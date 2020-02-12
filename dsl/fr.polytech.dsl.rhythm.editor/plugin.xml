@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rhythm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.polytech.dsl.rhythm.presentation.RhythmModelWizardID"
+            name="%_UI_RhythmModelWizard_label"
+            class="fr.polytech.dsl.rhythm.presentation.RhythmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RhythmModelFile.gif">
+         <description>%_UI_RhythmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rhythm -->
+      <editor
+            id="fr.polytech.dsl.rhythm.presentation.RhythmEditorID"
+            name="%_UI_RhythmEditor_label"
+            icon="icons/full/obj16/RhythmModelFile.gif"
+            extensions="rhythm"
+            class="fr.polytech.dsl.rhythm.presentation.RhythmEditor"
+            contributorClass="fr.polytech.dsl.rhythm.presentation.RhythmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

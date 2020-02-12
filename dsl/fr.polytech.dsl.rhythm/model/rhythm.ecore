@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rhythm" nsURI="http://fr.polytech.dsl/rhythm" nsPrefix="rhythm">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Music" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="track" lowerBound="1" upperBound="-1"
+        eType="#//Track" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" upperBound="-1"
+        eType="#//Section" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Track" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instrument" lowerBound="1"
+        eType="#//Instrument" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tempo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instrument" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="BatteryNote">
+    <eLiterals name="SNARE_DRUM"/>
+    <eLiterals name="BASS_DRUM" value="1"/>
+    <eLiterals name="CLOSED_HIHAT" value="2"/>
+    <eLiterals name="OPENED_HIHAT" value="3"/>
+    <eLiterals name="CRASH_CYMBAL" value="4"/>
+    <eLiterals name="RIDE_CYMBAL" value="5"/>
+    <eLiterals name="EMPTY" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Battery" eSuperTypes="#//Instrument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" lowerBound="1" upperBound="-1"
+        eType="#//BatteryNote"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Piano" eSuperTypes="#//Instrument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" lowerBound="1" upperBound="-1"
+        eType="#//PianoNote"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PianoNote">
+    <eLiterals name="C"/>
+    <eLiterals name="D" value="2"/>
+    <eLiterals name="E" value="4"/>
+    <eLiterals name="F" value="5"/>
+    <eLiterals name="G" value="7"/>
+    <eLiterals name="A" value="9"/>
+    <eLiterals name="B" value="11"/>
+    <eLiterals name="EMPTY" value="7"/>
+  </eClassifiers>
+</ecore:EPackage>
