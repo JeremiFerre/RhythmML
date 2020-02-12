@@ -20,17 +20,20 @@ public class DrumerUtils {
 			throws InvalidMidiDataException, MidiUnavailableException, InterruptedException, IOException {
 		Sequencer sequencer = MidiSystem.getSequencer();
 		test1(sequencer);
+
+		/**
 		loadSoundbank(sequencer, "soundBank/Scratch_3_0.sf2");
 		test1(sequencer);
 		loadSoundbank(sequencer, "soundBank/Yamaha_RX7_Drums.sf2");
 		test1(sequencer);
+		 **/
 	}
 
 	private static void test1(Sequencer sequencer)
 			throws InvalidMidiDataException, MidiUnavailableException, InterruptedException {
 		System.out.println("start");
 		int tempo = 80;
-		int nbBar = 2;
+		int nbBar = 4;
 		int nbBeatPerBar = 4;
 		int resolution = 200; // in slices per beat
 		Sequence sequence = new Sequence(Sequence.PPQ, resolution);
@@ -40,7 +43,7 @@ public class DrumerUtils {
 		for (int bar = 0; bar < nbBar; bar++) {
 			for (int beat = 0; beat < nbBeatPerBar; beat += 2) {
 				int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution);
-				addDrumHit(track, DrumElement.AcousticBassDrum, pos, 90);
+				addDrumHit(track, DrumElement.AcousticBassDrum, pos, 127);
 			}
 		}
 
@@ -48,12 +51,12 @@ public class DrumerUtils {
 		for (int bar = 0; bar < nbBar; bar++) {
 			for (int beat = 1; beat < 4; beat += 2) {
 				int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution);
-				addDrumHit(track, DrumElement.HandClap, pos, 100);
+				addDrumHit(track, DrumElement.HandClap, pos, 127);
 			}
 		}
 
 		// add hihat
-		for (int bar = 0; bar < nbBar; bar++) {
+	/**	for (int bar = 0; bar < nbBar; bar++) {
 			for (int beat = 0; beat < nbBeatPerBar; beat += 1) {
 				for (int d = 0; d < 4; d++) {
 					int pos = toTick(bar, beat, d / 4d, nbBeatPerBar, resolution);
@@ -67,7 +70,7 @@ public class DrumerUtils {
 		for (int bar = 0; bar < nbBar; bar++) {
 			int pos = toTick(bar, 1, 3 / 4d, nbBeatPerBar, resolution);
 			addDrumHit(track, DrumElement.AcousticBassDrum, pos, 80);
-		}
+		}**/
 
 		sequencer.open();
 		sequencer.setSequence(sequence);
