@@ -27,32 +27,32 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.rhythm.impl.MusicImpl#getTrack <em>Track</em>}</li>
- *   <li>{@link fr.polytech.dsl.rhythm.impl.MusicImpl#getSection <em>Section</em>}</li>
+ *   <li>{@link fr.polytech.dsl.rhythm.impl.MusicImpl#getTracks <em>Tracks</em>}</li>
+ *   <li>{@link fr.polytech.dsl.rhythm.impl.MusicImpl#getSections <em>Sections</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MusicImpl extends NamedElementImpl implements Music {
 	/**
-	 * The cached value of the '{@link #getTrack() <em>Track</em>}' containment reference list.
+	 * The cached value of the '{@link #getTracks() <em>Tracks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrack()
+	 * @see #getTracks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Track> track;
+	protected EList<Track> tracks;
 
 	/**
-	 * The cached value of the '{@link #getSection() <em>Section</em>}' containment reference list.
+	 * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSection()
+	 * @see #getSections()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Section> section;
+	protected EList<Section> sections;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,11 +78,11 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Track> getTrack() {
-		if (track == null) {
-			track = new EObjectContainmentEList<Track>(Track.class, this, RhythmPackage.MUSIC__TRACK);
+	public EList<Track> getTracks() {
+		if (tracks == null) {
+			tracks = new EObjectContainmentEList<Track>(Track.class, this, RhythmPackage.MUSIC__TRACKS);
 		}
-		return track;
+		return tracks;
 	}
 
 	/**
@@ -90,11 +90,11 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Section> getSection() {
-		if (section == null) {
-			section = new EObjectContainmentEList<Section>(Section.class, this, RhythmPackage.MUSIC__SECTION);
+	public EList<Section> getSections() {
+		if (sections == null) {
+			sections = new EObjectContainmentEList<Section>(Section.class, this, RhythmPackage.MUSIC__SECTIONS);
 		}
-		return section;
+		return sections;
 	}
 
 	/**
@@ -105,10 +105,10 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RhythmPackage.MUSIC__TRACK:
-			return ((InternalEList<?>) getTrack()).basicRemove(otherEnd, msgs);
-		case RhythmPackage.MUSIC__SECTION:
-			return ((InternalEList<?>) getSection()).basicRemove(otherEnd, msgs);
+		case RhythmPackage.MUSIC__TRACKS:
+			return ((InternalEList<?>) getTracks()).basicRemove(otherEnd, msgs);
+		case RhythmPackage.MUSIC__SECTIONS:
+			return ((InternalEList<?>) getSections()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -121,10 +121,10 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RhythmPackage.MUSIC__TRACK:
-			return getTrack();
-		case RhythmPackage.MUSIC__SECTION:
-			return getSection();
+		case RhythmPackage.MUSIC__TRACKS:
+			return getTracks();
+		case RhythmPackage.MUSIC__SECTIONS:
+			return getSections();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,13 +138,13 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RhythmPackage.MUSIC__TRACK:
-			getTrack().clear();
-			getTrack().addAll((Collection<? extends Track>) newValue);
+		case RhythmPackage.MUSIC__TRACKS:
+			getTracks().clear();
+			getTracks().addAll((Collection<? extends Track>) newValue);
 			return;
-		case RhythmPackage.MUSIC__SECTION:
-			getSection().clear();
-			getSection().addAll((Collection<? extends Section>) newValue);
+		case RhythmPackage.MUSIC__SECTIONS:
+			getSections().clear();
+			getSections().addAll((Collection<? extends Section>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,11 +158,11 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.MUSIC__TRACK:
-			getTrack().clear();
+		case RhythmPackage.MUSIC__TRACKS:
+			getTracks().clear();
 			return;
-		case RhythmPackage.MUSIC__SECTION:
-			getSection().clear();
+		case RhythmPackage.MUSIC__SECTIONS:
+			getSections().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -176,10 +176,10 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.MUSIC__TRACK:
-			return track != null && !track.isEmpty();
-		case RhythmPackage.MUSIC__SECTION:
-			return section != null && !section.isEmpty();
+		case RhythmPackage.MUSIC__TRACKS:
+			return tracks != null && !tracks.isEmpty();
+		case RhythmPackage.MUSIC__SECTIONS:
+			return sections != null && !sections.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

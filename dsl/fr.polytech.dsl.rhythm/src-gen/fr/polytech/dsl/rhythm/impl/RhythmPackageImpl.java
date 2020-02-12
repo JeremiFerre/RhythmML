@@ -4,11 +4,13 @@ package fr.polytech.dsl.rhythm.impl;
 
 import fr.polytech.dsl.rhythm.Battery;
 import fr.polytech.dsl.rhythm.BatteryNote;
+import fr.polytech.dsl.rhythm.BatteryNoteType;
+import fr.polytech.dsl.rhythm.EmptyNote;
 import fr.polytech.dsl.rhythm.Instrument;
 import fr.polytech.dsl.rhythm.Music;
 import fr.polytech.dsl.rhythm.NamedElement;
+import fr.polytech.dsl.rhythm.Note;
 import fr.polytech.dsl.rhythm.Piano;
-import fr.polytech.dsl.rhythm.PianoNote;
 import fr.polytech.dsl.rhythm.RhythmFactory;
 import fr.polytech.dsl.rhythm.RhythmPackage;
 import fr.polytech.dsl.rhythm.Section;
@@ -83,14 +85,28 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum batteryNoteEEnum = null;
+	private EClass noteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum pianoNoteEEnum = null;
+	private EClass batteryNoteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass emptyNoteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum batteryNoteTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -188,7 +204,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Track() {
+	public EReference getMusic_Tracks() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -197,7 +213,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Section() {
+	public EReference getMusic_Sections() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -269,8 +285,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBattery() {
-		return batteryEClass;
+	public EReference getInstrument_Notes() {
+		return (EReference) instrumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -278,8 +294,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBattery_Notes() {
-		return (EAttribute) batteryEClass.getEStructuralFeatures().get(0);
+	public EClass getBattery() {
+		return batteryEClass;
 	}
 
 	/**
@@ -296,8 +312,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPiano_Notes() {
-		return (EAttribute) pianoEClass.getEStructuralFeatures().get(0);
+	public EClass getNote() {
+		return noteEClass;
 	}
 
 	/**
@@ -305,8 +321,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getBatteryNote() {
-		return batteryNoteEEnum;
+	public EClass getBatteryNote() {
+		return batteryNoteEClass;
 	}
 
 	/**
@@ -314,8 +330,26 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getPianoNote() {
-		return pianoNoteEEnum;
+	public EAttribute getBatteryNote_NoteType() {
+		return (EAttribute) batteryNoteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEmptyNote() {
+		return emptyNoteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBatteryNoteType() {
+		return batteryNoteTypeEEnum;
 	}
 
 	/**
@@ -351,8 +385,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		musicEClass = createEClass(MUSIC);
-		createEReference(musicEClass, MUSIC__TRACK);
-		createEReference(musicEClass, MUSIC__SECTION);
+		createEReference(musicEClass, MUSIC__TRACKS);
+		createEReference(musicEClass, MUSIC__SECTIONS);
 
 		trackEClass = createEClass(TRACK);
 		createEReference(trackEClass, TRACK__INSTRUMENT);
@@ -363,16 +397,21 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		createEAttribute(sectionEClass, SECTION__BARS);
 
 		instrumentEClass = createEClass(INSTRUMENT);
+		createEReference(instrumentEClass, INSTRUMENT__NOTES);
 
 		batteryEClass = createEClass(BATTERY);
-		createEAttribute(batteryEClass, BATTERY__NOTES);
 
 		pianoEClass = createEClass(PIANO);
-		createEAttribute(pianoEClass, PIANO__NOTES);
+
+		noteEClass = createEClass(NOTE);
+
+		batteryNoteEClass = createEClass(BATTERY_NOTE);
+		createEAttribute(batteryNoteEClass, BATTERY_NOTE__NOTE_TYPE);
+
+		emptyNoteEClass = createEClass(EMPTY_NOTE);
 
 		// Create enums
-		batteryNoteEEnum = createEEnum(BATTERY_NOTE);
-		pianoNoteEEnum = createEEnum(PIANO_NOTE);
+		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
 	}
 
 	/**
@@ -410,6 +449,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		instrumentEClass.getESuperTypes().add(this.getNamedElement());
 		batteryEClass.getESuperTypes().add(this.getInstrument());
 		pianoEClass.getESuperTypes().add(this.getInstrument());
+		batteryNoteEClass.getESuperTypes().add(this.getNote());
+		emptyNoteEClass.getESuperTypes().add(this.getNote());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -418,12 +459,12 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(musicEClass, Music.class, "Music", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMusic_Track(), this.getTrack(), null, "track", null, 1, -1, Music.class, !IS_TRANSIENT,
+		initEReference(getMusic_Tracks(), this.getTrack(), null, "tracks", null, 1, -1, Music.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getMusic_Section(), this.getSection(), null, "section", null, 0, -1, Music.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getMusic_Sections(), this.getSection(), null, "sections", null, 0, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackEClass, Track.class, "Track", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrack_Instrument(), this.getInstrument(), null, "instrument", null, 1, 1, Track.class,
@@ -440,34 +481,32 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		initEClass(instrumentEClass, Instrument.class, "Instrument", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstrument_Notes(), this.getNote(), null, "notes", null, 0, -1, Instrument.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(batteryEClass, Battery.class, "Battery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBattery_Notes(), this.getBatteryNote(), "notes", null, 1, -1, Battery.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pianoEClass, Piano.class, "Piano", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPiano_Notes(), this.getPianoNote(), "notes", null, 1, -1, Piano.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(noteEClass, Note.class, "Note", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(batteryNoteEClass, BatteryNote.class, "BatteryNote", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBatteryNote_NoteType(), this.getBatteryNoteType(), "noteType", null, 0, 1, BatteryNote.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(emptyNoteEClass, EmptyNote.class, "EmptyNote", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
-		initEEnum(batteryNoteEEnum, BatteryNote.class, "BatteryNote");
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.SNARE_DRUM);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.BASS_DRUM);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.CLOSED_HIHAT);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.OPENED_HIHAT);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.CRASH_CYMBAL);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.RIDE_CYMBAL);
-		addEEnumLiteral(batteryNoteEEnum, BatteryNote.EMPTY);
-
-		initEEnum(pianoNoteEEnum, PianoNote.class, "PianoNote");
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.C);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.D);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.E);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.F);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.G);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.A);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.B);
-		addEEnumLiteral(pianoNoteEEnum, PianoNote.EMPTY);
+		initEEnum(batteryNoteTypeEEnum, BatteryNoteType.class, "BatteryNoteType");
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.SNARE_DRUM);
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.BASS_DRUM);
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.CLOSED_HIHAT);
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.OPENED_HIHAT);
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.CRASH_CYMBAL);
+		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.RIDE_CYMBAL);
 
 		// Create resource
 		createResource(eNS_URI);

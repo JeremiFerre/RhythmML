@@ -5,6 +5,8 @@ package fr.polytech.dsl.rhythm.serializer;
 
 import com.google.inject.Inject;
 import fr.polytech.dsl.rhythm.Battery;
+import fr.polytech.dsl.rhythm.BatteryNote;
+import fr.polytech.dsl.rhythm.EmptyNote;
 import fr.polytech.dsl.rhythm.Music;
 import fr.polytech.dsl.rhythm.RhythmPackage;
 import fr.polytech.dsl.rhythm.Section;
@@ -38,6 +40,12 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RhythmPackage.BATTERY:
 				sequence_Battery(context, (Battery) semanticObject); 
 				return; 
+			case RhythmPackage.BATTERY_NOTE:
+				sequence_BatteryNote(context, (BatteryNote) semanticObject); 
+				return; 
+			case RhythmPackage.EMPTY_NOTE:
+				sequence_EmptyNote(context, (EmptyNote) semanticObject); 
+				return; 
 			case RhythmPackage.MUSIC:
 				sequence_Music(context, (Music) semanticObject); 
 				return; 
@@ -54,12 +62,42 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     BatteryNote returns BatteryNote
+	 *
+	 * Constraint:
+	 *     noteType=BatteryNoteType
+	 */
+	protected void sequence_BatteryNote(ISerializationContext context, BatteryNote semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RhythmPackage.Literals.BATTERY_NOTE__NOTE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmPackage.Literals.BATTERY_NOTE__NOTE_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBatteryNoteAccess().getNoteTypeBatteryNoteTypeEnumRuleCall_1_0(), semanticObject.getNoteType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Battery returns Battery
 	 *
 	 * Constraint:
-	 *     (name=EString? notes+=BatteryNote+)
+	 *     (name=EString? (notes+=BatteryNote | notes+=EmptyNote)+)
 	 */
 	protected void sequence_Battery(ISerializationContext context, Battery semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EmptyNote returns EmptyNote
+	 *
+	 * Constraint:
+	 *     {EmptyNote}
+	 */
+	protected void sequence_EmptyNote(ISerializationContext context, EmptyNote semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -69,7 +107,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Music returns Music
 	 *
 	 * Constraint:
-	 *     (name=EString section+=Section section+=Section* track+=Track track+=Track*)
+	 *     (name=EString sections+=Section sections+=Section* tracks+=Track tracks+=Track*)
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

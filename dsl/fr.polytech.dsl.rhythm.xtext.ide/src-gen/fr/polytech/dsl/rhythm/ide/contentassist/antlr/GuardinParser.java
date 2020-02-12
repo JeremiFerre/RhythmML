@@ -31,21 +31,24 @@ public class GuardinParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, GuardinGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getBatteryAccess().getNotesAlternatives_2_0(), "rule__Battery__NotesAlternatives_2_0");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getBatteryNoteAccess().getAlternatives(), "rule__BatteryNote__Alternatives");
+			builder.put(grammarAccess.getBatteryNoteTypeAccess().getAlternatives(), "rule__BatteryNoteType__Alternatives");
 			builder.put(grammarAccess.getMusicAccess().getGroup(), "rule__Music__Group__0");
-			builder.put(grammarAccess.getMusicAccess().getGroup_7(), "rule__Music__Group_7__0");
-			builder.put(grammarAccess.getMusicAccess().getGroup_7_2(), "rule__Music__Group_7_2__0");
+			builder.put(grammarAccess.getMusicAccess().getGroup_10(), "rule__Music__Group_10__0");
+			builder.put(grammarAccess.getMusicAccess().getGroup_10_2(), "rule__Music__Group_10_2__0");
 			builder.put(grammarAccess.getSectionAccess().getGroup(), "rule__Section__Group__0");
 			builder.put(grammarAccess.getTrackAccess().getGroup(), "rule__Track__Group__0");
 			builder.put(grammarAccess.getTrackAccess().getGroup_1(), "rule__Track__Group_1__0");
 			builder.put(grammarAccess.getBatteryAccess().getGroup(), "rule__Battery__Group__0");
 			builder.put(grammarAccess.getBatteryAccess().getGroup_1(), "rule__Battery__Group_1__0");
-			builder.put(grammarAccess.getMusicAccess().getNameAssignment_1(), "rule__Music__NameAssignment_1");
-			builder.put(grammarAccess.getMusicAccess().getSectionAssignment_3(), "rule__Music__SectionAssignment_3");
-			builder.put(grammarAccess.getMusicAccess().getSectionAssignment_4(), "rule__Music__SectionAssignment_4");
-			builder.put(grammarAccess.getMusicAccess().getTrackAssignment_7_1(), "rule__Music__TrackAssignment_7_1");
-			builder.put(grammarAccess.getMusicAccess().getTrackAssignment_7_2_1(), "rule__Music__TrackAssignment_7_2_1");
+			builder.put(grammarAccess.getEmptyNoteAccess().getGroup(), "rule__EmptyNote__Group__0");
+			builder.put(grammarAccess.getBatteryNoteAccess().getGroup(), "rule__BatteryNote__Group__0");
+			builder.put(grammarAccess.getMusicAccess().getNameAssignment_2(), "rule__Music__NameAssignment_2");
+			builder.put(grammarAccess.getMusicAccess().getSectionsAssignment_6(), "rule__Music__SectionsAssignment_6");
+			builder.put(grammarAccess.getMusicAccess().getSectionsAssignment_7(), "rule__Music__SectionsAssignment_7");
+			builder.put(grammarAccess.getMusicAccess().getTracksAssignment_10_1(), "rule__Music__TracksAssignment_10_1");
+			builder.put(grammarAccess.getMusicAccess().getTracksAssignment_10_2_1(), "rule__Music__TracksAssignment_10_2_1");
 			builder.put(grammarAccess.getSectionAccess().getNameAssignment_1(), "rule__Section__NameAssignment_1");
 			builder.put(grammarAccess.getSectionAccess().getTempoAssignment_4(), "rule__Section__TempoAssignment_4");
 			builder.put(grammarAccess.getSectionAccess().getSignatureAssignment_6(), "rule__Section__SignatureAssignment_6");
@@ -54,6 +57,7 @@ public class GuardinParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTrackAccess().getInstrumentAssignment_4(), "rule__Track__InstrumentAssignment_4");
 			builder.put(grammarAccess.getBatteryAccess().getNameAssignment_1_0(), "rule__Battery__NameAssignment_1_0");
 			builder.put(grammarAccess.getBatteryAccess().getNotesAssignment_2(), "rule__Battery__NotesAssignment_2");
+			builder.put(grammarAccess.getBatteryNoteAccess().getNoteTypeAssignment_1(), "rule__BatteryNote__NoteTypeAssignment_1");
 		}
 	}
 	

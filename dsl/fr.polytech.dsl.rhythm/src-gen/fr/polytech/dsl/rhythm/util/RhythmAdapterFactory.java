@@ -102,6 +102,21 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseNote(Note object) {
+			return createNoteAdapter();
+		}
+
+		@Override
+		public Adapter caseBatteryNote(BatteryNote object) {
+			return createBatteryNoteAdapter();
+		}
+
+		@Override
+		public Adapter caseEmptyNote(EmptyNote object) {
+			return createEmptyNoteAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -215,6 +230,48 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPianoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.rhythm.Note <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.rhythm.Note
+	 * @generated
+	 */
+	public Adapter createNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.rhythm.BatteryNote <em>Battery Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.rhythm.BatteryNote
+	 * @generated
+	 */
+	public Adapter createBatteryNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.rhythm.EmptyNote <em>Empty Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.rhythm.EmptyNote
+	 * @generated
+	 */
+	public Adapter createEmptyNoteAdapter() {
 		return null;
 	}
 

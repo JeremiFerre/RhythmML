@@ -131,6 +131,31 @@ public class RhythmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RhythmPackage.NOTE: {
+			Note note = (Note) theEObject;
+			T result = caseNote(note);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmPackage.BATTERY_NOTE: {
+			BatteryNote batteryNote = (BatteryNote) theEObject;
+			T result = caseBatteryNote(batteryNote);
+			if (result == null)
+				result = caseNote(batteryNote);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmPackage.EMPTY_NOTE: {
+			EmptyNote emptyNote = (EmptyNote) theEObject;
+			T result = caseEmptyNote(emptyNote);
+			if (result == null)
+				result = caseNote(emptyNote);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -238,6 +263,51 @@ public class RhythmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePiano(Piano object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNote(Note object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Battery Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Battery Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBatteryNote(BatteryNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Empty Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Empty Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEmptyNote(EmptyNote object) {
 		return null;
 	}
 

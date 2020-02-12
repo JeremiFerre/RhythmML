@@ -16,10 +16,10 @@ class GuardinFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Music music, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (section : music.section) {
+		for (section : music.sections) {
 			section.format
 		}
-		for (track : music.track) {
+		for (track : music.tracks) {
 			track.format
 		}
 	}

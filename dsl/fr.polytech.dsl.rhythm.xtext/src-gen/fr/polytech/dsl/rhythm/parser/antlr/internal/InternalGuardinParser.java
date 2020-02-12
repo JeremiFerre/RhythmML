@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGuardinParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'tracks'", "'-'", "'tempo='", "'signature='", "'bars='", "'instrument'", "'$'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Music'", "':'", "'sections'", "'tracks'", "'-'", "'tempo='", "'signature='", "'bars='", "'instrument'", "'$'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -39,11 +39,13 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     public static final int RULE_ID=6;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
     public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
     public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -123,35 +125,38 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMusic"
-    // InternalGuardin.g:72:1: ruleMusic returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_section_3_0= ruleSection ) ) ( (lv_section_4_0= ruleSection ) )* otherlv_5= 'tracks' otherlv_6= ':' (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* ) ) ;
+    // InternalGuardin.g:72:1: ruleMusic returns [EObject current=null] : ( () otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' otherlv_4= 'sections' otherlv_5= ':' ( (lv_sections_6_0= ruleSection ) ) ( (lv_sections_7_0= ruleSection ) )* otherlv_8= 'tracks' otherlv_9= ':' (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* ) ) ;
     public final EObject ruleMusic() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
+        Token otherlv_8=null;
         Token otherlv_9=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_section_3_0 = null;
+        EObject lv_sections_6_0 = null;
 
-        EObject lv_section_4_0 = null;
+        EObject lv_sections_7_0 = null;
 
-        EObject lv_track_8_0 = null;
+        EObject lv_tracks_11_0 = null;
 
-        EObject lv_track_10_0 = null;
+        EObject lv_tracks_13_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGuardin.g:78:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_section_3_0= ruleSection ) ) ( (lv_section_4_0= ruleSection ) )* otherlv_5= 'tracks' otherlv_6= ':' (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* ) ) )
-            // InternalGuardin.g:79:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_section_3_0= ruleSection ) ) ( (lv_section_4_0= ruleSection ) )* otherlv_5= 'tracks' otherlv_6= ':' (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* ) )
+            // InternalGuardin.g:78:2: ( ( () otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' otherlv_4= 'sections' otherlv_5= ':' ( (lv_sections_6_0= ruleSection ) ) ( (lv_sections_7_0= ruleSection ) )* otherlv_8= 'tracks' otherlv_9= ':' (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* ) ) )
+            // InternalGuardin.g:79:2: ( () otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' otherlv_4= 'sections' otherlv_5= ':' ( (lv_sections_6_0= ruleSection ) ) ( (lv_sections_7_0= ruleSection ) )* otherlv_8= 'tracks' otherlv_9= ':' (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* ) )
             {
-            // InternalGuardin.g:79:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_section_3_0= ruleSection ) ) ( (lv_section_4_0= ruleSection ) )* otherlv_5= 'tracks' otherlv_6= ':' (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* ) )
-            // InternalGuardin.g:80:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_section_3_0= ruleSection ) ) ( (lv_section_4_0= ruleSection ) )* otherlv_5= 'tracks' otherlv_6= ':' (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* )
+            // InternalGuardin.g:79:2: ( () otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' otherlv_4= 'sections' otherlv_5= ':' ( (lv_sections_6_0= ruleSection ) ) ( (lv_sections_7_0= ruleSection ) )* otherlv_8= 'tracks' otherlv_9= ':' (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* ) )
+            // InternalGuardin.g:80:3: () otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' otherlv_4= 'sections' otherlv_5= ':' ( (lv_sections_6_0= ruleSection ) ) ( (lv_sections_7_0= ruleSection ) )* otherlv_8= 'tracks' otherlv_9= ':' (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* )
             {
             // InternalGuardin.g:80:3: ()
             // InternalGuardin.g:81:4: 
@@ -164,17 +169,21 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:87:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalGuardin.g:88:4: (lv_name_1_0= ruleEString )
+            otherlv_1=(Token)match(input,11,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMusicAccess().getMusicKeyword_1());
+            		
+            // InternalGuardin.g:91:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalGuardin.g:92:4: (lv_name_2_0= ruleEString )
             {
-            // InternalGuardin.g:88:4: (lv_name_1_0= ruleEString )
-            // InternalGuardin.g:89:5: lv_name_1_0= ruleEString
+            // InternalGuardin.g:92:4: (lv_name_2_0= ruleEString )
+            // InternalGuardin.g:93:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getMusicAccess().getNameEStringParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getMusicAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_3);
-            lv_name_1_0=ruleEString();
+            pushFollow(FOLLOW_4);
+            lv_name_2_0=ruleEString();
 
             state._fsp--;
 
@@ -185,7 +194,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_1_0,
+            						lv_name_2_0,
             						"fr.polytech.dsl.rhythm.Guardin.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -195,21 +204,29 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,11,FOLLOW_4); 
+            otherlv_3=(Token)match(input,12,FOLLOW_5); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getMusicAccess().getColonKeyword_2());
+            			newLeafNode(otherlv_3, grammarAccess.getMusicAccess().getColonKeyword_3());
             		
-            // InternalGuardin.g:110:3: ( (lv_section_3_0= ruleSection ) )
-            // InternalGuardin.g:111:4: (lv_section_3_0= ruleSection )
+            otherlv_4=(Token)match(input,13,FOLLOW_4); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getMusicAccess().getSectionsKeyword_4());
+            		
+            otherlv_5=(Token)match(input,12,FOLLOW_3); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getMusicAccess().getColonKeyword_5());
+            		
+            // InternalGuardin.g:122:3: ( (lv_sections_6_0= ruleSection ) )
+            // InternalGuardin.g:123:4: (lv_sections_6_0= ruleSection )
             {
-            // InternalGuardin.g:111:4: (lv_section_3_0= ruleSection )
-            // InternalGuardin.g:112:5: lv_section_3_0= ruleSection
+            // InternalGuardin.g:123:4: (lv_sections_6_0= ruleSection )
+            // InternalGuardin.g:124:5: lv_sections_6_0= ruleSection
             {
 
-            					newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getMusicAccess().getSectionsSectionParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_5);
-            lv_section_3_0=ruleSection();
+            pushFollow(FOLLOW_6);
+            lv_sections_6_0=ruleSection();
 
             state._fsp--;
 
@@ -219,8 +236,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             					}
             					add(
             						current,
-            						"section",
-            						lv_section_3_0,
+            						"sections",
+            						lv_sections_6_0,
             						"fr.polytech.dsl.rhythm.Guardin.Section");
             					afterParserOrEnumRuleCall();
             				
@@ -230,7 +247,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:129:3: ( (lv_section_4_0= ruleSection ) )*
+            // InternalGuardin.g:141:3: ( (lv_sections_7_0= ruleSection ) )*
             loop1:
             do {
                 int alt1=2;
@@ -243,16 +260,16 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalGuardin.g:130:4: (lv_section_4_0= ruleSection )
+            	    // InternalGuardin.g:142:4: (lv_sections_7_0= ruleSection )
             	    {
-            	    // InternalGuardin.g:130:4: (lv_section_4_0= ruleSection )
-            	    // InternalGuardin.g:131:5: lv_section_4_0= ruleSection
+            	    // InternalGuardin.g:142:4: (lv_sections_7_0= ruleSection )
+            	    // InternalGuardin.g:143:5: lv_sections_7_0= ruleSection
             	    {
 
-            	    					newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_4_0());
+            	    					newCompositeNode(grammarAccess.getMusicAccess().getSectionsSectionParserRuleCall_7_0());
             	    				
-            	    pushFollow(FOLLOW_5);
-            	    lv_section_4_0=ruleSection();
+            	    pushFollow(FOLLOW_6);
+            	    lv_sections_7_0=ruleSection();
 
             	    state._fsp--;
 
@@ -262,8 +279,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"section",
-            	    						lv_section_4_0,
+            	    						"sections",
+            	    						lv_sections_7_0,
             	    						"fr.polytech.dsl.rhythm.Guardin.Section");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -279,32 +296,32 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,12,FOLLOW_3); 
+            otherlv_8=(Token)match(input,14,FOLLOW_4); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getMusicAccess().getTracksKeyword_5());
+            			newLeafNode(otherlv_8, grammarAccess.getMusicAccess().getTracksKeyword_8());
             		
-            otherlv_6=(Token)match(input,11,FOLLOW_6); 
+            otherlv_9=(Token)match(input,12,FOLLOW_7); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getMusicAccess().getColonKeyword_6());
+            			newLeafNode(otherlv_9, grammarAccess.getMusicAccess().getColonKeyword_9());
             		
-            // InternalGuardin.g:156:3: (otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )* )
-            // InternalGuardin.g:157:4: otherlv_7= '-' ( (lv_track_8_0= ruleTrack ) ) (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )*
+            // InternalGuardin.g:168:3: (otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )* )
+            // InternalGuardin.g:169:4: otherlv_10= '-' ( (lv_tracks_11_0= ruleTrack ) ) (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )*
             {
-            otherlv_7=(Token)match(input,13,FOLLOW_7); 
+            otherlv_10=(Token)match(input,15,FOLLOW_8); 
 
-            				newLeafNode(otherlv_7, grammarAccess.getMusicAccess().getHyphenMinusKeyword_7_0());
+            				newLeafNode(otherlv_10, grammarAccess.getMusicAccess().getHyphenMinusKeyword_10_0());
             			
-            // InternalGuardin.g:161:4: ( (lv_track_8_0= ruleTrack ) )
-            // InternalGuardin.g:162:5: (lv_track_8_0= ruleTrack )
+            // InternalGuardin.g:173:4: ( (lv_tracks_11_0= ruleTrack ) )
+            // InternalGuardin.g:174:5: (lv_tracks_11_0= ruleTrack )
             {
-            // InternalGuardin.g:162:5: (lv_track_8_0= ruleTrack )
-            // InternalGuardin.g:163:6: lv_track_8_0= ruleTrack
+            // InternalGuardin.g:174:5: (lv_tracks_11_0= ruleTrack )
+            // InternalGuardin.g:175:6: lv_tracks_11_0= ruleTrack
             {
 
-            						newCompositeNode(grammarAccess.getMusicAccess().getTrackTrackParserRuleCall_7_1_0());
+            						newCompositeNode(grammarAccess.getMusicAccess().getTracksTrackParserRuleCall_10_1_0());
             					
-            pushFollow(FOLLOW_8);
-            lv_track_8_0=ruleTrack();
+            pushFollow(FOLLOW_9);
+            lv_tracks_11_0=ruleTrack();
 
             state._fsp--;
 
@@ -314,8 +331,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             						}
             						add(
             							current,
-            							"track",
-            							lv_track_8_0,
+            							"tracks",
+            							lv_tracks_11_0,
             							"fr.polytech.dsl.rhythm.Guardin.Track");
             						afterParserOrEnumRuleCall();
             					
@@ -325,36 +342,36 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:180:4: (otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) ) )*
+            // InternalGuardin.g:192:4: (otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==13) ) {
+                if ( (LA2_0==15) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalGuardin.g:181:5: otherlv_9= '-' ( (lv_track_10_0= ruleTrack ) )
+            	    // InternalGuardin.g:193:5: otherlv_12= '-' ( (lv_tracks_13_0= ruleTrack ) )
             	    {
-            	    otherlv_9=(Token)match(input,13,FOLLOW_7); 
+            	    otherlv_12=(Token)match(input,15,FOLLOW_8); 
 
-            	    					newLeafNode(otherlv_9, grammarAccess.getMusicAccess().getHyphenMinusKeyword_7_2_0());
+            	    					newLeafNode(otherlv_12, grammarAccess.getMusicAccess().getHyphenMinusKeyword_10_2_0());
             	    				
-            	    // InternalGuardin.g:185:5: ( (lv_track_10_0= ruleTrack ) )
-            	    // InternalGuardin.g:186:6: (lv_track_10_0= ruleTrack )
+            	    // InternalGuardin.g:197:5: ( (lv_tracks_13_0= ruleTrack ) )
+            	    // InternalGuardin.g:198:6: (lv_tracks_13_0= ruleTrack )
             	    {
-            	    // InternalGuardin.g:186:6: (lv_track_10_0= ruleTrack )
-            	    // InternalGuardin.g:187:7: lv_track_10_0= ruleTrack
+            	    // InternalGuardin.g:198:6: (lv_tracks_13_0= ruleTrack )
+            	    // InternalGuardin.g:199:7: lv_tracks_13_0= ruleTrack
             	    {
 
-            	    							newCompositeNode(grammarAccess.getMusicAccess().getTrackTrackParserRuleCall_7_2_1_0());
+            	    							newCompositeNode(grammarAccess.getMusicAccess().getTracksTrackParserRuleCall_10_2_1_0());
             	    						
-            	    pushFollow(FOLLOW_8);
-            	    lv_track_10_0=ruleTrack();
+            	    pushFollow(FOLLOW_9);
+            	    lv_tracks_13_0=ruleTrack();
 
             	    state._fsp--;
 
@@ -364,8 +381,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    							}
             	    							add(
             	    								current,
-            	    								"track",
-            	    								lv_track_10_0,
+            	    								"tracks",
+            	    								lv_tracks_13_0,
             	    								"fr.polytech.dsl.rhythm.Guardin.Track");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -410,7 +427,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSection"
-    // InternalGuardin.g:210:1: entryRuleSection returns [EObject current=null] : iv_ruleSection= ruleSection EOF ;
+    // InternalGuardin.g:222:1: entryRuleSection returns [EObject current=null] : iv_ruleSection= ruleSection EOF ;
     public final EObject entryRuleSection() throws RecognitionException {
         EObject current = null;
 
@@ -418,8 +435,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:210:48: (iv_ruleSection= ruleSection EOF )
-            // InternalGuardin.g:211:2: iv_ruleSection= ruleSection EOF
+            // InternalGuardin.g:222:48: (iv_ruleSection= ruleSection EOF )
+            // InternalGuardin.g:223:2: iv_ruleSection= ruleSection EOF
             {
              newCompositeNode(grammarAccess.getSectionRule()); 
             pushFollow(FOLLOW_1);
@@ -446,7 +463,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSection"
-    // InternalGuardin.g:217:1: ruleSection returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) ) ;
+    // InternalGuardin.g:229:1: ruleSection returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) ) ;
     public final EObject ruleSection() throws RecognitionException {
         EObject current = null;
 
@@ -467,14 +484,14 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:223:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) ) )
-            // InternalGuardin.g:224:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) )
+            // InternalGuardin.g:235:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) ) )
+            // InternalGuardin.g:236:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) )
             {
-            // InternalGuardin.g:224:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) )
-            // InternalGuardin.g:225:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) )
+            // InternalGuardin.g:236:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) ) )
+            // InternalGuardin.g:237:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= 'tempo=' ( (lv_tempo_4_0= ruleEInt ) ) otherlv_5= 'signature=' ( (lv_signature_6_0= ruleEInt ) ) otherlv_7= 'bars=' ( (lv_bars_8_0= ruleEInt ) )
             {
-            // InternalGuardin.g:225:3: ()
-            // InternalGuardin.g:226:4: 
+            // InternalGuardin.g:237:3: ()
+            // InternalGuardin.g:238:4: 
             {
 
             				current = forceCreateModelElement(
@@ -484,16 +501,16 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:232:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalGuardin.g:233:4: (lv_name_1_0= ruleEString )
+            // InternalGuardin.g:244:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalGuardin.g:245:4: (lv_name_1_0= ruleEString )
             {
-            // InternalGuardin.g:233:4: (lv_name_1_0= ruleEString )
-            // InternalGuardin.g:234:5: lv_name_1_0= ruleEString
+            // InternalGuardin.g:245:4: (lv_name_1_0= ruleEString )
+            // InternalGuardin.g:246:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getNameEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_4);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -515,24 +532,24 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,11,FOLLOW_9); 
+            otherlv_2=(Token)match(input,12,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSectionAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,14,FOLLOW_10); 
+            otherlv_3=(Token)match(input,16,FOLLOW_11); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSectionAccess().getTempoKeyword_3());
             		
-            // InternalGuardin.g:259:3: ( (lv_tempo_4_0= ruleEInt ) )
-            // InternalGuardin.g:260:4: (lv_tempo_4_0= ruleEInt )
+            // InternalGuardin.g:271:3: ( (lv_tempo_4_0= ruleEInt ) )
+            // InternalGuardin.g:272:4: (lv_tempo_4_0= ruleEInt )
             {
-            // InternalGuardin.g:260:4: (lv_tempo_4_0= ruleEInt )
-            // InternalGuardin.g:261:5: lv_tempo_4_0= ruleEInt
+            // InternalGuardin.g:272:4: (lv_tempo_4_0= ruleEInt )
+            // InternalGuardin.g:273:5: lv_tempo_4_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getTempoEIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_tempo_4_0=ruleEInt();
 
             state._fsp--;
@@ -554,20 +571,20 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,15,FOLLOW_10); 
+            otherlv_5=(Token)match(input,17,FOLLOW_11); 
 
             			newLeafNode(otherlv_5, grammarAccess.getSectionAccess().getSignatureKeyword_5());
             		
-            // InternalGuardin.g:282:3: ( (lv_signature_6_0= ruleEInt ) )
-            // InternalGuardin.g:283:4: (lv_signature_6_0= ruleEInt )
+            // InternalGuardin.g:294:3: ( (lv_signature_6_0= ruleEInt ) )
+            // InternalGuardin.g:295:4: (lv_signature_6_0= ruleEInt )
             {
-            // InternalGuardin.g:283:4: (lv_signature_6_0= ruleEInt )
-            // InternalGuardin.g:284:5: lv_signature_6_0= ruleEInt
+            // InternalGuardin.g:295:4: (lv_signature_6_0= ruleEInt )
+            // InternalGuardin.g:296:5: lv_signature_6_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getSignatureEIntParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_13);
             lv_signature_6_0=ruleEInt();
 
             state._fsp--;
@@ -589,15 +606,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,16,FOLLOW_10); 
+            otherlv_7=(Token)match(input,18,FOLLOW_11); 
 
             			newLeafNode(otherlv_7, grammarAccess.getSectionAccess().getBarsKeyword_7());
             		
-            // InternalGuardin.g:305:3: ( (lv_bars_8_0= ruleEInt ) )
-            // InternalGuardin.g:306:4: (lv_bars_8_0= ruleEInt )
+            // InternalGuardin.g:317:3: ( (lv_bars_8_0= ruleEInt ) )
+            // InternalGuardin.g:318:4: (lv_bars_8_0= ruleEInt )
             {
-            // InternalGuardin.g:306:4: (lv_bars_8_0= ruleEInt )
-            // InternalGuardin.g:307:5: lv_bars_8_0= ruleEInt
+            // InternalGuardin.g:318:4: (lv_bars_8_0= ruleEInt )
+            // InternalGuardin.g:319:5: lv_bars_8_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getBarsEIntParserRuleCall_8_0());
@@ -647,7 +664,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrack"
-    // InternalGuardin.g:328:1: entryRuleTrack returns [EObject current=null] : iv_ruleTrack= ruleTrack EOF ;
+    // InternalGuardin.g:340:1: entryRuleTrack returns [EObject current=null] : iv_ruleTrack= ruleTrack EOF ;
     public final EObject entryRuleTrack() throws RecognitionException {
         EObject current = null;
 
@@ -655,8 +672,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:328:46: (iv_ruleTrack= ruleTrack EOF )
-            // InternalGuardin.g:329:2: iv_ruleTrack= ruleTrack EOF
+            // InternalGuardin.g:340:46: (iv_ruleTrack= ruleTrack EOF )
+            // InternalGuardin.g:341:2: iv_ruleTrack= ruleTrack EOF
             {
              newCompositeNode(grammarAccess.getTrackRule()); 
             pushFollow(FOLLOW_1);
@@ -683,7 +700,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrack"
-    // InternalGuardin.g:335:1: ruleTrack returns [EObject current=null] : ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) ) ;
+    // InternalGuardin.g:347:1: ruleTrack returns [EObject current=null] : ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) ) ;
     public final EObject ruleTrack() throws RecognitionException {
         EObject current = null;
 
@@ -699,14 +716,14 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:341:2: ( ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) ) )
-            // InternalGuardin.g:342:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) )
+            // InternalGuardin.g:353:2: ( ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) ) )
+            // InternalGuardin.g:354:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) )
             {
-            // InternalGuardin.g:342:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) )
-            // InternalGuardin.g:343:3: () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) )
+            // InternalGuardin.g:354:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) ) )
+            // InternalGuardin.g:355:3: () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? otherlv_3= 'instrument' otherlv_4= ':' ( (lv_instrument_5_0= ruleBattery ) )
             {
-            // InternalGuardin.g:343:3: ()
-            // InternalGuardin.g:344:4: 
+            // InternalGuardin.g:355:3: ()
+            // InternalGuardin.g:356:4: 
             {
 
             				current = forceCreateModelElement(
@@ -716,7 +733,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:350:3: ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )?
+            // InternalGuardin.g:362:3: ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -725,18 +742,18 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalGuardin.g:351:4: ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':'
+                    // InternalGuardin.g:363:4: ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':'
                     {
-                    // InternalGuardin.g:351:4: ( (lv_name_1_0= ruleEString ) )
-                    // InternalGuardin.g:352:5: (lv_name_1_0= ruleEString )
+                    // InternalGuardin.g:363:4: ( (lv_name_1_0= ruleEString ) )
+                    // InternalGuardin.g:364:5: (lv_name_1_0= ruleEString )
                     {
-                    // InternalGuardin.g:352:5: (lv_name_1_0= ruleEString )
-                    // InternalGuardin.g:353:6: lv_name_1_0= ruleEString
+                    // InternalGuardin.g:364:5: (lv_name_1_0= ruleEString )
+                    // InternalGuardin.g:365:6: lv_name_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getTrackAccess().getNameEStringParserRuleCall_1_0_0());
                     					
-                    pushFollow(FOLLOW_3);
+                    pushFollow(FOLLOW_4);
                     lv_name_1_0=ruleEString();
 
                     state._fsp--;
@@ -758,7 +775,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,11,FOLLOW_13); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_14); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getTrackAccess().getColonKeyword_1_1());
                     			
@@ -768,19 +785,19 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_3); 
+            otherlv_3=(Token)match(input,19,FOLLOW_4); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTrackAccess().getInstrumentKeyword_2());
             		
-            otherlv_4=(Token)match(input,11,FOLLOW_14); 
+            otherlv_4=(Token)match(input,12,FOLLOW_15); 
 
             			newLeafNode(otherlv_4, grammarAccess.getTrackAccess().getColonKeyword_3());
             		
-            // InternalGuardin.g:383:3: ( (lv_instrument_5_0= ruleBattery ) )
-            // InternalGuardin.g:384:4: (lv_instrument_5_0= ruleBattery )
+            // InternalGuardin.g:395:3: ( (lv_instrument_5_0= ruleBattery ) )
+            // InternalGuardin.g:396:4: (lv_instrument_5_0= ruleBattery )
             {
-            // InternalGuardin.g:384:4: (lv_instrument_5_0= ruleBattery )
-            // InternalGuardin.g:385:5: lv_instrument_5_0= ruleBattery
+            // InternalGuardin.g:396:4: (lv_instrument_5_0= ruleBattery )
+            // InternalGuardin.g:397:5: lv_instrument_5_0= ruleBattery
             {
 
             					newCompositeNode(grammarAccess.getTrackAccess().getInstrumentBatteryParserRuleCall_4_0());
@@ -830,7 +847,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBattery"
-    // InternalGuardin.g:406:1: entryRuleBattery returns [EObject current=null] : iv_ruleBattery= ruleBattery EOF ;
+    // InternalGuardin.g:418:1: entryRuleBattery returns [EObject current=null] : iv_ruleBattery= ruleBattery EOF ;
     public final EObject entryRuleBattery() throws RecognitionException {
         EObject current = null;
 
@@ -838,8 +855,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:406:48: (iv_ruleBattery= ruleBattery EOF )
-            // InternalGuardin.g:407:2: iv_ruleBattery= ruleBattery EOF
+            // InternalGuardin.g:418:48: (iv_ruleBattery= ruleBattery EOF )
+            // InternalGuardin.g:419:2: iv_ruleBattery= ruleBattery EOF
             {
              newCompositeNode(grammarAccess.getBatteryRule()); 
             pushFollow(FOLLOW_1);
@@ -866,28 +883,30 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBattery"
-    // InternalGuardin.g:413:1: ruleBattery returns [EObject current=null] : ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( (lv_notes_3_0= ruleBatteryNote ) )+ ) ;
+    // InternalGuardin.g:425:1: ruleBattery returns [EObject current=null] : ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+ ) ;
     public final EObject ruleBattery() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
-        Enumerator lv_notes_3_0 = null;
+        EObject lv_notes_3_1 = null;
+
+        EObject lv_notes_3_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGuardin.g:419:2: ( ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( (lv_notes_3_0= ruleBatteryNote ) )+ ) )
-            // InternalGuardin.g:420:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( (lv_notes_3_0= ruleBatteryNote ) )+ )
+            // InternalGuardin.g:431:2: ( ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+ ) )
+            // InternalGuardin.g:432:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+ )
             {
-            // InternalGuardin.g:420:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( (lv_notes_3_0= ruleBatteryNote ) )+ )
-            // InternalGuardin.g:421:3: () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( (lv_notes_3_0= ruleBatteryNote ) )+
+            // InternalGuardin.g:432:2: ( () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+ )
+            // InternalGuardin.g:433:3: () ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )? ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+
             {
-            // InternalGuardin.g:421:3: ()
-            // InternalGuardin.g:422:4: 
+            // InternalGuardin.g:433:3: ()
+            // InternalGuardin.g:434:4: 
             {
 
             				current = forceCreateModelElement(
@@ -897,7 +916,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:428:3: ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )?
+            // InternalGuardin.g:440:3: ( ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -906,18 +925,18 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGuardin.g:429:4: ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':'
+                    // InternalGuardin.g:441:4: ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':'
                     {
-                    // InternalGuardin.g:429:4: ( (lv_name_1_0= ruleEString ) )
-                    // InternalGuardin.g:430:5: (lv_name_1_0= ruleEString )
+                    // InternalGuardin.g:441:4: ( (lv_name_1_0= ruleEString ) )
+                    // InternalGuardin.g:442:5: (lv_name_1_0= ruleEString )
                     {
-                    // InternalGuardin.g:430:5: (lv_name_1_0= ruleEString )
-                    // InternalGuardin.g:431:6: lv_name_1_0= ruleEString
+                    // InternalGuardin.g:442:5: (lv_name_1_0= ruleEString )
+                    // InternalGuardin.g:443:6: lv_name_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getBatteryAccess().getNameEStringParserRuleCall_1_0_0());
                     					
-                    pushFollow(FOLLOW_3);
+                    pushFollow(FOLLOW_4);
                     lv_name_1_0=ruleEString();
 
                     state._fsp--;
@@ -939,7 +958,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,11,FOLLOW_14); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_15); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getBatteryAccess().getColonKeyword_1_1());
                     			
@@ -949,44 +968,95 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGuardin.g:453:3: ( (lv_notes_3_0= ruleBatteryNote ) )+
-            int cnt5=0;
-            loop5:
+            // InternalGuardin.g:465:3: ( ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) ) )+
+            int cnt6=0;
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( ((LA5_0>=18 && LA5_0<=24)) ) {
-                    alt5=1;
+                if ( ((LA6_0>=20 && LA6_0<=26)) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalGuardin.g:454:4: (lv_notes_3_0= ruleBatteryNote )
+            	    // InternalGuardin.g:466:4: ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) )
             	    {
-            	    // InternalGuardin.g:454:4: (lv_notes_3_0= ruleBatteryNote )
-            	    // InternalGuardin.g:455:5: lv_notes_3_0= ruleBatteryNote
+            	    // InternalGuardin.g:466:4: ( (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote ) )
+            	    // InternalGuardin.g:467:5: (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote )
             	    {
+            	    // InternalGuardin.g:467:5: (lv_notes_3_1= ruleBatteryNote | lv_notes_3_2= ruleEmptyNote )
+            	    int alt5=2;
+            	    int LA5_0 = input.LA(1);
 
-            	    					newCompositeNode(grammarAccess.getBatteryAccess().getNotesBatteryNoteEnumRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_15);
-            	    lv_notes_3_0=ruleBatteryNote();
+            	    if ( ((LA5_0>=21 && LA5_0<=26)) ) {
+            	        alt5=1;
+            	    }
+            	    else if ( (LA5_0==20) ) {
+            	        alt5=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 5, 0, input);
 
-            	    state._fsp--;
+            	        throw nvae;
+            	    }
+            	    switch (alt5) {
+            	        case 1 :
+            	            // InternalGuardin.g:468:6: lv_notes_3_1= ruleBatteryNote
+            	            {
+
+            	            						newCompositeNode(grammarAccess.getBatteryAccess().getNotesBatteryNoteParserRuleCall_2_0_0());
+            	            					
+            	            pushFollow(FOLLOW_16);
+            	            lv_notes_3_1=ruleBatteryNote();
+
+            	            state._fsp--;
 
 
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getBatteryRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"notes",
-            	    						lv_notes_3_0,
-            	    						"fr.polytech.dsl.rhythm.Guardin.BatteryNote");
-            	    					afterParserOrEnumRuleCall();
-            	    				
+            	            						if (current==null) {
+            	            							current = createModelElementForParent(grammarAccess.getBatteryRule());
+            	            						}
+            	            						add(
+            	            							current,
+            	            							"notes",
+            	            							lv_notes_3_1,
+            	            							"fr.polytech.dsl.rhythm.Guardin.BatteryNote");
+            	            						afterParserOrEnumRuleCall();
+            	            					
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalGuardin.g:484:6: lv_notes_3_2= ruleEmptyNote
+            	            {
+
+            	            						newCompositeNode(grammarAccess.getBatteryAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+            	            					
+            	            pushFollow(FOLLOW_16);
+            	            lv_notes_3_2=ruleEmptyNote();
+
+            	            state._fsp--;
+
+
+            	            						if (current==null) {
+            	            							current = createModelElementForParent(grammarAccess.getBatteryRule());
+            	            						}
+            	            						add(
+            	            							current,
+            	            							"notes",
+            	            							lv_notes_3_2,
+            	            							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+            	            						afterParserOrEnumRuleCall();
+            	            					
+
+            	            }
+            	            break;
+
+            	    }
+
 
             	    }
 
@@ -995,12 +1065,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt5 >= 1 ) break loop5;
+            	    if ( cnt6 >= 1 ) break loop6;
                         EarlyExitException eee =
-                            new EarlyExitException(5, input);
+                            new EarlyExitException(6, input);
                         throw eee;
                 }
-                cnt5++;
+                cnt6++;
             } while (true);
 
 
@@ -1025,8 +1095,216 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleBattery"
 
 
+    // $ANTLR start "entryRuleEmptyNote"
+    // InternalGuardin.g:506:1: entryRuleEmptyNote returns [EObject current=null] : iv_ruleEmptyNote= ruleEmptyNote EOF ;
+    public final EObject entryRuleEmptyNote() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEmptyNote = null;
+
+
+        try {
+            // InternalGuardin.g:506:50: (iv_ruleEmptyNote= ruleEmptyNote EOF )
+            // InternalGuardin.g:507:2: iv_ruleEmptyNote= ruleEmptyNote EOF
+            {
+             newCompositeNode(grammarAccess.getEmptyNoteRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEmptyNote=ruleEmptyNote();
+
+            state._fsp--;
+
+             current =iv_ruleEmptyNote; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEmptyNote"
+
+
+    // $ANTLR start "ruleEmptyNote"
+    // InternalGuardin.g:513:1: ruleEmptyNote returns [EObject current=null] : ( () otherlv_1= '$' ) ;
+    public final EObject ruleEmptyNote() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGuardin.g:519:2: ( ( () otherlv_1= '$' ) )
+            // InternalGuardin.g:520:2: ( () otherlv_1= '$' )
+            {
+            // InternalGuardin.g:520:2: ( () otherlv_1= '$' )
+            // InternalGuardin.g:521:3: () otherlv_1= '$'
+            {
+            // InternalGuardin.g:521:3: ()
+            // InternalGuardin.g:522:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getEmptyNoteAccess().getEmptyNoteAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getEmptyNoteAccess().getDollarSignKeyword_1());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEmptyNote"
+
+
+    // $ANTLR start "entryRuleBatteryNote"
+    // InternalGuardin.g:536:1: entryRuleBatteryNote returns [EObject current=null] : iv_ruleBatteryNote= ruleBatteryNote EOF ;
+    public final EObject entryRuleBatteryNote() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleBatteryNote = null;
+
+
+        try {
+            // InternalGuardin.g:536:52: (iv_ruleBatteryNote= ruleBatteryNote EOF )
+            // InternalGuardin.g:537:2: iv_ruleBatteryNote= ruleBatteryNote EOF
+            {
+             newCompositeNode(grammarAccess.getBatteryNoteRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleBatteryNote=ruleBatteryNote();
+
+            state._fsp--;
+
+             current =iv_ruleBatteryNote; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleBatteryNote"
+
+
+    // $ANTLR start "ruleBatteryNote"
+    // InternalGuardin.g:543:1: ruleBatteryNote returns [EObject current=null] : ( () ( (lv_noteType_1_0= ruleBatteryNoteType ) ) ) ;
+    public final EObject ruleBatteryNote() throws RecognitionException {
+        EObject current = null;
+
+        Enumerator lv_noteType_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGuardin.g:549:2: ( ( () ( (lv_noteType_1_0= ruleBatteryNoteType ) ) ) )
+            // InternalGuardin.g:550:2: ( () ( (lv_noteType_1_0= ruleBatteryNoteType ) ) )
+            {
+            // InternalGuardin.g:550:2: ( () ( (lv_noteType_1_0= ruleBatteryNoteType ) ) )
+            // InternalGuardin.g:551:3: () ( (lv_noteType_1_0= ruleBatteryNoteType ) )
+            {
+            // InternalGuardin.g:551:3: ()
+            // InternalGuardin.g:552:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getBatteryNoteAccess().getBatteryNoteAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalGuardin.g:558:3: ( (lv_noteType_1_0= ruleBatteryNoteType ) )
+            // InternalGuardin.g:559:4: (lv_noteType_1_0= ruleBatteryNoteType )
+            {
+            // InternalGuardin.g:559:4: (lv_noteType_1_0= ruleBatteryNoteType )
+            // InternalGuardin.g:560:5: lv_noteType_1_0= ruleBatteryNoteType
+            {
+
+            					newCompositeNode(grammarAccess.getBatteryNoteAccess().getNoteTypeBatteryNoteTypeEnumRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_noteType_1_0=ruleBatteryNoteType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getBatteryNoteRule());
+            					}
+            					set(
+            						current,
+            						"noteType",
+            						lv_noteType_1_0,
+            						"fr.polytech.dsl.rhythm.Guardin.BatteryNoteType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleBatteryNote"
+
+
     // $ANTLR start "entryRuleEInt"
-    // InternalGuardin.g:476:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalGuardin.g:581:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1034,8 +1312,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:476:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalGuardin.g:477:2: iv_ruleEInt= ruleEInt EOF
+            // InternalGuardin.g:581:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalGuardin.g:582:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -1062,7 +1340,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalGuardin.g:483:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalGuardin.g:588:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1072,8 +1350,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:489:2: (this_INT_0= RULE_INT )
-            // InternalGuardin.g:490:2: this_INT_0= RULE_INT
+            // InternalGuardin.g:594:2: (this_INT_0= RULE_INT )
+            // InternalGuardin.g:595:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1102,7 +1380,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalGuardin.g:500:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalGuardin.g:605:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1110,8 +1388,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:500:47: (iv_ruleEString= ruleEString EOF )
-            // InternalGuardin.g:501:2: iv_ruleEString= ruleEString EOF
+            // InternalGuardin.g:605:47: (iv_ruleEString= ruleEString EOF )
+            // InternalGuardin.g:606:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1138,7 +1416,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalGuardin.g:507:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalGuardin.g:612:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1149,28 +1427,28 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:513:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalGuardin.g:514:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalGuardin.g:618:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalGuardin.g:619:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalGuardin.g:514:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalGuardin.g:619:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
-                alt6=1;
+            if ( (LA7_0==RULE_STRING) ) {
+                alt7=1;
             }
-            else if ( (LA6_0==RULE_ID) ) {
-                alt6=2;
+            else if ( (LA7_0==RULE_ID) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalGuardin.g:515:3: this_STRING_0= RULE_STRING
+                    // InternalGuardin.g:620:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1183,7 +1461,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:523:3: this_ID_1= RULE_ID
+                    // InternalGuardin.g:628:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1217,9 +1495,9 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEString"
 
 
-    // $ANTLR start "ruleBatteryNote"
-    // InternalGuardin.g:534:1: ruleBatteryNote returns [Enumerator current=null] : ( (enumLiteral_0= '$' ) | (enumLiteral_1= 'bd' ) | (enumLiteral_2= 'ch' ) | (enumLiteral_3= 'cc' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'rc' ) | (enumLiteral_6= 'sd' ) ) ;
-    public final Enumerator ruleBatteryNote() throws RecognitionException {
+    // $ANTLR start "ruleBatteryNoteType"
+    // InternalGuardin.g:639:1: ruleBatteryNoteType returns [Enumerator current=null] : ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) ;
+    public final Enumerator ruleBatteryNoteType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
@@ -1228,71 +1506,65 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         Token enumLiteral_3=null;
         Token enumLiteral_4=null;
         Token enumLiteral_5=null;
-        Token enumLiteral_6=null;
 
 
         	enterRule();
 
         try {
-            // InternalGuardin.g:540:2: ( ( (enumLiteral_0= '$' ) | (enumLiteral_1= 'bd' ) | (enumLiteral_2= 'ch' ) | (enumLiteral_3= 'cc' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'rc' ) | (enumLiteral_6= 'sd' ) ) )
-            // InternalGuardin.g:541:2: ( (enumLiteral_0= '$' ) | (enumLiteral_1= 'bd' ) | (enumLiteral_2= 'ch' ) | (enumLiteral_3= 'cc' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'rc' ) | (enumLiteral_6= 'sd' ) )
+            // InternalGuardin.g:645:2: ( ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) )
+            // InternalGuardin.g:646:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
             {
-            // InternalGuardin.g:541:2: ( (enumLiteral_0= '$' ) | (enumLiteral_1= 'bd' ) | (enumLiteral_2= 'ch' ) | (enumLiteral_3= 'cc' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'rc' ) | (enumLiteral_6= 'sd' ) )
-            int alt7=7;
+            // InternalGuardin.g:646:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
+            int alt8=6;
             switch ( input.LA(1) ) {
-            case 18:
-                {
-                alt7=1;
-                }
-                break;
-            case 19:
-                {
-                alt7=2;
-                }
-                break;
-            case 20:
-                {
-                alt7=3;
-                }
-                break;
             case 21:
                 {
-                alt7=4;
+                alt8=1;
                 }
                 break;
             case 22:
                 {
-                alt7=5;
+                alt8=2;
                 }
                 break;
             case 23:
                 {
-                alt7=6;
+                alt8=3;
                 }
                 break;
             case 24:
                 {
-                alt7=7;
+                alt8=4;
+                }
+                break;
+            case 25:
+                {
+                alt8=5;
+                }
+                break;
+            case 26:
+                {
+                alt8=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalGuardin.g:542:3: (enumLiteral_0= '$' )
+                    // InternalGuardin.g:647:3: (enumLiteral_0= 'bd' )
                     {
-                    // InternalGuardin.g:542:3: (enumLiteral_0= '$' )
-                    // InternalGuardin.g:543:4: enumLiteral_0= '$'
+                    // InternalGuardin.g:647:3: (enumLiteral_0= 'bd' )
+                    // InternalGuardin.g:648:4: enumLiteral_0= 'bd'
                     {
-                    enumLiteral_0=(Token)match(input,18,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getEMPTYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getBatteryNoteAccess().getEMPTYEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getBASS_DRUMEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getBatteryNoteTypeAccess().getBASS_DRUMEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -1301,15 +1573,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:550:3: (enumLiteral_1= 'bd' )
+                    // InternalGuardin.g:655:3: (enumLiteral_1= 'ch' )
                     {
-                    // InternalGuardin.g:550:3: (enumLiteral_1= 'bd' )
-                    // InternalGuardin.g:551:4: enumLiteral_1= 'bd'
+                    // InternalGuardin.g:655:3: (enumLiteral_1= 'ch' )
+                    // InternalGuardin.g:656:4: enumLiteral_1= 'ch'
                     {
-                    enumLiteral_1=(Token)match(input,19,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getBASS_DRUMEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getBatteryNoteAccess().getBASS_DRUMEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getCLOSED_HIHATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getBatteryNoteTypeAccess().getCLOSED_HIHATEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -1318,15 +1590,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGuardin.g:558:3: (enumLiteral_2= 'ch' )
+                    // InternalGuardin.g:663:3: (enumLiteral_2= 'cc' )
                     {
-                    // InternalGuardin.g:558:3: (enumLiteral_2= 'ch' )
-                    // InternalGuardin.g:559:4: enumLiteral_2= 'ch'
+                    // InternalGuardin.g:663:3: (enumLiteral_2= 'cc' )
+                    // InternalGuardin.g:664:4: enumLiteral_2= 'cc'
                     {
-                    enumLiteral_2=(Token)match(input,20,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,23,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getCLOSED_HIHATEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getBatteryNoteAccess().getCLOSED_HIHATEnumLiteralDeclaration_2());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getCRASH_CYMBALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getBatteryNoteTypeAccess().getCRASH_CYMBALEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -1335,15 +1607,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGuardin.g:566:3: (enumLiteral_3= 'cc' )
+                    // InternalGuardin.g:671:3: (enumLiteral_3= 'oh' )
                     {
-                    // InternalGuardin.g:566:3: (enumLiteral_3= 'cc' )
-                    // InternalGuardin.g:567:4: enumLiteral_3= 'cc'
+                    // InternalGuardin.g:671:3: (enumLiteral_3= 'oh' )
+                    // InternalGuardin.g:672:4: enumLiteral_3= 'oh'
                     {
-                    enumLiteral_3=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,24,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getCRASH_CYMBALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getBatteryNoteAccess().getCRASH_CYMBALEnumLiteralDeclaration_3());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getOPENED_HIHATEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getBatteryNoteTypeAccess().getOPENED_HIHATEnumLiteralDeclaration_3());
                     			
 
                     }
@@ -1352,15 +1624,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalGuardin.g:574:3: (enumLiteral_4= 'oh' )
+                    // InternalGuardin.g:679:3: (enumLiteral_4= 'rc' )
                     {
-                    // InternalGuardin.g:574:3: (enumLiteral_4= 'oh' )
-                    // InternalGuardin.g:575:4: enumLiteral_4= 'oh'
+                    // InternalGuardin.g:679:3: (enumLiteral_4= 'rc' )
+                    // InternalGuardin.g:680:4: enumLiteral_4= 'rc'
                     {
-                    enumLiteral_4=(Token)match(input,22,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,25,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getOPENED_HIHATEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_4, grammarAccess.getBatteryNoteAccess().getOPENED_HIHATEnumLiteralDeclaration_4());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getRIDE_CYMBALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getBatteryNoteTypeAccess().getRIDE_CYMBALEnumLiteralDeclaration_4());
                     			
 
                     }
@@ -1369,32 +1641,15 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalGuardin.g:582:3: (enumLiteral_5= 'rc' )
+                    // InternalGuardin.g:687:3: (enumLiteral_5= 'sd' )
                     {
-                    // InternalGuardin.g:582:3: (enumLiteral_5= 'rc' )
-                    // InternalGuardin.g:583:4: enumLiteral_5= 'rc'
+                    // InternalGuardin.g:687:3: (enumLiteral_5= 'sd' )
+                    // InternalGuardin.g:688:4: enumLiteral_5= 'sd'
                     {
-                    enumLiteral_5=(Token)match(input,23,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,26,FOLLOW_2); 
 
-                    				current = grammarAccess.getBatteryNoteAccess().getRIDE_CYMBALEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_5, grammarAccess.getBatteryNoteAccess().getRIDE_CYMBALEnumLiteralDeclaration_5());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // InternalGuardin.g:590:3: (enumLiteral_6= 'sd' )
-                    {
-                    // InternalGuardin.g:590:3: (enumLiteral_6= 'sd' )
-                    // InternalGuardin.g:591:4: enumLiteral_6= 'sd'
-                    {
-                    enumLiteral_6=(Token)match(input,24,FOLLOW_2); 
-
-                    				current = grammarAccess.getBatteryNoteAccess().getSNARE_DRUMEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_6, grammarAccess.getBatteryNoteAccess().getSNARE_DRUMEnumLiteralDeclaration_6());
+                    				current = grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5());
                     			
 
                     }
@@ -1421,7 +1676,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleBatteryNote"
+    // $ANTLR end "ruleBatteryNoteType"
 
     // Delegated rules
 
@@ -1430,18 +1685,19 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001060L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020060L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001FC0060L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001FC0062L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004060L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080060L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000007F00060L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000007F00062L});
 
 }

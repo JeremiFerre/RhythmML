@@ -67,6 +67,10 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 			return createBattery();
 		case RhythmPackage.PIANO:
 			return createPiano();
+		case RhythmPackage.BATTERY_NOTE:
+			return createBatteryNote();
+		case RhythmPackage.EMPTY_NOTE:
+			return createEmptyNote();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,10 +84,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case RhythmPackage.BATTERY_NOTE:
-			return createBatteryNoteFromString(eDataType, initialValue);
-		case RhythmPackage.PIANO_NOTE:
-			return createPianoNoteFromString(eDataType, initialValue);
+		case RhythmPackage.BATTERY_NOTE_TYPE:
+			return createBatteryNoteTypeFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -97,10 +99,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case RhythmPackage.BATTERY_NOTE:
-			return convertBatteryNoteToString(eDataType, instanceValue);
-		case RhythmPackage.PIANO_NOTE:
-			return convertPianoNoteToString(eDataType, instanceValue);
+		case RhythmPackage.BATTERY_NOTE_TYPE:
+			return convertBatteryNoteTypeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -161,8 +161,28 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BatteryNote createBatteryNoteFromString(EDataType eDataType, String initialValue) {
-		BatteryNote result = BatteryNote.get(initialValue);
+	public BatteryNote createBatteryNote() {
+		BatteryNoteImpl batteryNote = new BatteryNoteImpl();
+		return batteryNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmptyNote createEmptyNote() {
+		EmptyNoteImpl emptyNote = new EmptyNoteImpl();
+		return emptyNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BatteryNoteType createBatteryNoteTypeFromString(EDataType eDataType, String initialValue) {
+		BatteryNoteType result = BatteryNoteType.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -174,29 +194,7 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBatteryNoteToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PianoNote createPianoNoteFromString(EDataType eDataType, String initialValue) {
-		PianoNote result = PianoNote.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPianoNoteToString(EDataType eDataType, Object instanceValue) {
+	public String convertBatteryNoteTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

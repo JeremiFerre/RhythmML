@@ -30,87 +30,102 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Music");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMusicAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSectionSectionParserRuleCall_3_0 = (RuleCall)cSectionAssignment_3.eContents().get(0);
-		private final Assignment cSectionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSectionSectionParserRuleCall_4_0 = (RuleCall)cSectionAssignment_4.eContents().get(0);
-		private final Keyword cTracksKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cHyphenMinusKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cTrackAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cTrackTrackParserRuleCall_7_1_0 = (RuleCall)cTrackAssignment_7_1.eContents().get(0);
-		private final Group cGroup_7_2 = (Group)cGroup_7.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_7_2_0 = (Keyword)cGroup_7_2.eContents().get(0);
-		private final Assignment cTrackAssignment_7_2_1 = (Assignment)cGroup_7_2.eContents().get(1);
-		private final RuleCall cTrackTrackParserRuleCall_7_2_1_0 = (RuleCall)cTrackAssignment_7_2_1.eContents().get(0);
+		private final Keyword cMusicKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSectionsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cSectionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSectionsSectionParserRuleCall_6_0 = (RuleCall)cSectionsAssignment_6.eContents().get(0);
+		private final Assignment cSectionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cSectionsSectionParserRuleCall_7_0 = (RuleCall)cSectionsAssignment_7.eContents().get(0);
+		private final Keyword cTracksKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cHyphenMinusKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cTracksAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cTracksTrackParserRuleCall_10_1_0 = (RuleCall)cTracksAssignment_10_1.eContents().get(0);
+		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_10_2_0 = (Keyword)cGroup_10_2.eContents().get(0);
+		private final Assignment cTracksAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
+		private final RuleCall cTracksTrackParserRuleCall_10_2_1_0 = (RuleCall)cTracksAssignment_10_2_1.eContents().get(0);
 		
 		//Music:
-		//	{Music} name=EString ":"
-		//	section+=Section
-		//	section+=Section*
-		//	"tracks" ":" ("-" track+=Track ("-" track+=Track)*);
+		//	{Music}
+		//	"Music" name=EString ":"
+		//	"sections" ":"
+		//	sections+=Section
+		//	sections+=Section*
+		//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Music} name=EString ":" section+=Section section+=Section* "tracks" ":" ("-" track+=Track ("-" track+=Track)*)
+		//{Music} "Music" name=EString ":" "sections" ":" sections+=Section sections+=Section* "tracks" ":" ("-" tracks+=Track
+		//("-" tracks+=Track)*)
 		public Group getGroup() { return cGroup; }
 		
 		//{Music}
 		public Action getMusicAction_0() { return cMusicAction_0; }
 		
+		//"Music"
+		public Keyword getMusicKeyword_1() { return cMusicKeyword_1; }
+		
 		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 		
 		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//section+=Section
-		public Assignment getSectionAssignment_3() { return cSectionAssignment_3; }
+		//"sections"
+		public Keyword getSectionsKeyword_4() { return cSectionsKeyword_4; }
+		
+		//":"
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		
+		//sections+=Section
+		public Assignment getSectionsAssignment_6() { return cSectionsAssignment_6; }
 		
 		//Section
-		public RuleCall getSectionSectionParserRuleCall_3_0() { return cSectionSectionParserRuleCall_3_0; }
+		public RuleCall getSectionsSectionParserRuleCall_6_0() { return cSectionsSectionParserRuleCall_6_0; }
 		
-		//section+=Section*
-		public Assignment getSectionAssignment_4() { return cSectionAssignment_4; }
+		//sections+=Section*
+		public Assignment getSectionsAssignment_7() { return cSectionsAssignment_7; }
 		
 		//Section
-		public RuleCall getSectionSectionParserRuleCall_4_0() { return cSectionSectionParserRuleCall_4_0; }
+		public RuleCall getSectionsSectionParserRuleCall_7_0() { return cSectionsSectionParserRuleCall_7_0; }
 		
 		//"tracks"
-		public Keyword getTracksKeyword_5() { return cTracksKeyword_5; }
+		public Keyword getTracksKeyword_8() { return cTracksKeyword_8; }
 		
 		//":"
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
-		//"-" track+=Track ("-" track+=Track)*
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//"-"
-		public Keyword getHyphenMinusKeyword_7_0() { return cHyphenMinusKeyword_7_0; }
-		
-		//track+=Track
-		public Assignment getTrackAssignment_7_1() { return cTrackAssignment_7_1; }
-		
-		//Track
-		public RuleCall getTrackTrackParserRuleCall_7_1_0() { return cTrackTrackParserRuleCall_7_1_0; }
-		
-		//("-" track+=Track)*
-		public Group getGroup_7_2() { return cGroup_7_2; }
+		//"-" tracks+=Track ("-" tracks+=Track)*
+		public Group getGroup_10() { return cGroup_10; }
 		
 		//"-"
-		public Keyword getHyphenMinusKeyword_7_2_0() { return cHyphenMinusKeyword_7_2_0; }
+		public Keyword getHyphenMinusKeyword_10_0() { return cHyphenMinusKeyword_10_0; }
 		
-		//track+=Track
-		public Assignment getTrackAssignment_7_2_1() { return cTrackAssignment_7_2_1; }
+		//tracks+=Track
+		public Assignment getTracksAssignment_10_1() { return cTracksAssignment_10_1; }
 		
 		//Track
-		public RuleCall getTrackTrackParserRuleCall_7_2_1_0() { return cTrackTrackParserRuleCall_7_2_1_0; }
+		public RuleCall getTracksTrackParserRuleCall_10_1_0() { return cTracksTrackParserRuleCall_10_1_0; }
+		
+		//("-" tracks+=Track)*
+		public Group getGroup_10_2() { return cGroup_10_2; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_10_2_0() { return cHyphenMinusKeyword_10_2_0; }
+		
+		//tracks+=Track
+		public Assignment getTracksAssignment_10_2_1() { return cTracksAssignment_10_2_1; }
+		
+		//Track
+		public RuleCall getTracksTrackParserRuleCall_10_2_1_0() { return cTracksTrackParserRuleCall_10_2_1_0; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Section");
@@ -235,14 +250,16 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
 		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cNotesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNotesBatteryNoteEnumRuleCall_2_0 = (RuleCall)cNotesAssignment_2.eContents().get(0);
+		private final Alternatives cNotesAlternatives_2_0 = (Alternatives)cNotesAssignment_2.eContents().get(0);
+		private final RuleCall cNotesBatteryNoteParserRuleCall_2_0_0 = (RuleCall)cNotesAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNotesEmptyNoteParserRuleCall_2_0_1 = (RuleCall)cNotesAlternatives_2_0.eContents().get(1);
 		
 		//Battery:
 		//	{Battery} (name=EString ":")?
-		//	notes+=BatteryNote+;
+		//	notes+=(BatteryNote | EmptyNote)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Battery} (name=EString ":")? notes+=BatteryNote+
+		//{Battery} (name=EString ":")? notes+=(BatteryNote | EmptyNote)+
 		public Group getGroup() { return cGroup; }
 		
 		//{Battery}
@@ -260,11 +277,60 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
-		//notes+=BatteryNote+
+		//notes+=(BatteryNote | EmptyNote)+
 		public Assignment getNotesAssignment_2() { return cNotesAssignment_2; }
 		
+		//(BatteryNote | EmptyNote)
+		public Alternatives getNotesAlternatives_2_0() { return cNotesAlternatives_2_0; }
+		
 		//BatteryNote
-		public RuleCall getNotesBatteryNoteEnumRuleCall_2_0() { return cNotesBatteryNoteEnumRuleCall_2_0; }
+		public RuleCall getNotesBatteryNoteParserRuleCall_2_0_0() { return cNotesBatteryNoteParserRuleCall_2_0_0; }
+		
+		//EmptyNote
+		public RuleCall getNotesEmptyNoteParserRuleCall_2_0_1() { return cNotesEmptyNoteParserRuleCall_2_0_1; }
+	}
+	public class EmptyNoteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEmptyNoteAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDollarSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//EmptyNote:
+		//	{EmptyNote}
+		//	"$";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EmptyNote} "$"
+		public Group getGroup() { return cGroup; }
+		
+		//{EmptyNote}
+		public Action getEmptyNoteAction_0() { return cEmptyNoteAction_0; }
+		
+		//"$"
+		public Keyword getDollarSignKeyword_1() { return cDollarSignKeyword_1; }
+	}
+	public class BatteryNoteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryNote");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBatteryNoteAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNoteTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNoteTypeBatteryNoteTypeEnumRuleCall_1_0 = (RuleCall)cNoteTypeAssignment_1.eContents().get(0);
+		
+		//BatteryNote:
+		//	{BatteryNote} noteType=BatteryNoteType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BatteryNote} noteType=BatteryNoteType
+		public Group getGroup() { return cGroup; }
+		
+		//{BatteryNote}
+		public Action getBatteryNoteAction_0() { return cBatteryNoteAction_0; }
+		
+		//noteType=BatteryNoteType
+		public Assignment getNoteTypeAssignment_1() { return cNoteTypeAssignment_1; }
+		
+		//BatteryNoteType
+		public RuleCall getNoteTypeBatteryNoteTypeEnumRuleCall_1_0() { return cNoteTypeBatteryNoteTypeEnumRuleCall_1_0; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.EInt");
@@ -297,81 +363,73 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	
-	public class BatteryNoteElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryNote");
+	public class BatteryNoteTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryNoteType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cEMPTYEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cEMPTYDollarSignKeyword_0_0 = (Keyword)cEMPTYEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cBASS_DRUMEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cBASS_DRUMBdKeyword_1_0 = (Keyword)cBASS_DRUMEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cCLOSED_HIHATEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cCLOSED_HIHATChKeyword_2_0 = (Keyword)cCLOSED_HIHATEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cCRASH_CYMBALEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cCRASH_CYMBALCcKeyword_3_0 = (Keyword)cCRASH_CYMBALEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cOPENED_HIHATEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cOPENED_HIHATOhKeyword_4_0 = (Keyword)cOPENED_HIHATEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cRIDE_CYMBALEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cRIDE_CYMBALRcKeyword_5_0 = (Keyword)cRIDE_CYMBALEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cSNARE_DRUMEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cSNARE_DRUMSdKeyword_6_0 = (Keyword)cSNARE_DRUMEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cBASS_DRUMEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cBASS_DRUMBdKeyword_0_0 = (Keyword)cBASS_DRUMEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCLOSED_HIHATEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCLOSED_HIHATChKeyword_1_0 = (Keyword)cCLOSED_HIHATEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cCRASH_CYMBALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cCRASH_CYMBALCcKeyword_2_0 = (Keyword)cCRASH_CYMBALEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cOPENED_HIHATEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cOPENED_HIHATOhKeyword_3_0 = (Keyword)cOPENED_HIHATEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cRIDE_CYMBALEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cRIDE_CYMBALRcKeyword_4_0 = (Keyword)cRIDE_CYMBALEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cSNARE_DRUMEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cSNARE_DRUMSdKeyword_5_0 = (Keyword)cSNARE_DRUMEnumLiteralDeclaration_5.eContents().get(0);
 		
-		//enum BatteryNote:
-		//	EMPTY="$" | BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" |
-		//	SNARE_DRUM="sd";
+		//enum BatteryNoteType:
+		//	BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd";
 		public EnumRule getRule() { return rule; }
 		
-		//EMPTY="$" | BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" |
-		//SNARE_DRUM="sd"
+		//BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//EMPTY="$"
-		public EnumLiteralDeclaration getEMPTYEnumLiteralDeclaration_0() { return cEMPTYEnumLiteralDeclaration_0; }
-		
-		//"$"
-		public Keyword getEMPTYDollarSignKeyword_0_0() { return cEMPTYDollarSignKeyword_0_0; }
-		
 		//BASS_DRUM="bd"
-		public EnumLiteralDeclaration getBASS_DRUMEnumLiteralDeclaration_1() { return cBASS_DRUMEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getBASS_DRUMEnumLiteralDeclaration_0() { return cBASS_DRUMEnumLiteralDeclaration_0; }
 		
 		//"bd"
-		public Keyword getBASS_DRUMBdKeyword_1_0() { return cBASS_DRUMBdKeyword_1_0; }
+		public Keyword getBASS_DRUMBdKeyword_0_0() { return cBASS_DRUMBdKeyword_0_0; }
 		
 		//CLOSED_HIHAT="ch"
-		public EnumLiteralDeclaration getCLOSED_HIHATEnumLiteralDeclaration_2() { return cCLOSED_HIHATEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getCLOSED_HIHATEnumLiteralDeclaration_1() { return cCLOSED_HIHATEnumLiteralDeclaration_1; }
 		
 		//"ch"
-		public Keyword getCLOSED_HIHATChKeyword_2_0() { return cCLOSED_HIHATChKeyword_2_0; }
+		public Keyword getCLOSED_HIHATChKeyword_1_0() { return cCLOSED_HIHATChKeyword_1_0; }
 		
 		//CRASH_CYMBAL="cc"
-		public EnumLiteralDeclaration getCRASH_CYMBALEnumLiteralDeclaration_3() { return cCRASH_CYMBALEnumLiteralDeclaration_3; }
+		public EnumLiteralDeclaration getCRASH_CYMBALEnumLiteralDeclaration_2() { return cCRASH_CYMBALEnumLiteralDeclaration_2; }
 		
 		//"cc"
-		public Keyword getCRASH_CYMBALCcKeyword_3_0() { return cCRASH_CYMBALCcKeyword_3_0; }
+		public Keyword getCRASH_CYMBALCcKeyword_2_0() { return cCRASH_CYMBALCcKeyword_2_0; }
 		
 		//OPENED_HIHAT="oh"
-		public EnumLiteralDeclaration getOPENED_HIHATEnumLiteralDeclaration_4() { return cOPENED_HIHATEnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getOPENED_HIHATEnumLiteralDeclaration_3() { return cOPENED_HIHATEnumLiteralDeclaration_3; }
 		
 		//"oh"
-		public Keyword getOPENED_HIHATOhKeyword_4_0() { return cOPENED_HIHATOhKeyword_4_0; }
+		public Keyword getOPENED_HIHATOhKeyword_3_0() { return cOPENED_HIHATOhKeyword_3_0; }
 		
 		//RIDE_CYMBAL="rc"
-		public EnumLiteralDeclaration getRIDE_CYMBALEnumLiteralDeclaration_5() { return cRIDE_CYMBALEnumLiteralDeclaration_5; }
+		public EnumLiteralDeclaration getRIDE_CYMBALEnumLiteralDeclaration_4() { return cRIDE_CYMBALEnumLiteralDeclaration_4; }
 		
 		//"rc"
-		public Keyword getRIDE_CYMBALRcKeyword_5_0() { return cRIDE_CYMBALRcKeyword_5_0; }
+		public Keyword getRIDE_CYMBALRcKeyword_4_0() { return cRIDE_CYMBALRcKeyword_4_0; }
 		
 		//SNARE_DRUM="sd"
-		public EnumLiteralDeclaration getSNARE_DRUMEnumLiteralDeclaration_6() { return cSNARE_DRUMEnumLiteralDeclaration_6; }
+		public EnumLiteralDeclaration getSNARE_DRUMEnumLiteralDeclaration_5() { return cSNARE_DRUMEnumLiteralDeclaration_5; }
 		
 		//"sd"
-		public Keyword getSNARE_DRUMSdKeyword_6_0() { return cSNARE_DRUMSdKeyword_6_0; }
+		public Keyword getSNARE_DRUMSdKeyword_5_0() { return cSNARE_DRUMSdKeyword_5_0; }
 	}
 	
 	private final MusicElements pMusic;
 	private final SectionElements pSection;
 	private final TrackElements pTrack;
 	private final BatteryElements pBattery;
-	private final BatteryNoteElements eBatteryNote;
+	private final EmptyNoteElements pEmptyNote;
+	private final BatteryNoteElements pBatteryNote;
+	private final BatteryNoteTypeElements eBatteryNoteType;
 	private final EIntElements pEInt;
 	private final EStringElements pEString;
 	
@@ -388,7 +446,9 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSection = new SectionElements();
 		this.pTrack = new TrackElements();
 		this.pBattery = new BatteryElements();
-		this.eBatteryNote = new BatteryNoteElements();
+		this.pEmptyNote = new EmptyNoteElements();
+		this.pBatteryNote = new BatteryNoteElements();
+		this.eBatteryNoteType = new BatteryNoteTypeElements();
 		this.pEInt = new EIntElements();
 		this.pEString = new EStringElements();
 	}
@@ -421,10 +481,12 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Music:
-	//	{Music} name=EString ":"
-	//	section+=Section
-	//	section+=Section*
-	//	"tracks" ":" ("-" track+=Track ("-" track+=Track)*);
+	//	{Music}
+	//	"Music" name=EString ":"
+	//	"sections" ":"
+	//	sections+=Section
+	//	sections+=Section*
+	//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*);
 	public MusicElements getMusicAccess() {
 		return pMusic;
 	}
@@ -459,7 +521,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Battery:
 	//	{Battery} (name=EString ":")?
-	//	notes+=BatteryNote+;
+	//	notes+=(BatteryNote | EmptyNote)+;
 	public BatteryElements getBatteryAccess() {
 		return pBattery;
 	}
@@ -468,15 +530,35 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		return getBatteryAccess().getRule();
 	}
 	
-	//enum BatteryNote:
-	//	EMPTY="$" | BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" |
-	//	SNARE_DRUM="sd";
-	public BatteryNoteElements getBatteryNoteAccess() {
-		return eBatteryNote;
+	//EmptyNote:
+	//	{EmptyNote}
+	//	"$";
+	public EmptyNoteElements getEmptyNoteAccess() {
+		return pEmptyNote;
 	}
 	
-	public EnumRule getBatteryNoteRule() {
+	public ParserRule getEmptyNoteRule() {
+		return getEmptyNoteAccess().getRule();
+	}
+	
+	//BatteryNote:
+	//	{BatteryNote} noteType=BatteryNoteType;
+	public BatteryNoteElements getBatteryNoteAccess() {
+		return pBatteryNote;
+	}
+	
+	public ParserRule getBatteryNoteRule() {
 		return getBatteryNoteAccess().getRule();
+	}
+	
+	//enum BatteryNoteType:
+	//	BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd";
+	public BatteryNoteTypeElements getBatteryNoteTypeAccess() {
+		return eBatteryNoteType;
+	}
+	
+	public EnumRule getBatteryNoteTypeRule() {
+		return getBatteryNoteTypeAccess().getRule();
 	}
 	
 	//EInt ecore::EInt:

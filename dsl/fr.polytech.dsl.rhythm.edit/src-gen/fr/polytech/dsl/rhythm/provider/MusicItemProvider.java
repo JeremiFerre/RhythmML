@@ -61,8 +61,8 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RhythmPackage.Literals.MUSIC__TRACK);
-			childrenFeatures.add(RhythmPackage.Literals.MUSIC__SECTION);
+			childrenFeatures.add(RhythmPackage.Literals.MUSIC__TRACKS);
+			childrenFeatures.add(RhythmPackage.Literals.MUSIC__SECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -126,8 +126,8 @@ public class MusicItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Music.class)) {
-		case RhythmPackage.MUSIC__TRACK:
-		case RhythmPackage.MUSIC__SECTION:
+		case RhythmPackage.MUSIC__TRACKS:
+		case RhythmPackage.MUSIC__SECTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -146,10 +146,10 @@ public class MusicItemProvider extends NamedElementItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(RhythmPackage.Literals.MUSIC__TRACK, RhythmFactory.eINSTANCE.createTrack()));
+				.add(createChildParameter(RhythmPackage.Literals.MUSIC__TRACKS, RhythmFactory.eINSTANCE.createTrack()));
 
 		newChildDescriptors.add(
-				createChildParameter(RhythmPackage.Literals.MUSIC__SECTION, RhythmFactory.eINSTANCE.createSection()));
+				createChildParameter(RhythmPackage.Literals.MUSIC__SECTIONS, RhythmFactory.eINSTANCE.createSection()));
 	}
 
 }

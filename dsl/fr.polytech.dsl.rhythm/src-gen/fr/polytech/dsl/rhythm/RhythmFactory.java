@@ -67,6 +67,24 @@ public interface RhythmFactory extends EFactory {
 	Piano createPiano();
 
 	/**
+	 * Returns a new object of class '<em>Battery Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Battery Note</em>'.
+	 * @generated
+	 */
+	BatteryNote createBatteryNote();
+
+	/**
+	 * Returns a new object of class '<em>Empty Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Empty Note</em>'.
+	 * @generated
+	 */
+	EmptyNote createEmptyNote();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

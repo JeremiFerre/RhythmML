@@ -6,12 +6,13 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Music returns Music:
 	{Music}
-	name=EString ":"
-	section+=Section
-	(section+=Section)*
+	"Music" name=EString ":"
+	"sections" ":"
+	sections+=Section
+	(sections+=Section)*
 	"tracks" ":"(
-		"-" track+=Track
-	   ("-" track+=Track)*
+		"-" tracks+=Track
+	   ("-" tracks+=Track)*
 	)
 ;
 
@@ -32,11 +33,21 @@ Track returns Track:
 Battery returns Battery:
 	{Battery}
 	(name=EString ":")?
-	(notes+=BatteryNote)+
+	(notes+=(BatteryNote|EmptyNote))+
 ;
 
-enum BatteryNote returns BatteryNote:
-	EMPTY="$" | BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd"
+EmptyNote returns EmptyNote:
+	{EmptyNote}
+	"$"
+;
+
+BatteryNote returns BatteryNote:
+	{BatteryNote}
+	noteType=BatteryNoteType
+;
+
+enum BatteryNoteType returns BatteryNoteType:
+	BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd"
 ;
 
 EInt returns ecore::EInt:
