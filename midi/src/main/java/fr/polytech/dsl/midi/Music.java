@@ -32,7 +32,7 @@ public class Music {
         SectionMidi sectionMidi = sectionMidis.stream().filter(v -> v.getName().equals(section)).findFirst().orElseThrow(SectionDoesntExistException::new);
         if(drumElements.length != sectionMidi.getNbBeatPerBar())
             throw new BadNumberOfBeatException("Nombre d'élement : "+drumElements.length + "\n Nombre de beat par mesure "+sectionMidi.getNbBeatPerBar());
-        for (int bar = 0; bar < sectionMidi.getNbBeatPerBar(); bar++) {
+        for (int bar = 0; bar < sectionMidi.getNbBar(); bar++) {
             for (int beat = 0; beat < drumElements.length; beat++) {
                 int pos = toTick(bar, beat, 0, sectionMidi.getNbBeatPerBar(), 200);
                 sectionMidi.addElementToTrack(track, drumElements[beat], pos, 90);

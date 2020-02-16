@@ -43,7 +43,7 @@ public class DrumerUtils {
 		for (int bar = 0; bar < nbBar; bar++) {
 			for (int beat = 0; beat < nbBeatPerBar; beat += 2) {
 				int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution);
-				addDrumHit(track, DrumElement.AcousticBassDrum, pos, 127);
+				addDrumHit(track, DrumElement.AcousticBassDrum, pos, 100);
 			}
 		}
 
@@ -51,7 +51,7 @@ public class DrumerUtils {
 		for (int bar = 0; bar < nbBar; bar++) {
 			for (int beat = 1; beat < 4; beat += 2) {
 				int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution);
-				addDrumHit(track, DrumElement.HandClap, pos, 127);
+				addDrumHit(track, DrumElement.HandClap, pos, 90);
 			}
 		}
 

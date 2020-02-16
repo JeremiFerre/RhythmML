@@ -14,9 +14,9 @@ public class App
 {
     public static void main( String[] args ) throws MidiUnavailableException, InvalidMidiDataException, InterruptedException {
         Music music =new Music();
-        music.createSection("Test",80, 4, 4);
-        music.addElements("Test", "Wesh", DrumElement.ClosedHiHat, DrumElement.HandClap, DrumElement.OpenHiHat, DrumElement.HandClap);
-        music.addElements("Test", "Wesh2", DrumElement.SideStick, DrumElement.SideStick, DrumElement.SideStick, DrumElement.SideStick);
+        music.createSection("Test",80, 8, 4);
+        music.addElements("Test", "Wesh", DrumElement.ElectricSnare, DrumElement.HandClap, DrumElement.OpenHiHat, DrumElement.HandClap);
+        //music.addElements("Test", "Wesh2", DrumElement.SideStick, DrumElement.SideStick, DrumElement.SideStick, DrumElement.SideStick);
 
         music.run();
     }

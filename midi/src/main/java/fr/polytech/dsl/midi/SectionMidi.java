@@ -5,6 +5,7 @@ import fr.polytech.dsl.midi.instrument.DrumElement;
 import javax.sound.midi.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SectionMidi {
     private Sequence sequence;
@@ -31,18 +32,25 @@ public class SectionMidi {
         sequencer.setSequence(sequence);
         sequencer.setTempoInBPM(tempo);
         sequencer.start();
-        int durationOfTheTrackMS = nbBar * nbBeatPerBar * 60000 / tempo;
-        System.out.println("sleeping " + (durationOfTheTrackMS) + "ms");
-        Thread.sleep(durationOfTheTrackMS);
+        while (true){
+            if(sequencer.getTickPosition()==sequencer.getTickLength()){
+                Thread.sleep(500);
+                break;
+            }
+    }
         System.out.println("stop sleeping");
         sequencer.stop();
         sequencer.close();
     }
 
     public void addElementToTrack(final String name, DrumElement drumElement, int pos, int velocity){
-        TrackMidi trackMidi = new TrackMidi(name, this.sequence);
-        trackMidi.addDrumHit(drumElement, pos, velocity);
-        trackMidis.add(trackMidi);
+        Optional<TrackMidi> trackMidi = this.trackMidis.stream().filter(v -> v.getName().equals(name)).findFirst();
+        // if trackmidi doesn't exist, create it
+        if(!trackMidi.isPresent()){
+            trackMidi = Optional.of(new TrackMidi(name, this.sequence));
+            trackMidis.add(trackMidi.get());
+        }
+        trackMidi.get().addDrumHit(drumElement, pos, velocity);
     }
     public Sequence getSequence() {
         return sequence;
