@@ -1,4 +1,4 @@
-package fr.polytech.dsl.midi.exception;
+package fr.polytech.dsl.old.exception;
 
 public class SectionDoesntExistException extends RuntimeException {
 }

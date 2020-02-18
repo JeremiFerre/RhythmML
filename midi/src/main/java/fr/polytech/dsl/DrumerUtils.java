@@ -19,14 +19,14 @@ public class DrumerUtils {
 	public static void main(String[] args)
 			throws InvalidMidiDataException, MidiUnavailableException, InterruptedException, IOException {
 		Sequencer sequencer = MidiSystem.getSequencer();
-		test1(sequencer);
+		//test1(sequencer);
 
-		/**
+
 		loadSoundbank(sequencer, "soundBank/Scratch_3_0.sf2");
 		test1(sequencer);
 		loadSoundbank(sequencer, "soundBank/Yamaha_RX7_Drums.sf2");
 		test1(sequencer);
-		 **/
+
 	}
 
 	private static void test1(Sequencer sequencer)

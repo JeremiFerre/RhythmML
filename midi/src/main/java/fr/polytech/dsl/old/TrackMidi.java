@@ -1,6 +1,6 @@
-package fr.polytech.dsl.midi;
+package fr.polytech.dsl.old;
 
-import fr.polytech.dsl.midi.instrument.DrumElement;
+import fr.polytech.dsl.old.instrument.DrumElement;
 
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.Sequence;
