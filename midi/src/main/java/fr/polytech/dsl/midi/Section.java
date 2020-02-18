@@ -1,15 +1,7 @@
 package fr.polytech.dsl.midi;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.jfugue.pattern.Pattern;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Section {
     private int tempo;
     private int bar;
@@ -20,6 +12,15 @@ public class Section {
 
     public Pattern generatePattern(){
         return new Pattern(music).setTempo(tempo).setInstrument(instrument).repeat(bar).setVoice(voice);
+    }
+
+    public Section(int tempo, int bar, int signature, int voice, String instrument, String music) {
+        this.tempo = tempo;
+        this.bar = bar;
+        this.signature = signature;
+        this.voice = voice;
+        this.instrument = instrument;
+        this.music = music;
     }
 
 }

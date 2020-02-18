@@ -1,15 +1,11 @@
 package fr.polytech.dsl.midi;
 
-import lombok.Builder;
-import lombok.Data;
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-@Data
 public class JFugueWrapper {
     private List<Section> sections;
     private Player player;

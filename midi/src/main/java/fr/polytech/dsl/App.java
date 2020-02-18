@@ -2,6 +2,7 @@ package fr.polytech.dsl;
 
 import fr.polytech.dsl.midi.JFugueWrapper;
 import fr.polytech.dsl.midi.Section;
+import fr.polytech.dsl.midi.SectionBuilder;
 import fr.polytech.dsl.old.Music;
 import fr.polytech.dsl.old.instrument.DrumElement;
 import org.jfugue.pattern.Pattern;
@@ -18,13 +19,13 @@ public class App
 {
     public static void main( String[] args ) {
         JFugueWrapper jFugueWrapper = new JFugueWrapper();
-        Section section =  Section.builder()
-                .bar(4)
-                .signature(4)
-                .tempo(120)
-                .instrument("Ocarina")
-                .voice(0) //TRACK
-                .music("A B C D")
+        Section section =  new SectionBuilder()
+                .setBar(4)
+                .setSignature(4)
+                .setTempo(120)
+                .setInstrument("Ocarina")
+                .setVoice(0) //TRACK
+                .setMusic("A B C D")
                 .build();
         jFugueWrapper.addSection(section);
         jFugueWrapper.run();
