@@ -4,33 +4,40 @@ import fr.polytech.dsl.midi.JFugueWrapper;
 import fr.polytech.dsl.midi.Section;
 import fr.polytech.dsl.midi.SectionBuilder;
 import fr.polytech.dsl.midi.Track;
-import fr.polytech.dsl.old.Music;
-import fr.polytech.dsl.old.instrument.DrumElement;
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 import org.jfugue.rhythm.Rhythm;
+import org.jfugue.theory.Note;
 
-import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
-import java.util.Map;
+import javax.sound.midi.Synthesizer;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Hello world!
- *
  */
-public class App
-{
-    public static void main( String[] args ) {
+public class App {
+    public static void main(String[] args) throws MidiUnavailableException {
+
+        Synthesizer synthesizer = MidiSystem.getSynthesizer();
+        System.out.println(Arrays.toString(synthesizer.getAvailableInstruments()));
         JFugueWrapper jFugueWrapper = new JFugueWrapper();
-        Section section =  new SectionBuilder()
-                .setNbrNote(8)
+        Section section = new SectionBuilder()
+                .setNbrNote(27)
                 .setTempo(120)
                 .build();
         jFugueWrapper.addSection(section);
         Track ocarina = new Track("A B C D A B C D", "Ocarina", 0);
         Track piano = new Track("R R R R F G F G", "Piano", 1);
+        List<String> s = Arrays.stream("[BASS_DRUM]i Ri Ri Rs [BASS_DRUM]s [BASS_DRUM]i Ri Ri Ri [BASS_DRUM]i Ri Ri Rs [BASS_DRUM]s [BASS_DRUM]i [BASS_DRUM]i Ri Ri L1 Ri Ri [ACOUSTIC_SNARE]i Ri Ri Ri [ACOUSTIC_SNARE]i Ri Ri Ri [ACOUSTIC_SNARE]i Ri Ri Ri [ACOUSTIC_SNARE]i Ri L2 [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs [PEDAL_HI_HAT]s Rs L3 Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri Ri [CRASH_CYMBAL_1]s Rs".split(" "))
+                .filter(v -> v.contains("[")).collect(Collectors.toList());
+        String s3 = s.stream().reduce((s1, s2) -> s1 + " " + s2).get();
         jFugueWrapper.addTrack(ocarina);
         jFugueWrapper.addTrack(piano);
-        jFugueWrapper.run();
+
+        new Player().play("V9 60"); //
     }
 }

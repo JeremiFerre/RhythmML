@@ -1,4 +1,4 @@
-package fr.polytech.dsl.old.instrument;
+package fr.polytech.dsl.midi;
 
 /**
 	 * Partial list of Drum elements to ease the reading

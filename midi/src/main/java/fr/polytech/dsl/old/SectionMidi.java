@@ -1,6 +1,6 @@
 package fr.polytech.dsl.old;
 
-import fr.polytech.dsl.old.instrument.DrumElement;
+import fr.polytech.dsl.midi.DrumElement;
 
 import javax.sound.midi.*;
 import java.util.ArrayList;

@@ -22,6 +22,15 @@ public class Track {
         this.voice = voice;
     }
 
+    public Track(String instrument, DrumElement ... de) {
+        this.notes = new ArrayList<>();
+        for (DrumElement d : de) {
+            this.notes.add(new Note(d.noteNumber));
+        }
+        this.instrument = instrument;
+        this.voice = 9;
+    }
+
     public List<Note> getNotes() {
         return notes;
     }

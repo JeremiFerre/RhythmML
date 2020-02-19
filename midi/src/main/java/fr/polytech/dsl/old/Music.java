@@ -2,7 +2,7 @@ package fr.polytech.dsl.old;
 
 import fr.polytech.dsl.old.exception.BadNumberOfBeatException;
 import fr.polytech.dsl.old.exception.SectionDoesntExistException;
-import fr.polytech.dsl.old.instrument.DrumElement;
+import fr.polytech.dsl.midi.DrumElement;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
