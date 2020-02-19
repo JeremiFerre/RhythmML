@@ -7,7 +7,4 @@ Bundle-ClassPath: midi.jar,
  jeremiferre/Documents/Personnel/SI5/S9-2/DSL/RhythmML/RhythmML/midi/libs/jfugue-5.0.9.jar,
  libs/jfugue-5.0.9.jar
 Export-Package: fr.polytech.dsl,
- fr.polytech.dsl.midi,
- fr.polytech.dsl.old,
- fr.polytech.dsl.old.exception,
- fr.polytech.dsl.old.instrument
+ fr.polytech.dsl.midi

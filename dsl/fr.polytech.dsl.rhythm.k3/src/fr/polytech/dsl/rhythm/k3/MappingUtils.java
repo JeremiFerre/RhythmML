@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import fr.polytech.dsl.midi.DrumElement;
 import fr.polytech.dsl.midi.JFugueWrapper;
 import fr.polytech.dsl.midi.SectionBuilder;
 import fr.polytech.dsl.midi.Track;
@@ -33,14 +34,23 @@ public class MappingUtils {
 		AtomicInteger voice = new AtomicInteger(0);
 		music.getTracks().forEach(track -> {
 			track.getInstrument().getLayers().forEach(layer -> {
-				jFugueWrapper.addTrack(
-					new Track(
-						layer.getNotes().stream().map(MappingUtils::mapNote).collect(Collectors.joining(" ")),
-						mapInstrument(track.getInstrument()),
-						voice.get()
-					)
-				);
-				voice.set(voice.get() + 1);
+				if (track.getInstrument() instanceof Battery) {
+					List<DrumElement> elements = new ArrayList<>();
+					layer.getNotes().forEach(note -> elements.addAll(mapBatteryNote(note)));
+					jFugueWrapper.addTrack(
+						new Track(elements.toArray(new DrumElement[] {}))
+					);
+				} else {
+					jFugueWrapper.addTrack(
+						new Track(
+							layer.getNotes().stream().map(MappingUtils::mapNote).collect(Collectors.joining(" ")),
+							mapInstrument(track.getInstrument()),
+							voice.get()
+						)
+					);
+					voice.set(voice.get() + 1);
+				}
+				
 			});
 		});
 		
@@ -71,14 +81,46 @@ public class MappingUtils {
 			return mapPianoNote((PianoNote) note);
 		}
 		
-		if (note instanceof BatteryNote) {
-			return "R"; // TODO
-		}
-		
 		return "R";
 	}
 	
 	public static String mapPianoNote(PianoNote note) {
 		return note.getNoteType().toString();
+	}
+	
+	public static List<DrumElement> mapBatteryNote(Note note) {
+		List<DrumElement> drums = new ArrayList<>();
+		if (note instanceof BatteryNote) {
+			switch (((BatteryNote) note).getNoteType()) {
+				case BASS_DRUM:
+					drums.add(DrumElement.BASS_DRUM);
+					break;
+				case CLOSED_HIHAT:
+					drums.add(DrumElement.CLOSED_HI_HAT);
+					break;
+				case CRASH_CYMBAL:
+					drums.add(DrumElement.CRASH_CYMBAL_);
+					break;
+				case OPENED_HIHAT:
+					drums.add(DrumElement.OPEN_HI_HAT);
+					break;
+				case RIDE_CYMBAL:
+					drums.add(DrumElement.RIDE_CYMBAL_);
+					break;
+				case SNARE_DRUM:
+					drums.add(DrumElement.ELECTRIC_SNARE);
+					break;
+				default:
+					drums.add(DrumElement.SILENCE);
+					break;
+			}
+		} else if (note instanceof CompositeNote) {
+			List<Note> notes = new ArrayList<>();
+			IntStream.range(0, ((CompositeNote) note).getRepeats()).forEach(i -> notes.addAll(((CompositeNote) note).getNotes()));
+			
+			notes.stream().forEach(n -> drums.addAll(mapBatteryNote(n)));
+		}
+		
+		return drums;
 	}
 }

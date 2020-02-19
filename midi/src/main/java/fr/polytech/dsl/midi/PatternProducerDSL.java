@@ -28,12 +28,15 @@ public class PatternProducerDSL implements PatternProducer {
     @Override
     public Pattern getPattern() {
 
-        Pattern pattern =new Pattern();
+        Pattern pattern = new Pattern();
         for (int i = 0; i < section.getNbrNote(); i++) {
             Note note = track.getNotes().remove(0);
             pattern.add(note);
         }
-        pattern.setTempo(section.getTempo()).setVoice(track.getVoice()).setInstrument(track.getInstrument());
+        pattern.setTempo(section.getTempo()).setVoice(track.getVoice());
+        if (!track.getInstrument().equals("Battery")) {
+        	pattern.setInstrument(track.getInstrument());
+        }
         return pattern;
     }
 }

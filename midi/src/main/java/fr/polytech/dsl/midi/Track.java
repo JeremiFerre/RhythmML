@@ -22,12 +22,12 @@ public class Track {
         this.voice = voice;
     }
 
-    public Track(String instrument, DrumElement ... de) {
+    public Track(DrumElement ... de) {
         this.notes = new ArrayList<>();
         for (DrumElement d : de) {
             this.notes.add(new Note(d.getNote()));
         }
-        this.instrument = instrument;
+        this.instrument = "Battery";
         this.voice = 9;
     }
 
