@@ -4,23 +4,31 @@ package fr.polytech.dsl.midi;
 	 * Partial list of Drum elements to ease the reading
 	 */
 	public enum DrumElement {
-		AcousticBassDrum(35), BassDrum1(36), SideStick(37), AcousticSnare(38), HandClap(39), ElectricSnare(40),
-		LowFloorTom(41), ClosedHiHat(42), OpenHiHat(46);
+	ACOUSTIC_BASS_DRUM("ACOUSTIC_BASS_DRUM"), BASS_DRUM("BASS_DRUM"),
+	SIDE_STICK("SIDE_STICK"), ACOUSTIC_SNARE("ACOUSTIC_SNARE"),
+	HAND_CLAP("HAND_CLAP"), ELECTRIC_SNARE("ELECTRIC_SNARE"),
+	LO_FLOOR_TOM("LO_FLOOR_TOM"), CLOSED_HI_HAT("CLOSED_HI_HAT"),
+	HIGH_FLOOR_TOM("HIGH_FLOOR_TOM"), PEDAL_HI_HAT("PEDAL_HI_HAT"),
+	LO_TOM("LO_TOM"), OPEN_HI_HAT("OPEN_HI_HAT"), LO_MID_TOM("LO_MID_TOM"),
+	HI_MID_TOM("HI_MID_TOM"), CRASH_CYMBAL_("CRASH_CYMBAL_"),
+	HI_TOM("HI_TOM"), RIDE_CYMBAL_("RIDE_CYMBAL_"),
+	CHINESE_CYMBAL("CHINESE_CYMBAL"), RIDE_BELL("RIDE_BELL"),
+	TAMBOURINE("TAMBOURINE"), SPLASH_CYMBAL("SPLASH_CYMBAL"), COWBELL("COWBELL"),
+	CRASH_CYMBAL_2("CRASH_CYMBAL_2"), VIBRASLAP("VIBRASLAP"),
+	RIDE_CYMBAL_2("RIDE_CYMBAL_2"), HI_BONGO("HI_BONGO"), LO_BONGO("LO_BONGO"),
+	MUTE_HI_CONGA("MUTE_HI_CONGA"), OPEN_HI_CONGA("OPEN_HI_CONGA"),
+	LO_CONGA("LO_CONGA"), HI_TIMBALE("HI_TIMBALE"), LO_TIMBALE("LO_TIMBALE"),
+	HI_AGOGO("HI_AGOGO"), LO_AGOGO("LO_AGOGO"), CABASA("CABASA"), MARACAS("MARACAS"),
+	SHORT_WHISTLE("SHORT_WHISTLE"), LONG_WHISTLE("LONG_WHISTLE"), SHORT_GUIRO("SHORT_GUIRO"),
+	LONG_GUIRO("LONG_GUIRO"), CLAVES("CLAVES"), HI_WOOD_BLOCK("HI_WOOD_BLOCK"), LO_WOOD_BLOCK("LO_WOOD_BLOCK"),
+	MUTE_CUICA("MUTE_CUICA"), OPEN_CUICA("OPEN_CUICA"), MUTE_TRIANGLE("MUTE_TRIANGLE"), OPEN_TRIANGLE("OPEN_TRIANGLE");
+		private String note;
 
-		/*
-		 * "High floor tom", "Pedal hi-hat", "Low tom", "Open hi-hat", "Low-mid tom",
-		 * "Hi-mid tom", "Crash cymbal 1", "High tom", "Ride cymbal 1",
-		 * "Chinese cymbal", "Ride bell", "Tambourine", "Splash cymbal", "Cowbell",
-		 * "Crash cymbal 2", "Vibraslap", "Ride cymbal 2", "Hi bongo", "Low bongo",
-		 * "Mute hi conga", "Open hi conga", "Low conga", "High timbale", "Low timbale",
-		 * "High agogo", "Low agogo", "Cabasa", "Maracas", "Short whistle",
-		 * "Long whistle", "Short guiro", "Long guiro", "Claves", "Hi wood block",
-		 * "Low wood block", "Mute cuica", "Open cuica", "Mute triangle",
-		 * "Open triangle" };
-		 */
-		public int noteNumber;
-
-		private DrumElement(int noteNumber) {
-			this.noteNumber = noteNumber;
+		private DrumElement(String note) {
+			this.note = note;
 		}
+
+	public String getNote() {
+		return note;
 	}
+}

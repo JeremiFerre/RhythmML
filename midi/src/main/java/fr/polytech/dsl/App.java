@@ -38,6 +38,6 @@ public class App {
         jFugueWrapper.addTrack(ocarina);
         jFugueWrapper.addTrack(piano);
 
-        new Player().play("V9 60"); //
+        new Player().play(new Note("ACOUSTIC_BASS_DRUM").getPattern().setVoice(9)); //
     }
 }
