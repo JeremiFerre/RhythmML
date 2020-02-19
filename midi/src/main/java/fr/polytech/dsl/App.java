@@ -1,9 +1,6 @@
 package fr.polytech.dsl;
 
-import fr.polytech.dsl.midi.JFugueWrapper;
-import fr.polytech.dsl.midi.Section;
-import fr.polytech.dsl.midi.SectionBuilder;
-import fr.polytech.dsl.midi.Track;
+import fr.polytech.dsl.midi.*;
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 import org.jfugue.rhythm.Rhythm;
@@ -37,7 +34,7 @@ public class App {
         String s3 = s.stream().reduce((s1, s2) -> s1 + " " + s2).get();
         jFugueWrapper.addTrack(ocarina);
         jFugueWrapper.addTrack(piano);
-
-        new Player().play(new Note("ACOUSTIC_BASS_DRUM").getPattern().setVoice(9)); //
+        new Player().play(new Note(35).getPattern().setVoice(9)); //
+        new Player().play(new Note(42).getPattern().setVoice(9)); //
     }
 }

@@ -25,7 +25,12 @@ public class Track {
     public Track(DrumElement ... de) {
         this.notes = new ArrayList<>();
         for (DrumElement d : de) {
-            this.notes.add(new Note(d.getNote()));
+            if(d.getNoteNumber()==-1){
+                // SILENCE
+                this.notes.add(new Note(d.getNote()));
+            } else {
+                this.notes.add(new Note(d.getNoteNumber()));
+            }
         }
         this.instrument = "Battery";
         this.voice = 9;
