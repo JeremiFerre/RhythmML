@@ -5,4 +5,8 @@ Music BillieJean:
 			signature=4
 			bars=8
 	tracks:
-		- instrument: bd cc bd cc $ cc $ cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc bd cc
+		- battery:
+			layer: (bd sd) x 16
+			layer: (ch) x 32
+		- piano:
+			layer: ($) x 16 (B D B $) x 4

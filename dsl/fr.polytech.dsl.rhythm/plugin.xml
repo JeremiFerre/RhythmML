@@ -10,7 +10,7 @@
       <!-- @generated rhythm -->
       <package
             uri="http://fr.polytech.dsl/rhythm"
-            class="fr.polytech.dsl.rhythm.RhythmPackage"
+            class="fr.polytech.dsl.model.rhythm.RhythmPackage"
             genModel="model/rhythm.genmodel"/>
    </extension>
 

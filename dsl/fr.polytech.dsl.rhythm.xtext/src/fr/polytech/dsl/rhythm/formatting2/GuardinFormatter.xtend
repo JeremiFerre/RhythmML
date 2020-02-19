@@ -4,11 +4,11 @@
 package fr.polytech.dsl.rhythm.formatting2
 
 import com.google.inject.Inject
-import fr.polytech.dsl.rhythm.Music
-import fr.polytech.dsl.rhythm.Track
 import fr.polytech.dsl.rhythm.services.GuardinGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
+import fr.polytech.dsl.model.rhythm.Music
+import fr.polytech.dsl.model.rhythm.Track
 
 class GuardinFormatter extends AbstractFormatter2 {
 	

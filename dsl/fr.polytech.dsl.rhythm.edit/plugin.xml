@@ -10,7 +10,7 @@
       <!-- @generated rhythm -->
       <factory
             uri="http://fr.polytech.dsl/rhythm"
-            class="fr.polytech.dsl.rhythm.provider.RhythmItemProviderAdapterFactory"
+            class="fr.polytech.dsl.model.rhythm.provider.RhythmItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

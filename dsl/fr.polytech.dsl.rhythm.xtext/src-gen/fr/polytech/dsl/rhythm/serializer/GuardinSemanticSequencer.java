@@ -4,13 +4,17 @@
 package fr.polytech.dsl.rhythm.serializer;
 
 import com.google.inject.Inject;
-import fr.polytech.dsl.rhythm.Battery;
-import fr.polytech.dsl.rhythm.BatteryNote;
-import fr.polytech.dsl.rhythm.EmptyNote;
-import fr.polytech.dsl.rhythm.Music;
-import fr.polytech.dsl.rhythm.RhythmPackage;
-import fr.polytech.dsl.rhythm.Section;
-import fr.polytech.dsl.rhythm.Track;
+import fr.polytech.dsl.model.rhythm.Battery;
+import fr.polytech.dsl.model.rhythm.BatteryNote;
+import fr.polytech.dsl.model.rhythm.CompositeNote;
+import fr.polytech.dsl.model.rhythm.EmptyNote;
+import fr.polytech.dsl.model.rhythm.Layer;
+import fr.polytech.dsl.model.rhythm.Music;
+import fr.polytech.dsl.model.rhythm.Piano;
+import fr.polytech.dsl.model.rhythm.PianoNote;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
+import fr.polytech.dsl.model.rhythm.Section;
+import fr.polytech.dsl.model.rhythm.Track;
 import fr.polytech.dsl.rhythm.services.GuardinGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -43,11 +47,37 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RhythmPackage.BATTERY_NOTE:
 				sequence_BatteryNote(context, (BatteryNote) semanticObject); 
 				return; 
+			case RhythmPackage.COMPOSITE_NOTE:
+				if (rule == grammarAccess.getCompositeBatteryNoteRule()) {
+					sequence_CompositeBatteryNote(context, (CompositeNote) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getCompositePianoNoteRule()) {
+					sequence_CompositePianoNote(context, (CompositeNote) semanticObject); 
+					return; 
+				}
+				else break;
 			case RhythmPackage.EMPTY_NOTE:
 				sequence_EmptyNote(context, (EmptyNote) semanticObject); 
 				return; 
+			case RhythmPackage.LAYER:
+				if (rule == grammarAccess.getBatteryLayerRule()) {
+					sequence_BatteryLayer(context, (Layer) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPianoLayerRule()) {
+					sequence_PianoLayer(context, (Layer) semanticObject); 
+					return; 
+				}
+				else break;
 			case RhythmPackage.MUSIC:
 				sequence_Music(context, (Music) semanticObject); 
+				return; 
+			case RhythmPackage.PIANO:
+				sequence_Piano(context, (Piano) semanticObject); 
+				return; 
+			case RhythmPackage.PIANO_NOTE:
+				sequence_PianoNote(context, (PianoNote) semanticObject); 
 				return; 
 			case RhythmPackage.SECTION:
 				sequence_Section(context, (Section) semanticObject); 
@@ -59,6 +89,18 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     BatteryLayer returns Layer
+	 *
+	 * Constraint:
+	 *     (notes+=BatteryNote | notes+=EmptyNote | notes+=CompositeBatteryNote)+
+	 */
+	protected void sequence_BatteryLayer(ISerializationContext context, Layer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -83,9 +125,33 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Battery returns Battery
 	 *
 	 * Constraint:
-	 *     (name=EString? (notes+=BatteryNote | notes+=EmptyNote)+)
+	 *     (name=EString? layers+=BatteryLayer+)
 	 */
 	protected void sequence_Battery(ISerializationContext context, Battery semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CompositeBatteryNote returns CompositeNote
+	 *
+	 * Constraint:
+	 *     ((notes+=BatteryNote | notes+=EmptyNote)+ repeats=EInt)
+	 */
+	protected void sequence_CompositeBatteryNote(ISerializationContext context, CompositeNote semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CompositePianoNote returns CompositeNote
+	 *
+	 * Constraint:
+	 *     ((notes+=PianoNote | notes+=EmptyNote)+ repeats=EInt)
+	 */
+	protected void sequence_CompositePianoNote(ISerializationContext context, CompositeNote semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -110,6 +176,48 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (name=EString sections+=Section sections+=Section* tracks+=Track tracks+=Track*)
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PianoLayer returns Layer
+	 *
+	 * Constraint:
+	 *     (notes+=PianoNote | notes+=EmptyNote | notes+=CompositePianoNote)+
+	 */
+	protected void sequence_PianoLayer(ISerializationContext context, Layer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PianoNote returns PianoNote
+	 *
+	 * Constraint:
+	 *     noteType=PianoNoteType
+	 */
+	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RhythmPackage.Literals.PIANO_NOTE__NOTE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmPackage.Literals.PIANO_NOTE__NOTE_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0(), semanticObject.getNoteType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Piano returns Piano
+	 *
+	 * Constraint:
+	 *     (name=EString? layers+=PianoLayer+)
+	 */
+	protected void sequence_Piano(ISerializationContext context, Piano semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -146,7 +254,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Track returns Track
 	 *
 	 * Constraint:
-	 *     (name=EString? instrument=Battery)
+	 *     (name=EString? (instrument=Battery | instrument=Piano))
 	 */
 	protected void sequence_Track(ISerializationContext context, Track semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

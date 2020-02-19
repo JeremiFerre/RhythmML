@@ -2,19 +2,18 @@
  */
 package fr.polytech.dsl.rhythm.provider;
 
-import fr.polytech.dsl.rhythm.Instrument;
-
-import fr.polytech.dsl.rhythm.RhythmFactory;
-import fr.polytech.dsl.rhythm.RhythmPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import fr.polytech.dsl.model.rhythm.Instrument;
+import fr.polytech.dsl.model.rhythm.RhythmFactory;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.polytech.dsl.rhythm.Instrument} object.
@@ -60,7 +59,7 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RhythmPackage.Literals.INSTRUMENT__NOTES);
+			childrenFeatures.add(RhythmPackage.Literals.INSTRUMENT__LAYERS);
 		}
 		return childrenFeatures;
 	}
@@ -113,7 +112,7 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Instrument.class)) {
-		case RhythmPackage.INSTRUMENT__NOTES:
+		case RhythmPackage.INSTRUMENT__LAYERS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -131,11 +130,8 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.INSTRUMENT__NOTES,
-				RhythmFactory.eINSTANCE.createBatteryNote()));
-
-		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.INSTRUMENT__NOTES,
-				RhythmFactory.eINSTANCE.createEmptyNote()));
+		newChildDescriptors.add(
+				createChildParameter(RhythmPackage.Literals.INSTRUMENT__LAYERS, RhythmFactory.eINSTANCE.createLayer()));
 	}
 
 }

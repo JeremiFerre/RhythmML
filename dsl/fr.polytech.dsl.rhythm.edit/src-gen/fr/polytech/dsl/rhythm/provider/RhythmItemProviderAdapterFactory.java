@@ -2,15 +2,12 @@
  */
 package fr.polytech.dsl.rhythm.provider;
 
-import fr.polytech.dsl.rhythm.util.RhythmAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -22,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import fr.polytech.dsl.model.rhythm.util.RhythmAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -234,6 +233,75 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.rhythm.Layer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LayerItemProvider layerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.rhythm.Layer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLayerAdapter() {
+		if (layerItemProvider == null) {
+			layerItemProvider = new LayerItemProvider(this);
+		}
+
+		return layerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.rhythm.PianoNote} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PianoNoteItemProvider pianoNoteItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.rhythm.PianoNote}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPianoNoteAdapter() {
+		if (pianoNoteItemProvider == null) {
+			pianoNoteItemProvider = new PianoNoteItemProvider(this);
+		}
+
+		return pianoNoteItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.rhythm.CompositeNote} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeNoteItemProvider compositeNoteItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.rhythm.CompositeNote}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeNoteAdapter() {
+		if (compositeNoteItemProvider == null) {
+			compositeNoteItemProvider = new CompositeNoteItemProvider(this);
+		}
+
+		return compositeNoteItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +414,12 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 			batteryNoteItemProvider.dispose();
 		if (emptyNoteItemProvider != null)
 			emptyNoteItemProvider.dispose();
+		if (layerItemProvider != null)
+			layerItemProvider.dispose();
+		if (pianoNoteItemProvider != null)
+			pianoNoteItemProvider.dispose();
+		if (compositeNoteItemProvider != null)
+			compositeNoteItemProvider.dispose();
 	}
 
 }

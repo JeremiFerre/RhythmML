@@ -6,21 +6,25 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: fr.polytech.dsl.rhythm.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: fr.polytech.dsl.rhythm,
- org.eclipse.xtext,
+Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.antlr.runtime,
  org.eclipse.xtext.util,
- org.eclipse.xtend.lib;bundle-version="2.14.0"
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ fr.polytech.dsl.rhythm;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.polytech.dsl.rhythm.parser.antlr,
- fr.polytech.dsl.rhythm,
- fr.polytech.dsl.rhythm.serializer,
+Export-Package: fr.polytech.dsl.rhythm,
+ fr.polytech.dsl.rhythm.parser.antlr,
  fr.polytech.dsl.rhythm.parser.antlr.internal,
- fr.polytech.dsl.rhythm.scoping,
+ fr.polytech.dsl.rhythm.serializer,
  fr.polytech.dsl.rhythm.services,
+ fr.polytech.dsl.rhythm.formatting2,
+ fr.polytech.dsl.rhythm.generator,
+ fr.polytech.dsl.rhythm.scoping,
+ fr.polytech.dsl.rhythm.validation,
+ fr.polytech.dsl.rhythm.scoping,
  fr.polytech.dsl.rhythm.generator,
  fr.polytech.dsl.rhythm.validation,
  fr.polytech.dsl.rhythm.formatting2

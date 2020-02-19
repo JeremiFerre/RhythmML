@@ -5,11 +5,12 @@ Bundle-SymbolicName: fr.polytech.dsl.rhythm.editor;singleton:=true
 Automatic-Module-Name: fr.polytech.dsl.rhythm.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: fr.polytech.dsl.rhythm.presentation.RhythmEditorPlugin$Implementation
+Bundle-Activator: fr.polytech.dsl.model.rhythm.presentation.RhythmEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.polytech.dsl.rhythm.presentation
+Export-Package: fr.polytech.dsl.rhythm.presentation,
+ fr.polytech.dsl.model.rhythm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  fr.polytech.dsl.rhythm.edit;visibility:=reexport,

@@ -7,9 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import fr.polytech.dsl.rhythm.impl.MusicImpl
-import fr.polytech.dsl.rhythm.checker.GuardinChecker
-import fr.polytech.dsl.rhythm.Music
+import fr.polytech.dsl.rhythm.GuardinChecker
+import fr.polytech.dsl.model.rhythm.Music
+import fr.polytech.dsl.model.rhythm.impl.MusicImpl
 
 /**
  * Generates code from your model files on save.

@@ -8,7 +8,7 @@
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>rhythm.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Rhythm" basePackage="fr.polytech.dsl" disposableProviderFactory="true"
+  <genPackages prefix="Rhythm" basePackage="fr.polytech.dsl.model" disposableProviderFactory="true"
       ecorePackage="rhythm.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythm.ecore#//BatteryNoteType">
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//BatteryNoteType/SNARE_DRUM"/>
@@ -17,6 +17,15 @@
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//BatteryNoteType/OPENED_HIHAT"/>
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//BatteryNoteType/CRASH_CYMBAL"/>
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//BatteryNoteType/RIDE_CYMBAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythm.ecore#//PianoNoteType">
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/C"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/D"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/E"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/F"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/G"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/A"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//PianoNoteType/B"/>
     </genEnums>
     <genClasses image="false" ecoreClass="rhythm.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//NamedElement/name"/>
@@ -34,7 +43,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//Section/bars"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rhythm.ecore#//Instrument">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Instrument/notes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Instrument/layers"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//Battery"/>
     <genClasses ecoreClass="rhythm.ecore#//Piano"/>
@@ -43,5 +52,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//BatteryNote/noteType"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//EmptyNote"/>
+    <genClasses ecoreClass="rhythm.ecore#//Layer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Layer/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythm.ecore#//PianoNote">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//PianoNote/noteType"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythm.ecore#//CompositeNote">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//CompositeNote/notes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//CompositeNote/repeats"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

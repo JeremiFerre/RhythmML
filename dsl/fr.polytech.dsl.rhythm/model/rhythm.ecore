@@ -21,8 +21,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instrument" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
-        eType="#//Note" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layers" upperBound="-1"
+        eType="#//Layer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BatteryNoteType">
     <eLiterals name="SNARE_DRUM"/>
@@ -39,4 +39,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//BatteryNoteType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyNote" eSuperTypes="#//Note"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Layer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
+        eType="#//Note" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PianoNote" eSuperTypes="#//Note">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//PianoNoteType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PianoNoteType">
+    <eLiterals name="C"/>
+    <eLiterals name="D" value="1"/>
+    <eLiterals name="E" value="2"/>
+    <eLiterals name="F" value="3"/>
+    <eLiterals name="G" value="4"/>
+    <eLiterals name="A" value="5"/>
+    <eLiterals name="B" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeNote" eSuperTypes="#//Note">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
+        eType="#//Note" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
 </ecore:EPackage>

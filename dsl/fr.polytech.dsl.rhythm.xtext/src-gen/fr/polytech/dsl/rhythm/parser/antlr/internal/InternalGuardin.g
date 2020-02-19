@@ -384,33 +384,89 @@ ruleTrack returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getTrackAccess().getColonKeyword_1_1());
 			}
 		)?
-		otherlv_3='instrument'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getTrackAccess().getInstrumentKeyword_2());
-		}
-		otherlv_4=':'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getTrackAccess().getColonKeyword_3());
-		}
 		(
 			(
+				otherlv_3='battery:'
 				{
-					newCompositeNode(grammarAccess.getTrackAccess().getInstrumentBatteryParserRuleCall_4_0());
+					newLeafNode(otherlv_3, grammarAccess.getTrackAccess().getBatteryKeyword_2_0_0());
 				}
-				lv_instrument_5_0=ruleBattery
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getTrackAccess().getInstrumentBatteryParserRuleCall_2_0_1_0());
+						}
+						lv_instrument_4_0=ruleBattery
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getTrackRule());
+							}
+							set(
+								$current,
+								"instrument",
+								lv_instrument_4_0,
+								"fr.polytech.dsl.rhythm.Guardin.Battery");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+			    |
+			(
+				otherlv_5='piano:'
 				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTrackRule());
-					}
-					set(
-						$current,
-						"instrument",
-						lv_instrument_5_0,
-						"fr.polytech.dsl.rhythm.Guardin.Battery");
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_5, grammarAccess.getTrackAccess().getPianoKeyword_2_1_0());
 				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getTrackAccess().getInstrumentPianoParserRuleCall_2_1_1_0());
+						}
+						lv_instrument_6_0=rulePiano
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getTrackRule());
+							}
+							set(
+								$current,
+								"instrument",
+								lv_instrument_6_0,
+								"fr.polytech.dsl.rhythm.Guardin.Piano");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleEmptyNote
+entryRuleEmptyNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEmptyNoteRule()); }
+	iv_ruleEmptyNote=ruleEmptyNote
+	{ $current=$iv_ruleEmptyNote.current; }
+	EOF;
+
+// Rule EmptyNote
+ruleEmptyNote returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEmptyNoteAccess().getEmptyNoteAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='$'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEmptyNoteAccess().getDollarSignKeyword_1());
+		}
 	)
 ;
 
@@ -464,53 +520,35 @@ ruleBattery returns [EObject current=null]
 		)?
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBatteryAccess().getNotesBatteryNoteParserRuleCall_2_0_0());
+				{
+					newCompositeNode(grammarAccess.getBatteryAccess().getLayersBatteryLayerParserRuleCall_2_0());
+				}
+				lv_layers_3_0=ruleBatteryLayer
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBatteryRule());
 					}
-					lv_notes_3_1=ruleBatteryNote
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBatteryRule());
-						}
-						add(
-							$current,
-							"notes",
-							lv_notes_3_1,
-							"fr.polytech.dsl.rhythm.Guardin.BatteryNote");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getBatteryAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
-					}
-					lv_notes_3_2=ruleEmptyNote
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBatteryRule());
-						}
-						add(
-							$current,
-							"notes",
-							lv_notes_3_2,
-							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"layers",
+						lv_layers_3_0,
+						"fr.polytech.dsl.rhythm.Guardin.BatteryLayer");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)+
 	)
 ;
 
-// Entry rule entryRuleEmptyNote
-entryRuleEmptyNote returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEmptyNoteRule()); }
-	iv_ruleEmptyNote=ruleEmptyNote
-	{ $current=$iv_ruleEmptyNote.current; }
+// Entry rule entryRuleBatteryLayer
+entryRuleBatteryLayer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBatteryLayerRule()); }
+	iv_ruleBatteryLayer=ruleBatteryLayer
+	{ $current=$iv_ruleBatteryLayer.current; }
 	EOF;
 
-// Rule EmptyNote
-ruleEmptyNote returns [EObject current=null]
+// Rule BatteryLayer
+ruleBatteryLayer returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -521,14 +559,67 @@ ruleEmptyNote returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getEmptyNoteAccess().getEmptyNoteAction_0(),
+					grammarAccess.getBatteryLayerAccess().getLayerAction_0(),
 					$current);
 			}
 		)
-		otherlv_1='$'
+		otherlv_1='layer:'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getEmptyNoteAccess().getDollarSignKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getBatteryLayerAccess().getLayerKeyword_1());
 		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBatteryLayerAccess().getNotesBatteryNoteParserRuleCall_2_0_0());
+					}
+					lv_notes_2_1=ruleBatteryNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBatteryLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_1,
+							"fr.polytech.dsl.rhythm.Guardin.BatteryNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getBatteryLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+					}
+					lv_notes_2_2=ruleEmptyNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBatteryLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_2,
+							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getBatteryLayerAccess().getNotesCompositeBatteryNoteParserRuleCall_2_0_2());
+					}
+					lv_notes_2_3=ruleCompositeBatteryNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBatteryLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_3,
+							"fr.polytech.dsl.rhythm.Guardin.CompositeBatteryNote");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
 	)
 ;
 
@@ -570,6 +661,392 @@ ruleBatteryNote returns [EObject current=null]
 						"noteType",
 						lv_noteType_1_0,
 						"fr.polytech.dsl.rhythm.Guardin.BatteryNoteType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCompositeBatteryNote
+entryRuleCompositeBatteryNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositeBatteryNoteRule()); }
+	iv_ruleCompositeBatteryNote=ruleCompositeBatteryNote
+	{ $current=$iv_ruleCompositeBatteryNote.current; }
+	EOF;
+
+// Rule CompositeBatteryNote
+ruleCompositeBatteryNote returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCompositeBatteryNoteAccess().getCompositeNoteAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCompositeBatteryNoteAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeBatteryNoteAccess().getNotesBatteryNoteParserRuleCall_2_0_0());
+					}
+					lv_notes_2_1=ruleBatteryNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeBatteryNoteRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_1,
+							"fr.polytech.dsl.rhythm.Guardin.BatteryNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getCompositeBatteryNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+					}
+					lv_notes_2_2=ruleEmptyNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeBatteryNoteRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_2,
+							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCompositeBatteryNoteAccess().getRightParenthesisKeyword_3());
+		}
+		otherlv_4='x'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCompositeBatteryNoteAccess().getXKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositeBatteryNoteAccess().getRepeatsEIntParserRuleCall_5_0());
+				}
+				lv_repeats_5_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositeBatteryNoteRule());
+					}
+					set(
+						$current,
+						"repeats",
+						lv_repeats_5_0,
+						"fr.polytech.dsl.rhythm.Guardin.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePiano
+entryRulePiano returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPianoRule()); }
+	iv_rulePiano=rulePiano
+	{ $current=$iv_rulePiano.current; }
+	EOF;
+
+// Rule Piano
+rulePiano returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPianoAccess().getPianoAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPianoAccess().getNameEStringParserRuleCall_1_0_0());
+					}
+					lv_name_1_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoRule());
+						}
+						set(
+							$current,
+							"name",
+							lv_name_1_0,
+							"fr.polytech.dsl.rhythm.Guardin.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_2=':'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getPianoAccess().getColonKeyword_1_1());
+			}
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPianoAccess().getLayersPianoLayerParserRuleCall_2_0());
+				}
+				lv_layers_3_0=rulePianoLayer
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPianoRule());
+					}
+					add(
+						$current,
+						"layers",
+						lv_layers_3_0,
+						"fr.polytech.dsl.rhythm.Guardin.PianoLayer");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
+;
+
+// Entry rule entryRulePianoLayer
+entryRulePianoLayer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPianoLayerRule()); }
+	iv_rulePianoLayer=rulePianoLayer
+	{ $current=$iv_rulePianoLayer.current; }
+	EOF;
+
+// Rule PianoLayer
+rulePianoLayer returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPianoLayerAccess().getLayerAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='layer:'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getPianoLayerAccess().getLayerKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesPianoNoteParserRuleCall_2_0_0());
+					}
+					lv_notes_2_1=rulePianoNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_1,
+							"fr.polytech.dsl.rhythm.Guardin.PianoNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+					}
+					lv_notes_2_2=ruleEmptyNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_2,
+							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2());
+					}
+					lv_notes_2_3=ruleCompositePianoNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_3,
+							"fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+	)
+;
+
+// Entry rule entryRulePianoNote
+entryRulePianoNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPianoNoteRule()); }
+	iv_rulePianoNote=rulePianoNote
+	{ $current=$iv_rulePianoNote.current; }
+	EOF;
+
+// Rule PianoNote
+rulePianoNote returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPianoNoteAccess().getPianoNoteAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0());
+				}
+				lv_noteType_1_0=rulePianoNoteType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+					}
+					set(
+						$current,
+						"noteType",
+						lv_noteType_1_0,
+						"fr.polytech.dsl.rhythm.Guardin.PianoNoteType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCompositePianoNote
+entryRuleCompositePianoNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositePianoNoteRule()); }
+	iv_ruleCompositePianoNote=ruleCompositePianoNote
+	{ $current=$iv_ruleCompositePianoNote.current; }
+	EOF;
+
+// Rule CompositePianoNote
+ruleCompositePianoNote returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCompositePianoNoteAccess().getCompositeNoteAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCompositePianoNoteAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesPianoNoteParserRuleCall_2_0_0());
+					}
+					lv_notes_2_1=rulePianoNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_1,
+							"fr.polytech.dsl.rhythm.Guardin.PianoNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+					}
+					lv_notes_2_2=ruleEmptyNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+						}
+						add(
+							$current,
+							"notes",
+							lv_notes_2_2,
+							"fr.polytech.dsl.rhythm.Guardin.EmptyNote");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCompositePianoNoteAccess().getRightParenthesisKeyword_3());
+		}
+		otherlv_4='x'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCompositePianoNoteAccess().getXKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getRepeatsEIntParserRuleCall_5_0());
+				}
+				lv_repeats_5_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+					}
+					set(
+						$current,
+						"repeats",
+						lv_repeats_5_0,
+						"fr.polytech.dsl.rhythm.Guardin.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -689,6 +1166,73 @@ ruleBatteryNoteType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_5, grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5());
+			}
+		)
+	)
+;
+
+// Rule PianoNoteType
+rulePianoNoteType returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='A'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='B'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='C'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='D'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='E'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4());
+			}
+		)
+		    |
+		(
+			enumLiteral_5='F'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5());
+			}
+		)
+		    |
+		(
+			enumLiteral_6='G'
+			{
+				$current = grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6());
 			}
 		)
 	)

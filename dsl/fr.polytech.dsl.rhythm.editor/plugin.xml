@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="fr.polytech.dsl.rhythm.presentation.RhythmModelWizardID"
+            id="fr.polytech.dsl.model.rhythm.presentation.RhythmModelWizardID"
             name="%_UI_RhythmModelWizard_label"
-            class="fr.polytech.dsl.rhythm.presentation.RhythmModelWizard"
+            class="fr.polytech.dsl.model.rhythm.presentation.RhythmModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RhythmModelFile.gif">
          <description>%_UI_RhythmModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated rhythm -->
       <editor
-            id="fr.polytech.dsl.rhythm.presentation.RhythmEditorID"
+            id="fr.polytech.dsl.model.rhythm.presentation.RhythmEditorID"
             name="%_UI_RhythmEditor_label"
             icon="icons/full/obj16/RhythmModelFile.gif"
             extensions="rhythm"
-            class="fr.polytech.dsl.rhythm.presentation.RhythmEditor"
-            contributorClass="fr.polytech.dsl.rhythm.presentation.RhythmActionBarContributor">
+            class="fr.polytech.dsl.model.rhythm.presentation.RhythmEditor"
+            contributorClass="fr.polytech.dsl.model.rhythm.presentation.RhythmActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

@@ -27,18 +27,24 @@ Section returns Section:
 Track returns Track:
 	{Track}
 	(name=EString ":")?
-	"instrument" ":" instrument=(Battery)
-;
-
-Battery returns Battery:
-	{Battery}
-	(name=EString ":")?
-	(notes+=(BatteryNote|EmptyNote))+
+	(("battery:" instrument=Battery)|("piano:" instrument=Piano))
 ;
 
 EmptyNote returns EmptyNote:
 	{EmptyNote}
 	"$"
+;
+
+/*------------------ BATTERY ------------------*/
+Battery returns Battery:
+	{Battery}
+	(name=EString ":")?
+	(layers+=BatteryLayer)+
+;
+
+BatteryLayer returns Layer:
+	{Layer}
+	"layer:" (notes+=(BatteryNote|EmptyNote|CompositeBatteryNote))+
 ;
 
 BatteryNote returns BatteryNote:
@@ -49,6 +55,39 @@ BatteryNote returns BatteryNote:
 enum BatteryNoteType returns BatteryNoteType:
 	BASS_DRUM="bd" | CLOSED_HIHAT="ch" | CRASH_CYMBAL="cc" | OPENED_HIHAT="oh" | RIDE_CYMBAL="rc" | SNARE_DRUM="sd"
 ;
+
+CompositeBatteryNote returns CompositeNote:
+	{CompositeNote}
+	"(" (notes+=(BatteryNote|EmptyNote))+ ")" "x" repeats=EInt
+;
+/* ------------------------------------------- */
+
+/*------------------ PIANO ------------------*/
+Piano returns Piano:
+	{Piano}
+	(name=EString ":")?
+	(layers+=PianoLayer)+
+;
+
+PianoLayer returns Layer:
+	{Layer}
+	"layer:" (notes+=(PianoNote|EmptyNote|CompositePianoNote))+
+;
+
+PianoNote returns PianoNote:
+	{PianoNote}
+	noteType=PianoNoteType
+;
+
+enum PianoNoteType returns PianoNoteType:
+	A|B|C|D|E|F|G
+;
+
+CompositePianoNote returns CompositeNote:
+	{CompositeNote}
+	"(" (notes+=(PianoNote|EmptyNote))+ ")" "x" repeats=EInt
+;
+/* ------------------------------------------- */
 
 EInt returns ecore::EInt:
 	INT
