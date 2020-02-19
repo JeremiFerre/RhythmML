@@ -60,7 +60,6 @@ tmp/
 local.properties
 .loadpath
 .factorypath
-
 ##############################
 ## NetBeans
 ##############################
@@ -77,3 +76,5 @@ nb-configuration.xml
 ##############################
 .DS_Store
 kernel/.idea/
+
+!libs/jfugue-5.0.9.jar
