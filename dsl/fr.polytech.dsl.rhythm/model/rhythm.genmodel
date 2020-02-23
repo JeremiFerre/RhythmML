@@ -57,6 +57,7 @@
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//PianoNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//PianoNote/noteType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//PianoNote/octaveOffset"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//CompositeNote">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//CompositeNote/notes"/>

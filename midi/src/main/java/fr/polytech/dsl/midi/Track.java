@@ -10,6 +10,8 @@ import java.util.List;
 
 public class Track {
     private List<Note> notes;
+    private List<String> notesStrings = new ArrayList<>();
+    
     private String instrument;
     private int voice;
 
@@ -35,7 +37,31 @@ public class Track {
         this.instrument = "Battery";
         this.voice = 9;
     }
+    
+    public Track(List<DrumElement> ... deLists) {
+        this.notes = new ArrayList<>();
+        for (List<DrumElement> de : deLists) {
+        	String str = "";
+	        for (DrumElement d : de) {
+	            if(d.getNoteNumber()==-1){
+	                // SILENCE
+	            	str += d.getNote();
+	            } else {
+	            	str += "[" + d.getNote() + "]";
+	            }
+	            str += "+";
+	        }
+	        str = str.substring(0, str.length() - 1);
+	        this.notesStrings.add(str);
+        }
+        this.instrument = "Battery";
+        this.voice = 9;
+    }
 
+    public List<String> getNotesStrings() {
+        return notesStrings;
+    }
+    
     public List<Note> getNotes() {
         return notes;
     }

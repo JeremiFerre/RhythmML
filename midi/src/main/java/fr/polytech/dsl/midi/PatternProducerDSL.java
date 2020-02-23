@@ -30,8 +30,13 @@ public class PatternProducerDSL implements PatternProducer {
 
         Pattern pattern = new Pattern();
         for (int i = 0; i < section.getNbrNote(); i++) {
-            Note note = track.getNotes().remove(0);
-            pattern.add(note);
+        	if (!track.getNotesStrings().isEmpty()) {
+        		String note = track.getNotesStrings().remove(0);
+        		pattern.add(note);
+        	} else {
+        		Note note = track.getNotes().remove(0);
+                pattern.add(note);
+        	}
         }
         pattern.setTempo(section.getTempo()).setVoice(track.getVoice());
         if (!track.getInstrument().equals("Battery")) {

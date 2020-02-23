@@ -521,12 +521,16 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPianoNoteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNoteTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNoteTypePianoNoteTypeEnumRuleCall_1_0 = (RuleCall)cNoteTypeAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cSolidusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cOctaveOffsetAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cOctaveOffsetERelativeIntParserRuleCall_2_1_0 = (RuleCall)cOctaveOffsetAssignment_2_1.eContents().get(0);
 		
 		//PianoNote:
-		//	{PianoNote} noteType=PianoNoteType;
+		//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{PianoNote} noteType=PianoNoteType
+		//{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?
 		public Group getGroup() { return cGroup; }
 		
 		//{PianoNote}
@@ -537,6 +541,18 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PianoNoteType
 		public RuleCall getNoteTypePianoNoteTypeEnumRuleCall_1_0() { return cNoteTypePianoNoteTypeEnumRuleCall_1_0; }
+		
+		//("/" octaveOffset=ERelativeInt)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"/"
+		public Keyword getSolidusKeyword_2_0() { return cSolidusKeyword_2_0; }
+		
+		//octaveOffset=ERelativeInt
+		public Assignment getOctaveOffsetAssignment_2_1() { return cOctaveOffsetAssignment_2_1; }
+		
+		//ERelativeInt
+		public RuleCall getOctaveOffsetERelativeIntParserRuleCall_2_1_0() { return cOctaveOffsetERelativeIntParserRuleCall_2_1_0; }
 	}
 	public class CompositePianoNoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
@@ -600,6 +616,25 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
+	}
+	public class ERelativeIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//ERelativeInt ecore::EInt:
+		//	"-"? INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"-"? INT
+		public Group getGroup() { return cGroup; }
+		
+		//"-"?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.EString");
@@ -763,6 +798,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	private final PianoNoteTypeElements ePianoNoteType;
 	private final CompositePianoNoteElements pCompositePianoNote;
 	private final EIntElements pEInt;
+	private final ERelativeIntElements pERelativeInt;
 	private final EStringElements pEString;
 	
 	private final Grammar grammar;
@@ -789,6 +825,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		this.ePianoNoteType = new PianoNoteTypeElements();
 		this.pCompositePianoNote = new CompositePianoNoteElements();
 		this.pEInt = new EIntElements();
+		this.pERelativeInt = new ERelativeIntElements();
 		this.pEString = new EStringElements();
 	}
 	
@@ -944,7 +981,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PianoNote:
-	//	{PianoNote} noteType=PianoNoteType;
+	//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?;
 	public PianoNoteElements getPianoNoteAccess() {
 		return pPianoNote;
 	}
@@ -982,6 +1019,16 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEIntRule() {
 		return getEIntAccess().getRule();
+	}
+	
+	//ERelativeInt ecore::EInt:
+	//	"-"? INT;
+	public ERelativeIntElements getERelativeIntAccess() {
+		return pERelativeInt;
+	}
+	
+	public ParserRule getERelativeIntRule() {
+		return getERelativeIntAccess().getRule();
 	}
 	
 	//EString:

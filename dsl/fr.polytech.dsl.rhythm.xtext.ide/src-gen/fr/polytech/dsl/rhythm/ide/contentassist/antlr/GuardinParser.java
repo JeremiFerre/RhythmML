@@ -57,7 +57,9 @@ public class GuardinParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPianoAccess().getGroup_1(), "rule__Piano__Group_1__0");
 			builder.put(grammarAccess.getPianoLayerAccess().getGroup(), "rule__PianoLayer__Group__0");
 			builder.put(grammarAccess.getPianoNoteAccess().getGroup(), "rule__PianoNote__Group__0");
+			builder.put(grammarAccess.getPianoNoteAccess().getGroup_2(), "rule__PianoNote__Group_2__0");
 			builder.put(grammarAccess.getCompositePianoNoteAccess().getGroup(), "rule__CompositePianoNote__Group__0");
+			builder.put(grammarAccess.getERelativeIntAccess().getGroup(), "rule__ERelativeInt__Group__0");
 			builder.put(grammarAccess.getMusicAccess().getNameAssignment_2(), "rule__Music__NameAssignment_2");
 			builder.put(grammarAccess.getMusicAccess().getSectionsAssignment_6(), "rule__Music__SectionsAssignment_6");
 			builder.put(grammarAccess.getMusicAccess().getSectionsAssignment_7(), "rule__Music__SectionsAssignment_7");
@@ -80,6 +82,7 @@ public class GuardinParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPianoAccess().getLayersAssignment_2(), "rule__Piano__LayersAssignment_2");
 			builder.put(grammarAccess.getPianoLayerAccess().getNotesAssignment_2(), "rule__PianoLayer__NotesAssignment_2");
 			builder.put(grammarAccess.getPianoNoteAccess().getNoteTypeAssignment_1(), "rule__PianoNote__NoteTypeAssignment_1");
+			builder.put(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_2_1(), "rule__PianoNote__OctaveOffsetAssignment_2_1");
 			builder.put(grammarAccess.getCompositePianoNoteAccess().getNotesAssignment_2(), "rule__CompositePianoNote__NotesAssignment_2");
 			builder.put(grammarAccess.getCompositePianoNoteAccess().getRepeatsAssignment_5(), "rule__CompositePianoNote__RepeatsAssignment_5");
 		}

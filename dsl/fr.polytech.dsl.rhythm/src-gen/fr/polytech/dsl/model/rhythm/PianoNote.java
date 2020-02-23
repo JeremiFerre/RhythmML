@@ -12,6 +12,7 @@ package fr.polytech.dsl.model.rhythm;
  * </p>
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getNoteType <em>Note Type</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}</li>
  * </ul>
  *
  * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote()
@@ -47,5 +48,31 @@ public interface PianoNote extends Note {
 	 * @generated
 	 */
 	void setNoteType(PianoNoteType value);
+
+	/**
+	 * Returns the value of the '<em><b>Octave Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Octave Offset</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Octave Offset</em>' attribute.
+	 * @see #setOctaveOffset(int)
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote_OctaveOffset()
+	 * @model
+	 * @generated
+	 */
+	int getOctaveOffset();
+
+	/**
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Octave Offset</em>' attribute.
+	 * @see #getOctaveOffset()
+	 * @generated
+	 */
+	void setOctaveOffset(int value);
 
 } // PianoNote

@@ -957,6 +957,31 @@ rulePianoNote returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_2='/'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_1_0());
+					}
+					lv_octaveOffset_3_0=ruleERelativeInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+						}
+						set(
+							$current,
+							"octaveOffset",
+							lv_octaveOffset_3_0,
+							"fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -1076,6 +1101,39 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	{
 		newLeafNode(this_INT_0, grammarAccess.getEIntAccess().getINTTerminalRuleCall());
 	}
+;
+
+// Entry rule entryRuleERelativeInt
+entryRuleERelativeInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getERelativeIntRule()); }
+	iv_ruleERelativeInt=ruleERelativeInt
+	{ $current=$iv_ruleERelativeInt.current.getText(); }
+	EOF;
+
+// Rule ERelativeInt
+ruleERelativeInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getERelativeIntAccess().getHyphenMinusKeyword_0());
+			}
+		)?
+		this_INT_1=RULE_INT
+		{
+			$current.merge(this_INT_1);
+		}
+		{
+			newLeafNode(this_INT_1, grammarAccess.getERelativeIntAccess().getINTTerminalRuleCall_1());
+		}
+	)
 ;
 
 // Entry rule entryRuleEString

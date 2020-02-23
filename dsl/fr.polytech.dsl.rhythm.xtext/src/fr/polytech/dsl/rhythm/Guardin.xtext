@@ -76,7 +76,7 @@ PianoLayer returns Layer:
 
 PianoNote returns PianoNote:
 	{PianoNote}
-	noteType=PianoNoteType
+	noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?
 ;
 
 enum PianoNoteType returns PianoNoteType:
@@ -91,6 +91,10 @@ CompositePianoNote returns CompositeNote:
 
 EInt returns ecore::EInt:
 	INT
+;
+
+ERelativeInt returns ecore::EInt:
+	"-"? INT
 ;
 
 EString returns ecore::EString:

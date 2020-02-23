@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getNoteType <em>Note Type</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getOctaveOffset <em>Octave Offset</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,26 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * @ordered
 	 */
 	protected PianoNoteType noteType = NOTE_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOctaveOffset() <em>Octave Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOctaveOffset()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int OCTAVE_OFFSET_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getOctaveOffset() <em>Octave Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOctaveOffset()
+	 * @generated
+	 * @ordered
+	 */
+	protected int octaveOffset = OCTAVE_OFFSET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,11 +114,35 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getOctaveOffset() {
+		return octaveOffset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOctaveOffset(int newOctaveOffset) {
+		int oldOctaveOffset = octaveOffset;
+		octaveOffset = newOctaveOffset;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET,
+					oldOctaveOffset, octaveOffset));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 			return getNoteType();
+		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+			return getOctaveOffset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,6 +157,9 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		switch (featureID) {
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 			setNoteType((PianoNoteType) newValue);
+			return;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+			setOctaveOffset((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,6 +176,9 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 			setNoteType(NOTE_TYPE_EDEFAULT);
 			return;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+			setOctaveOffset(OCTAVE_OFFSET_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,6 +193,8 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		switch (featureID) {
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 			return noteType != NOTE_TYPE_EDEFAULT;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+			return octaveOffset != OCTAVE_OFFSET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +212,8 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (noteType: ");
 		result.append(noteType);
+		result.append(", octaveOffset: ");
+		result.append(octaveOffset);
 		result.append(')');
 		return result.toString();
 	}

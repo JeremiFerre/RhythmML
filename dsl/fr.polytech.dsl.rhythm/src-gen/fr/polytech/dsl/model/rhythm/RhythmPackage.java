@@ -547,13 +547,22 @@ public interface RhythmPackage extends EPackage {
 	int PIANO_NOTE__NOTE_TYPE = NOTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Octave Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_NOTE__OCTAVE_OFFSET = NOTE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Piano Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIANO_NOTE_FEATURE_COUNT = NOTE_FEATURE_COUNT + 1;
+	int PIANO_NOTE_FEATURE_COUNT = NOTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Piano Note</em>' class.
@@ -872,6 +881,17 @@ public interface RhythmPackage extends EPackage {
 	EAttribute getPianoNote_NoteType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Octave Offset</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset()
+	 * @see #getPianoNote()
+	 * @generated
+	 */
+	EAttribute getPianoNote_OctaveOffset();
+
+	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.CompositeNote <em>Composite Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1153,6 +1173,14 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PIANO_NOTE__NOTE_TYPE = eINSTANCE.getPianoNote_NoteType();
+
+		/**
+		 * The meta object literal for the '<em><b>Octave Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIANO_NOTE__OCTAVE_OFFSET = eINSTANCE.getPianoNote_OctaveOffset();
 
 		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.CompositeNoteImpl <em>Composite Note</em>}' class.

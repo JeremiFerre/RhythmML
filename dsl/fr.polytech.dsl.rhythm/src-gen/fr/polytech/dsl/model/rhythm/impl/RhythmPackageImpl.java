@@ -416,6 +416,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPianoNote_OctaveOffset() {
+		return (EAttribute) pianoNoteEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCompositeNote() {
 		return compositeNoteEClass;
 	}
@@ -519,6 +528,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		pianoNoteEClass = createEClass(PIANO_NOTE);
 		createEAttribute(pianoNoteEClass, PIANO_NOTE__NOTE_TYPE);
+		createEAttribute(pianoNoteEClass, PIANO_NOTE__OCTAVE_OFFSET);
 
 		compositeNoteEClass = createEClass(COMPOSITE_NOTE);
 		createEReference(compositeNoteEClass, COMPOSITE_NOTE__NOTES);
@@ -624,6 +634,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		initEClass(pianoNoteEClass, PianoNote.class, "PianoNote", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPianoNote_NoteType(), this.getPianoNoteType(), "noteType", null, 0, 1, PianoNote.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPianoNote_OctaveOffset(), ecorePackage.getEInt(), "octaveOffset", null, 0, 1, PianoNote.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeNoteEClass, CompositeNote.class, "CompositeNote", !IS_ABSTRACT, !IS_INTERFACE,

@@ -45,6 +45,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PianoNote" eSuperTypes="#//Note">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//PianoNoteType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="octaveOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PianoNoteType">
     <eLiterals name="C"/>

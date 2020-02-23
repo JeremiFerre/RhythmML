@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGuardinParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Music'", "':'", "'sections'", "'tracks'", "'-'", "'tempo='", "'signature='", "'bars='", "'battery:'", "'piano:'", "'$'", "'layer:'", "'('", "')'", "'x'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Music'", "':'", "'sections'", "'tracks'", "'-'", "'tempo='", "'signature='", "'bars='", "'battery:'", "'piano:'", "'$'", "'layer:'", "'('", "')'", "'x'", "'/'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -32,6 +32,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     public static final int T__16=16;
     public static final int T__38=38;
     public static final int T__17=17;
+    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
     public static final int T__33=33;
@@ -1302,7 +1303,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==21||LA8_0==23||(LA8_0>=26 && LA8_0<=31)) ) {
+                if ( (LA8_0==21||LA8_0==23||(LA8_0>=27 && LA8_0<=32)) ) {
                     alt8=1;
                 }
 
@@ -1317,12 +1318,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    // InternalGuardin.g:572:5: (lv_notes_2_1= ruleBatteryNote | lv_notes_2_2= ruleEmptyNote | lv_notes_2_3= ruleCompositeBatteryNote )
             	    int alt7=3;
             	    switch ( input.LA(1) ) {
-            	    case 26:
             	    case 27:
             	    case 28:
             	    case 29:
             	    case 30:
             	    case 31:
+            	    case 32:
             	        {
             	        alt7=1;
             	        }
@@ -1662,7 +1663,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==21||(LA10_0>=26 && LA10_0<=31)) ) {
+                if ( (LA10_0==21||(LA10_0>=27 && LA10_0<=32)) ) {
                     alt10=1;
                 }
 
@@ -1678,7 +1679,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    int alt9=2;
             	    int LA9_0 = input.LA(1);
 
-            	    if ( ((LA9_0>=26 && LA9_0<=31)) ) {
+            	    if ( ((LA9_0>=27 && LA9_0<=32)) ) {
             	        alt9=1;
             	    }
             	    else if ( (LA9_0==21) ) {
@@ -2098,7 +2099,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==21||LA14_0==23||(LA14_0>=32 && LA14_0<=38)) ) {
+                if ( (LA14_0==21||LA14_0==23||(LA14_0>=33 && LA14_0<=39)) ) {
                     alt14=1;
                 }
 
@@ -2113,13 +2114,13 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    // InternalGuardin.g:864:5: (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote | lv_notes_2_3= ruleCompositePianoNote )
             	    int alt13=3;
             	    switch ( input.LA(1) ) {
-            	    case 32:
             	    case 33:
             	    case 34:
             	    case 35:
             	    case 36:
             	    case 37:
             	    case 38:
+            	    case 39:
             	        {
             	        alt13=1;
             	        }
@@ -2295,22 +2296,25 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePianoNote"
-    // InternalGuardin.g:926:1: rulePianoNote returns [EObject current=null] : ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) ) ;
+    // InternalGuardin.g:926:1: rulePianoNote returns [EObject current=null] : ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )? ) ;
     public final EObject rulePianoNote() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_2=null;
         Enumerator lv_noteType_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_octaveOffset_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGuardin.g:932:2: ( ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) ) )
-            // InternalGuardin.g:933:2: ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) )
+            // InternalGuardin.g:932:2: ( ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )? ) )
+            // InternalGuardin.g:933:2: ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )? )
             {
-            // InternalGuardin.g:933:2: ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) )
-            // InternalGuardin.g:934:3: () ( (lv_noteType_1_0= rulePianoNoteType ) )
+            // InternalGuardin.g:933:2: ( () ( (lv_noteType_1_0= rulePianoNoteType ) ) (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )? )
+            // InternalGuardin.g:934:3: () ( (lv_noteType_1_0= rulePianoNoteType ) ) (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )?
             {
             // InternalGuardin.g:934:3: ()
             // InternalGuardin.g:935:4: 
@@ -2332,7 +2336,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0());
             				
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_24);
             lv_noteType_1_0=rulePianoNoteType();
 
             state._fsp--;
@@ -2351,6 +2355,58 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
+
+            }
+
+            // InternalGuardin.g:960:3: (otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) ) )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==26) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalGuardin.g:961:4: otherlv_2= '/' ( (lv_octaveOffset_3_0= ruleERelativeInt ) )
+                    {
+                    otherlv_2=(Token)match(input,26,FOLLOW_25); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0());
+                    			
+                    // InternalGuardin.g:965:4: ( (lv_octaveOffset_3_0= ruleERelativeInt ) )
+                    // InternalGuardin.g:966:5: (lv_octaveOffset_3_0= ruleERelativeInt )
+                    {
+                    // InternalGuardin.g:966:5: (lv_octaveOffset_3_0= ruleERelativeInt )
+                    // InternalGuardin.g:967:6: lv_octaveOffset_3_0= ruleERelativeInt
+                    {
+
+                    						newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_octaveOffset_3_0=ruleERelativeInt();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+                    						}
+                    						set(
+                    							current,
+                    							"octaveOffset",
+                    							lv_octaveOffset_3_0,
+                    							"fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2377,7 +2433,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompositePianoNote"
-    // InternalGuardin.g:964:1: entryRuleCompositePianoNote returns [EObject current=null] : iv_ruleCompositePianoNote= ruleCompositePianoNote EOF ;
+    // InternalGuardin.g:989:1: entryRuleCompositePianoNote returns [EObject current=null] : iv_ruleCompositePianoNote= ruleCompositePianoNote EOF ;
     public final EObject entryRuleCompositePianoNote() throws RecognitionException {
         EObject current = null;
 
@@ -2385,8 +2441,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:964:59: (iv_ruleCompositePianoNote= ruleCompositePianoNote EOF )
-            // InternalGuardin.g:965:2: iv_ruleCompositePianoNote= ruleCompositePianoNote EOF
+            // InternalGuardin.g:989:59: (iv_ruleCompositePianoNote= ruleCompositePianoNote EOF )
+            // InternalGuardin.g:990:2: iv_ruleCompositePianoNote= ruleCompositePianoNote EOF
             {
              newCompositeNode(grammarAccess.getCompositePianoNoteRule()); 
             pushFollow(FOLLOW_1);
@@ -2413,7 +2469,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositePianoNote"
-    // InternalGuardin.g:971:1: ruleCompositePianoNote returns [EObject current=null] : ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) ) ;
+    // InternalGuardin.g:996:1: ruleCompositePianoNote returns [EObject current=null] : ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) ) ;
     public final EObject ruleCompositePianoNote() throws RecognitionException {
         EObject current = null;
 
@@ -2431,14 +2487,14 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:977:2: ( ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) ) )
-            // InternalGuardin.g:978:2: ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) )
+            // InternalGuardin.g:1002:2: ( ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) ) )
+            // InternalGuardin.g:1003:2: ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) )
             {
-            // InternalGuardin.g:978:2: ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) )
-            // InternalGuardin.g:979:3: () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) )
+            // InternalGuardin.g:1003:2: ( () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) ) )
+            // InternalGuardin.g:1004:3: () otherlv_1= '(' ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+ otherlv_3= ')' otherlv_4= 'x' ( (lv_repeats_5_0= ruleEInt ) )
             {
-            // InternalGuardin.g:979:3: ()
-            // InternalGuardin.g:980:4: 
+            // InternalGuardin.g:1004:3: ()
+            // InternalGuardin.g:1005:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2448,53 +2504,53 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_24); 
+            otherlv_1=(Token)match(input,23,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCompositePianoNoteAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalGuardin.g:990:3: ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+
-            int cnt16=0;
-            loop16:
+            // InternalGuardin.g:1015:3: ( ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) ) )+
+            int cnt17=0;
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==21||(LA16_0>=32 && LA16_0<=38)) ) {
-                    alt16=1;
+                if ( (LA17_0==21||(LA17_0>=33 && LA17_0<=39)) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
-            	    // InternalGuardin.g:991:4: ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) )
+            	    // InternalGuardin.g:1016:4: ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) )
             	    {
-            	    // InternalGuardin.g:991:4: ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) )
-            	    // InternalGuardin.g:992:5: (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote )
+            	    // InternalGuardin.g:1016:4: ( (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote ) )
+            	    // InternalGuardin.g:1017:5: (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote )
             	    {
-            	    // InternalGuardin.g:992:5: (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote )
-            	    int alt15=2;
-            	    int LA15_0 = input.LA(1);
+            	    // InternalGuardin.g:1017:5: (lv_notes_2_1= rulePianoNote | lv_notes_2_2= ruleEmptyNote )
+            	    int alt16=2;
+            	    int LA16_0 = input.LA(1);
 
-            	    if ( ((LA15_0>=32 && LA15_0<=38)) ) {
-            	        alt15=1;
+            	    if ( ((LA16_0>=33 && LA16_0<=39)) ) {
+            	        alt16=1;
             	    }
-            	    else if ( (LA15_0==21) ) {
-            	        alt15=2;
+            	    else if ( (LA16_0==21) ) {
+            	        alt16=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 15, 0, input);
+            	            new NoViableAltException("", 16, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt15) {
+            	    switch (alt16) {
             	        case 1 :
-            	            // InternalGuardin.g:993:6: lv_notes_2_1= rulePianoNote
+            	            // InternalGuardin.g:1018:6: lv_notes_2_1= rulePianoNote
             	            {
 
             	            						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesPianoNoteParserRuleCall_2_0_0());
             	            					
-            	            pushFollow(FOLLOW_25);
+            	            pushFollow(FOLLOW_27);
             	            lv_notes_2_1=rulePianoNote();
 
             	            state._fsp--;
@@ -2514,12 +2570,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalGuardin.g:1009:6: lv_notes_2_2= ruleEmptyNote
+            	            // InternalGuardin.g:1034:6: lv_notes_2_2= ruleEmptyNote
             	            {
 
             	            						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
             	            					
-            	            pushFollow(FOLLOW_25);
+            	            pushFollow(FOLLOW_27);
             	            lv_notes_2_2=ruleEmptyNote();
 
             	            state._fsp--;
@@ -2549,12 +2605,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt16 >= 1 ) break loop16;
+            	    if ( cnt17 >= 1 ) break loop17;
                         EarlyExitException eee =
-                            new EarlyExitException(16, input);
+                            new EarlyExitException(17, input);
                         throw eee;
                 }
-                cnt16++;
+                cnt17++;
             } while (true);
 
             otherlv_3=(Token)match(input,24,FOLLOW_21); 
@@ -2565,11 +2621,11 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getCompositePianoNoteAccess().getXKeyword_4());
             		
-            // InternalGuardin.g:1035:3: ( (lv_repeats_5_0= ruleEInt ) )
-            // InternalGuardin.g:1036:4: (lv_repeats_5_0= ruleEInt )
+            // InternalGuardin.g:1060:3: ( (lv_repeats_5_0= ruleEInt ) )
+            // InternalGuardin.g:1061:4: (lv_repeats_5_0= ruleEInt )
             {
-            // InternalGuardin.g:1036:4: (lv_repeats_5_0= ruleEInt )
-            // InternalGuardin.g:1037:5: lv_repeats_5_0= ruleEInt
+            // InternalGuardin.g:1061:4: (lv_repeats_5_0= ruleEInt )
+            // InternalGuardin.g:1062:5: lv_repeats_5_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getRepeatsEIntParserRuleCall_5_0());
@@ -2619,7 +2675,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalGuardin.g:1058:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalGuardin.g:1083:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -2627,8 +2683,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:1058:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalGuardin.g:1059:2: iv_ruleEInt= ruleEInt EOF
+            // InternalGuardin.g:1083:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalGuardin.g:1084:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -2655,7 +2711,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalGuardin.g:1065:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalGuardin.g:1090:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2665,8 +2721,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:1071:2: (this_INT_0= RULE_INT )
-            // InternalGuardin.g:1072:2: this_INT_0= RULE_INT
+            // InternalGuardin.g:1096:2: (this_INT_0= RULE_INT )
+            // InternalGuardin.g:1097:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2694,8 +2750,113 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEInt"
 
 
+    // $ANTLR start "entryRuleERelativeInt"
+    // InternalGuardin.g:1107:1: entryRuleERelativeInt returns [String current=null] : iv_ruleERelativeInt= ruleERelativeInt EOF ;
+    public final String entryRuleERelativeInt() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleERelativeInt = null;
+
+
+        try {
+            // InternalGuardin.g:1107:52: (iv_ruleERelativeInt= ruleERelativeInt EOF )
+            // InternalGuardin.g:1108:2: iv_ruleERelativeInt= ruleERelativeInt EOF
+            {
+             newCompositeNode(grammarAccess.getERelativeIntRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleERelativeInt=ruleERelativeInt();
+
+            state._fsp--;
+
+             current =iv_ruleERelativeInt.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleERelativeInt"
+
+
+    // $ANTLR start "ruleERelativeInt"
+    // InternalGuardin.g:1114:1: ruleERelativeInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleERelativeInt() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        Token this_INT_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGuardin.g:1120:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalGuardin.g:1121:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            {
+            // InternalGuardin.g:1121:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalGuardin.g:1122:3: (kw= '-' )? this_INT_1= RULE_INT
+            {
+            // InternalGuardin.g:1122:3: (kw= '-' )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==15) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalGuardin.g:1123:4: kw= '-'
+                    {
+                    kw=(Token)match(input,15,FOLLOW_11); 
+
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getERelativeIntAccess().getHyphenMinusKeyword_0());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            			current.merge(this_INT_1);
+            		
+
+            			newLeafNode(this_INT_1, grammarAccess.getERelativeIntAccess().getINTTerminalRuleCall_1());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleERelativeInt"
+
+
     // $ANTLR start "entryRuleEString"
-    // InternalGuardin.g:1082:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalGuardin.g:1140:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -2703,8 +2864,8 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGuardin.g:1082:47: (iv_ruleEString= ruleEString EOF )
-            // InternalGuardin.g:1083:2: iv_ruleEString= ruleEString EOF
+            // InternalGuardin.g:1140:47: (iv_ruleEString= ruleEString EOF )
+            // InternalGuardin.g:1141:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -2731,7 +2892,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalGuardin.g:1089:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalGuardin.g:1147:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2742,28 +2903,28 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:1095:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalGuardin.g:1096:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalGuardin.g:1153:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalGuardin.g:1154:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalGuardin.g:1096:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalGuardin.g:1154:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA17_0==RULE_STRING) ) {
-                alt17=1;
+            if ( (LA19_0==RULE_STRING) ) {
+                alt19=1;
             }
-            else if ( (LA17_0==RULE_ID) ) {
-                alt17=2;
+            else if ( (LA19_0==RULE_ID) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt19) {
                 case 1 :
-                    // InternalGuardin.g:1097:3: this_STRING_0= RULE_STRING
+                    // InternalGuardin.g:1155:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2776,7 +2937,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:1105:3: this_ID_1= RULE_ID
+                    // InternalGuardin.g:1163:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2811,7 +2972,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBatteryNoteType"
-    // InternalGuardin.g:1116:1: ruleBatteryNoteType returns [Enumerator current=null] : ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) ;
+    // InternalGuardin.g:1174:1: ruleBatteryNoteType returns [Enumerator current=null] : ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) ;
     public final Enumerator ruleBatteryNoteType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2826,57 +2987,57 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:1122:2: ( ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) )
-            // InternalGuardin.g:1123:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
+            // InternalGuardin.g:1180:2: ( ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) ) )
+            // InternalGuardin.g:1181:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
             {
-            // InternalGuardin.g:1123:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
-            int alt18=6;
+            // InternalGuardin.g:1181:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'ch' ) | (enumLiteral_2= 'cc' ) | (enumLiteral_3= 'oh' ) | (enumLiteral_4= 'rc' ) | (enumLiteral_5= 'sd' ) )
+            int alt20=6;
             switch ( input.LA(1) ) {
-            case 26:
-                {
-                alt18=1;
-                }
-                break;
             case 27:
                 {
-                alt18=2;
+                alt20=1;
                 }
                 break;
             case 28:
                 {
-                alt18=3;
+                alt20=2;
                 }
                 break;
             case 29:
                 {
-                alt18=4;
+                alt20=3;
                 }
                 break;
             case 30:
                 {
-                alt18=5;
+                alt20=4;
                 }
                 break;
             case 31:
                 {
-                alt18=6;
+                alt20=5;
+                }
+                break;
+            case 32:
+                {
+                alt20=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt18) {
+            switch (alt20) {
                 case 1 :
-                    // InternalGuardin.g:1124:3: (enumLiteral_0= 'bd' )
+                    // InternalGuardin.g:1182:3: (enumLiteral_0= 'bd' )
                     {
-                    // InternalGuardin.g:1124:3: (enumLiteral_0= 'bd' )
-                    // InternalGuardin.g:1125:4: enumLiteral_0= 'bd'
+                    // InternalGuardin.g:1182:3: (enumLiteral_0= 'bd' )
+                    // InternalGuardin.g:1183:4: enumLiteral_0= 'bd'
                     {
-                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,27,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getBASS_DRUMEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getBatteryNoteTypeAccess().getBASS_DRUMEnumLiteralDeclaration_0());
@@ -2888,12 +3049,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:1132:3: (enumLiteral_1= 'ch' )
+                    // InternalGuardin.g:1190:3: (enumLiteral_1= 'ch' )
                     {
-                    // InternalGuardin.g:1132:3: (enumLiteral_1= 'ch' )
-                    // InternalGuardin.g:1133:4: enumLiteral_1= 'ch'
+                    // InternalGuardin.g:1190:3: (enumLiteral_1= 'ch' )
+                    // InternalGuardin.g:1191:4: enumLiteral_1= 'ch'
                     {
-                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,28,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getCLOSED_HIHATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getBatteryNoteTypeAccess().getCLOSED_HIHATEnumLiteralDeclaration_1());
@@ -2905,12 +3066,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGuardin.g:1140:3: (enumLiteral_2= 'cc' )
+                    // InternalGuardin.g:1198:3: (enumLiteral_2= 'cc' )
                     {
-                    // InternalGuardin.g:1140:3: (enumLiteral_2= 'cc' )
-                    // InternalGuardin.g:1141:4: enumLiteral_2= 'cc'
+                    // InternalGuardin.g:1198:3: (enumLiteral_2= 'cc' )
+                    // InternalGuardin.g:1199:4: enumLiteral_2= 'cc'
                     {
-                    enumLiteral_2=(Token)match(input,28,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,29,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getCRASH_CYMBALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getBatteryNoteTypeAccess().getCRASH_CYMBALEnumLiteralDeclaration_2());
@@ -2922,12 +3083,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGuardin.g:1148:3: (enumLiteral_3= 'oh' )
+                    // InternalGuardin.g:1206:3: (enumLiteral_3= 'oh' )
                     {
-                    // InternalGuardin.g:1148:3: (enumLiteral_3= 'oh' )
-                    // InternalGuardin.g:1149:4: enumLiteral_3= 'oh'
+                    // InternalGuardin.g:1206:3: (enumLiteral_3= 'oh' )
+                    // InternalGuardin.g:1207:4: enumLiteral_3= 'oh'
                     {
-                    enumLiteral_3=(Token)match(input,29,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,30,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getOPENED_HIHATEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getBatteryNoteTypeAccess().getOPENED_HIHATEnumLiteralDeclaration_3());
@@ -2939,12 +3100,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalGuardin.g:1156:3: (enumLiteral_4= 'rc' )
+                    // InternalGuardin.g:1214:3: (enumLiteral_4= 'rc' )
                     {
-                    // InternalGuardin.g:1156:3: (enumLiteral_4= 'rc' )
-                    // InternalGuardin.g:1157:4: enumLiteral_4= 'rc'
+                    // InternalGuardin.g:1214:3: (enumLiteral_4= 'rc' )
+                    // InternalGuardin.g:1215:4: enumLiteral_4= 'rc'
                     {
-                    enumLiteral_4=(Token)match(input,30,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,31,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getRIDE_CYMBALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getBatteryNoteTypeAccess().getRIDE_CYMBALEnumLiteralDeclaration_4());
@@ -2956,12 +3117,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalGuardin.g:1164:3: (enumLiteral_5= 'sd' )
+                    // InternalGuardin.g:1222:3: (enumLiteral_5= 'sd' )
                     {
-                    // InternalGuardin.g:1164:3: (enumLiteral_5= 'sd' )
-                    // InternalGuardin.g:1165:4: enumLiteral_5= 'sd'
+                    // InternalGuardin.g:1222:3: (enumLiteral_5= 'sd' )
+                    // InternalGuardin.g:1223:4: enumLiteral_5= 'sd'
                     {
-                    enumLiteral_5=(Token)match(input,31,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,32,FOLLOW_2); 
 
                     				current = grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5());
@@ -2995,7 +3156,7 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePianoNoteType"
-    // InternalGuardin.g:1175:1: rulePianoNoteType returns [Enumerator current=null] : ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) ) ;
+    // InternalGuardin.g:1233:1: rulePianoNoteType returns [Enumerator current=null] : ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) ) ;
     public final Enumerator rulePianoNoteType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3011,62 +3172,62 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGuardin.g:1181:2: ( ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) ) )
-            // InternalGuardin.g:1182:2: ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) )
+            // InternalGuardin.g:1239:2: ( ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) ) )
+            // InternalGuardin.g:1240:2: ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) )
             {
-            // InternalGuardin.g:1182:2: ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) )
-            int alt19=7;
+            // InternalGuardin.g:1240:2: ( (enumLiteral_0= 'A' ) | (enumLiteral_1= 'B' ) | (enumLiteral_2= 'C' ) | (enumLiteral_3= 'D' ) | (enumLiteral_4= 'E' ) | (enumLiteral_5= 'F' ) | (enumLiteral_6= 'G' ) )
+            int alt21=7;
             switch ( input.LA(1) ) {
-            case 32:
-                {
-                alt19=1;
-                }
-                break;
             case 33:
                 {
-                alt19=2;
+                alt21=1;
                 }
                 break;
             case 34:
                 {
-                alt19=3;
+                alt21=2;
                 }
                 break;
             case 35:
                 {
-                alt19=4;
+                alt21=3;
                 }
                 break;
             case 36:
                 {
-                alt19=5;
+                alt21=4;
                 }
                 break;
             case 37:
                 {
-                alt19=6;
+                alt21=5;
                 }
                 break;
             case 38:
                 {
-                alt19=7;
+                alt21=6;
+                }
+                break;
+            case 39:
+                {
+                alt21=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt19) {
+            switch (alt21) {
                 case 1 :
-                    // InternalGuardin.g:1183:3: (enumLiteral_0= 'A' )
+                    // InternalGuardin.g:1241:3: (enumLiteral_0= 'A' )
                     {
-                    // InternalGuardin.g:1183:3: (enumLiteral_0= 'A' )
-                    // InternalGuardin.g:1184:4: enumLiteral_0= 'A'
+                    // InternalGuardin.g:1241:3: (enumLiteral_0= 'A' )
+                    // InternalGuardin.g:1242:4: enumLiteral_0= 'A'
                     {
-                    enumLiteral_0=(Token)match(input,32,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,33,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0());
@@ -3078,12 +3239,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:1191:3: (enumLiteral_1= 'B' )
+                    // InternalGuardin.g:1249:3: (enumLiteral_1= 'B' )
                     {
-                    // InternalGuardin.g:1191:3: (enumLiteral_1= 'B' )
-                    // InternalGuardin.g:1192:4: enumLiteral_1= 'B'
+                    // InternalGuardin.g:1249:3: (enumLiteral_1= 'B' )
+                    // InternalGuardin.g:1250:4: enumLiteral_1= 'B'
                     {
-                    enumLiteral_1=(Token)match(input,33,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,34,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1());
@@ -3095,12 +3256,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGuardin.g:1199:3: (enumLiteral_2= 'C' )
+                    // InternalGuardin.g:1257:3: (enumLiteral_2= 'C' )
                     {
-                    // InternalGuardin.g:1199:3: (enumLiteral_2= 'C' )
-                    // InternalGuardin.g:1200:4: enumLiteral_2= 'C'
+                    // InternalGuardin.g:1257:3: (enumLiteral_2= 'C' )
+                    // InternalGuardin.g:1258:4: enumLiteral_2= 'C'
                     {
-                    enumLiteral_2=(Token)match(input,34,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,35,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2());
@@ -3112,12 +3273,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGuardin.g:1207:3: (enumLiteral_3= 'D' )
+                    // InternalGuardin.g:1265:3: (enumLiteral_3= 'D' )
                     {
-                    // InternalGuardin.g:1207:3: (enumLiteral_3= 'D' )
-                    // InternalGuardin.g:1208:4: enumLiteral_3= 'D'
+                    // InternalGuardin.g:1265:3: (enumLiteral_3= 'D' )
+                    // InternalGuardin.g:1266:4: enumLiteral_3= 'D'
                     {
-                    enumLiteral_3=(Token)match(input,35,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,36,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3());
@@ -3129,12 +3290,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalGuardin.g:1215:3: (enumLiteral_4= 'E' )
+                    // InternalGuardin.g:1273:3: (enumLiteral_4= 'E' )
                     {
-                    // InternalGuardin.g:1215:3: (enumLiteral_4= 'E' )
-                    // InternalGuardin.g:1216:4: enumLiteral_4= 'E'
+                    // InternalGuardin.g:1273:3: (enumLiteral_4= 'E' )
+                    // InternalGuardin.g:1274:4: enumLiteral_4= 'E'
                     {
-                    enumLiteral_4=(Token)match(input,36,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,37,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4());
@@ -3146,12 +3307,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalGuardin.g:1223:3: (enumLiteral_5= 'F' )
+                    // InternalGuardin.g:1281:3: (enumLiteral_5= 'F' )
                     {
-                    // InternalGuardin.g:1223:3: (enumLiteral_5= 'F' )
-                    // InternalGuardin.g:1224:4: enumLiteral_5= 'F'
+                    // InternalGuardin.g:1281:3: (enumLiteral_5= 'F' )
+                    // InternalGuardin.g:1282:4: enumLiteral_5= 'F'
                     {
-                    enumLiteral_5=(Token)match(input,37,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,38,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5());
@@ -3163,12 +3324,12 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalGuardin.g:1231:3: (enumLiteral_6= 'G' )
+                    // InternalGuardin.g:1289:3: (enumLiteral_6= 'G' )
                     {
-                    // InternalGuardin.g:1231:3: (enumLiteral_6= 'G' )
-                    // InternalGuardin.g:1232:4: enumLiteral_6= 'G'
+                    // InternalGuardin.g:1289:3: (enumLiteral_6= 'G' )
+                    // InternalGuardin.g:1290:4: enumLiteral_6= 'G'
                     {
-                    enumLiteral_6=(Token)match(input,38,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,39,FOLLOW_2); 
 
                     				current = grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6());
@@ -3221,14 +3382,16 @@ public class InternalGuardinParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000180000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400060L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400062L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000FCA00000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000000FCA00002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000FC200000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000000FD200000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000001F8A00000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000001F8A00002L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000001F8200000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000001F9200000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000007F00A00000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000007F00A00002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000007F00200000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000007F01200000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000FE00A00000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000FE00A00002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000008010L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x000000FE00200000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000000FE01200000L});
 
 }

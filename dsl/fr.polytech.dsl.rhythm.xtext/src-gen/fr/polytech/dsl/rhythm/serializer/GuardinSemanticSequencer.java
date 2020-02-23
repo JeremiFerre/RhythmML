@@ -197,16 +197,10 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PianoNote returns PianoNote
 	 *
 	 * Constraint:
-	 *     noteType=PianoNoteType
+	 *     (noteType=PianoNoteType octaveOffset=ERelativeInt?)
 	 */
 	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RhythmPackage.Literals.PIANO_NOTE__NOTE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmPackage.Literals.PIANO_NOTE__NOTE_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0(), semanticObject.getNoteType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
