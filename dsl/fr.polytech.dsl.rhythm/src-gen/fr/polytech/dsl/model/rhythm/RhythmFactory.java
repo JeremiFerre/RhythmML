@@ -112,6 +112,24 @@ public interface RhythmFactory extends EFactory {
 	CompositeNote createCompositeNote();
 
 	/**
+	 * Returns a new object of class '<em>Piano Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Piano Pattern</em>'.
+	 * @generated
+	 */
+	PianoPattern createPianoPattern();
+
+	/**
+	 * Returns a new object of class '<em>Battery Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Battery Pattern</em>'.
+	 * @generated
+	 */
+	BatteryPattern createBatteryPattern();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

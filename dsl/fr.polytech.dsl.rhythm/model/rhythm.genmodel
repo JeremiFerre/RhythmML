@@ -33,6 +33,7 @@
     <genClasses ecoreClass="rhythm.ecore#//Music">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Music/tracks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Music/sections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Music/patterns"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//Track">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Track/instrument"/>
@@ -53,7 +54,7 @@
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//EmptyNote"/>
     <genClasses ecoreClass="rhythm.ecore#//Layer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Layer/notes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rhythm.ecore#//Layer/notes"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//PianoNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//PianoNote/noteType"/>
@@ -63,5 +64,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//CompositeNote/notes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//CompositeNote/repeats"/>
     </genClasses>
+    <genClasses ecoreClass="rhythm.ecore#//Pattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Pattern/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythm.ecore#//PianoPattern"/>
+    <genClasses ecoreClass="rhythm.ecore#//BatteryPattern"/>
   </genPackages>
 </genmodel:GenModel>

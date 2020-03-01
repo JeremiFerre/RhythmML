@@ -6,12 +6,14 @@ package fr.polytech.dsl.rhythm.serializer;
 import com.google.inject.Inject;
 import fr.polytech.dsl.model.rhythm.Battery;
 import fr.polytech.dsl.model.rhythm.BatteryNote;
+import fr.polytech.dsl.model.rhythm.BatteryPattern;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
 import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.Piano;
 import fr.polytech.dsl.model.rhythm.PianoNote;
+import fr.polytech.dsl.model.rhythm.PianoPattern;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
 import fr.polytech.dsl.model.rhythm.Track;
@@ -47,6 +49,9 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RhythmPackage.BATTERY_NOTE:
 				sequence_BatteryNote(context, (BatteryNote) semanticObject); 
 				return; 
+			case RhythmPackage.BATTERY_PATTERN:
+				sequence_BatteryPattern(context, (BatteryPattern) semanticObject); 
+				return; 
 			case RhythmPackage.COMPOSITE_NOTE:
 				if (rule == grammarAccess.getCompositeBatteryNoteRule()) {
 					sequence_CompositeBatteryNote(context, (CompositeNote) semanticObject); 
@@ -79,6 +84,9 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RhythmPackage.PIANO_NOTE:
 				sequence_PianoNote(context, (PianoNote) semanticObject); 
 				return; 
+			case RhythmPackage.PIANO_PATTERN:
+				sequence_PianoPattern(context, (PianoPattern) semanticObject); 
+				return; 
 			case RhythmPackage.SECTION:
 				sequence_Section(context, (Section) semanticObject); 
 				return; 
@@ -95,7 +103,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BatteryLayer returns Layer
 	 *
 	 * Constraint:
-	 *     (notes+=BatteryNote | notes+=EmptyNote | notes+=CompositeBatteryNote)+
+	 *     (notes+=BatteryNote | notes+=EmptyNote | notes+=CompositeBatteryNote | notes+=[BatteryPattern|EString])+
 	 */
 	protected void sequence_BatteryLayer(ISerializationContext context, Layer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -117,6 +125,18 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBatteryNoteAccess().getNoteTypeBatteryNoteTypeEnumRuleCall_1_0(), semanticObject.getNoteType());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     BatteryPattern returns BatteryPattern
+	 *
+	 * Constraint:
+	 *     (name=EString notes+=CompositeBatteryNote+)
+	 */
+	protected void sequence_BatteryPattern(ISerializationContext context, BatteryPattern semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -173,7 +193,15 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Music returns Music
 	 *
 	 * Constraint:
-	 *     (name=EString sections+=Section sections+=Section* tracks+=Track tracks+=Track*)
+	 *     (
+	 *         name=EString 
+	 *         sections+=Section 
+	 *         sections+=Section* 
+	 *         tracks+=Track 
+	 *         tracks+=Track* 
+	 *         (patterns+=PianoPattern patterns+=PianoPattern*)? 
+	 *         (patterns+=BatteryPattern patterns+=BatteryPattern*)?
+	 *     )
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -200,6 +228,18 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (noteType=PianoNoteType octaveOffset=ERelativeInt?)
 	 */
 	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PianoPattern returns PianoPattern
+	 *
+	 * Constraint:
+	 *     (name=EString notes+=CompositePianoNote+)
+	 */
+	protected void sequence_PianoPattern(ISerializationContext context, PianoPattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Layer extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Notes</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Notes</b></em>' reference list.
 	 * The list contents are of type {@link fr.polytech.dsl.model.rhythm.Note}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -32,9 +32,9 @@ public interface Layer extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notes</em>' containment reference list.
+	 * @return the value of the '<em>Notes</em>' reference list.
 	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getLayer_Notes()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Note> getNotes();

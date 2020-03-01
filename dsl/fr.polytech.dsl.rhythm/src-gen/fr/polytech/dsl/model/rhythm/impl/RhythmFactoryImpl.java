@@ -77,6 +77,10 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 			return createPianoNote();
 		case RhythmPackage.COMPOSITE_NOTE:
 			return createCompositeNote();
+		case RhythmPackage.PIANO_PATTERN:
+			return createPianoPattern();
+		case RhythmPackage.BATTERY_PATTERN:
+			return createBatteryPattern();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -214,6 +218,26 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	public CompositeNote createCompositeNote() {
 		CompositeNoteImpl compositeNote = new CompositeNoteImpl();
 		return compositeNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PianoPattern createPianoPattern() {
+		PianoPatternImpl pianoPattern = new PianoPatternImpl();
+		return pianoPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BatteryPattern createBatteryPattern() {
+		BatteryPatternImpl batteryPattern = new BatteryPatternImpl();
+		return batteryPattern;
 	}
 
 	/**

@@ -9,6 +9,8 @@
         upperBound="-1" eType="#//Track" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
         eType="#//Section" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//Pattern" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Track" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instrument" lowerBound="1"
@@ -34,14 +36,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Battery" eSuperTypes="#//Instrument"/>
   <eClassifiers xsi:type="ecore:EClass" name="Piano" eSuperTypes="#//Instrument"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Note" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Note" abstract="true" interface="true"
+      eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BatteryNote" eSuperTypes="#//Note">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//BatteryNoteType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyNote" eSuperTypes="#//Note"/>
   <eClassifiers xsi:type="ecore:EClass" name="Layer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
-        eType="#//Note" containment="true"/>
+        eType="#//Note"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PianoNote" eSuperTypes="#//Note">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//PianoNoteType"/>
@@ -61,4 +64,10 @@
         eType="#//Note" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern" abstract="true" eSuperTypes="#//Note">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" eType="#//CompositeNote"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PianoPattern" eSuperTypes="#//Pattern"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BatteryPattern" eSuperTypes="#//Pattern"/>
 </ecore:EPackage>

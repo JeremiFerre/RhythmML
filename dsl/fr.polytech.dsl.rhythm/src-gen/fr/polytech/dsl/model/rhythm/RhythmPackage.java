@@ -132,13 +132,22 @@ public interface RhythmPackage extends EPackage {
 	int MUSIC__SECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Patterns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC__PATTERNS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Music</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MUSIC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Music</em>' class.
@@ -408,13 +417,22 @@ public interface RhythmPackage extends EPackage {
 	int NOTE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOTE_FEATURE_COUNT = 0;
+	int NOTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Note</em>' class.
@@ -423,7 +441,7 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NOTE_OPERATION_COUNT = 0;
+	int NOTE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.impl.BatteryNoteImpl <em>Battery Note</em>}' class.
@@ -434,6 +452,15 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int BATTERY_NOTE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_NOTE__NAME = NOTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Note Type</b></em>' attribute.
@@ -473,6 +500,15 @@ public interface RhythmPackage extends EPackage {
 	int EMPTY_NOTE = 9;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_NOTE__NAME = NOTE__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Empty Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -501,7 +537,7 @@ public interface RhythmPackage extends EPackage {
 	int LAYER = 10;
 
 	/**
-	 * The feature id for the '<em><b>Notes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Notes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -536,6 +572,15 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int PIANO_NOTE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_NOTE__NAME = NOTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Note Type</b></em>' attribute.
@@ -584,6 +629,15 @@ public interface RhythmPackage extends EPackage {
 	int COMPOSITE_NOTE = 12;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_NOTE__NAME = NOTE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Notes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -620,6 +674,144 @@ public interface RhythmPackage extends EPackage {
 	int COMPOSITE_NOTE_OPERATION_COUNT = NOTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.impl.PatternImpl <em>Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.impl.PatternImpl
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPattern()
+	 * @generated
+	 */
+	int PATTERN = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN__NAME = NOTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN__NOTES = NOTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_FEATURE_COUNT = NOTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN_OPERATION_COUNT = NOTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.impl.PianoPatternImpl <em>Piano Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.impl.PianoPatternImpl
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPianoPattern()
+	 * @generated
+	 */
+	int PIANO_PATTERN = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_PATTERN__NAME = PATTERN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_PATTERN__NOTES = PATTERN__NOTES;
+
+	/**
+	 * The number of structural features of the '<em>Piano Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_PATTERN_FEATURE_COUNT = PATTERN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Piano Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_PATTERN_OPERATION_COUNT = PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.impl.BatteryPatternImpl <em>Battery Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.impl.BatteryPatternImpl
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getBatteryPattern()
+	 * @generated
+	 */
+	int BATTERY_PATTERN = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_PATTERN__NAME = PATTERN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_PATTERN__NOTES = PATTERN__NOTES;
+
+	/**
+	 * The number of structural features of the '<em>Battery Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_PATTERN_FEATURE_COUNT = PATTERN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Battery Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_PATTERN_OPERATION_COUNT = PATTERN_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,7 +819,7 @@ public interface RhythmPackage extends EPackage {
 	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getBatteryNoteType()
 	 * @generated
 	 */
-	int BATTERY_NOTE_TYPE = 13;
+	int BATTERY_NOTE_TYPE = 16;
 
 	/**
 	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.PianoNoteType <em>Piano Note Type</em>}' enum.
@@ -637,7 +829,7 @@ public interface RhythmPackage extends EPackage {
 	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPianoNoteType()
 	 * @generated
 	 */
-	int PIANO_NOTE_TYPE = 14;
+	int PIANO_NOTE_TYPE = 17;
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.NamedElement <em>Named Element</em>}'.
@@ -691,6 +883,17 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMusic_Sections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.polytech.dsl.model.rhythm.Music#getPatterns <em>Patterns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Patterns</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Music#getPatterns()
+	 * @see #getMusic()
+	 * @generated
+	 */
+	EReference getMusic_Patterns();
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.Track <em>Track</em>}'.
@@ -849,10 +1052,10 @@ public interface RhythmPackage extends EPackage {
 	EClass getLayer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.polytech.dsl.model.rhythm.Layer#getNotes <em>Notes</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.polytech.dsl.model.rhythm.Layer#getNotes <em>Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Notes</em>'.
+	 * @return the meta object for the reference list '<em>Notes</em>'.
 	 * @see fr.polytech.dsl.model.rhythm.Layer#getNotes()
 	 * @see #getLayer()
 	 * @generated
@@ -922,6 +1125,47 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCompositeNote_Repeats();
+
+	/**
+	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.Pattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pattern</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Pattern
+	 * @generated
+	 */
+	EClass getPattern();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.polytech.dsl.model.rhythm.Pattern#getNotes <em>Notes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Notes</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Pattern#getNotes()
+	 * @see #getPattern()
+	 * @generated
+	 */
+	EReference getPattern_Notes();
+
+	/**
+	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.PianoPattern <em>Piano Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Piano Pattern</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.PianoPattern
+	 * @generated
+	 */
+	EClass getPianoPattern();
+
+	/**
+	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.BatteryPattern <em>Battery Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Battery Pattern</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.BatteryPattern
+	 * @generated
+	 */
+	EClass getBatteryPattern();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}'.
@@ -1009,6 +1253,14 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MUSIC__SECTIONS = eINSTANCE.getMusic_Sections();
+
+		/**
+		 * The meta object literal for the '<em><b>Patterns</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MUSIC__PATTERNS = eINSTANCE.getMusic_Patterns();
 
 		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.TrackImpl <em>Track</em>}' class.
@@ -1149,7 +1401,7 @@ public interface RhythmPackage extends EPackage {
 		EClass LAYER = eINSTANCE.getLayer();
 
 		/**
-		 * The meta object literal for the '<em><b>Notes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Notes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1207,6 +1459,44 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPOSITE_NOTE__REPEATS = eINSTANCE.getCompositeNote_Repeats();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.PatternImpl <em>Pattern</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.impl.PatternImpl
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPattern()
+		 * @generated
+		 */
+		EClass PATTERN = eINSTANCE.getPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Notes</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATTERN__NOTES = eINSTANCE.getPattern_Notes();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.PianoPatternImpl <em>Piano Pattern</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.impl.PianoPatternImpl
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPianoPattern()
+		 * @generated
+		 */
+		EClass PIANO_PATTERN = eINSTANCE.getPianoPattern();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.BatteryPatternImpl <em>Battery Pattern</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.impl.BatteryPatternImpl
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getBatteryPattern()
+		 * @generated
+		 */
+		EClass BATTERY_PATTERN = eINSTANCE.getBatteryPattern();
 
 		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}' enum.

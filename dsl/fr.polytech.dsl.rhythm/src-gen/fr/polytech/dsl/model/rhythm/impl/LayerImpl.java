@@ -7,18 +7,11 @@ import fr.polytech.dsl.model.rhythm.Note;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LayerImpl extends MinimalEObjectImpl.Container implements Layer {
 	/**
-	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference list.
+	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNotes()
@@ -70,23 +63,9 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer {
 	 */
 	public EList<Note> getNotes() {
 		if (notes == null) {
-			notes = new EObjectContainmentEList<Note>(Note.class, this, RhythmPackage.LAYER__NOTES);
+			notes = new EObjectResolvingEList<Note>(Note.class, this, RhythmPackage.LAYER__NOTES);
 		}
 		return notes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case RhythmPackage.LAYER__NOTES:
-			return ((InternalEList<?>) getNotes()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

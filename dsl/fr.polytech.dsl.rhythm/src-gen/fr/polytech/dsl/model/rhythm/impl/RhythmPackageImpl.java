@@ -5,6 +5,7 @@ package fr.polytech.dsl.model.rhythm.impl;
 import fr.polytech.dsl.model.rhythm.Battery;
 import fr.polytech.dsl.model.rhythm.BatteryNote;
 import fr.polytech.dsl.model.rhythm.BatteryNoteType;
+import fr.polytech.dsl.model.rhythm.BatteryPattern;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
 import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Instrument;
@@ -12,9 +13,11 @@ import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.NamedElement;
 import fr.polytech.dsl.model.rhythm.Note;
+import fr.polytech.dsl.model.rhythm.Pattern;
 import fr.polytech.dsl.model.rhythm.Piano;
 import fr.polytech.dsl.model.rhythm.PianoNote;
 import fr.polytech.dsl.model.rhythm.PianoNoteType;
+import fr.polytech.dsl.model.rhythm.PianoPattern;
 import fr.polytech.dsl.model.rhythm.RhythmFactory;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
@@ -125,6 +128,27 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * @generated
 	 */
 	private EClass compositeNoteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass patternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pianoPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass batteryPatternEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,6 +271,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 */
 	public EReference getMusic_Sections() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMusic_Patterns() {
+		return (EReference) musicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -452,6 +485,42 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPattern() {
+		return patternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPattern_Notes() {
+		return (EReference) patternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPianoPattern() {
+		return pianoPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBatteryPattern() {
+		return batteryPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBatteryNoteType() {
 		return batteryNoteTypeEEnum;
 	}
@@ -500,6 +569,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		musicEClass = createEClass(MUSIC);
 		createEReference(musicEClass, MUSIC__TRACKS);
 		createEReference(musicEClass, MUSIC__SECTIONS);
+		createEReference(musicEClass, MUSIC__PATTERNS);
 
 		trackEClass = createEClass(TRACK);
 		createEReference(trackEClass, TRACK__INSTRUMENT);
@@ -533,6 +603,13 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		compositeNoteEClass = createEClass(COMPOSITE_NOTE);
 		createEReference(compositeNoteEClass, COMPOSITE_NOTE__NOTES);
 		createEAttribute(compositeNoteEClass, COMPOSITE_NOTE__REPEATS);
+
+		patternEClass = createEClass(PATTERN);
+		createEReference(patternEClass, PATTERN__NOTES);
+
+		pianoPatternEClass = createEClass(PIANO_PATTERN);
+
+		batteryPatternEClass = createEClass(BATTERY_PATTERN);
 
 		// Create enums
 		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
@@ -574,10 +651,14 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		instrumentEClass.getESuperTypes().add(this.getNamedElement());
 		batteryEClass.getESuperTypes().add(this.getInstrument());
 		pianoEClass.getESuperTypes().add(this.getInstrument());
+		noteEClass.getESuperTypes().add(this.getNamedElement());
 		batteryNoteEClass.getESuperTypes().add(this.getNote());
 		emptyNoteEClass.getESuperTypes().add(this.getNote());
 		pianoNoteEClass.getESuperTypes().add(this.getNote());
 		compositeNoteEClass.getESuperTypes().add(this.getNote());
+		patternEClass.getESuperTypes().add(this.getNote());
+		pianoPatternEClass.getESuperTypes().add(this.getPattern());
+		batteryPatternEClass.getESuperTypes().add(this.getPattern());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -590,6 +671,9 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getMusic_Sections(), this.getSection(), null, "sections", null, 0, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMusic_Patterns(), this.getPattern(), null, "patterns", null, 0, -1, Music.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -628,7 +712,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		initEClass(layerEClass, Layer.class, "Layer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLayer_Notes(), this.getNote(), null, "notes", null, 0, -1, Layer.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(pianoNoteEClass, PianoNote.class, "PianoNote", !IS_ABSTRACT, !IS_INTERFACE,
@@ -645,6 +729,17 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompositeNote_Repeats(), ecorePackage.getEInt(), "repeats", null, 0, 1, CompositeNote.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(patternEClass, Pattern.class, "Pattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPattern_Notes(), this.getCompositeNote(), null, "notes", null, 0, 1, Pattern.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pianoPatternEClass, PianoPattern.class, "PianoPattern", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(batteryPatternEClass, BatteryPattern.class, "BatteryPattern", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(batteryNoteTypeEEnum, BatteryNoteType.class, "BatteryNoteType");

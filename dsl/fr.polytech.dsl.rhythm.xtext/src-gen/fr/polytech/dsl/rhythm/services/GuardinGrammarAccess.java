@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.EnumLiteralDeclaration;
 import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
@@ -50,6 +51,31 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_10_2_0 = (Keyword)cGroup_10_2.eContents().get(0);
 		private final Assignment cTracksAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
 		private final RuleCall cTracksTrackParserRuleCall_10_2_1_0 = (RuleCall)cTracksAssignment_10_2_1.eContents().get(0);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cPatternsKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_11_2_0 = (Keyword)cGroup_11_2.eContents().get(0);
+		private final Keyword cPianoKeyword_11_2_1 = (Keyword)cGroup_11_2.eContents().get(1);
+		private final Keyword cColonKeyword_11_2_2 = (Keyword)cGroup_11_2.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_11_2_3 = (Keyword)cGroup_11_2.eContents().get(3);
+		private final Assignment cPatternsAssignment_11_2_4 = (Assignment)cGroup_11_2.eContents().get(4);
+		private final RuleCall cPatternsPianoPatternParserRuleCall_11_2_4_0 = (RuleCall)cPatternsAssignment_11_2_4.eContents().get(0);
+		private final Group cGroup_11_2_5 = (Group)cGroup_11_2.eContents().get(5);
+		private final Keyword cHyphenMinusKeyword_11_2_5_0 = (Keyword)cGroup_11_2_5.eContents().get(0);
+		private final Assignment cPatternsAssignment_11_2_5_1 = (Assignment)cGroup_11_2_5.eContents().get(1);
+		private final RuleCall cPatternsPianoPatternParserRuleCall_11_2_5_1_0 = (RuleCall)cPatternsAssignment_11_2_5_1.eContents().get(0);
+		private final Group cGroup_11_3 = (Group)cGroup_11.eContents().get(3);
+		private final Keyword cHyphenMinusKeyword_11_3_0 = (Keyword)cGroup_11_3.eContents().get(0);
+		private final Keyword cBatteryKeyword_11_3_1 = (Keyword)cGroup_11_3.eContents().get(1);
+		private final Keyword cColonKeyword_11_3_2 = (Keyword)cGroup_11_3.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_11_3_3 = (Keyword)cGroup_11_3.eContents().get(3);
+		private final Assignment cPatternsAssignment_11_3_4 = (Assignment)cGroup_11_3.eContents().get(4);
+		private final RuleCall cPatternsBatteryPatternParserRuleCall_11_3_4_0 = (RuleCall)cPatternsAssignment_11_3_4.eContents().get(0);
+		private final Group cGroup_11_3_5 = (Group)cGroup_11_3.eContents().get(5);
+		private final Keyword cHyphenMinusKeyword_11_3_5_0 = (Keyword)cGroup_11_3_5.eContents().get(0);
+		private final Assignment cPatternsAssignment_11_3_5_1 = (Assignment)cGroup_11_3_5.eContents().get(1);
+		private final RuleCall cPatternsBatteryPatternParserRuleCall_11_3_5_1_0 = (RuleCall)cPatternsAssignment_11_3_5_1.eContents().get(0);
 		
 		//Music:
 		//	{Music}
@@ -57,11 +83,14 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//	"sections" ":"
 		//	sections+=Section
 		//	sections+=Section*
-		//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*);
+		//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*) ("patterns" ":" ("-" "piano" ":"
+		//	"-" patterns+=PianoPattern ("-" patterns+=PianoPattern)*)? ("-" "battery" ":"
+		//	"-" patterns+=BatteryPattern ("-" patterns+=BatteryPattern)*)?)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Music} "Music" name=EString ":" "sections" ":" sections+=Section sections+=Section* "tracks" ":" ("-" tracks+=Track
-		//("-" tracks+=Track)*)
+		//("-" tracks+=Track)*) ("patterns" ":" ("-" "piano" ":" "-" patterns+=PianoPattern ("-" patterns+=PianoPattern)*)? ("-"
+		//"battery" ":" "-" patterns+=BatteryPattern ("-" patterns+=BatteryPattern)*)?)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Music}
@@ -126,6 +155,82 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Track
 		public RuleCall getTracksTrackParserRuleCall_10_2_1_0() { return cTracksTrackParserRuleCall_10_2_1_0; }
+		
+		//("patterns" ":" ("-" "piano" ":" "-" patterns+=PianoPattern ("-" patterns+=PianoPattern)*)? ("-" "battery" ":" "-"
+		//patterns+=BatteryPattern ("-" patterns+=BatteryPattern)*)?)?
+		public Group getGroup_11() { return cGroup_11; }
+		
+		//"patterns"
+		public Keyword getPatternsKeyword_11_0() { return cPatternsKeyword_11_0; }
+		
+		//":"
+		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
+		
+		//("-" "piano" ":" "-" patterns+=PianoPattern ("-" patterns+=PianoPattern)*)?
+		public Group getGroup_11_2() { return cGroup_11_2; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_2_0() { return cHyphenMinusKeyword_11_2_0; }
+		
+		//"piano"
+		public Keyword getPianoKeyword_11_2_1() { return cPianoKeyword_11_2_1; }
+		
+		//":"
+		public Keyword getColonKeyword_11_2_2() { return cColonKeyword_11_2_2; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_2_3() { return cHyphenMinusKeyword_11_2_3; }
+		
+		//patterns+=PianoPattern
+		public Assignment getPatternsAssignment_11_2_4() { return cPatternsAssignment_11_2_4; }
+		
+		//PianoPattern
+		public RuleCall getPatternsPianoPatternParserRuleCall_11_2_4_0() { return cPatternsPianoPatternParserRuleCall_11_2_4_0; }
+		
+		//("-" patterns+=PianoPattern)*
+		public Group getGroup_11_2_5() { return cGroup_11_2_5; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_2_5_0() { return cHyphenMinusKeyword_11_2_5_0; }
+		
+		//patterns+=PianoPattern
+		public Assignment getPatternsAssignment_11_2_5_1() { return cPatternsAssignment_11_2_5_1; }
+		
+		//PianoPattern
+		public RuleCall getPatternsPianoPatternParserRuleCall_11_2_5_1_0() { return cPatternsPianoPatternParserRuleCall_11_2_5_1_0; }
+		
+		//("-" "battery" ":" "-" patterns+=BatteryPattern ("-" patterns+=BatteryPattern)*)?
+		public Group getGroup_11_3() { return cGroup_11_3; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_3_0() { return cHyphenMinusKeyword_11_3_0; }
+		
+		//"battery"
+		public Keyword getBatteryKeyword_11_3_1() { return cBatteryKeyword_11_3_1; }
+		
+		//":"
+		public Keyword getColonKeyword_11_3_2() { return cColonKeyword_11_3_2; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_3_3() { return cHyphenMinusKeyword_11_3_3; }
+		
+		//patterns+=BatteryPattern
+		public Assignment getPatternsAssignment_11_3_4() { return cPatternsAssignment_11_3_4; }
+		
+		//BatteryPattern
+		public RuleCall getPatternsBatteryPatternParserRuleCall_11_3_4_0() { return cPatternsBatteryPatternParserRuleCall_11_3_4_0; }
+		
+		//("-" patterns+=BatteryPattern)*
+		public Group getGroup_11_3_5() { return cGroup_11_3_5; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_3_5_0() { return cHyphenMinusKeyword_11_3_5_0; }
+		
+		//patterns+=BatteryPattern
+		public Assignment getPatternsAssignment_11_3_5_1() { return cPatternsAssignment_11_3_5_1; }
+		
+		//BatteryPattern
+		public RuleCall getPatternsBatteryPatternParserRuleCall_11_3_5_1_0() { return cPatternsBatteryPatternParserRuleCall_11_3_5_1_0; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Section");
@@ -330,13 +435,15 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNotesBatteryNoteParserRuleCall_2_0_0 = (RuleCall)cNotesAlternatives_2_0.eContents().get(0);
 		private final RuleCall cNotesEmptyNoteParserRuleCall_2_0_1 = (RuleCall)cNotesAlternatives_2_0.eContents().get(1);
 		private final RuleCall cNotesCompositeBatteryNoteParserRuleCall_2_0_2 = (RuleCall)cNotesAlternatives_2_0.eContents().get(2);
+		private final CrossReference cNotesBatteryPatternCrossReference_2_0_3 = (CrossReference)cNotesAlternatives_2_0.eContents().get(3);
+		private final RuleCall cNotesBatteryPatternEStringParserRuleCall_2_0_3_1 = (RuleCall)cNotesBatteryPatternCrossReference_2_0_3.eContents().get(1);
 		
 		//BatteryLayer Layer:
 		//	{Layer}
-		//	"layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote)+;
+		//	"layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote | [BatteryPattern|EString])+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Layer} "layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote)+
+		//{Layer} "layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote | [BatteryPattern|EString])+
 		public Group getGroup() { return cGroup; }
 		
 		//{Layer}
@@ -345,10 +452,10 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//"layer:"
 		public Keyword getLayerKeyword_1() { return cLayerKeyword_1; }
 		
-		//notes+=(BatteryNote | EmptyNote | CompositeBatteryNote)+
+		//notes+=(BatteryNote | EmptyNote | CompositeBatteryNote | [BatteryPattern|EString])+
 		public Assignment getNotesAssignment_2() { return cNotesAssignment_2; }
 		
-		//(BatteryNote | EmptyNote | CompositeBatteryNote)
+		//(BatteryNote | EmptyNote | CompositeBatteryNote | [BatteryPattern|EString])
 		public Alternatives getNotesAlternatives_2_0() { return cNotesAlternatives_2_0; }
 		
 		//BatteryNote
@@ -359,6 +466,12 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CompositeBatteryNote
 		public RuleCall getNotesCompositeBatteryNoteParserRuleCall_2_0_2() { return cNotesCompositeBatteryNoteParserRuleCall_2_0_2; }
+		
+		//[BatteryPattern|EString]
+		public CrossReference getNotesBatteryPatternCrossReference_2_0_3() { return cNotesBatteryPatternCrossReference_2_0_3; }
+		
+		//EString
+		public RuleCall getNotesBatteryPatternEStringParserRuleCall_2_0_3_1() { return cNotesBatteryPatternEStringParserRuleCall_2_0_3_1; }
 	}
 	public class BatteryNoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryNote");
@@ -606,6 +719,76 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getRepeatsEIntParserRuleCall_5_0() { return cRepeatsEIntParserRuleCall_5_0; }
 	}
+	public class PianoPatternElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.PianoPattern");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPianoPatternAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNotesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNotesCompositePianoNoteParserRuleCall_3_0 = (RuleCall)cNotesAssignment_3.eContents().get(0);
+		
+		//PianoPattern:
+		//	{PianoPattern} name=EString ":" notes+=CompositePianoNote+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PianoPattern} name=EString ":" notes+=CompositePianoNote+
+		public Group getGroup() { return cGroup; }
+		
+		//{PianoPattern}
+		public Action getPianoPatternAction_0() { return cPianoPatternAction_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//notes+=CompositePianoNote+
+		public Assignment getNotesAssignment_3() { return cNotesAssignment_3; }
+		
+		//CompositePianoNote
+		public RuleCall getNotesCompositePianoNoteParserRuleCall_3_0() { return cNotesCompositePianoNoteParserRuleCall_3_0; }
+	}
+	public class BatteryPatternElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryPattern");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBatteryPatternAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNotesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNotesCompositeBatteryNoteParserRuleCall_3_0 = (RuleCall)cNotesAssignment_3.eContents().get(0);
+		
+		//BatteryPattern:
+		//	{BatteryPattern} name=EString ":" notes+=CompositeBatteryNote+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BatteryPattern} name=EString ":" notes+=CompositeBatteryNote+
+		public Group getGroup() { return cGroup; }
+		
+		//{BatteryPattern}
+		public Action getBatteryPatternAction_0() { return cBatteryPatternAction_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//notes+=CompositeBatteryNote+
+		public Assignment getNotesAssignment_3() { return cNotesAssignment_3; }
+		
+		//CompositeBatteryNote
+		public RuleCall getNotesCompositeBatteryNoteParserRuleCall_3_0() { return cNotesCompositeBatteryNoteParserRuleCall_3_0; }
+	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.EInt");
 		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
@@ -797,6 +980,8 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	private final PianoNoteElements pPianoNote;
 	private final PianoNoteTypeElements ePianoNoteType;
 	private final CompositePianoNoteElements pCompositePianoNote;
+	private final PianoPatternElements pPianoPattern;
+	private final BatteryPatternElements pBatteryPattern;
 	private final EIntElements pEInt;
 	private final ERelativeIntElements pERelativeInt;
 	private final EStringElements pEString;
@@ -824,6 +1009,8 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPianoNote = new PianoNoteElements();
 		this.ePianoNoteType = new PianoNoteTypeElements();
 		this.pCompositePianoNote = new CompositePianoNoteElements();
+		this.pPianoPattern = new PianoPatternElements();
+		this.pBatteryPattern = new BatteryPatternElements();
 		this.pEInt = new EIntElements();
 		this.pERelativeInt = new ERelativeIntElements();
 		this.pEString = new EStringElements();
@@ -862,7 +1049,9 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	//	"sections" ":"
 	//	sections+=Section
 	//	sections+=Section*
-	//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*);
+	//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*) ("patterns" ":" ("-" "piano" ":"
+	//	"-" patterns+=PianoPattern ("-" patterns+=PianoPattern)*)? ("-" "battery" ":"
+	//	"-" patterns+=BatteryPattern ("-" patterns+=BatteryPattern)*)?)?;
 	public MusicElements getMusicAccess() {
 		return pMusic;
 	}
@@ -918,7 +1107,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//BatteryLayer Layer:
 	//	{Layer}
-	//	"layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote)+;
+	//	"layer:" notes+=(BatteryNote | EmptyNote | CompositeBatteryNote | [BatteryPattern|EString])+;
 	public BatteryLayerElements getBatteryLayerAccess() {
 		return pBatteryLayer;
 	}
@@ -1009,6 +1198,26 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCompositePianoNoteRule() {
 		return getCompositePianoNoteAccess().getRule();
+	}
+	
+	//PianoPattern:
+	//	{PianoPattern} name=EString ":" notes+=CompositePianoNote+;
+	public PianoPatternElements getPianoPatternAccess() {
+		return pPianoPattern;
+	}
+	
+	public ParserRule getPianoPatternRule() {
+		return getPianoPatternAccess().getRule();
+	}
+	
+	//BatteryPattern:
+	//	{BatteryPattern} name=EString ":" notes+=CompositeBatteryNote+;
+	public BatteryPatternElements getBatteryPatternAccess() {
+		return pBatteryPattern;
+	}
+	
+	public ParserRule getBatteryPatternRule() {
+		return getBatteryPatternAccess().getRule();
 	}
 	
 	///* ------------------------------------------- */ EInt ecore::EInt:

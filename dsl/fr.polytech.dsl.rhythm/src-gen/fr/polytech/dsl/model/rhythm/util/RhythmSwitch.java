@@ -135,6 +135,8 @@ public class RhythmSwitch<T> extends Switch<T> {
 			Note note = (Note) theEObject;
 			T result = caseNote(note);
 			if (result == null)
+				result = caseNamedElement(note);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -144,6 +146,8 @@ public class RhythmSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNote(batteryNote);
 			if (result == null)
+				result = caseNamedElement(batteryNote);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -152,6 +156,8 @@ public class RhythmSwitch<T> extends Switch<T> {
 			T result = caseEmptyNote(emptyNote);
 			if (result == null)
 				result = caseNote(emptyNote);
+			if (result == null)
+				result = caseNamedElement(emptyNote);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -169,6 +175,8 @@ public class RhythmSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNote(pianoNote);
 			if (result == null)
+				result = caseNamedElement(pianoNote);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -177,6 +185,45 @@ public class RhythmSwitch<T> extends Switch<T> {
 			T result = caseCompositeNote(compositeNote);
 			if (result == null)
 				result = caseNote(compositeNote);
+			if (result == null)
+				result = caseNamedElement(compositeNote);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmPackage.PATTERN: {
+			Pattern pattern = (Pattern) theEObject;
+			T result = casePattern(pattern);
+			if (result == null)
+				result = caseNote(pattern);
+			if (result == null)
+				result = caseNamedElement(pattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmPackage.PIANO_PATTERN: {
+			PianoPattern pianoPattern = (PianoPattern) theEObject;
+			T result = casePianoPattern(pianoPattern);
+			if (result == null)
+				result = casePattern(pianoPattern);
+			if (result == null)
+				result = caseNote(pianoPattern);
+			if (result == null)
+				result = caseNamedElement(pianoPattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmPackage.BATTERY_PATTERN: {
+			BatteryPattern batteryPattern = (BatteryPattern) theEObject;
+			T result = caseBatteryPattern(batteryPattern);
+			if (result == null)
+				result = casePattern(batteryPattern);
+			if (result == null)
+				result = caseNote(batteryPattern);
+			if (result == null)
+				result = caseNamedElement(batteryPattern);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -378,6 +425,51 @@ public class RhythmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompositeNote(CompositeNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePattern(Pattern object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Piano Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Piano Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePianoPattern(PianoPattern object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Battery Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Battery Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBatteryPattern(BatteryPattern object) {
 		return null;
 	}
 

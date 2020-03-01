@@ -132,6 +132,21 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter casePattern(Pattern object) {
+			return createPatternAdapter();
+		}
+
+		@Override
+		public Adapter casePianoPattern(PianoPattern object) {
+			return createPianoPatternAdapter();
+		}
+
+		@Override
+		public Adapter caseBatteryPattern(BatteryPattern object) {
+			return createBatteryPatternAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -329,6 +344,48 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompositeNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.Pattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.model.rhythm.Pattern
+	 * @generated
+	 */
+	public Adapter createPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.PianoPattern <em>Piano Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.model.rhythm.PianoPattern
+	 * @generated
+	 */
+	public Adapter createPianoPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.BatteryPattern <em>Battery Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.polytech.dsl.model.rhythm.BatteryPattern
+	 * @generated
+	 */
+	public Adapter createBatteryPatternAdapter() {
 		return null;
 	}
 

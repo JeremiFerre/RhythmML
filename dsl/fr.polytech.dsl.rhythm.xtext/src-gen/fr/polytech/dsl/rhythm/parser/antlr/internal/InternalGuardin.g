@@ -215,6 +215,140 @@ ruleMusic returns [EObject current=null]
 				)
 			)*
 		)
+		(
+			otherlv_14='patterns'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getMusicAccess().getPatternsKeyword_11_0());
+			}
+			otherlv_15=':'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getMusicAccess().getColonKeyword_11_1());
+			}
+			(
+				otherlv_16='-'
+				{
+					newLeafNode(otherlv_16, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_2_0());
+				}
+				otherlv_17='piano'
+				{
+					newLeafNode(otherlv_17, grammarAccess.getMusicAccess().getPianoKeyword_11_2_1());
+				}
+				otherlv_18=':'
+				{
+					newLeafNode(otherlv_18, grammarAccess.getMusicAccess().getColonKeyword_11_2_2());
+				}
+				otherlv_19='-'
+				{
+					newLeafNode(otherlv_19, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_2_3());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getMusicAccess().getPatternsPianoPatternParserRuleCall_11_2_4_0());
+						}
+						lv_patterns_20_0=rulePianoPattern
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getMusicRule());
+							}
+							add(
+								$current,
+								"patterns",
+								lv_patterns_20_0,
+								"fr.polytech.dsl.rhythm.Guardin.PianoPattern");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					otherlv_21='-'
+					{
+						newLeafNode(otherlv_21, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_2_5_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMusicAccess().getPatternsPianoPatternParserRuleCall_11_2_5_1_0());
+							}
+							lv_patterns_22_0=rulePianoPattern
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMusicRule());
+								}
+								add(
+									$current,
+									"patterns",
+									lv_patterns_22_0,
+									"fr.polytech.dsl.rhythm.Guardin.PianoPattern");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+			)?
+			(
+				otherlv_23='-'
+				{
+					newLeafNode(otherlv_23, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_3_0());
+				}
+				otherlv_24='battery'
+				{
+					newLeafNode(otherlv_24, grammarAccess.getMusicAccess().getBatteryKeyword_11_3_1());
+				}
+				otherlv_25=':'
+				{
+					newLeafNode(otherlv_25, grammarAccess.getMusicAccess().getColonKeyword_11_3_2());
+				}
+				otherlv_26='-'
+				{
+					newLeafNode(otherlv_26, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_3_3());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getMusicAccess().getPatternsBatteryPatternParserRuleCall_11_3_4_0());
+						}
+						lv_patterns_27_0=ruleBatteryPattern
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getMusicRule());
+							}
+							add(
+								$current,
+								"patterns",
+								lv_patterns_27_0,
+								"fr.polytech.dsl.rhythm.Guardin.BatteryPattern");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					otherlv_28='-'
+					{
+						newLeafNode(otherlv_28, grammarAccess.getMusicAccess().getHyphenMinusKeyword_11_3_5_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMusicAccess().getPatternsBatteryPatternParserRuleCall_11_3_5_1_0());
+							}
+							lv_patterns_29_0=ruleBatteryPattern
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMusicRule());
+								}
+								add(
+									$current,
+									"patterns",
+									lv_patterns_29_0,
+									"fr.polytech.dsl.rhythm.Guardin.BatteryPattern");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+			)?
+		)?
 	)
 ;
 
@@ -615,6 +749,19 @@ ruleBatteryLayer returns [EObject current=null]
 							"notes",
 							lv_notes_2_3,
 							"fr.polytech.dsl.rhythm.Guardin.CompositeBatteryNote");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBatteryLayerRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getBatteryLayerAccess().getNotesBatteryPatternCrossReference_2_0_3());
+					}
+					ruleEString
+					{
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1076,6 +1223,142 @@ ruleCompositePianoNote returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRulePianoPattern
+entryRulePianoPattern returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPianoPatternRule()); }
+	iv_rulePianoPattern=rulePianoPattern
+	{ $current=$iv_rulePianoPattern.current; }
+	EOF;
+
+// Rule PianoPattern
+rulePianoPattern returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPianoPatternAccess().getPianoPatternAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPianoPatternAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPianoPatternRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.polytech.dsl.rhythm.Guardin.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getPianoPatternAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPianoPatternAccess().getNotesCompositePianoNoteParserRuleCall_3_0());
+				}
+				lv_notes_3_0=ruleCompositePianoNote
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPianoPatternRule());
+					}
+					add(
+						$current,
+						"notes",
+						lv_notes_3_0,
+						"fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
+;
+
+// Entry rule entryRuleBatteryPattern
+entryRuleBatteryPattern returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBatteryPatternRule()); }
+	iv_ruleBatteryPattern=ruleBatteryPattern
+	{ $current=$iv_ruleBatteryPattern.current; }
+	EOF;
+
+// Rule BatteryPattern
+ruleBatteryPattern returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getBatteryPatternAccess().getBatteryPatternAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBatteryPatternAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBatteryPatternRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.polytech.dsl.rhythm.Guardin.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBatteryPatternAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBatteryPatternAccess().getNotesCompositeBatteryNoteParserRuleCall_3_0());
+				}
+				lv_notes_3_0=ruleCompositeBatteryNote
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBatteryPatternRule());
+					}
+					add(
+						$current,
+						"notes",
+						lv_notes_3_0,
+						"fr.polytech.dsl.rhythm.Guardin.CompositeBatteryNote");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
 	)
 ;
 

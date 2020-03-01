@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.Music#getTracks <em>Tracks</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.Music#getSections <em>Sections</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.Music#getPatterns <em>Patterns</em>}</li>
  * </ul>
  *
  * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMusic()
@@ -53,5 +54,21 @@ public interface Music extends NamedElement {
 	 * @generated
 	 */
 	EList<Section> getSections();
+
+	/**
+	 * Returns the value of the '<em><b>Patterns</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.polytech.dsl.model.rhythm.Pattern}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Patterns</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Patterns</em>' containment reference list.
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMusic_Patterns()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Pattern> getPatterns();
 
 } // Music

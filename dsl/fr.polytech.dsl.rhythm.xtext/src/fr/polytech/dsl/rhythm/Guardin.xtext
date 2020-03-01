@@ -14,6 +14,14 @@ Music returns Music:
 		"-" tracks+=Track
 	   ("-" tracks+=Track)*
 	)
+	("patterns" ":"
+		("-" "piano" ":"
+			"-" patterns+=PianoPattern
+			("-" patterns+=PianoPattern)*)?
+		("-" "battery" ":"
+			"-" patterns+=BatteryPattern
+			("-" patterns+=BatteryPattern)*)?
+	)?
 ;
 
 Section returns Section:
@@ -44,7 +52,7 @@ Battery returns Battery:
 
 BatteryLayer returns Layer:
 	{Layer}
-	"layer:" (notes+=(BatteryNote|EmptyNote|CompositeBatteryNote))+
+	"layer:" (notes+= [BatteryPattern|EString])+
 ;
 
 BatteryNote returns BatteryNote:
@@ -71,7 +79,7 @@ Piano returns Piano:
 
 PianoLayer returns Layer:
 	{Layer}
-	"layer:" (notes+=(PianoNote|EmptyNote|CompositePianoNote))+
+	"layer:" (notes+=(PianoNote | EmptyNote | CompositePianoNote))+
 ;
 
 PianoNote returns PianoNote:
@@ -87,6 +95,17 @@ CompositePianoNote returns CompositeNote:
 	{CompositeNote}
 	"(" (notes+=(PianoNote|EmptyNote))+ ")" "x" repeats=EInt
 ;
+
+PianoPattern returns PianoPattern:
+	{PianoPattern}
+	name=EString ":" notes=CompositePianoNote
+;
+
+BatteryPattern returns BatteryPattern:
+	{BatteryPattern}
+	name=EString ":" notes=CompositeBatteryNote
+;
+ 
 /* ------------------------------------------- */
 
 EInt returns ecore::EInt:

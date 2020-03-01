@@ -302,6 +302,52 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.model.rhythm.PianoPattern} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PianoPatternItemProvider pianoPatternItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.model.rhythm.PianoPattern}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPianoPatternAdapter() {
+		if (pianoPatternItemProvider == null) {
+			pianoPatternItemProvider = new PianoPatternItemProvider(this);
+		}
+
+		return pianoPatternItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.model.rhythm.BatteryPattern} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BatteryPatternItemProvider batteryPatternItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.model.rhythm.BatteryPattern}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBatteryPatternAdapter() {
+		if (batteryPatternItemProvider == null) {
+			batteryPatternItemProvider = new BatteryPatternItemProvider(this);
+		}
+
+		return batteryPatternItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +466,10 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 			pianoNoteItemProvider.dispose();
 		if (compositeNoteItemProvider != null)
 			compositeNoteItemProvider.dispose();
+		if (pianoPatternItemProvider != null)
+			pianoPatternItemProvider.dispose();
+		if (batteryPatternItemProvider != null)
+			batteryPatternItemProvider.dispose();
 	}
 
 }

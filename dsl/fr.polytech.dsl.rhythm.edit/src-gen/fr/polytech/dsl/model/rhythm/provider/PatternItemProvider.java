@@ -2,6 +2,10 @@
  */
 package fr.polytech.dsl.model.rhythm.provider;
 
+import fr.polytech.dsl.model.rhythm.Pattern;
+import fr.polytech.dsl.model.rhythm.RhythmFactory;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -11,24 +15,20 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import fr.polytech.dsl.model.rhythm.Music;
-import fr.polytech.dsl.model.rhythm.RhythmFactory;
-import fr.polytech.dsl.model.rhythm.RhythmPackage;
-
 /**
- * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.Music} object.
+ * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.Pattern} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MusicItemProvider extends NamedElementItemProvider {
+public class PatternItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MusicItemProvider(AdapterFactory adapterFactory) {
+	public PatternItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,9 +59,7 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RhythmPackage.Literals.MUSIC__TRACKS);
-			childrenFeatures.add(RhythmPackage.Literals.MUSIC__SECTIONS);
-			childrenFeatures.add(RhythmPackage.Literals.MUSIC__PATTERNS);
+			childrenFeatures.add(RhythmPackage.Literals.PATTERN__NOTES);
 		}
 		return childrenFeatures;
 	}
@@ -80,14 +78,14 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns Music.gif.
+	 * This returns Pattern.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Music"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Pattern"));
 	}
 
 	/**
@@ -108,9 +106,9 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Music) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Music_type")
-				: getString("_UI_Music_type") + " " + label;
+		String label = ((Pattern) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Pattern_type")
+				: getString("_UI_Pattern_type") + " " + label;
 	}
 
 	/**
@@ -124,10 +122,8 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Music.class)) {
-		case RhythmPackage.MUSIC__TRACKS:
-		case RhythmPackage.MUSIC__SECTIONS:
-		case RhythmPackage.MUSIC__PATTERNS:
+		switch (notification.getFeatureID(Pattern.class)) {
+		case RhythmPackage.PATTERN__NOTES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -145,17 +141,8 @@ public class MusicItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(RhythmPackage.Literals.MUSIC__TRACKS, RhythmFactory.eINSTANCE.createTrack()));
-
-		newChildDescriptors.add(
-				createChildParameter(RhythmPackage.Literals.MUSIC__SECTIONS, RhythmFactory.eINSTANCE.createSection()));
-
-		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.MUSIC__PATTERNS,
-				RhythmFactory.eINSTANCE.createPianoPattern()));
-
-		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.MUSIC__PATTERNS,
-				RhythmFactory.eINSTANCE.createBatteryPattern()));
+		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.PATTERN__NOTES,
+				RhythmFactory.eINSTANCE.createCompositeNote()));
 	}
 
 }

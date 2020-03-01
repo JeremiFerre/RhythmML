@@ -3,6 +3,7 @@
 package fr.polytech.dsl.model.rhythm.impl;
 
 import fr.polytech.dsl.model.rhythm.Music;
+import fr.polytech.dsl.model.rhythm.Pattern;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
 import fr.polytech.dsl.model.rhythm.Track;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getTracks <em>Tracks</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getPatterns <em>Patterns</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +55,16 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * @ordered
 	 */
 	protected EList<Section> sections;
+
+	/**
+	 * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatterns()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Pattern> patterns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +114,18 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Pattern> getPatterns() {
+		if (patterns == null) {
+			patterns = new EObjectContainmentEList<Pattern>(Pattern.class, this, RhythmPackage.MUSIC__PATTERNS);
+		}
+		return patterns;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -109,6 +133,8 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			return ((InternalEList<?>) getTracks()).basicRemove(otherEnd, msgs);
 		case RhythmPackage.MUSIC__SECTIONS:
 			return ((InternalEList<?>) getSections()).basicRemove(otherEnd, msgs);
+		case RhythmPackage.MUSIC__PATTERNS:
+			return ((InternalEList<?>) getPatterns()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,6 +151,8 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			return getTracks();
 		case RhythmPackage.MUSIC__SECTIONS:
 			return getSections();
+		case RhythmPackage.MUSIC__PATTERNS:
+			return getPatterns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +174,10 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			getSections().clear();
 			getSections().addAll((Collection<? extends Section>) newValue);
 			return;
+		case RhythmPackage.MUSIC__PATTERNS:
+			getPatterns().clear();
+			getPatterns().addAll((Collection<? extends Pattern>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +196,9 @@ public class MusicImpl extends NamedElementImpl implements Music {
 		case RhythmPackage.MUSIC__SECTIONS:
 			getSections().clear();
 			return;
+		case RhythmPackage.MUSIC__PATTERNS:
+			getPatterns().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,6 +215,8 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			return tracks != null && !tracks.isEmpty();
 		case RhythmPackage.MUSIC__SECTIONS:
 			return sections != null && !sections.isEmpty();
+		case RhythmPackage.MUSIC__PATTERNS:
+			return patterns != null && !patterns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
