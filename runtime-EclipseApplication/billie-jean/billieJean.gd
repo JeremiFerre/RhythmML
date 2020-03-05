@@ -1,3 +1,4 @@
+CustomSoundBank basePath="/Users/jeremiferre/Documents/Personnel/SI5/S9-2/DSL/RhythmML/RhythmML/midi/soundBank"
 Music BillieJean:
 	sections:
 		section1:

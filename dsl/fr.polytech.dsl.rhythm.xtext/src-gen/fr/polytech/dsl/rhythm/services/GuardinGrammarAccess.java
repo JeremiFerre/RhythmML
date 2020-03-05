@@ -31,29 +31,34 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Music");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMusicAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMusicKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cSectionsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cSectionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cSectionsSectionParserRuleCall_6_0 = (RuleCall)cSectionsAssignment_6.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCustomSoundBankKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cBasePathKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cSoundBankPathAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cSoundBankPathEStringParserRuleCall_1_2_0 = (RuleCall)cSoundBankPathAssignment_1_2.eContents().get(0);
+		private final Keyword cMusicKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSectionsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cSectionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cSectionsSectionParserRuleCall_7_0 = (RuleCall)cSectionsAssignment_7.eContents().get(0);
-		private final Keyword cTracksKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cHyphenMinusKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cTracksAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cTracksTrackParserRuleCall_10_1_0 = (RuleCall)cTracksAssignment_10_1.eContents().get(0);
-		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_10_2_0 = (Keyword)cGroup_10_2.eContents().get(0);
-		private final Assignment cTracksAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
-		private final RuleCall cTracksTrackParserRuleCall_10_2_1_0 = (RuleCall)cTracksAssignment_10_2_1.eContents().get(0);
+		private final Assignment cSectionsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cSectionsSectionParserRuleCall_8_0 = (RuleCall)cSectionsAssignment_8.eContents().get(0);
+		private final Keyword cTracksKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cHyphenMinusKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cTracksAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final RuleCall cTracksTrackParserRuleCall_11_1_0 = (RuleCall)cTracksAssignment_11_1.eContents().get(0);
+		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_11_2_0 = (Keyword)cGroup_11_2.eContents().get(0);
+		private final Assignment cTracksAssignment_11_2_1 = (Assignment)cGroup_11_2.eContents().get(1);
+		private final RuleCall cTracksTrackParserRuleCall_11_2_1_0 = (RuleCall)cTracksAssignment_11_2_1.eContents().get(0);
 		
 		//Music:
-		//	{Music}
+		//	{Music} ("CustomSoundBank" "basePath=" soundBankPath=EString)?
 		//	"Music" name=EString ":"
 		//	"sections" ":"
 		//	sections+=Section
@@ -61,72 +66,87 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//	"tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Music} "Music" name=EString ":" "sections" ":" sections+=Section sections+=Section* "tracks" ":" ("-" tracks+=Track
-		//("-" tracks+=Track)*)
+		//{Music} ("CustomSoundBank" "basePath=" soundBankPath=EString)? "Music" name=EString ":" "sections" ":" sections+=Section
+		//sections+=Section* "tracks" ":" ("-" tracks+=Track ("-" tracks+=Track)*)
 		public Group getGroup() { return cGroup; }
 		
 		//{Music}
 		public Action getMusicAction_0() { return cMusicAction_0; }
 		
-		//"Music"
-		public Keyword getMusicKeyword_1() { return cMusicKeyword_1; }
+		//("CustomSoundBank" "basePath=" soundBankPath=EString)?
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//"CustomSoundBank"
+		public Keyword getCustomSoundBankKeyword_1_0() { return cCustomSoundBankKeyword_1_0; }
+		
+		//"basePath="
+		public Keyword getBasePathKeyword_1_1() { return cBasePathKeyword_1_1; }
+		
+		//soundBankPath=EString
+		public Assignment getSoundBankPathAssignment_1_2() { return cSoundBankPathAssignment_1_2; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		public RuleCall getSoundBankPathEStringParserRuleCall_1_2_0() { return cSoundBankPathEStringParserRuleCall_1_2_0; }
+		
+		//"Music"
+		public Keyword getMusicKeyword_2() { return cMusicKeyword_2; }
+		
+		//name=EString
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//":"
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
 		//"sections"
-		public Keyword getSectionsKeyword_4() { return cSectionsKeyword_4; }
+		public Keyword getSectionsKeyword_5() { return cSectionsKeyword_5; }
 		
 		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//sections+=Section
-		public Assignment getSectionsAssignment_6() { return cSectionsAssignment_6; }
-		
-		//Section
-		public RuleCall getSectionsSectionParserRuleCall_6_0() { return cSectionsSectionParserRuleCall_6_0; }
-		
-		//sections+=Section*
 		public Assignment getSectionsAssignment_7() { return cSectionsAssignment_7; }
 		
 		//Section
 		public RuleCall getSectionsSectionParserRuleCall_7_0() { return cSectionsSectionParserRuleCall_7_0; }
 		
+		//sections+=Section*
+		public Assignment getSectionsAssignment_8() { return cSectionsAssignment_8; }
+		
+		//Section
+		public RuleCall getSectionsSectionParserRuleCall_8_0() { return cSectionsSectionParserRuleCall_8_0; }
+		
 		//"tracks"
-		public Keyword getTracksKeyword_8() { return cTracksKeyword_8; }
+		public Keyword getTracksKeyword_9() { return cTracksKeyword_9; }
 		
 		//":"
-		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
 		//"-" tracks+=Track ("-" tracks+=Track)*
-		public Group getGroup_10() { return cGroup_10; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//"-"
-		public Keyword getHyphenMinusKeyword_10_0() { return cHyphenMinusKeyword_10_0; }
+		public Keyword getHyphenMinusKeyword_11_0() { return cHyphenMinusKeyword_11_0; }
 		
 		//tracks+=Track
-		public Assignment getTracksAssignment_10_1() { return cTracksAssignment_10_1; }
+		public Assignment getTracksAssignment_11_1() { return cTracksAssignment_11_1; }
 		
 		//Track
-		public RuleCall getTracksTrackParserRuleCall_10_1_0() { return cTracksTrackParserRuleCall_10_1_0; }
+		public RuleCall getTracksTrackParserRuleCall_11_1_0() { return cTracksTrackParserRuleCall_11_1_0; }
 		
 		//("-" tracks+=Track)*
-		public Group getGroup_10_2() { return cGroup_10_2; }
+		public Group getGroup_11_2() { return cGroup_11_2; }
 		
 		//"-"
-		public Keyword getHyphenMinusKeyword_10_2_0() { return cHyphenMinusKeyword_10_2_0; }
+		public Keyword getHyphenMinusKeyword_11_2_0() { return cHyphenMinusKeyword_11_2_0; }
 		
 		//tracks+=Track
-		public Assignment getTracksAssignment_10_2_1() { return cTracksAssignment_10_2_1; }
+		public Assignment getTracksAssignment_11_2_1() { return cTracksAssignment_11_2_1; }
 		
 		//Track
-		public RuleCall getTracksTrackParserRuleCall_10_2_1_0() { return cTracksTrackParserRuleCall_10_2_1_0; }
+		public RuleCall getTracksTrackParserRuleCall_11_2_1_0() { return cTracksTrackParserRuleCall_11_2_1_0; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Section");
@@ -996,7 +1016,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Music:
-	//	{Music}
+	//	{Music} ("CustomSoundBank" "basePath=" soundBankPath=EString)?
 	//	"Music" name=EString ":"
 	//	"sections" ":"
 	//	sections+=Section

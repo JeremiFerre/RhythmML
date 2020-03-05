@@ -9,6 +9,7 @@ import fr.polytech.dsl.model.rhythm.Track;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getTracks <em>Tracks</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MusicImpl#getSoundBankPath <em>Sound Bank Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +56,26 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * @ordered
 	 */
 	protected EList<Section> sections;
+
+	/**
+	 * The default value of the '{@link #getSoundBankPath() <em>Sound Bank Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoundBankPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOUND_BANK_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSoundBankPath() <em>Sound Bank Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoundBankPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String soundBankPath = SOUND_BANK_PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +125,28 @@ public class MusicImpl extends NamedElementImpl implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSoundBankPath() {
+		return soundBankPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSoundBankPath(String newSoundBankPath) {
+		String oldSoundBankPath = soundBankPath;
+		soundBankPath = newSoundBankPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MUSIC__SOUND_BANK_PATH,
+					oldSoundBankPath, soundBankPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -125,6 +170,8 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			return getTracks();
 		case RhythmPackage.MUSIC__SECTIONS:
 			return getSections();
+		case RhythmPackage.MUSIC__SOUND_BANK_PATH:
+			return getSoundBankPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +193,9 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			getSections().clear();
 			getSections().addAll((Collection<? extends Section>) newValue);
 			return;
+		case RhythmPackage.MUSIC__SOUND_BANK_PATH:
+			setSoundBankPath((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +214,9 @@ public class MusicImpl extends NamedElementImpl implements Music {
 		case RhythmPackage.MUSIC__SECTIONS:
 			getSections().clear();
 			return;
+		case RhythmPackage.MUSIC__SOUND_BANK_PATH:
+			setSoundBankPath(SOUND_BANK_PATH_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,8 +233,28 @@ public class MusicImpl extends NamedElementImpl implements Music {
 			return tracks != null && !tracks.isEmpty();
 		case RhythmPackage.MUSIC__SECTIONS:
 			return sections != null && !sections.isEmpty();
+		case RhythmPackage.MUSIC__SOUND_BANK_PATH:
+			return SOUND_BANK_PATH_EDEFAULT == null ? soundBankPath != null
+					: !SOUND_BANK_PATH_EDEFAULT.equals(soundBankPath);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (soundBankPath: ");
+		result.append(soundBankPath);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MusicImpl

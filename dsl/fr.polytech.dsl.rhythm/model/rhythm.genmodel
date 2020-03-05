@@ -33,6 +33,7 @@
     <genClasses ecoreClass="rhythm.ecore#//Music">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Music/tracks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Music/sections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//Music/soundBankPath"/>
     </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//Track">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythm.ecore#//Track/instrument"/>

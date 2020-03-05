@@ -1,11 +1,15 @@
 package fr.polytech.dsl.rhythm.k3;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiUnavailableException;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -48,8 +52,11 @@ public class MappingUtils {
 		return sum;
 	}
 	
-	public static void runMusic(Music music) {
+	public static void runMusic(Music music) throws IOException, MidiUnavailableException, InvalidMidiDataException {
 		JFugueWrapper jFugueWrapper = new JFugueWrapper();
+		if (music.getSoundBankPath() != null && !music.getSoundBankPath().equals("")) {
+			jFugueWrapper.setBasePathLib(music.getSoundBankPath());
+		}
 		
 		music.getSections().forEach(section -> 
 			jFugueWrapper.addSection(new SectionBuilder()

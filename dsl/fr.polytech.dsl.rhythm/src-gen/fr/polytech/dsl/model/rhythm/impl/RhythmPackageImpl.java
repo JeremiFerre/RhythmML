@@ -262,6 +262,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMusic_SoundBankPath() {
+		return (EAttribute) musicEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTrack() {
 		return trackEClass;
 	}
@@ -544,6 +553,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		musicEClass = createEClass(MUSIC);
 		createEReference(musicEClass, MUSIC__TRACKS);
 		createEReference(musicEClass, MUSIC__SECTIONS);
+		createEAttribute(musicEClass, MUSIC__SOUND_BANK_PATH);
 
 		trackEClass = createEClass(TRACK);
 		createEReference(trackEClass, TRACK__INSTRUMENT);
@@ -641,6 +651,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		initEReference(getMusic_Sections(), this.getSection(), null, "sections", null, 0, -1, Music.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMusic_SoundBankPath(), ecorePackage.getEString(), "soundBankPath", null, 0, 1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackEClass, Track.class, "Track", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrack_Instrument(), this.getInstrument(), null, "instrument", null, 1, 1, Track.class,

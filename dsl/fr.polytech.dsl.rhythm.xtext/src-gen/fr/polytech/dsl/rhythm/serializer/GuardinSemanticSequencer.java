@@ -185,7 +185,14 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Music returns Music
 	 *
 	 * Constraint:
-	 *     (name=EString sections+=Section sections+=Section* tracks+=Track tracks+=Track*)
+	 *     (
+	 *         soundBankPath=EString? 
+	 *         name=EString 
+	 *         sections+=Section 
+	 *         sections+=Section* 
+	 *         tracks+=Track 
+	 *         tracks+=Track*
+	 *     )
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

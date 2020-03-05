@@ -132,13 +132,22 @@ public interface RhythmPackage extends EPackage {
 	int MUSIC__SECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Sound Bank Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC__SOUND_BANK_PATH = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Music</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MUSIC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Music</em>' class.
@@ -766,6 +775,17 @@ public interface RhythmPackage extends EPackage {
 	EReference getMusic_Sections();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.Music#getSoundBankPath <em>Sound Bank Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sound Bank Path</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Music#getSoundBankPath()
+	 * @see #getMusic()
+	 * @generated
+	 */
+	EAttribute getMusic_SoundBankPath();
+
+	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.Track <em>Track</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1125,6 +1145,14 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MUSIC__SECTIONS = eINSTANCE.getMusic_Sections();
+
+		/**
+		 * The meta object literal for the '<em><b>Sound Bank Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MUSIC__SOUND_BANK_PATH = eINSTANCE.getMusic_SoundBankPath();
 
 		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.TrackImpl <em>Track</em>}' class.
