@@ -61,7 +61,7 @@ public class MappingUtils {
 		music.getSections().forEach(section -> 
 			jFugueWrapper.addSection(new SectionBuilder()
 				.setNbrNote(section.getBars() * section.getSignature())
-				.setTempo(section.getTempo())
+				.setTempo(section.getTempo() * 2)
 				.build())
 		);
 		
@@ -171,6 +171,15 @@ public class MappingUtils {
 		}
 		
 		if (instrument instanceof Piano) {
+			Piano piano = ((Piano) instrument);
+			if (piano.getOther() != null && !piano.getOther().equals("")) {
+				return piano.getOther();
+			}
+			
+			if (piano.getInstrument() != null) {
+				return piano.getInstrument().toString();
+			}
+			
 			return "Piano";
 		}
 		
@@ -196,6 +205,8 @@ public class MappingUtils {
 		String res = note.getNoteType().toString();
 		if (note.getOctaveOffset() != 0) {
 			res += (5 + note.getOctaveOffset());
+		} else if (note.getOctaveAbsolute() != 5) {
+			res += note.getOctaveAbsolute();
 		}
 		return res;
 	}

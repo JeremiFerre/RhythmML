@@ -416,13 +416,31 @@ public interface RhythmPackage extends EPackage {
 	int PIANO__SECTIONS = INSTRUMENT__SECTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Instrument</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO__INSTRUMENT = INSTRUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Other</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO__OTHER = INSTRUMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Piano</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIANO_FEATURE_COUNT = INSTRUMENT_FEATURE_COUNT + 0;
+	int PIANO_FEATURE_COUNT = INSTRUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Piano</em>' class.
@@ -592,13 +610,22 @@ public interface RhythmPackage extends EPackage {
 	int PIANO_NOTE__OCTAVE_OFFSET = NOTE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Octave Absolute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_NOTE__OCTAVE_ABSOLUTE = NOTE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Piano Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIANO_NOTE_FEATURE_COUNT = NOTE_FEATURE_COUNT + 2;
+	int PIANO_NOTE_FEATURE_COUNT = NOTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Piano Note</em>' class.
@@ -720,6 +747,16 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int PIANO_NOTE_TYPE = 15;
+
+	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.Instruments <em>Instruments</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.Instruments
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getInstruments()
+	 * @generated
+	 */
+	int INSTRUMENTS = 16;
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.NamedElement <em>Named Element</em>}'.
@@ -902,6 +939,28 @@ public interface RhythmPackage extends EPackage {
 	EClass getPiano();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.Piano#getInstrument <em>Instrument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Instrument</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Piano#getInstrument()
+	 * @see #getPiano()
+	 * @generated
+	 */
+	EAttribute getPiano_Instrument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.Piano#getOther <em>Other</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Other</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Piano#getOther()
+	 * @see #getPiano()
+	 * @generated
+	 */
+	EAttribute getPiano_Other();
+
+	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.Note <em>Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -996,6 +1055,17 @@ public interface RhythmPackage extends EPackage {
 	EAttribute getPianoNote_OctaveOffset();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute <em>Octave Absolute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Octave Absolute</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute()
+	 * @see #getPianoNote()
+	 * @generated
+	 */
+	EAttribute getPianoNote_OctaveAbsolute();
+
+	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.CompositeNote <em>Composite Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1078,6 +1148,16 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getPianoNoteType();
+
+	/**
+	 * Returns the meta object for enum '{@link fr.polytech.dsl.model.rhythm.Instruments <em>Instruments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Instruments</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Instruments
+	 * @generated
+	 */
+	EEnum getInstruments();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1253,6 +1333,22 @@ public interface RhythmPackage extends EPackage {
 		EClass PIANO = eINSTANCE.getPiano();
 
 		/**
+		 * The meta object literal for the '<em><b>Instrument</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIANO__INSTRUMENT = eINSTANCE.getPiano_Instrument();
+
+		/**
+		 * The meta object literal for the '<em><b>Other</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIANO__OTHER = eINSTANCE.getPiano_Other();
+
+		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.Note <em>Note</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1335,6 +1431,14 @@ public interface RhythmPackage extends EPackage {
 		EAttribute PIANO_NOTE__OCTAVE_OFFSET = eINSTANCE.getPianoNote_OctaveOffset();
 
 		/**
+		 * The meta object literal for the '<em><b>Octave Absolute</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIANO_NOTE__OCTAVE_ABSOLUTE = eINSTANCE.getPianoNote_OctaveAbsolute();
+
+		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.CompositeNoteImpl <em>Composite Note</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1405,6 +1509,16 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PIANO_NOTE_TYPE = eINSTANCE.getPianoNoteType();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.Instruments <em>Instruments</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.Instruments
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getInstruments()
+		 * @generated
+		 */
+		EEnum INSTRUMENTS = eINSTANCE.getInstruments();
 
 	}
 

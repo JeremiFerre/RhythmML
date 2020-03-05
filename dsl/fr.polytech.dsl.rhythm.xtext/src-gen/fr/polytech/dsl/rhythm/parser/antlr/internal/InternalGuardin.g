@@ -627,9 +627,9 @@ ruleSectionBatteryLayer returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='debut_section'
+		otherlv_1='begin_section'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSectionBatteryLayerAccess().getDebut_sectionKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getSectionBatteryLayerAccess().getBegin_sectionKeyword_1());
 		}
 		(
 			(
@@ -666,9 +666,9 @@ ruleSectionBatteryLayer returns [EObject current=null]
 				}
 			)
 		)+
-		otherlv_4='fin_section'
+		otherlv_4='end_section'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSectionBatteryLayerAccess().getFin_sectionKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getSectionBatteryLayerAccess().getEnd_sectionKeyword_4());
 		}
 	)
 ;
@@ -918,14 +918,62 @@ rulePiano returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='piano'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getPianoAccess().getPianoKeyword_1());
-		}
 		(
-			otherlv_2=':'
+			otherlv_1='piano'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getPianoAccess().getColonKeyword_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getPianoAccess().getPianoKeyword_1_0());
+			}
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0());
+					}
+					lv_instrument_2_0=ruleInstruments
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPianoRule());
+						}
+						set(
+							$current,
+							"instrument",
+							lv_instrument_2_0,
+							"fr.polytech.dsl.rhythm.Guardin.Instruments");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				otherlv_3='other:'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getPianoAccess().getOtherKeyword_1_2_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0());
+						}
+						lv_other_4_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPianoRule());
+							}
+							set(
+								$current,
+								"other",
+								lv_other_4_0,
+								"fr.polytech.dsl.rhythm.Guardin.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+		)
+		(
+			otherlv_5=':'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPianoAccess().getColonKeyword_2_0());
 			}
 			    |
 			(
@@ -934,7 +982,7 @@ rulePiano returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getPianoAccess().getNameEStringParserRuleCall_2_1_0_0());
 						}
-						lv_name_3_0=ruleEString
+						lv_name_6_0=ruleEString
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPianoRule());
@@ -942,15 +990,15 @@ rulePiano returns [EObject current=null]
 							set(
 								$current,
 								"name",
-								lv_name_3_0,
+								lv_name_6_0,
 								"fr.polytech.dsl.rhythm.Guardin.EString");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-				otherlv_4=':'
+				otherlv_7=':'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getPianoAccess().getColonKeyword_2_1_1());
+					newLeafNode(otherlv_7, grammarAccess.getPianoAccess().getColonKeyword_2_1_1());
 				}
 			)
 		)
@@ -960,7 +1008,7 @@ rulePiano returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getPianoAccess().getSectionsSectionPianoLayerParserRuleCall_3_0_0());
 					}
-					lv_sections_5_0=ruleSectionPianoLayer
+					lv_sections_8_0=ruleSectionPianoLayer
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPianoRule());
@@ -968,7 +1016,7 @@ rulePiano returns [EObject current=null]
 						add(
 							$current,
 							"sections",
-							lv_sections_5_0,
+							lv_sections_8_0,
 							"fr.polytech.dsl.rhythm.Guardin.SectionPianoLayer");
 						afterParserOrEnumRuleCall();
 					}
@@ -980,7 +1028,7 @@ rulePiano returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getPianoAccess().getLayersPianoLayerParserRuleCall_3_1_0());
 					}
-					lv_layers_6_0=rulePianoLayer
+					lv_layers_9_0=rulePianoLayer
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPianoRule());
@@ -988,7 +1036,7 @@ rulePiano returns [EObject current=null]
 						add(
 							$current,
 							"layers",
-							lv_layers_6_0,
+							lv_layers_9_0,
 							"fr.polytech.dsl.rhythm.Guardin.PianoLayer");
 						afterParserOrEnumRuleCall();
 					}
@@ -1021,9 +1069,9 @@ ruleSectionPianoLayer returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='debut_section'
+		otherlv_1='begin_section'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSectionPianoLayerAccess().getDebut_sectionKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1());
 		}
 		(
 			(
@@ -1060,9 +1108,9 @@ ruleSectionPianoLayer returns [EObject current=null]
 				}
 			)
 		)+
-		otherlv_4='fin_section'
+		otherlv_4='end_section'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSectionPianoLayerAccess().getFin_sectionKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4());
 		}
 	)
 ;
@@ -1193,27 +1241,55 @@ rulePianoNote returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2='/'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0());
-			}
 			(
+				otherlv_2='/'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_1_0());
-					}
-					lv_octaveOffset_3_0=ruleERelativeInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0());
 						}
-						set(
-							$current,
-							"octaveOffset",
-							lv_octaveOffset_3_0,
-							"fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
-						afterParserOrEnumRuleCall();
-					}
+						lv_octaveOffset_3_0=ruleERelativeInt
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+							}
+							set(
+								$current,
+								"octaveOffset",
+								lv_octaveOffset_3_0,
+								"fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+			    |
+			(
+				otherlv_4='|'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_2_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_2_1_1_0());
+						}
+						lv_octaveAbsolute_5_0=ruleEInt
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+							}
+							set(
+								$current,
+								"octaveAbsolute",
+								lv_octaveAbsolute_5_0,
+								"fr.polytech.dsl.rhythm.Guardin.EInt");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
 			)
 		)?
@@ -1459,6 +1535,97 @@ ruleBatteryNoteType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_5, grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5());
+			}
+		)
+	)
+;
+
+// Rule Instruments
+ruleInstruments returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='ACOUSTIC_BASS'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getACOUSTIC_BASSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getInstrumentsAccess().getACOUSTIC_BASSEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='CHURCH_ORGAN'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getCHURCH_ORGANEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getInstrumentsAccess().getCHURCH_ORGANEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='CLAVINET'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getCLAVINETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getInstrumentsAccess().getCLAVINETEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='GUITAR'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getGUITAREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getInstrumentsAccess().getGUITAREnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='HARPSICHORD'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getHARPSICHORDEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getInstrumentsAccess().getHARPSICHORDEnumLiteralDeclaration_4());
+			}
+		)
+		    |
+		(
+			enumLiteral_5='MUSIC_BOX'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getMUSIC_BOXEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getInstrumentsAccess().getMUSIC_BOXEnumLiteralDeclaration_5());
+			}
+		)
+		    |
+		(
+			enumLiteral_6='OCARINA'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getOCARINAEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getInstrumentsAccess().getOCARINAEnumLiteralDeclaration_6());
+			}
+		)
+		    |
+		(
+			enumLiteral_7='PIANO'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getPIANOEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_7, grammarAccess.getInstrumentsAccess().getPIANOEnumLiteralDeclaration_7());
+			}
+		)
+		    |
+		(
+			enumLiteral_8='SYNTH_BASS_1'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getSYNTH_BASS_1EnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_8, grammarAccess.getInstrumentsAccess().getSYNTH_BASS_1EnumLiteralDeclaration_8());
+			}
+		)
+		    |
+		(
+			enumLiteral_9='VIOLIN'
+			{
+				$current = grammarAccess.getInstrumentsAccess().getVIOLINEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_9, grammarAccess.getInstrumentsAccess().getVIOLINEnumLiteralDeclaration_9());
 			}
 		)
 	)

@@ -27,7 +27,6 @@ public class JFugueWrapper {
         player = new Player();
         this.sections = new ArrayList<>();
         this.tracks = new ArrayList<>();
-
     }
 
     public void run() {

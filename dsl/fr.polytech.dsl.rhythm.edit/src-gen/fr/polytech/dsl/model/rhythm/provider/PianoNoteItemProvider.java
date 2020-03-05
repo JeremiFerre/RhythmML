@@ -54,6 +54,7 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 
 			addNoteTypePropertyDescriptor(object);
 			addOctaveOffsetPropertyDescriptor(object);
+			addOctaveAbsolutePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,22 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 						getString("_UI_PropertyDescriptor_description", "_UI_PianoNote_octaveOffset_feature",
 								"_UI_PianoNote_type"),
 						RhythmPackage.Literals.PIANO_NOTE__OCTAVE_OFFSET, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Octave Absolute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOctaveAbsolutePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PianoNote_octaveAbsolute_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PianoNote_octaveAbsolute_feature",
+								"_UI_PianoNote_type"),
+						RhythmPackage.Literals.PIANO_NOTE__OCTAVE_ABSOLUTE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -139,6 +156,7 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 		switch (notification.getFeatureID(PianoNote.class)) {
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

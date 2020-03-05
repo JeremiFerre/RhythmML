@@ -13,6 +13,7 @@ package fr.polytech.dsl.model.rhythm;
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getNoteType <em>Note Type</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute <em>Octave Absolute</em>}</li>
  * </ul>
  *
  * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote()
@@ -74,5 +75,32 @@ public interface PianoNote extends Note {
 	 * @generated
 	 */
 	void setOctaveOffset(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Octave Absolute</b></em>' attribute.
+	 * The default value is <code>"5"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Octave Absolute</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Octave Absolute</em>' attribute.
+	 * @see #setOctaveAbsolute(int)
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote_OctaveAbsolute()
+	 * @model default="5"
+	 * @generated
+	 */
+	int getOctaveAbsolute();
+
+	/**
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute <em>Octave Absolute</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Octave Absolute</em>' attribute.
+	 * @see #getOctaveAbsolute()
+	 * @generated
+	 */
+	void setOctaveAbsolute(int value);
 
 } // PianoNote

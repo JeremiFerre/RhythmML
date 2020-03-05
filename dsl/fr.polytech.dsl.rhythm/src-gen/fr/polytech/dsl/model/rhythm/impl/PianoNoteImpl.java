@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getNoteType <em>Note Type</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getOctaveOffset <em>Octave Offset</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getOctaveAbsolute <em>Octave Absolute</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * @ordered
 	 */
 	protected int octaveOffset = OCTAVE_OFFSET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOctaveAbsolute() <em>Octave Absolute</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOctaveAbsolute()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int OCTAVE_ABSOLUTE_EDEFAULT = 5;
+
+	/**
+	 * The cached value of the '{@link #getOctaveAbsolute() <em>Octave Absolute</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOctaveAbsolute()
+	 * @generated
+	 * @ordered
+	 */
+	protected int octaveAbsolute = OCTAVE_ABSOLUTE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,6 +157,28 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getOctaveAbsolute() {
+		return octaveAbsolute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOctaveAbsolute(int newOctaveAbsolute) {
+		int oldOctaveAbsolute = octaveAbsolute;
+		octaveAbsolute = newOctaveAbsolute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE,
+					oldOctaveAbsolute, octaveAbsolute));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -143,6 +186,8 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 			return getNoteType();
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
 			return getOctaveOffset();
+		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+			return getOctaveAbsolute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,6 +205,9 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 			return;
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
 			setOctaveOffset((Integer) newValue);
+			return;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+			setOctaveAbsolute((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,6 +227,9 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
 			setOctaveOffset(OCTAVE_OFFSET_EDEFAULT);
 			return;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+			setOctaveAbsolute(OCTAVE_ABSOLUTE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,6 +246,8 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 			return noteType != NOTE_TYPE_EDEFAULT;
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
 			return octaveOffset != OCTAVE_OFFSET_EDEFAULT;
+		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+			return octaveAbsolute != OCTAVE_ABSOLUTE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,6 +267,8 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		result.append(noteType);
 		result.append(", octaveOffset: ");
 		result.append(octaveOffset);
+		result.append(", octaveAbsolute: ");
+		result.append(octaveAbsolute);
 		result.append(')');
 		return result.toString();
 	}

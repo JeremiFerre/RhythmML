@@ -361,29 +361,29 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.SectionBatteryLayer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSectionLayerAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDebut_sectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cBegin_sectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSectionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cSectionSectionCrossReference_2_0 = (CrossReference)cSectionAssignment_2.eContents().get(0);
 		private final RuleCall cSectionSectionEStringParserRuleCall_2_0_1 = (RuleCall)cSectionSectionCrossReference_2_0.eContents().get(1);
 		private final Assignment cLayersAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLayersBatteryLayerParserRuleCall_3_0 = (RuleCall)cLayersAssignment_3.eContents().get(0);
-		private final Keyword cFin_sectionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cEnd_sectionKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SectionBatteryLayer SectionLayer:
 		//	{SectionLayer}
-		//	"debut_section"
+		//	"begin_section"
 		//	section=[Section|EString] layers+=BatteryLayer+
-		//	"fin_section";
+		//	"end_section";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SectionLayer} "debut_section" section=[Section|EString] layers+=BatteryLayer+ "fin_section"
+		//{SectionLayer} "begin_section" section=[Section|EString] layers+=BatteryLayer+ "end_section"
 		public Group getGroup() { return cGroup; }
 		
 		//{SectionLayer}
 		public Action getSectionLayerAction_0() { return cSectionLayerAction_0; }
 		
-		//"debut_section"
-		public Keyword getDebut_sectionKeyword_1() { return cDebut_sectionKeyword_1; }
+		//"begin_section"
+		public Keyword getBegin_sectionKeyword_1() { return cBegin_sectionKeyword_1; }
 		
 		//section=[Section|EString]
 		public Assignment getSectionAssignment_2() { return cSectionAssignment_2; }
@@ -400,8 +400,8 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//BatteryLayer
 		public RuleCall getLayersBatteryLayerParserRuleCall_3_0() { return cLayersBatteryLayerParserRuleCall_3_0; }
 		
-		//"fin_section"
-		public Keyword getFin_sectionKeyword_4() { return cFin_sectionKeyword_4; }
+		//"end_section"
+		public Keyword getEnd_sectionKeyword_4() { return cEnd_sectionKeyword_4; }
 	}
 	public class BatteryLayerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryLayer");
@@ -522,7 +522,14 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Piano");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPianoAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cPianoKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cPianoKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Assignment cInstrumentAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cInstrumentInstrumentsEnumRuleCall_1_1_0 = (RuleCall)cInstrumentAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cOtherKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cOtherAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cOtherEStringParserRuleCall_1_2_1_0 = (RuleCall)cOtherAssignment_1_2_1.eContents().get(0);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Keyword cColonKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
@@ -536,18 +543,40 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLayersPianoLayerParserRuleCall_3_1_0 = (RuleCall)cLayersAssignment_3_1.eContents().get(0);
 		
 		///* ------------------------------------------- */ /*------------------ PIANO ------------------*/ Piano:
-		//	{Piano}
-		//	"piano" (":" | name=EString ":") (sections+=SectionPianoLayer | layers+=PianoLayer)+;
+		//	{Piano} ("piano" | instrument=Instruments | "other:" other=EString) (":" | name=EString ":")
+		//	(sections+=SectionPianoLayer | layers+=PianoLayer)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Piano} "piano" (":" | name=EString ":") (sections+=SectionPianoLayer | layers+=PianoLayer)+
+		//{Piano} ("piano" | instrument=Instruments | "other:" other=EString) (":" | name=EString ":")
+		//(sections+=SectionPianoLayer | layers+=PianoLayer)+
 		public Group getGroup() { return cGroup; }
 		
 		//{Piano}
 		public Action getPianoAction_0() { return cPianoAction_0; }
 		
+		//"piano" | instrument=Instruments | "other:" other=EString
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//"piano"
-		public Keyword getPianoKeyword_1() { return cPianoKeyword_1; }
+		public Keyword getPianoKeyword_1_0() { return cPianoKeyword_1_0; }
+		
+		//instrument=Instruments
+		public Assignment getInstrumentAssignment_1_1() { return cInstrumentAssignment_1_1; }
+		
+		//Instruments
+		public RuleCall getInstrumentInstrumentsEnumRuleCall_1_1_0() { return cInstrumentInstrumentsEnumRuleCall_1_1_0; }
+		
+		//"other:" other=EString
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		//"other:"
+		public Keyword getOtherKeyword_1_2_0() { return cOtherKeyword_1_2_0; }
+		
+		//other=EString
+		public Assignment getOtherAssignment_1_2_1() { return cOtherAssignment_1_2_1; }
+		
+		//EString
+		public RuleCall getOtherEStringParserRuleCall_1_2_1_0() { return cOtherEStringParserRuleCall_1_2_1_0; }
 		
 		//":" | name=EString ":"
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
@@ -586,29 +615,29 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.SectionPianoLayer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSectionLayerAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDebut_sectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cBegin_sectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSectionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cSectionSectionCrossReference_2_0 = (CrossReference)cSectionAssignment_2.eContents().get(0);
 		private final RuleCall cSectionSectionEStringParserRuleCall_2_0_1 = (RuleCall)cSectionSectionCrossReference_2_0.eContents().get(1);
 		private final Assignment cLayersAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLayersPianoLayerParserRuleCall_3_0 = (RuleCall)cLayersAssignment_3.eContents().get(0);
-		private final Keyword cFin_sectionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cEnd_sectionKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SectionPianoLayer SectionLayer:
 		//	{SectionLayer}
-		//	"debut_section"
+		//	"begin_section"
 		//	section=[Section|EString] layers+=PianoLayer+
-		//	"fin_section";
+		//	"end_section";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SectionLayer} "debut_section" section=[Section|EString] layers+=PianoLayer+ "fin_section"
+		//{SectionLayer} "begin_section" section=[Section|EString] layers+=PianoLayer+ "end_section"
 		public Group getGroup() { return cGroup; }
 		
 		//{SectionLayer}
 		public Action getSectionLayerAction_0() { return cSectionLayerAction_0; }
 		
-		//"debut_section"
-		public Keyword getDebut_sectionKeyword_1() { return cDebut_sectionKeyword_1; }
+		//"begin_section"
+		public Keyword getBegin_sectionKeyword_1() { return cBegin_sectionKeyword_1; }
 		
 		//section=[Section|EString]
 		public Assignment getSectionAssignment_2() { return cSectionAssignment_2; }
@@ -625,8 +654,8 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//PianoLayer
 		public RuleCall getLayersPianoLayerParserRuleCall_3_0() { return cLayersPianoLayerParserRuleCall_3_0; }
 		
-		//"fin_section"
-		public Keyword getFin_sectionKeyword_4() { return cFin_sectionKeyword_4; }
+		//"end_section"
+		public Keyword getEnd_sectionKeyword_4() { return cEnd_sectionKeyword_4; }
 	}
 	public class PianoLayerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.PianoLayer");
@@ -674,16 +703,21 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPianoNoteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNoteTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNoteTypePianoNoteTypeEnumRuleCall_1_0 = (RuleCall)cNoteTypeAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cSolidusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cOctaveOffsetAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cOctaveOffsetERelativeIntParserRuleCall_2_1_0 = (RuleCall)cOctaveOffsetAssignment_2_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Keyword cSolidusKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Assignment cOctaveOffsetAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cOctaveOffsetERelativeIntParserRuleCall_2_0_1_0 = (RuleCall)cOctaveOffsetAssignment_2_0_1.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cVerticalLineKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cOctaveAbsoluteAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cOctaveAbsoluteEIntParserRuleCall_2_1_1_0 = (RuleCall)cOctaveAbsoluteAssignment_2_1_1.eContents().get(0);
 		
 		//PianoNote:
-		//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?;
+		//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?
+		//{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?
 		public Group getGroup() { return cGroup; }
 		
 		//{PianoNote}
@@ -695,17 +729,32 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//PianoNoteType
 		public RuleCall getNoteTypePianoNoteTypeEnumRuleCall_1_0() { return cNoteTypePianoNoteTypeEnumRuleCall_1_0; }
 		
-		//("/" octaveOffset=ERelativeInt)?
-		public Group getGroup_2() { return cGroup_2; }
+		//("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//"/" octaveOffset=ERelativeInt
+		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//"/"
-		public Keyword getSolidusKeyword_2_0() { return cSolidusKeyword_2_0; }
+		public Keyword getSolidusKeyword_2_0_0() { return cSolidusKeyword_2_0_0; }
 		
 		//octaveOffset=ERelativeInt
-		public Assignment getOctaveOffsetAssignment_2_1() { return cOctaveOffsetAssignment_2_1; }
+		public Assignment getOctaveOffsetAssignment_2_0_1() { return cOctaveOffsetAssignment_2_0_1; }
 		
 		//ERelativeInt
-		public RuleCall getOctaveOffsetERelativeIntParserRuleCall_2_1_0() { return cOctaveOffsetERelativeIntParserRuleCall_2_1_0; }
+		public RuleCall getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0() { return cOctaveOffsetERelativeIntParserRuleCall_2_0_1_0; }
+		
+		//"|" octaveAbsolute=EInt
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//"|"
+		public Keyword getVerticalLineKeyword_2_1_0() { return cVerticalLineKeyword_2_1_0; }
+		
+		//octaveAbsolute=EInt
+		public Assignment getOctaveAbsoluteAssignment_2_1_1() { return cOctaveAbsoluteAssignment_2_1_1; }
+		
+		//EInt
+		public RuleCall getOctaveAbsoluteEIntParserRuleCall_2_1_1_0() { return cOctaveAbsoluteEIntParserRuleCall_2_1_1_0; }
 	}
 	public class CompositePianoNoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
@@ -868,6 +917,97 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//"sd"
 		public Keyword getSNARE_DRUMSdKeyword_5_0() { return cSNARE_DRUMSdKeyword_5_0; }
 	}
+	public class InstrumentsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Instruments");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cACOUSTIC_BASSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cACOUSTIC_BASSACOUSTIC_BASSKeyword_0_0 = (Keyword)cACOUSTIC_BASSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCHURCH_ORGANEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCHURCH_ORGANCHURCH_ORGANKeyword_1_0 = (Keyword)cCHURCH_ORGANEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cCLAVINETEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cCLAVINETCLAVINETKeyword_2_0 = (Keyword)cCLAVINETEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cGUITAREnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cGUITARGUITARKeyword_3_0 = (Keyword)cGUITAREnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cHARPSICHORDEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cHARPSICHORDHARPSICHORDKeyword_4_0 = (Keyword)cHARPSICHORDEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cMUSIC_BOXEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cMUSIC_BOXMUSIC_BOXKeyword_5_0 = (Keyword)cMUSIC_BOXEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cOCARINAEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cOCARINAOCARINAKeyword_6_0 = (Keyword)cOCARINAEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cPIANOEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cPIANOPIANOKeyword_7_0 = (Keyword)cPIANOEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cSYNTH_BASS_1EnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cSYNTH_BASS_1SYNTH_BASS_1Keyword_8_0 = (Keyword)cSYNTH_BASS_1EnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cVIOLINEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cVIOLINVIOLINKeyword_9_0 = (Keyword)cVIOLINEnumLiteralDeclaration_9.eContents().get(0);
+		
+		//enum Instruments:
+		//	ACOUSTIC_BASS | CHURCH_ORGAN | CLAVINET | GUITAR | HARPSICHORD | MUSIC_BOX | OCARINA | PIANO | SYNTH_BASS_1 | VIOLIN;
+		public EnumRule getRule() { return rule; }
+		
+		//ACOUSTIC_BASS | CHURCH_ORGAN | CLAVINET | GUITAR | HARPSICHORD | MUSIC_BOX | OCARINA | PIANO | SYNTH_BASS_1 | VIOLIN
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ACOUSTIC_BASS
+		public EnumLiteralDeclaration getACOUSTIC_BASSEnumLiteralDeclaration_0() { return cACOUSTIC_BASSEnumLiteralDeclaration_0; }
+		
+		//"ACOUSTIC_BASS"
+		public Keyword getACOUSTIC_BASSACOUSTIC_BASSKeyword_0_0() { return cACOUSTIC_BASSACOUSTIC_BASSKeyword_0_0; }
+		
+		//CHURCH_ORGAN
+		public EnumLiteralDeclaration getCHURCH_ORGANEnumLiteralDeclaration_1() { return cCHURCH_ORGANEnumLiteralDeclaration_1; }
+		
+		//"CHURCH_ORGAN"
+		public Keyword getCHURCH_ORGANCHURCH_ORGANKeyword_1_0() { return cCHURCH_ORGANCHURCH_ORGANKeyword_1_0; }
+		
+		//CLAVINET
+		public EnumLiteralDeclaration getCLAVINETEnumLiteralDeclaration_2() { return cCLAVINETEnumLiteralDeclaration_2; }
+		
+		//"CLAVINET"
+		public Keyword getCLAVINETCLAVINETKeyword_2_0() { return cCLAVINETCLAVINETKeyword_2_0; }
+		
+		//GUITAR
+		public EnumLiteralDeclaration getGUITAREnumLiteralDeclaration_3() { return cGUITAREnumLiteralDeclaration_3; }
+		
+		//"GUITAR"
+		public Keyword getGUITARGUITARKeyword_3_0() { return cGUITARGUITARKeyword_3_0; }
+		
+		//HARPSICHORD
+		public EnumLiteralDeclaration getHARPSICHORDEnumLiteralDeclaration_4() { return cHARPSICHORDEnumLiteralDeclaration_4; }
+		
+		//"HARPSICHORD"
+		public Keyword getHARPSICHORDHARPSICHORDKeyword_4_0() { return cHARPSICHORDHARPSICHORDKeyword_4_0; }
+		
+		//MUSIC_BOX
+		public EnumLiteralDeclaration getMUSIC_BOXEnumLiteralDeclaration_5() { return cMUSIC_BOXEnumLiteralDeclaration_5; }
+		
+		//"MUSIC_BOX"
+		public Keyword getMUSIC_BOXMUSIC_BOXKeyword_5_0() { return cMUSIC_BOXMUSIC_BOXKeyword_5_0; }
+		
+		//OCARINA
+		public EnumLiteralDeclaration getOCARINAEnumLiteralDeclaration_6() { return cOCARINAEnumLiteralDeclaration_6; }
+		
+		//"OCARINA"
+		public Keyword getOCARINAOCARINAKeyword_6_0() { return cOCARINAOCARINAKeyword_6_0; }
+		
+		//PIANO
+		public EnumLiteralDeclaration getPIANOEnumLiteralDeclaration_7() { return cPIANOEnumLiteralDeclaration_7; }
+		
+		//"PIANO"
+		public Keyword getPIANOPIANOKeyword_7_0() { return cPIANOPIANOKeyword_7_0; }
+		
+		//SYNTH_BASS_1
+		public EnumLiteralDeclaration getSYNTH_BASS_1EnumLiteralDeclaration_8() { return cSYNTH_BASS_1EnumLiteralDeclaration_8; }
+		
+		//"SYNTH_BASS_1"
+		public Keyword getSYNTH_BASS_1SYNTH_BASS_1Keyword_8_0() { return cSYNTH_BASS_1SYNTH_BASS_1Keyword_8_0; }
+		
+		//VIOLIN
+		public EnumLiteralDeclaration getVIOLINEnumLiteralDeclaration_9() { return cVIOLINEnumLiteralDeclaration_9; }
+		
+		//"VIOLIN"
+		public Keyword getVIOLINVIOLINKeyword_9_0() { return cVIOLINVIOLINKeyword_9_0; }
+	}
 	public class PianoNoteTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.PianoNoteType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -951,6 +1091,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	private final SectionPianoLayerElements pSectionPianoLayer;
 	private final PianoLayerElements pPianoLayer;
 	private final PianoNoteElements pPianoNote;
+	private final InstrumentsElements eInstruments;
 	private final PianoNoteTypeElements ePianoNoteType;
 	private final CompositePianoNoteElements pCompositePianoNote;
 	private final EIntElements pEInt;
@@ -981,6 +1122,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSectionPianoLayer = new SectionPianoLayerElements();
 		this.pPianoLayer = new PianoLayerElements();
 		this.pPianoNote = new PianoNoteElements();
+		this.eInstruments = new InstrumentsElements();
 		this.ePianoNoteType = new PianoNoteTypeElements();
 		this.pCompositePianoNote = new CompositePianoNoteElements();
 		this.pEInt = new EIntElements();
@@ -1088,9 +1230,9 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SectionBatteryLayer SectionLayer:
 	//	{SectionLayer}
-	//	"debut_section"
+	//	"begin_section"
 	//	section=[Section|EString] layers+=BatteryLayer+
-	//	"fin_section";
+	//	"end_section";
 	public SectionBatteryLayerElements getSectionBatteryLayerAccess() {
 		return pSectionBatteryLayer;
 	}
@@ -1142,8 +1284,8 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	///* ------------------------------------------- */ /*------------------ PIANO ------------------*/ Piano:
-	//	{Piano}
-	//	"piano" (":" | name=EString ":") (sections+=SectionPianoLayer | layers+=PianoLayer)+;
+	//	{Piano} ("piano" | instrument=Instruments | "other:" other=EString) (":" | name=EString ":")
+	//	(sections+=SectionPianoLayer | layers+=PianoLayer)+;
 	public PianoElements getPianoAccess() {
 		return pPiano;
 	}
@@ -1154,9 +1296,9 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SectionPianoLayer SectionLayer:
 	//	{SectionLayer}
-	//	"debut_section"
+	//	"begin_section"
 	//	section=[Section|EString] layers+=PianoLayer+
-	//	"fin_section";
+	//	"end_section";
 	public SectionPianoLayerElements getSectionPianoLayerAccess() {
 		return pSectionPianoLayer;
 	}
@@ -1177,13 +1319,23 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PianoNote:
-	//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?;
+	//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
 	public PianoNoteElements getPianoNoteAccess() {
 		return pPianoNote;
 	}
 	
 	public ParserRule getPianoNoteRule() {
 		return getPianoNoteAccess().getRule();
+	}
+	
+	//enum Instruments:
+	//	ACOUSTIC_BASS | CHURCH_ORGAN | CLAVINET | GUITAR | HARPSICHORD | MUSIC_BOX | OCARINA | PIANO | SYNTH_BASS_1 | VIOLIN;
+	public InstrumentsElements getInstrumentsAccess() {
+		return eInstruments;
+	}
+	
+	public EnumRule getInstrumentsRule() {
+		return getInstrumentsAccess().getRule();
 	}
 	
 	//enum PianoNoteType:

@@ -8,6 +8,7 @@ import fr.polytech.dsl.model.rhythm.BatteryNoteType;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
 import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Instrument;
+import fr.polytech.dsl.model.rhythm.Instruments;
 import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.NamedElement;
@@ -147,6 +148,13 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * @generated
 	 */
 	private EEnum pianoNoteTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum instrumentsEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -370,6 +378,24 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPiano_Instrument() {
+		return (EAttribute) pianoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPiano_Other() {
+		return (EAttribute) pianoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNote() {
 		return noteEClass;
 	}
@@ -451,6 +477,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPianoNote_OctaveAbsolute() {
+		return (EAttribute) pianoNoteEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCompositeNote() {
 		return compositeNoteEClass;
 	}
@@ -523,6 +558,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getInstruments() {
+		return instrumentsEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RhythmFactory getRhythmFactory() {
 		return (RhythmFactory) getEFactoryInstance();
 	}
@@ -570,6 +614,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		batteryEClass = createEClass(BATTERY);
 
 		pianoEClass = createEClass(PIANO);
+		createEAttribute(pianoEClass, PIANO__INSTRUMENT);
+		createEAttribute(pianoEClass, PIANO__OTHER);
 
 		noteEClass = createEClass(NOTE);
 
@@ -584,6 +630,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		pianoNoteEClass = createEClass(PIANO_NOTE);
 		createEAttribute(pianoNoteEClass, PIANO_NOTE__NOTE_TYPE);
 		createEAttribute(pianoNoteEClass, PIANO_NOTE__OCTAVE_OFFSET);
+		createEAttribute(pianoNoteEClass, PIANO_NOTE__OCTAVE_ABSOLUTE);
 
 		compositeNoteEClass = createEClass(COMPOSITE_NOTE);
 		createEReference(compositeNoteEClass, COMPOSITE_NOTE__NOTES);
@@ -596,6 +643,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		// Create enums
 		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
 		pianoNoteTypeEEnum = createEEnum(PIANO_NOTE_TYPE);
+		instrumentsEEnum = createEEnum(INSTRUMENTS);
 	}
 
 	/**
@@ -679,6 +727,10 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		initEClass(batteryEClass, Battery.class, "Battery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(pianoEClass, Piano.class, "Piano", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPiano_Instrument(), this.getInstruments(), "instrument", "PIANO", 0, 1, Piano.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPiano_Other(), ecorePackage.getEString(), "other", null, 0, 1, Piano.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(noteEClass, Note.class, "Note", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -701,6 +753,9 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPianoNote_OctaveOffset(), ecorePackage.getEInt(), "octaveOffset", null, 0, 1, PianoNote.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPianoNote_OctaveAbsolute(), ecorePackage.getEInt(), "octaveAbsolute", "5", 0, 1,
+				PianoNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeNoteEClass, CompositeNote.class, "CompositeNote", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -736,6 +791,18 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.G);
 		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.A);
 		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.B);
+
+		initEEnum(instrumentsEEnum, Instruments.class, "Instruments");
+		addEEnumLiteral(instrumentsEEnum, Instruments.PIANO);
+		addEEnumLiteral(instrumentsEEnum, Instruments.GUITAR);
+		addEEnumLiteral(instrumentsEEnum, Instruments.HARPSICHORD);
+		addEEnumLiteral(instrumentsEEnum, Instruments.CLAVINET);
+		addEEnumLiteral(instrumentsEEnum, Instruments.VIOLIN);
+		addEEnumLiteral(instrumentsEEnum, Instruments.SYNTH_BASS_1);
+		addEEnumLiteral(instrumentsEEnum, Instruments.OCARINA);
+		addEEnumLiteral(instrumentsEEnum, Instruments.ACOUSTIC_BASS);
+		addEEnumLiteral(instrumentsEEnum, Instruments.CHURCH_ORGAN);
+		addEEnumLiteral(instrumentsEEnum, Instruments.MUSIC_BOX);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -216,7 +216,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PianoNote returns PianoNote
 	 *
 	 * Constraint:
-	 *     (noteType=PianoNoteType octaveOffset=ERelativeInt?)
+	 *     (noteType=PianoNoteType (octaveOffset=ERelativeInt | octaveAbsolute=EInt)?)
 	 */
 	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -229,7 +229,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Piano returns Piano
 	 *
 	 * Constraint:
-	 *     (name=EString? (sections+=SectionPianoLayer | layers+=PianoLayer)+)
+	 *     ((instrument=Instruments | other=EString)? name=EString? (sections+=SectionPianoLayer | layers+=PianoLayer)+)
 	 */
 	protected void sequence_Piano(ISerializationContext context, Piano semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

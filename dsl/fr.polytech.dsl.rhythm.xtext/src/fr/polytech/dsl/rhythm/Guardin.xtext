@@ -49,10 +49,10 @@ Battery returns Battery:
 
 SectionBatteryLayer returns SectionLayer:
 	{SectionLayer}
-	"debut_section"
+	"begin_section"
 	section=[Section|EString]
 	(layers+=BatteryLayer)+
-	"fin_section"
+	"end_section"
 ;
 
 BatteryLayer returns Layer:
@@ -78,16 +78,16 @@ CompositeBatteryNote returns CompositeNote:
 /*------------------ PIANO ------------------*/
 Piano returns Piano:
 	{Piano}
-	"piano" (":"|(name=EString ":"))
+	("piano"|instrument=Instruments|"other:" other=EString) (":"|(name=EString ":"))
 	((sections+=SectionPianoLayer)|(layers+=PianoLayer))+
 ;
 
 SectionPianoLayer returns SectionLayer:
 	{SectionLayer}
-	"debut_section"
+	"begin_section"
 	section=[Section|EString]
 	(layers+=PianoLayer)+
-	"fin_section"
+	"end_section"
 ;
 
 PianoLayer returns Layer:
@@ -97,7 +97,11 @@ PianoLayer returns Layer:
 
 PianoNote returns PianoNote:
 	{PianoNote}
-	noteType=PianoNoteType ("/" octaveOffset=ERelativeInt)?
+	noteType=PianoNoteType (("/" octaveOffset=ERelativeInt)|("|" octaveAbsolute=EInt))?
+;
+
+enum Instruments:
+	ACOUSTIC_BASS|CHURCH_ORGAN|CLAVINET|GUITAR|HARPSICHORD|MUSIC_BOX|OCARINA|PIANO|SYNTH_BASS_1|VIOLIN
 ;
 
 enum PianoNoteType returns PianoNoteType:

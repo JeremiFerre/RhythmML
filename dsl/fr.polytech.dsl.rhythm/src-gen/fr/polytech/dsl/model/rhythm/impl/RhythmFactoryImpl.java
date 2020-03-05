@@ -96,6 +96,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 			return createBatteryNoteTypeFromString(eDataType, initialValue);
 		case RhythmPackage.PIANO_NOTE_TYPE:
 			return createPianoNoteTypeFromString(eDataType, initialValue);
+		case RhythmPackage.INSTRUMENTS:
+			return createInstrumentsFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -113,6 +115,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 			return convertBatteryNoteTypeToString(eDataType, instanceValue);
 		case RhythmPackage.PIANO_NOTE_TYPE:
 			return convertPianoNoteTypeToString(eDataType, instanceValue);
+		case RhythmPackage.INSTRUMENTS:
+			return convertInstrumentsToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -269,6 +273,28 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * @generated
 	 */
 	public String convertPianoNoteTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Instruments createInstrumentsFromString(EDataType eDataType, String initialValue) {
+		Instruments result = Instruments.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInstrumentsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

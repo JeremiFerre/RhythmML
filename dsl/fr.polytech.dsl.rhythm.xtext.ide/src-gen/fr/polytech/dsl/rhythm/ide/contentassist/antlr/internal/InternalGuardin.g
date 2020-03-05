@@ -515,6 +515,22 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Rule Instruments
+ruleInstruments
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getAlternatives()); }
+		(rule__Instruments__Alternatives)
+		{ after(grammarAccess.getInstrumentsAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Rule PianoNoteType
 rulePianoNoteType
 	@init {
@@ -642,6 +658,33 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Piano__Alternatives_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPianoAccess().getPianoKeyword_1_0()); }
+		'piano'
+		{ after(grammarAccess.getPianoAccess().getPianoKeyword_1_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getPianoAccess().getInstrumentAssignment_1_1()); }
+		(rule__Piano__InstrumentAssignment_1_1)
+		{ after(grammarAccess.getPianoAccess().getInstrumentAssignment_1_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getPianoAccess().getGroup_1_2()); }
+		(rule__Piano__Group_1_2__0)
+		{ after(grammarAccess.getPianoAccess().getGroup_1_2()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Piano__Alternatives_2
 	@init {
 		int stackSize = keepStackSize();
@@ -705,6 +748,27 @@ rule__PianoLayer__NotesAlternatives_2_0
 		{ before(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2()); }
 		ruleCompositePianoNote
 		{ after(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PianoNote__Alternatives_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPianoNoteAccess().getGroup_2_0()); }
+		(rule__PianoNote__Group_2_0__0)
+		{ after(grammarAccess.getPianoNoteAccess().getGroup_2_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getPianoNoteAccess().getGroup_2_1()); }
+		(rule__PianoNote__Group_2_1__0)
+		{ after(grammarAccess.getPianoNoteAccess().getGroup_2_1()); }
 	)
 ;
 finally {
@@ -792,6 +856,75 @@ rule__BatteryNoteType__Alternatives
 		{ before(grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5()); }
 		('sd')
 		{ after(grammarAccess.getBatteryNoteTypeAccess().getSNARE_DRUMEnumLiteralDeclaration_5()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Instruments__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getACOUSTIC_BASSEnumLiteralDeclaration_0()); }
+		('ACOUSTIC_BASS')
+		{ after(grammarAccess.getInstrumentsAccess().getACOUSTIC_BASSEnumLiteralDeclaration_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getCHURCH_ORGANEnumLiteralDeclaration_1()); }
+		('CHURCH_ORGAN')
+		{ after(grammarAccess.getInstrumentsAccess().getCHURCH_ORGANEnumLiteralDeclaration_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getCLAVINETEnumLiteralDeclaration_2()); }
+		('CLAVINET')
+		{ after(grammarAccess.getInstrumentsAccess().getCLAVINETEnumLiteralDeclaration_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getGUITAREnumLiteralDeclaration_3()); }
+		('GUITAR')
+		{ after(grammarAccess.getInstrumentsAccess().getGUITAREnumLiteralDeclaration_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getHARPSICHORDEnumLiteralDeclaration_4()); }
+		('HARPSICHORD')
+		{ after(grammarAccess.getInstrumentsAccess().getHARPSICHORDEnumLiteralDeclaration_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getMUSIC_BOXEnumLiteralDeclaration_5()); }
+		('MUSIC_BOX')
+		{ after(grammarAccess.getInstrumentsAccess().getMUSIC_BOXEnumLiteralDeclaration_5()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getOCARINAEnumLiteralDeclaration_6()); }
+		('OCARINA')
+		{ after(grammarAccess.getInstrumentsAccess().getOCARINAEnumLiteralDeclaration_6()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getPIANOEnumLiteralDeclaration_7()); }
+		('PIANO')
+		{ after(grammarAccess.getInstrumentsAccess().getPIANOEnumLiteralDeclaration_7()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getSYNTH_BASS_1EnumLiteralDeclaration_8()); }
+		('SYNTH_BASS_1')
+		{ after(grammarAccess.getInstrumentsAccess().getSYNTH_BASS_1EnumLiteralDeclaration_8()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstrumentsAccess().getVIOLINEnumLiteralDeclaration_9()); }
+		('VIOLIN')
+		{ after(grammarAccess.getInstrumentsAccess().getVIOLINEnumLiteralDeclaration_9()); }
 	)
 ;
 finally {
@@ -2035,9 +2168,9 @@ rule__SectionBatteryLayer__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSectionBatteryLayerAccess().getDebut_sectionKeyword_1()); }
-	'debut_section'
-	{ after(grammarAccess.getSectionBatteryLayerAccess().getDebut_sectionKeyword_1()); }
+	{ before(grammarAccess.getSectionBatteryLayerAccess().getBegin_sectionKeyword_1()); }
+	'begin_section'
+	{ after(grammarAccess.getSectionBatteryLayerAccess().getBegin_sectionKeyword_1()); }
 )
 ;
 finally {
@@ -2122,9 +2255,9 @@ rule__SectionBatteryLayer__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSectionBatteryLayerAccess().getFin_sectionKeyword_4()); }
-	'fin_section'
-	{ after(grammarAccess.getSectionBatteryLayerAccess().getFin_sectionKeyword_4()); }
+	{ before(grammarAccess.getSectionBatteryLayerAccess().getEnd_sectionKeyword_4()); }
+	'end_section'
+	{ after(grammarAccess.getSectionBatteryLayerAccess().getEnd_sectionKeyword_4()); }
 )
 ;
 finally {
@@ -2488,9 +2621,9 @@ rule__Piano__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPianoAccess().getPianoKeyword_1()); }
-	'piano'
-	{ after(grammarAccess.getPianoAccess().getPianoKeyword_1()); }
+	{ before(grammarAccess.getPianoAccess().getAlternatives_1()); }
+	(rule__Piano__Alternatives_1)
+	{ after(grammarAccess.getPianoAccess().getAlternatives_1()); }
 )
 ;
 finally {
@@ -2551,6 +2684,60 @@ rule__Piano__Group__3__Impl
 		(rule__Piano__Alternatives_3)*
 		{ after(grammarAccess.getPianoAccess().getAlternatives_3()); }
 	)
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Piano__Group_1_2__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Piano__Group_1_2__0__Impl
+	rule__Piano__Group_1_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Piano__Group_1_2__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPianoAccess().getOtherKeyword_1_2_0()); }
+	'other:'
+	{ after(grammarAccess.getPianoAccess().getOtherKeyword_1_2_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Piano__Group_1_2__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Piano__Group_1_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Piano__Group_1_2__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPianoAccess().getOtherAssignment_1_2_1()); }
+	(rule__Piano__OtherAssignment_1_2_1)
+	{ after(grammarAccess.getPianoAccess().getOtherAssignment_1_2_1()); }
 )
 ;
 finally {
@@ -2657,9 +2844,9 @@ rule__SectionPianoLayer__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSectionPianoLayerAccess().getDebut_sectionKeyword_1()); }
-	'debut_section'
-	{ after(grammarAccess.getSectionPianoLayerAccess().getDebut_sectionKeyword_1()); }
+	{ before(grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1()); }
+	'begin_section'
+	{ after(grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1()); }
 )
 ;
 finally {
@@ -2744,9 +2931,9 @@ rule__SectionPianoLayer__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSectionPianoLayerAccess().getFin_sectionKeyword_4()); }
-	'fin_section'
-	{ after(grammarAccess.getSectionPianoLayerAccess().getFin_sectionKeyword_4()); }
+	{ before(grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4()); }
+	'end_section'
+	{ after(grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4()); }
 )
 ;
 finally {
@@ -2913,9 +3100,9 @@ rule__PianoNote__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPianoNoteAccess().getGroup_2()); }
-	(rule__PianoNote__Group_2__0)?
-	{ after(grammarAccess.getPianoNoteAccess().getGroup_2()); }
+	{ before(grammarAccess.getPianoNoteAccess().getAlternatives_2()); }
+	(rule__PianoNote__Alternatives_2)?
+	{ after(grammarAccess.getPianoNoteAccess().getAlternatives_2()); }
 )
 ;
 finally {
@@ -2923,53 +3110,107 @@ finally {
 }
 
 
-rule__PianoNote__Group_2__0
+rule__PianoNote__Group_2_0__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__PianoNote__Group_2__0__Impl
-	rule__PianoNote__Group_2__1
+	rule__PianoNote__Group_2_0__0__Impl
+	rule__PianoNote__Group_2_0__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PianoNote__Group_2__0__Impl
+rule__PianoNote__Group_2_0__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0()); }
+	{ before(grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0_0()); }
 	'/'
-	{ after(grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0()); }
+	{ after(grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PianoNote__Group_2__1
+rule__PianoNote__Group_2_0__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__PianoNote__Group_2__1__Impl
+	rule__PianoNote__Group_2_0__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PianoNote__Group_2__1__Impl
+rule__PianoNote__Group_2_0__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_2_1()); }
-	(rule__PianoNote__OctaveOffsetAssignment_2_1)
-	{ after(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_2_1()); }
+	{ before(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_2_0_1()); }
+	(rule__PianoNote__OctaveOffsetAssignment_2_0_1)
+	{ after(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_2_0_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__PianoNote__Group_2_1__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PianoNote__Group_2_1__0__Impl
+	rule__PianoNote__Group_2_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PianoNote__Group_2_1__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_2_1_0()); }
+	'|'
+	{ after(grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_2_1_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PianoNote__Group_2_1__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PianoNote__Group_2_1__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PianoNote__Group_2_1__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteAssignment_2_1_1()); }
+	(rule__PianoNote__OctaveAbsoluteAssignment_2_1_1)
+	{ after(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteAssignment_2_1_1()); }
 )
 ;
 finally {
@@ -3519,6 +3760,36 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Piano__InstrumentAssignment_1_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); }
+		ruleInstruments
+		{ after(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Piano__OtherAssignment_1_2_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0()); }
+		ruleEString
+		{ after(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Piano__NameAssignment_2_1_0
 	@init {
 		int stackSize = keepStackSize();
@@ -3628,15 +3899,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PianoNote__OctaveOffsetAssignment_2_1
+rule__PianoNote__OctaveOffsetAssignment_2_0_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_1_0()); }
+		{ before(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0()); }
 		ruleERelativeInt
-		{ after(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_1_0()); }
+		{ after(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PianoNote__OctaveAbsoluteAssignment_2_1_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_2_1_1_0()); }
+		ruleEInt
+		{ after(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_2_1_1_0()); }
 	)
 ;
 finally {
