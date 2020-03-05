@@ -2,15 +2,20 @@
  */
 package fr.polytech.dsl.model.rhythm.provider;
 
-import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.RhythmFactory;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
+import fr.polytech.dsl.model.rhythm.SectionLayer;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,15 +24,14 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 /**
- * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.Layer} object.
+ * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.SectionLayer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LayerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SectionLayerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -35,7 +39,7 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LayerItemProvider(AdapterFactory adapterFactory) {
+	public SectionLayerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -50,8 +54,24 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Section feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_SectionLayer_section_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SectionLayer_section_feature",
+								"_UI_SectionLayer_type"),
+						RhythmPackage.Literals.SECTION_LAYER__SECTION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -66,7 +86,7 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RhythmPackage.Literals.LAYER__NOTES);
+			childrenFeatures.add(RhythmPackage.Literals.SECTION_LAYER__LAYERS);
 		}
 		return childrenFeatures;
 	}
@@ -85,14 +105,14 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
-	 * This returns Layer.gif.
+	 * This returns SectionLayer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Layer"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SectionLayer"));
 	}
 
 	/**
@@ -113,7 +133,7 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Layer_type");
+		return getString("_UI_SectionLayer_type");
 	}
 
 	/**
@@ -127,8 +147,8 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Layer.class)) {
-		case RhythmPackage.LAYER__NOTES:
+		switch (notification.getFeatureID(SectionLayer.class)) {
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -146,17 +166,8 @@ public class LayerItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(RhythmPackage.Literals.LAYER__NOTES, RhythmFactory.eINSTANCE.createBatteryNote()));
-
-		newChildDescriptors.add(
-				createChildParameter(RhythmPackage.Literals.LAYER__NOTES, RhythmFactory.eINSTANCE.createEmptyNote()));
-
-		newChildDescriptors.add(
-				createChildParameter(RhythmPackage.Literals.LAYER__NOTES, RhythmFactory.eINSTANCE.createPianoNote()));
-
-		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.LAYER__NOTES,
-				RhythmFactory.eINSTANCE.createCompositeNote()));
+		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.SECTION_LAYER__LAYERS,
+				RhythmFactory.eINSTANCE.createLayer()));
 	}
 
 	/**

@@ -10,8 +10,14 @@ Music BillieJean:
 			bars=8
 	tracks:
 		- battery:
-			layer: (bd $ sd $) x 32
-			layer: (ch) x 128
+			debut_section section1
+				layer: (bd $ sd $) x 16
+				layer: (ch) x 64
+			fin_section
+			debut_section section2
+				layer: (bd $ sd $) x 16
+				layer: (ch) x 64
+			fin_section
 		- piano:
 			layer: ($ $ $ $) x 4 (A E G A G E D E) x 14
 		- piano:

@@ -112,6 +112,15 @@ public interface RhythmFactory extends EFactory {
 	CompositeNote createCompositeNote();
 
 	/**
+	 * Returns a new object of class '<em>Section Layer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Section Layer</em>'.
+	 * @generated
+	 */
+	SectionLayer createSectionLayer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

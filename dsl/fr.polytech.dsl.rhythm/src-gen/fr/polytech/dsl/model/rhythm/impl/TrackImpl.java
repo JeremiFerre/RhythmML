@@ -5,10 +5,8 @@ package fr.polytech.dsl.model.rhythm.impl;
 import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Track;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -140,6 +138,7 @@ public class TrackImpl extends NamedElementImpl implements Track {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

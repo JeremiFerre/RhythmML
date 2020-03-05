@@ -14,6 +14,7 @@ import fr.polytech.dsl.model.rhythm.Piano;
 import fr.polytech.dsl.model.rhythm.PianoNote;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
+import fr.polytech.dsl.model.rhythm.SectionLayer;
 import fr.polytech.dsl.model.rhythm.Track;
 import fr.polytech.dsl.rhythm.services.GuardinGrammarAccess;
 import java.util.Set;
@@ -82,6 +83,16 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RhythmPackage.SECTION:
 				sequence_Section(context, (Section) semanticObject); 
 				return; 
+			case RhythmPackage.SECTION_LAYER:
+				if (rule == grammarAccess.getSectionBatteryLayerRule()) {
+					sequence_SectionBatteryLayer(context, (SectionLayer) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSectionPianoLayerRule()) {
+					sequence_SectionPianoLayer(context, (SectionLayer) semanticObject); 
+					return; 
+				}
+				else break;
 			case RhythmPackage.TRACK:
 				sequence_Track(context, (Track) semanticObject); 
 				return; 
@@ -122,10 +133,11 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Instrument returns Battery
 	 *     Battery returns Battery
 	 *
 	 * Constraint:
-	 *     (name=EString? layers+=BatteryLayer+)
+	 *     (name=EString? (sections+=SectionBatteryLayer | layers+=BatteryLayer)+)
 	 */
 	protected void sequence_Battery(ISerializationContext context, Battery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -206,12 +218,37 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Instrument returns Piano
 	 *     Piano returns Piano
 	 *
 	 * Constraint:
-	 *     (name=EString? layers+=PianoLayer+)
+	 *     (name=EString? (sections+=SectionPianoLayer | layers+=PianoLayer)+)
 	 */
 	protected void sequence_Piano(ISerializationContext context, Piano semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SectionBatteryLayer returns SectionLayer
+	 *
+	 * Constraint:
+	 *     (section=[Section|EString] layers+=BatteryLayer+)
+	 */
+	protected void sequence_SectionBatteryLayer(ISerializationContext context, SectionLayer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SectionPianoLayer returns SectionLayer
+	 *
+	 * Constraint:
+	 *     (section=[Section|EString] layers+=PianoLayer+)
+	 */
+	protected void sequence_SectionPianoLayer(ISerializationContext context, SectionLayer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -248,7 +285,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Track returns Track
 	 *
 	 * Constraint:
-	 *     (name=EString? (instrument=Battery | instrument=Piano))
+	 *     (name=EString? instrument=Instrument)
 	 */
 	protected void sequence_Track(ISerializationContext context, Track semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

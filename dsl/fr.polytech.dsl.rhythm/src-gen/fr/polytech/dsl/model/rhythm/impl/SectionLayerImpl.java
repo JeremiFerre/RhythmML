@@ -2,35 +2,41 @@
  */
 package fr.polytech.dsl.model.rhythm.impl;
 
-import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
+import fr.polytech.dsl.model.rhythm.Section;
 import fr.polytech.dsl.model.rhythm.SectionLayer;
+
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Instrument</b></em>'.
+ * An implementation of the model object '<em><b>Section Layer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.InstrumentImpl#getLayers <em>Layers</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.InstrumentImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl#getLayers <em>Layers</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl#getSection <em>Section</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class InstrumentImpl extends NamedElementImpl implements Instrument {
+public class SectionLayerImpl extends MinimalEObjectImpl.Container implements SectionLayer {
 	/**
 	 * The cached value of the '{@link #getLayers() <em>Layers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,21 +48,21 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	protected EList<Layer> layers;
 
 	/**
-	 * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
+	 * The cached value of the '{@link #getSection() <em>Section</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSections()
+	 * @see #getSection()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SectionLayer> sections;
+	protected Section section;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstrumentImpl() {
+	protected SectionLayerImpl() {
 		super();
 	}
 
@@ -67,7 +73,7 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RhythmPackage.Literals.INSTRUMENT;
+		return RhythmPackage.Literals.SECTION_LAYER;
 	}
 
 	/**
@@ -77,7 +83,7 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	 */
 	public EList<Layer> getLayers() {
 		if (layers == null) {
-			layers = new EObjectContainmentEList<Layer>(Layer.class, this, RhythmPackage.INSTRUMENT__LAYERS);
+			layers = new EObjectContainmentEList<Layer>(Layer.class, this, RhythmPackage.SECTION_LAYER__LAYERS);
 		}
 		return layers;
 	}
@@ -87,12 +93,39 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SectionLayer> getSections() {
-		if (sections == null) {
-			sections = new EObjectContainmentEList<SectionLayer>(SectionLayer.class, this,
-					RhythmPackage.INSTRUMENT__SECTIONS);
+	public Section getSection() {
+		if (section != null && section.eIsProxy()) {
+			InternalEObject oldSection = (InternalEObject) section;
+			section = (Section) eResolveProxy(oldSection);
+			if (section != oldSection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RhythmPackage.SECTION_LAYER__SECTION,
+							oldSection, section));
+			}
 		}
-		return sections;
+		return section;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Section basicGetSection() {
+		return section;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSection(Section newSection) {
+		Section oldSection = section;
+		section = newSection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.SECTION_LAYER__SECTION, oldSection,
+					section));
 	}
 
 	/**
@@ -103,10 +136,8 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			return ((InternalEList<?>) getLayers()).basicRemove(otherEnd, msgs);
-		case RhythmPackage.INSTRUMENT__SECTIONS:
-			return ((InternalEList<?>) getSections()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -119,10 +150,12 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			return getLayers();
-		case RhythmPackage.INSTRUMENT__SECTIONS:
-			return getSections();
+		case RhythmPackage.SECTION_LAYER__SECTION:
+			if (resolve)
+				return getSection();
+			return basicGetSection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,13 +169,12 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			getLayers().clear();
 			getLayers().addAll((Collection<? extends Layer>) newValue);
 			return;
-		case RhythmPackage.INSTRUMENT__SECTIONS:
-			getSections().clear();
-			getSections().addAll((Collection<? extends SectionLayer>) newValue);
+		case RhythmPackage.SECTION_LAYER__SECTION:
+			setSection((Section) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,11 +188,11 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			getLayers().clear();
 			return;
-		case RhythmPackage.INSTRUMENT__SECTIONS:
-			getSections().clear();
+		case RhythmPackage.SECTION_LAYER__SECTION:
+			setSection((Section) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -174,12 +206,12 @@ public abstract class InstrumentImpl extends NamedElementImpl implements Instrum
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.SECTION_LAYER__LAYERS:
 			return layers != null && !layers.isEmpty();
-		case RhythmPackage.INSTRUMENT__SECTIONS:
-			return sections != null && !sections.isEmpty();
+		case RhythmPackage.SECTION_LAYER__SECTION:
+			return section != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //InstrumentImpl
+} //SectionLayerImpl

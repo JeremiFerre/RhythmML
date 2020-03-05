@@ -302,6 +302,29 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.polytech.dsl.model.rhythm.SectionLayer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SectionLayerItemProvider sectionLayerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.polytech.dsl.model.rhythm.SectionLayer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSectionLayerAdapter() {
+		if (sectionLayerItemProvider == null) {
+			sectionLayerItemProvider = new SectionLayerItemProvider(this);
+		}
+
+		return sectionLayerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +443,8 @@ public class RhythmItemProviderAdapterFactory extends RhythmAdapterFactory
 			pianoNoteItemProvider.dispose();
 		if (compositeNoteItemProvider != null)
 			compositeNoteItemProvider.dispose();
+		if (sectionLayerItemProvider != null)
+			sectionLayerItemProvider.dispose();
 	}
 
 }

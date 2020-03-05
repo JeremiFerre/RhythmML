@@ -18,6 +18,7 @@ import fr.polytech.dsl.model.rhythm.PianoNoteType;
 import fr.polytech.dsl.model.rhythm.RhythmFactory;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
+import fr.polytech.dsl.model.rhythm.SectionLayer;
 import fr.polytech.dsl.model.rhythm.Track;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -125,6 +126,13 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * @generated
 	 */
 	private EClass compositeNoteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sectionLayerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,6 +334,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInstrument_Sections() {
+		return (EReference) instrumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBattery() {
 		return batteryEClass;
 	}
@@ -452,6 +469,33 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSectionLayer() {
+		return sectionLayerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSectionLayer_Layers() {
+		return (EReference) sectionLayerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSectionLayer_Section() {
+		return (EReference) sectionLayerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBatteryNoteType() {
 		return batteryNoteTypeEEnum;
 	}
@@ -511,6 +555,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		instrumentEClass = createEClass(INSTRUMENT);
 		createEReference(instrumentEClass, INSTRUMENT__LAYERS);
+		createEReference(instrumentEClass, INSTRUMENT__SECTIONS);
 
 		batteryEClass = createEClass(BATTERY);
 
@@ -533,6 +578,10 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		compositeNoteEClass = createEClass(COMPOSITE_NOTE);
 		createEReference(compositeNoteEClass, COMPOSITE_NOTE__NOTES);
 		createEAttribute(compositeNoteEClass, COMPOSITE_NOTE__REPEATS);
+
+		sectionLayerEClass = createEClass(SECTION_LAYER);
+		createEReference(sectionLayerEClass, SECTION_LAYER__LAYERS);
+		createEReference(sectionLayerEClass, SECTION_LAYER__SECTION);
 
 		// Create enums
 		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
@@ -611,6 +660,9 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		initEReference(getInstrument_Layers(), this.getLayer(), null, "layers", null, 0, -1, Instrument.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstrument_Sections(), this.getSectionLayer(), null, "sections", null, 0, -1,
+				Instrument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(batteryEClass, Battery.class, "Battery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -645,6 +697,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompositeNote_Repeats(), ecorePackage.getEInt(), "repeats", null, 0, 1, CompositeNote.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sectionLayerEClass, SectionLayer.class, "SectionLayer", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSectionLayer_Layers(), this.getLayer(), null, "layers", null, 0, -1, SectionLayer.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSectionLayer_Section(), this.getSection(), null, "section", null, 1, 1, SectionLayer.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(batteryNoteTypeEEnum, BatteryNoteType.class, "BatteryNoteType");

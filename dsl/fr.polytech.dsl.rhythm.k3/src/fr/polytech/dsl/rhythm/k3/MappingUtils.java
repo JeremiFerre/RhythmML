@@ -1,12 +1,22 @@
 package fr.polytech.dsl.rhythm.k3;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 
 import fr.polytech.dsl.midi.DrumElement;
 import fr.polytech.dsl.midi.JFugueWrapper;
@@ -21,6 +31,7 @@ import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.Note;
 import fr.polytech.dsl.model.rhythm.Piano;
 import fr.polytech.dsl.model.rhythm.PianoNote;
+import fr.polytech.dsl.model.rhythm.SectionLayer;
 
 public class MappingUtils {
 	
@@ -51,39 +62,96 @@ public class MappingUtils {
 		music.getTracks().forEach(track -> {
 			if (track.getInstrument() instanceof Battery) {
 				
-				Layer layer = track.getInstrument().getLayers().get(0);
-				int nbNotes = notesNumber(layer.getNotes());
-				
-				List<List<DrumElement>> elements = new ArrayList<>();
-				AtomicInteger j = new AtomicInteger(0);
-				track.getInstrument().getLayers().forEach(l -> {
-					elements.add(new ArrayList<>());
-					l.getNotes().forEach(note -> elements.get(j.get()).addAll(mapBatteryNote(note)));
-					j.set(j.get() + 1);
-				});
-				
-				List<List<DrumElement>> finalList = new ArrayList<>();
-				for (int i = 0; i < nbNotes; i++) {
-					finalList.add(new ArrayList<>());
-					for (List<DrumElement> el : elements) {
-						finalList.get(i).add(el.get(i));
+				if (track.getInstrument().getSections().isEmpty()) {
+					Layer layer = track.getInstrument().getLayers().get(0);
+					int nbNotes = notesNumber(layer.getNotes());
+					
+					List<List<DrumElement>> elements = new ArrayList<>();
+					AtomicInteger j = new AtomicInteger(0);
+					track.getInstrument().getLayers().forEach(l -> {
+						elements.add(new ArrayList<>());
+						l.getNotes().forEach(note -> elements.get(j.get()).addAll(mapBatteryNote(note)));
+						j.set(j.get() + 1);
+					});
+					
+					List<List<DrumElement>> finalList = new ArrayList<>();
+					for (int i = 0; i < nbNotes; i++) {
+						finalList.add(new ArrayList<>());
+						for (List<DrumElement> el : elements) {
+							finalList.get(i).add(el.get(i));
+						}
 					}
-				}
-				
-				jFugueWrapper.addTrack(
-					new Track(finalList.toArray(new List[] {}))
-				);
-			} else {
-				track.getInstrument().getLayers().forEach(layer -> {
+					
 					jFugueWrapper.addTrack(
-						new Track(
-							layer.getNotes().stream().map(MappingUtils::mapNote).collect(Collectors.joining(" ")),
-							mapInstrument(track.getInstrument()),
-							voice.get()
-						)
+						new Track(finalList.toArray(new List[] {}))
 					);
-					voice.set(voice.get() + 1);
-				});
+				} else {					
+					List<List<DrumElement>> elements = new ArrayList<>();
+					List<List<Layer>> layersList = new ArrayList<>();
+					for (int n = 0; n < track.getInstrument().getSections().get(0).getLayers().size(); n++) {
+						layersList.add(new ArrayList<>());
+						final int nFinal = n;
+						track.getInstrument().getSections().forEach(s -> {
+							layersList.get(nFinal).add(s.getLayers().get(nFinal));
+						});
+					}
+					
+					AtomicInteger j = new AtomicInteger(0);
+					layersList.forEach(lGroup -> {
+						elements.add(new ArrayList<>());
+						lGroup.forEach(l -> {
+							l.getNotes().forEach(note -> elements.get(j.get()).addAll(mapBatteryNote(note)));
+						});
+						j.set(j.get() + 1);
+					});
+					
+					List<List<DrumElement>> finalList = new ArrayList<>();
+					for (int i = 0; i < layersList.get(0).stream().mapToInt(l -> notesNumber(l.getNotes())).sum(); i++) {
+						finalList.add(new ArrayList<>());
+						for (List<DrumElement> el : elements) {
+							finalList.get(i).add(el.get(i));
+						}
+					}
+					
+					jFugueWrapper.addTrack(
+						new Track(finalList.toArray(new List[] {}))
+					);
+				}
+			} else {
+				if (track.getInstrument().getSections().isEmpty()) {
+					track.getInstrument().getLayers().forEach(layer -> {
+						jFugueWrapper.addTrack(
+							new Track(
+								layer.getNotes().stream().map(MappingUtils::mapNote).collect(Collectors.joining(" ")),
+								mapInstrument(track.getInstrument()),
+								voice.get()
+							)
+						);
+						voice.set(voice.get() + 1);
+					});
+				} else {
+					List<List<Layer>> layersList = new ArrayList<>();
+					for (int n = 0; n < track.getInstrument().getSections().get(0).getLayers().size(); n++) {
+						layersList.add(new ArrayList<>());
+						final int nFinal = n;
+						track.getInstrument().getSections().forEach(s -> {
+							layersList.get(nFinal).add(s.getLayers().get(nFinal));
+						});
+					}
+					
+					layersList.forEach(layersTrack -> {
+						List<Note> allTrackNotes = new ArrayList<>();
+						layersTrack.forEach(l -> allTrackNotes.addAll(l.getNotes()));
+						jFugueWrapper.addTrack(
+								new Track(
+									allTrackNotes.stream().map(MappingUtils::mapNote).collect(Collectors.joining(" ")),
+									mapInstrument(track.getInstrument()),
+									voice.get()
+								)
+							);
+							voice.set(voice.get() + 1);
+					});
+				}
 			}
 		});
 		

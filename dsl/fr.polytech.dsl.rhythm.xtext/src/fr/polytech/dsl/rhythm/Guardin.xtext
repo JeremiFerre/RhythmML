@@ -27,7 +27,11 @@ Section returns Section:
 Track returns Track:
 	{Track}
 	(name=EString ":")?
-	(("battery:" instrument=Battery)|("piano:" instrument=Piano))
+	instrument=Instrument
+;
+
+Instrument returns Instrument:
+	Battery|Piano
 ;
 
 EmptyNote returns EmptyNote:
@@ -38,8 +42,16 @@ EmptyNote returns EmptyNote:
 /*------------------ BATTERY ------------------*/
 Battery returns Battery:
 	{Battery}
-	(name=EString ":")?
+	"battery" (":"|(name=EString ":"))
+	((sections+=SectionBatteryLayer)|(layers+=BatteryLayer))+
+;
+
+SectionBatteryLayer returns SectionLayer:
+	{SectionLayer}
+	"debut_section"
+	section=[Section|EString]
 	(layers+=BatteryLayer)+
+	"fin_section"
 ;
 
 BatteryLayer returns Layer:
@@ -65,8 +77,16 @@ CompositeBatteryNote returns CompositeNote:
 /*------------------ PIANO ------------------*/
 Piano returns Piano:
 	{Piano}
-	(name=EString ":")?
+	"piano" (":"|(name=EString ":"))
+	((sections+=SectionPianoLayer)|(layers+=PianoLayer))+
+;
+
+SectionPianoLayer returns SectionLayer:
+	{SectionLayer}
+	"debut_section"
+	section=[Section|EString]
 	(layers+=PianoLayer)+
+	"fin_section"
 ;
 
 PianoLayer returns Layer:

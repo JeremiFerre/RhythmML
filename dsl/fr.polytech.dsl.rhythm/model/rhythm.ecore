@@ -23,6 +23,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Instrument" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layers" upperBound="-1"
         eType="#//Layer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//SectionLayer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BatteryNoteType">
     <eLiterals name="SNARE_DRUM"/>
@@ -60,5 +62,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
         eType="#//Note" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionLayer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layers" upperBound="-1"
+        eType="#//Layer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" lowerBound="1"
+        eType="#//Section"/>
   </eClassifiers>
 </ecore:EPackage>

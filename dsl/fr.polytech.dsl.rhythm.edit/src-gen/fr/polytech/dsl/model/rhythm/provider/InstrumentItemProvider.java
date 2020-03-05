@@ -8,6 +8,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -43,8 +44,24 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSectionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sections feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSectionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Instrument_sections_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Instrument_sections_feature",
+								"_UI_Instrument_type"),
+						RhythmPackage.Literals.INSTRUMENT__SECTIONS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -60,6 +77,7 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RhythmPackage.Literals.INSTRUMENT__LAYERS);
+			childrenFeatures.add(RhythmPackage.Literals.INSTRUMENT__SECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -113,6 +131,7 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Instrument.class)) {
 		case RhythmPackage.INSTRUMENT__LAYERS:
+		case RhythmPackage.INSTRUMENT__SECTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -132,6 +151,9 @@ public class InstrumentItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(RhythmPackage.Literals.INSTRUMENT__LAYERS, RhythmFactory.eINSTANCE.createLayer()));
+
+		newChildDescriptors.add(createChildParameter(RhythmPackage.Literals.INSTRUMENT__SECTIONS,
+				RhythmFactory.eINSTANCE.createSectionLayer()));
 	}
 
 }

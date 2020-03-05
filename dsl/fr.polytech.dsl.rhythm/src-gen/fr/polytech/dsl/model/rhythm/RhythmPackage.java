@@ -288,13 +288,22 @@ public interface RhythmPackage extends EPackage {
 	int INSTRUMENT__LAYERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUMENT__SECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Instrument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Instrument</em>' class.
@@ -332,6 +341,15 @@ public interface RhythmPackage extends EPackage {
 	 * @ordered
 	 */
 	int BATTERY__LAYERS = INSTRUMENT__LAYERS;
+
+	/**
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY__SECTIONS = INSTRUMENT__SECTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Battery</em>' class.
@@ -378,6 +396,15 @@ public interface RhythmPackage extends EPackage {
 	 * @ordered
 	 */
 	int PIANO__LAYERS = INSTRUMENT__LAYERS;
+
+	/**
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO__SECTIONS = INSTRUMENT__SECTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Piano</em>' class.
@@ -620,6 +647,52 @@ public interface RhythmPackage extends EPackage {
 	int COMPOSITE_NOTE_OPERATION_COUNT = NOTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl <em>Section Layer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getSectionLayer()
+	 * @generated
+	 */
+	int SECTION_LAYER = 13;
+
+	/**
+	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_LAYER__LAYERS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Section</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_LAYER__SECTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Section Layer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_LAYER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Section Layer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_LAYER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,7 +700,7 @@ public interface RhythmPackage extends EPackage {
 	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getBatteryNoteType()
 	 * @generated
 	 */
-	int BATTERY_NOTE_TYPE = 13;
+	int BATTERY_NOTE_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.PianoNoteType <em>Piano Note Type</em>}' enum.
@@ -637,7 +710,7 @@ public interface RhythmPackage extends EPackage {
 	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getPianoNoteType()
 	 * @generated
 	 */
-	int PIANO_NOTE_TYPE = 14;
+	int PIANO_NOTE_TYPE = 15;
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.NamedElement <em>Named Element</em>}'.
@@ -776,6 +849,17 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstrument_Layers();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.polytech.dsl.model.rhythm.Instrument#getSections <em>Sections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sections</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Instrument#getSections()
+	 * @see #getInstrument()
+	 * @generated
+	 */
+	EReference getInstrument_Sections();
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.Battery <em>Battery</em>}'.
@@ -922,6 +1006,38 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCompositeNote_Repeats();
+
+	/**
+	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.SectionLayer <em>Section Layer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Section Layer</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.SectionLayer
+	 * @generated
+	 */
+	EClass getSectionLayer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.polytech.dsl.model.rhythm.SectionLayer#getLayers <em>Layers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Layers</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.SectionLayer#getLayers()
+	 * @see #getSectionLayer()
+	 * @generated
+	 */
+	EReference getSectionLayer_Layers();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.polytech.dsl.model.rhythm.SectionLayer#getSection <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Section</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.SectionLayer#getSection()
+	 * @see #getSectionLayer()
+	 * @generated
+	 */
+	EReference getSectionLayer_Section();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}'.
@@ -1081,6 +1197,14 @@ public interface RhythmPackage extends EPackage {
 		EReference INSTRUMENT__LAYERS = eINSTANCE.getInstrument_Layers();
 
 		/**
+		 * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUMENT__SECTIONS = eINSTANCE.getInstrument_Sections();
+
+		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.BatteryImpl <em>Battery</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1207,6 +1331,32 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPOSITE_NOTE__REPEATS = eINSTANCE.getCompositeNote_Repeats();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl <em>Section Layer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.impl.SectionLayerImpl
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getSectionLayer()
+		 * @generated
+		 */
+		EClass SECTION_LAYER = eINSTANCE.getSectionLayer();
+
+		/**
+		 * The meta object literal for the '<em><b>Layers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION_LAYER__LAYERS = eINSTANCE.getSectionLayer_Layers();
+
+		/**
+		 * The meta object literal for the '<em><b>Section</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION_LAYER__SECTION = eINSTANCE.getSectionLayer_Section();
 
 		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.BatteryNoteType <em>Battery Note Type</em>}' enum.

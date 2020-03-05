@@ -6,7 +6,6 @@ import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

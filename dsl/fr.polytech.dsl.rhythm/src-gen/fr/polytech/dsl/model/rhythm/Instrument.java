@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.polytech.dsl.model.rhythm.Instrument#getLayers <em>Layers</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.Instrument#getSections <em>Sections</em>}</li>
  * </ul>
  *
  * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getInstrument()
@@ -36,5 +37,21 @@ public interface Instrument extends NamedElement {
 	 * @generated
 	 */
 	EList<Layer> getLayers();
+
+	/**
+	 * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.polytech.dsl.model.rhythm.SectionLayer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sections</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sections</em>' containment reference list.
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getInstrument_Sections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SectionLayer> getSections();
 
 } // Instrument
