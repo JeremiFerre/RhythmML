@@ -39,6 +39,14 @@
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Instruments/CHURCH_ORGAN"/>
       <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Instruments/MUSIC_BOX"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythm.ecore#//Duration">
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/WHOLE"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/HALF"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/QUARTER"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/EIGHTH"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/SIXTEENTH"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythm.ecore#//Duration/THIRTY_SECOND"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="rhythm.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//NamedElement/name"/>
     </genClasses>
@@ -64,7 +72,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//Piano/instrument"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//Piano/other"/>
     </genClasses>
-    <genClasses ecoreClass="rhythm.ecore#//Note"/>
+    <genClasses ecoreClass="rhythm.ecore#//Note">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//Note/duration"/>
+    </genClasses>
     <genClasses ecoreClass="rhythm.ecore#//BatteryNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythm.ecore#//BatteryNote/noteType"/>
     </genClasses>

@@ -449,12 +449,14 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cBatteryNoteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNoteTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNoteTypeBatteryNoteTypeEnumRuleCall_1_0 = (RuleCall)cNoteTypeAssignment_1.eContents().get(0);
+		private final Assignment cDurationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDurationDurationEnumRuleCall_2_0 = (RuleCall)cDurationAssignment_2.eContents().get(0);
 		
 		//BatteryNote:
-		//	{BatteryNote} noteType=BatteryNoteType;
+		//	{BatteryNote} noteType=BatteryNoteType duration=Duration?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{BatteryNote} noteType=BatteryNoteType
+		//{BatteryNote} noteType=BatteryNoteType duration=Duration?
 		public Group getGroup() { return cGroup; }
 		
 		//{BatteryNote}
@@ -465,6 +467,12 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BatteryNoteType
 		public RuleCall getNoteTypeBatteryNoteTypeEnumRuleCall_1_0() { return cNoteTypeBatteryNoteTypeEnumRuleCall_1_0; }
+		
+		//duration=Duration?
+		public Assignment getDurationAssignment_2() { return cDurationAssignment_2; }
+		
+		//Duration
+		public RuleCall getDurationDurationEnumRuleCall_2_0() { return cDurationDurationEnumRuleCall_2_0; }
 	}
 	public class CompositeBatteryNoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.CompositeBatteryNote");
@@ -542,7 +550,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLayersAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cLayersPianoLayerParserRuleCall_3_1_0 = (RuleCall)cLayersAssignment_3_1.eContents().get(0);
 		
-		///* ------------------------------------------- */ /*------------------ PIANO ------------------*/ Piano:
+		///* ------------------------------------------- */ /*------------------ OTHER INSTRUMENTS ------------------*/ Piano:
 		//	{Piano} ("piano" | instrument=Instruments | "other:" other=EString) (":" | name=EString ":")
 		//	(sections+=SectionPianoLayer | layers+=PianoLayer)+;
 		@Override public ParserRule getRule() { return rule; }
@@ -703,21 +711,23 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPianoNoteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNoteTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNoteTypePianoNoteTypeEnumRuleCall_1_0 = (RuleCall)cNoteTypeAssignment_1.eContents().get(0);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Keyword cSolidusKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cOctaveOffsetAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cOctaveOffsetERelativeIntParserRuleCall_2_0_1_0 = (RuleCall)cOctaveOffsetAssignment_2_0_1.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
-		private final Keyword cVerticalLineKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cOctaveAbsoluteAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cOctaveAbsoluteEIntParserRuleCall_2_1_1_0 = (RuleCall)cOctaveAbsoluteAssignment_2_1_1.eContents().get(0);
+		private final Assignment cDurationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDurationDurationEnumRuleCall_2_0 = (RuleCall)cDurationAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
+		private final Keyword cSolidusKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cOctaveOffsetAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cOctaveOffsetERelativeIntParserRuleCall_3_0_1_0 = (RuleCall)cOctaveOffsetAssignment_3_0_1.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Keyword cVerticalLineKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cOctaveAbsoluteAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cOctaveAbsoluteEIntParserRuleCall_3_1_1_0 = (RuleCall)cOctaveAbsoluteAssignment_3_1_1.eContents().get(0);
 		
 		//PianoNote:
-		//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
+		//	{PianoNote} noteType=PianoNoteType duration=Duration? ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?
+		//{PianoNote} noteType=PianoNoteType duration=Duration? ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?
 		public Group getGroup() { return cGroup; }
 		
 		//{PianoNote}
@@ -729,32 +739,38 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		//PianoNoteType
 		public RuleCall getNoteTypePianoNoteTypeEnumRuleCall_1_0() { return cNoteTypePianoNoteTypeEnumRuleCall_1_0; }
 		
+		//duration=Duration?
+		public Assignment getDurationAssignment_2() { return cDurationAssignment_2; }
+		
+		//Duration
+		public RuleCall getDurationDurationEnumRuleCall_2_0() { return cDurationDurationEnumRuleCall_2_0; }
+		
 		//("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//"/" octaveOffset=ERelativeInt
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//"/"
-		public Keyword getSolidusKeyword_2_0_0() { return cSolidusKeyword_2_0_0; }
+		public Keyword getSolidusKeyword_3_0_0() { return cSolidusKeyword_3_0_0; }
 		
 		//octaveOffset=ERelativeInt
-		public Assignment getOctaveOffsetAssignment_2_0_1() { return cOctaveOffsetAssignment_2_0_1; }
+		public Assignment getOctaveOffsetAssignment_3_0_1() { return cOctaveOffsetAssignment_3_0_1; }
 		
 		//ERelativeInt
-		public RuleCall getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0() { return cOctaveOffsetERelativeIntParserRuleCall_2_0_1_0; }
+		public RuleCall getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0() { return cOctaveOffsetERelativeIntParserRuleCall_3_0_1_0; }
 		
 		//"|" octaveAbsolute=EInt
-		public Group getGroup_2_1() { return cGroup_2_1; }
+		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//"|"
-		public Keyword getVerticalLineKeyword_2_1_0() { return cVerticalLineKeyword_2_1_0; }
+		public Keyword getVerticalLineKeyword_3_1_0() { return cVerticalLineKeyword_3_1_0; }
 		
 		//octaveAbsolute=EInt
-		public Assignment getOctaveAbsoluteAssignment_2_1_1() { return cOctaveAbsoluteAssignment_2_1_1; }
+		public Assignment getOctaveAbsoluteAssignment_3_1_1() { return cOctaveAbsoluteAssignment_3_1_1; }
 		
 		//EInt
-		public RuleCall getOctaveAbsoluteEIntParserRuleCall_2_1_1_0() { return cOctaveAbsoluteEIntParserRuleCall_2_1_1_0; }
+		public RuleCall getOctaveAbsoluteEIntParserRuleCall_3_1_1_0() { return cOctaveAbsoluteEIntParserRuleCall_3_1_1_0; }
 	}
 	public class CompositePianoNoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
@@ -858,6 +874,41 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	
+	public class DurationElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.Duration");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cEIGHTHEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cEIGHTHFullStopFullStopKeyword_0_0 = (Keyword)cEIGHTHEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSIXTEENTHEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSIXTEENTHFullStopFullStopFullStopKeyword_1_0 = (Keyword)cSIXTEENTHEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTHIRTY_SECONDEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTHIRTY_SECONDFullStopFullStopFullStopFullStopKeyword_2_0 = (Keyword)cTHIRTY_SECONDEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Duration:
+		//	EIGHTH=".." | SIXTEENTH="..." | THIRTY_SECOND="....";
+		public EnumRule getRule() { return rule; }
+		
+		//EIGHTH=".." | SIXTEENTH="..." | THIRTY_SECOND="...."
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//EIGHTH=".."
+		public EnumLiteralDeclaration getEIGHTHEnumLiteralDeclaration_0() { return cEIGHTHEnumLiteralDeclaration_0; }
+		
+		//".."
+		public Keyword getEIGHTHFullStopFullStopKeyword_0_0() { return cEIGHTHFullStopFullStopKeyword_0_0; }
+		
+		//SIXTEENTH="..."
+		public EnumLiteralDeclaration getSIXTEENTHEnumLiteralDeclaration_1() { return cSIXTEENTHEnumLiteralDeclaration_1; }
+		
+		//"..."
+		public Keyword getSIXTEENTHFullStopFullStopFullStopKeyword_1_0() { return cSIXTEENTHFullStopFullStopFullStopKeyword_1_0; }
+		
+		//THIRTY_SECOND="...."
+		public EnumLiteralDeclaration getTHIRTY_SECONDEnumLiteralDeclaration_2() { return cTHIRTY_SECONDEnumLiteralDeclaration_2; }
+		
+		//"...."
+		public Keyword getTHIRTY_SECONDFullStopFullStopFullStopFullStopKeyword_2_0() { return cTHIRTY_SECONDFullStopFullStopFullStopFullStopKeyword_2_0; }
+	}
 	public class BatteryNoteTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.polytech.dsl.rhythm.Guardin.BatteryNoteType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1081,6 +1132,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	private final TrackElements pTrack;
 	private final InstrumentElements pInstrument;
 	private final EmptyNoteElements pEmptyNote;
+	private final DurationElements eDuration;
 	private final BatteryElements pBattery;
 	private final SectionBatteryLayerElements pSectionBatteryLayer;
 	private final BatteryLayerElements pBatteryLayer;
@@ -1112,6 +1164,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTrack = new TrackElements();
 		this.pInstrument = new InstrumentElements();
 		this.pEmptyNote = new EmptyNoteElements();
+		this.eDuration = new DurationElements();
 		this.pBattery = new BatteryElements();
 		this.pSectionBatteryLayer = new SectionBatteryLayerElements();
 		this.pBatteryLayer = new BatteryLayerElements();
@@ -1217,6 +1270,16 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		return getEmptyNoteAccess().getRule();
 	}
 	
+	//enum Duration:
+	//	EIGHTH=".." | SIXTEENTH="..." | THIRTY_SECOND="....";
+	public DurationElements getDurationAccess() {
+		return eDuration;
+	}
+	
+	public EnumRule getDurationRule() {
+		return getDurationAccess().getRule();
+	}
+	
 	///*------------------ BATTERY ------------------*/ Battery:
 	//	{Battery}
 	//	"battery" (":" | name=EString ":") (sections+=SectionBatteryLayer | layers+=BatteryLayer)+;
@@ -1253,7 +1316,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BatteryNote:
-	//	{BatteryNote} noteType=BatteryNoteType;
+	//	{BatteryNote} noteType=BatteryNoteType duration=Duration?;
 	public BatteryNoteElements getBatteryNoteAccess() {
 		return pBatteryNote;
 	}
@@ -1283,7 +1346,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 		return getCompositeBatteryNoteAccess().getRule();
 	}
 	
-	///* ------------------------------------------- */ /*------------------ PIANO ------------------*/ Piano:
+	///* ------------------------------------------- */ /*------------------ OTHER INSTRUMENTS ------------------*/ Piano:
 	//	{Piano} ("piano" | instrument=Instruments | "other:" other=EString) (":" | name=EString ":")
 	//	(sections+=SectionPianoLayer | layers+=PianoLayer)+;
 	public PianoElements getPianoAccess() {
@@ -1319,7 +1382,7 @@ public class GuardinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PianoNote:
-	//	{PianoNote} noteType=PianoNoteType ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
+	//	{PianoNote} noteType=PianoNoteType duration=Duration? ("/" octaveOffset=ERelativeInt | "|" octaveAbsolute=EInt)?;
 	public PianoNoteElements getPianoNoteAccess() {
 		return pPianoNote;
 	}

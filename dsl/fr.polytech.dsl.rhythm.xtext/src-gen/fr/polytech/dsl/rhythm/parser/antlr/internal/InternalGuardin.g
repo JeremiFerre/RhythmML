@@ -798,6 +798,25 @@ ruleBatteryNote returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBatteryNoteAccess().getDurationDurationEnumRuleCall_2_0());
+				}
+				lv_duration_2_0=ruleDuration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBatteryNoteRule());
+					}
+					set(
+						$current,
+						"duration",
+						lv_duration_2_0,
+						"fr.polytech.dsl.rhythm.Guardin.Duration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 
@@ -1242,16 +1261,35 @@ rulePianoNote returns [EObject current=null]
 		)
 		(
 			(
-				otherlv_2='/'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getPianoNoteAccess().getSolidusKeyword_2_0_0());
+					newCompositeNode(grammarAccess.getPianoNoteAccess().getDurationDurationEnumRuleCall_2_0());
+				}
+				lv_duration_2_0=ruleDuration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+					}
+					set(
+						$current,
+						"duration",
+						lv_duration_2_0,
+						"fr.polytech.dsl.rhythm.Guardin.Duration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				otherlv_3='/'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getPianoNoteAccess().getSolidusKeyword_3_0_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_2_0_1_0());
+							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0());
 						}
-						lv_octaveOffset_3_0=ruleERelativeInt
+						lv_octaveOffset_4_0=ruleERelativeInt
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
@@ -1259,7 +1297,7 @@ rulePianoNote returns [EObject current=null]
 							set(
 								$current,
 								"octaveOffset",
-								lv_octaveOffset_3_0,
+								lv_octaveOffset_4_0,
 								"fr.polytech.dsl.rhythm.Guardin.ERelativeInt");
 							afterParserOrEnumRuleCall();
 						}
@@ -1268,16 +1306,16 @@ rulePianoNote returns [EObject current=null]
 			)
 			    |
 			(
-				otherlv_4='|'
+				otherlv_5='|'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_2_1_0());
+					newLeafNode(otherlv_5, grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_3_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_2_1_1_0());
+							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0());
 						}
-						lv_octaveAbsolute_5_0=ruleEInt
+						lv_octaveAbsolute_6_0=ruleEInt
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
@@ -1285,7 +1323,7 @@ rulePianoNote returns [EObject current=null]
 							set(
 								$current,
 								"octaveAbsolute",
-								lv_octaveAbsolute_5_0,
+								lv_octaveAbsolute_6_0,
 								"fr.polytech.dsl.rhythm.Guardin.EInt");
 							afterParserOrEnumRuleCall();
 						}
@@ -1478,6 +1516,41 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
 		}
+	)
+;
+
+// Rule Duration
+ruleDuration returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='..'
+			{
+				$current = grammarAccess.getDurationAccess().getEIGHTHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getDurationAccess().getEIGHTHEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='...'
+			{
+				$current = grammarAccess.getDurationAccess().getSIXTEENTHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getDurationAccess().getSIXTEENTHEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='....'
+			{
+				$current = grammarAccess.getDurationAccess().getTHIRTY_SECONDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getDurationAccess().getTHIRTY_SECONDEnumLiteralDeclaration_2());
+			}
+		)
 	)
 ;
 

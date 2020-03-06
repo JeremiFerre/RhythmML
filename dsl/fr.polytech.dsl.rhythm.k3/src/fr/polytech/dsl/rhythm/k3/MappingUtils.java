@@ -29,6 +29,7 @@ import fr.polytech.dsl.midi.Track;
 import fr.polytech.dsl.model.rhythm.Battery;
 import fr.polytech.dsl.model.rhythm.BatteryNote;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
+import fr.polytech.dsl.model.rhythm.Duration;
 import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.Music;
@@ -186,6 +187,21 @@ public class MappingUtils {
 		return "";
 	}
 	
+	public static String mapDuration(Duration duration) {
+		switch (duration) {
+		case QUARTER:
+			return "";
+		case EIGHTH:
+			return "i";
+		case SIXTEENTH:
+			return "s";
+		case THIRTY_SECOND:
+			return "t";
+		default:
+			return "";
+		}
+	}
+	
 	public static String mapNote(Note note) {
 		if (note instanceof CompositeNote) {
 			List<Note> notes = new ArrayList<>();
@@ -195,7 +211,7 @@ public class MappingUtils {
 		}
 		
 		if (note instanceof PianoNote) {
-			return mapPianoNote((PianoNote) note);
+			return mapPianoNote((PianoNote) note) + mapDuration(note.getDuration());
 		}
 		
 		return "R";

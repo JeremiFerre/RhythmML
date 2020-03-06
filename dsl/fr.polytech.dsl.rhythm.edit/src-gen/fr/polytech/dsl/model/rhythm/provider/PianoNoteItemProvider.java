@@ -2,6 +2,7 @@
  */
 package fr.polytech.dsl.model.rhythm.provider;
 
+import fr.polytech.dsl.model.rhythm.Duration;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,7 +21,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.polytech.dsl.model.rhythm.PianoNote;
-import fr.polytech.dsl.model.rhythm.PianoNoteType;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 /**
@@ -52,11 +52,27 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDurationPropertyDescriptor(object);
 			addNoteTypePropertyDescriptor(object);
 			addOctaveOffsetPropertyDescriptor(object);
 			addOctaveAbsolutePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Duration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Note_duration_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Note_duration_feature", "_UI_Note_type"),
+						RhythmPackage.Literals.NOTE__DURATION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -136,7 +152,7 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		PianoNoteType labelValue = ((PianoNote) object).getNoteType();
+		Duration labelValue = ((PianoNote) object).getDuration();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_PianoNote_type")
 				: getString("_UI_PianoNote_type") + " " + label;
@@ -154,6 +170,7 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PianoNote.class)) {
+		case RhythmPackage.PIANO_NOTE__DURATION:
 		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
 		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
 		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:

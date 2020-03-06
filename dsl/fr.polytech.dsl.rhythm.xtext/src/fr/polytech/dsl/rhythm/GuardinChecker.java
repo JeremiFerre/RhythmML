@@ -21,17 +21,31 @@ public class GuardinChecker {
 		return music.getSections().stream().mapToInt(section -> section.getBars() * section.getSignature()).sum();
 	}
 	
+	public double noteBeats(Note note) {
+		switch (note.getDuration()) {
+		case EIGHTH:
+			return 0.5;
+		case SIXTEENTH:
+			return 0.25;
+		case THIRTY_SECOND:
+			return 0.125;
+		default:
+			return 1;
+		}
+	}
+	
 	public int notesNumber(EList<Note> notes) {
-		int sum = 0;
+		double sum = 0;
 		for (int i = 0; i < notes.size(); i++) {
 			Note n = notes.get(i);
 			if (n instanceof CompositeNote) {
-				sum += ((CompositeNote) n).getRepeats() * ((CompositeNote) n).getNotes().size();
+				CompositeNote cn = ((CompositeNote) n);
+				sum += cn.getNotes().stream().mapToDouble(note -> noteBeats(note)).sum() * cn.getRepeats();
 			} else {
-				sum++;
+				sum += noteBeats(n);
 			}
 		}
-		return sum;
+		return (int) sum;
 	}
 	
 	public boolean sameLayersCount(List<SectionLayer> sectionLayers) {

@@ -3,6 +3,7 @@
 package fr.polytech.dsl.model.rhythm.impl;
 
 import fr.polytech.dsl.model.rhythm.CompositeNote;
+import fr.polytech.dsl.model.rhythm.Duration;
 import fr.polytech.dsl.model.rhythm.Note;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.CompositeNoteImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.CompositeNoteImpl#getNotes <em>Notes</em>}</li>
  *   <li>{@link fr.polytech.dsl.model.rhythm.impl.CompositeNoteImpl#getRepeats <em>Repeats</em>}</li>
  * </ul>
@@ -36,6 +38,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements CompositeNote {
+	/**
+	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Duration DURATION_EDEFAULT = Duration.QUARTER;
+
+	/**
+	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
+	protected Duration duration = DURATION_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -83,6 +105,28 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	protected EClass eStaticClass() {
 		return RhythmPackage.Literals.COMPOSITE_NOTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Duration getDuration() {
+		return duration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDuration(Duration newDuration) {
+		Duration oldDuration = duration;
+		duration = newDuration == null ? DURATION_EDEFAULT : newDuration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.COMPOSITE_NOTE__DURATION, oldDuration,
+					duration));
 	}
 
 	/**
@@ -141,6 +185,8 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case RhythmPackage.COMPOSITE_NOTE__DURATION:
+			return getDuration();
 		case RhythmPackage.COMPOSITE_NOTE__NOTES:
 			return getNotes();
 		case RhythmPackage.COMPOSITE_NOTE__REPEATS:
@@ -158,6 +204,9 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case RhythmPackage.COMPOSITE_NOTE__DURATION:
+			setDuration((Duration) newValue);
+			return;
 		case RhythmPackage.COMPOSITE_NOTE__NOTES:
 			getNotes().clear();
 			getNotes().addAll((Collection<? extends Note>) newValue);
@@ -177,6 +226,9 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case RhythmPackage.COMPOSITE_NOTE__DURATION:
+			setDuration(DURATION_EDEFAULT);
+			return;
 		case RhythmPackage.COMPOSITE_NOTE__NOTES:
 			getNotes().clear();
 			return;
@@ -195,6 +247,8 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case RhythmPackage.COMPOSITE_NOTE__DURATION:
+			return duration != DURATION_EDEFAULT;
 		case RhythmPackage.COMPOSITE_NOTE__NOTES:
 			return notes != null && !notes.isEmpty();
 		case RhythmPackage.COMPOSITE_NOTE__REPEATS:
@@ -214,7 +268,9 @@ public class CompositeNoteImpl extends MinimalEObjectImpl.Container implements C
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (repeats: ");
+		result.append(" (duration: ");
+		result.append(duration);
+		result.append(", repeats: ");
 		result.append(repeats);
 		result.append(')');
 		return result.toString();

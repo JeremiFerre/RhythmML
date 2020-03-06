@@ -6,6 +6,7 @@ import fr.polytech.dsl.model.rhythm.Battery;
 import fr.polytech.dsl.model.rhythm.BatteryNote;
 import fr.polytech.dsl.model.rhythm.BatteryNoteType;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
+import fr.polytech.dsl.model.rhythm.Duration;
 import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.Instruments;
@@ -155,6 +156,13 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * @generated
 	 */
 	private EEnum instrumentsEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum durationEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -405,6 +413,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNote_Duration() {
+		return (EAttribute) noteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBatteryNote() {
 		return batteryNoteEClass;
 	}
@@ -567,6 +584,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDuration() {
+		return durationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RhythmFactory getRhythmFactory() {
 		return (RhythmFactory) getEFactoryInstance();
 	}
@@ -618,6 +644,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		createEAttribute(pianoEClass, PIANO__OTHER);
 
 		noteEClass = createEClass(NOTE);
+		createEAttribute(noteEClass, NOTE__DURATION);
 
 		batteryNoteEClass = createEClass(BATTERY_NOTE);
 		createEAttribute(batteryNoteEClass, BATTERY_NOTE__NOTE_TYPE);
@@ -644,6 +671,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
 		pianoNoteTypeEEnum = createEEnum(PIANO_NOTE_TYPE);
 		instrumentsEEnum = createEEnum(INSTRUMENTS);
+		durationEEnum = createEEnum(DURATION);
 	}
 
 	/**
@@ -733,6 +761,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(noteEClass, Note.class, "Note", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNote_Duration(), this.getDuration(), "duration", "QUARTER", 0, 1, Note.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(batteryNoteEClass, BatteryNote.class, "BatteryNote", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -803,6 +833,14 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		addEEnumLiteral(instrumentsEEnum, Instruments.ACOUSTIC_BASS);
 		addEEnumLiteral(instrumentsEEnum, Instruments.CHURCH_ORGAN);
 		addEEnumLiteral(instrumentsEEnum, Instruments.MUSIC_BOX);
+
+		initEEnum(durationEEnum, Duration.class, "Duration");
+		addEEnumLiteral(durationEEnum, Duration.WHOLE);
+		addEEnumLiteral(durationEEnum, Duration.HALF);
+		addEEnumLiteral(durationEEnum, Duration.QUARTER);
+		addEEnumLiteral(durationEEnum, Duration.EIGHTH);
+		addEEnumLiteral(durationEEnum, Duration.SIXTEENTH);
+		addEEnumLiteral(durationEEnum, Duration.THIRTY_SECOND);
 
 		// Create resource
 		createResource(eNS_URI);

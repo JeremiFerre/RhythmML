@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.polytech.dsl.model.rhythm.BatteryNote;
-import fr.polytech.dsl.model.rhythm.BatteryNoteType;
+import fr.polytech.dsl.model.rhythm.Duration;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 /**
@@ -52,9 +52,25 @@ public class BatteryNoteItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDurationPropertyDescriptor(object);
 			addNoteTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Duration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Note_duration_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Note_duration_feature", "_UI_Note_type"),
+						RhythmPackage.Literals.NOTE__DURATION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -102,7 +118,7 @@ public class BatteryNoteItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		BatteryNoteType labelValue = ((BatteryNote) object).getNoteType();
+		Duration labelValue = ((BatteryNote) object).getDuration();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_BatteryNote_type")
 				: getString("_UI_BatteryNote_type") + " " + label;
@@ -120,6 +136,7 @@ public class BatteryNoteItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BatteryNote.class)) {
+		case RhythmPackage.BATTERY_NOTE__DURATION:
 		case RhythmPackage.BATTERY_NOTE__NOTE_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

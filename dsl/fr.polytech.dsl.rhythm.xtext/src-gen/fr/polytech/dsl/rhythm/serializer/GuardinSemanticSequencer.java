@@ -118,16 +118,10 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BatteryNote returns BatteryNote
 	 *
 	 * Constraint:
-	 *     noteType=BatteryNoteType
+	 *     (noteType=BatteryNoteType duration=Duration?)
 	 */
 	protected void sequence_BatteryNote(ISerializationContext context, BatteryNote semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RhythmPackage.Literals.BATTERY_NOTE__NOTE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmPackage.Literals.BATTERY_NOTE__NOTE_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBatteryNoteAccess().getNoteTypeBatteryNoteTypeEnumRuleCall_1_0(), semanticObject.getNoteType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -216,7 +210,7 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PianoNote returns PianoNote
 	 *
 	 * Constraint:
-	 *     (noteType=PianoNoteType (octaveOffset=ERelativeInt | octaveAbsolute=EInt)?)
+	 *     (noteType=PianoNoteType duration=Duration? (octaveOffset=ERelativeInt | octaveAbsolute=EInt)?)
 	 */
 	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

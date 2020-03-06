@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.polytech.dsl.model.rhythm.CompositeNote;
+import fr.polytech.dsl.model.rhythm.Duration;
 import fr.polytech.dsl.model.rhythm.RhythmFactory;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
@@ -53,9 +54,25 @@ public class CompositeNoteItemProvider extends ItemProviderAdapter implements IE
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDurationPropertyDescriptor(object);
 			addRepeatsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Duration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Note_duration_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Note_duration_feature", "_UI_Note_type"),
+						RhythmPackage.Literals.NOTE__DURATION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -133,8 +150,10 @@ public class CompositeNoteItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		CompositeNote compositeNote = (CompositeNote) object;
-		return getString("_UI_CompositeNote_type") + " " + compositeNote.getRepeats();
+		Duration labelValue = ((CompositeNote) object).getDuration();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_CompositeNote_type")
+				: getString("_UI_CompositeNote_type") + " " + label;
 	}
 
 	/**
@@ -149,6 +168,7 @@ public class CompositeNoteItemProvider extends ItemProviderAdapter implements IE
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CompositeNote.class)) {
+		case RhythmPackage.COMPOSITE_NOTE__DURATION:
 		case RhythmPackage.COMPOSITE_NOTE__REPEATS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

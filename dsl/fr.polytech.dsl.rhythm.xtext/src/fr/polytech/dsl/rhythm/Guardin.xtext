@@ -40,6 +40,10 @@ EmptyNote returns EmptyNote:
 	"$"
 ;
 
+enum Duration:
+	EIGHTH=".."|SIXTEENTH="..."|THIRTY_SECOND="...."
+;
+
 /*------------------ BATTERY ------------------*/
 Battery returns Battery:
 	{Battery}
@@ -62,7 +66,7 @@ BatteryLayer returns Layer:
 
 BatteryNote returns BatteryNote:
 	{BatteryNote}
-	noteType=BatteryNoteType
+	noteType=BatteryNoteType (duration=Duration)?
 ;
 
 enum BatteryNoteType returns BatteryNoteType:
@@ -75,7 +79,7 @@ CompositeBatteryNote returns CompositeNote:
 ;
 /* ------------------------------------------- */
 
-/*------------------ PIANO ------------------*/
+/*------------------ OTHER INSTRUMENTS ------------------*/
 Piano returns Piano:
 	{Piano}
 	("piano"|instrument=Instruments|"other:" other=EString) (":"|(name=EString ":"))
@@ -97,7 +101,7 @@ PianoLayer returns Layer:
 
 PianoNote returns PianoNote:
 	{PianoNote}
-	noteType=PianoNoteType (("/" octaveOffset=ERelativeInt)|("|" octaveAbsolute=EInt))?
+	noteType=PianoNoteType (duration=Duration)? (("/" octaveOffset=ERelativeInt)|("|" octaveAbsolute=EInt))?
 ;
 
 enum Instruments:

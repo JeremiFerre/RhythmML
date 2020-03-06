@@ -462,13 +462,22 @@ public interface RhythmPackage extends EPackage {
 	int NOTE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__DURATION = 0;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOTE_FEATURE_COUNT = 0;
+	int NOTE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Note</em>' class.
@@ -488,6 +497,15 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int BATTERY_NOTE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BATTERY_NOTE__DURATION = NOTE__DURATION;
 
 	/**
 	 * The feature id for the '<em><b>Note Type</b></em>' attribute.
@@ -525,6 +543,15 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int EMPTY_NOTE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_NOTE__DURATION = NOTE__DURATION;
 
 	/**
 	 * The number of structural features of the '<em>Empty Note</em>' class.
@@ -592,6 +619,15 @@ public interface RhythmPackage extends EPackage {
 	int PIANO_NOTE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIANO_NOTE__DURATION = NOTE__DURATION;
+
+	/**
 	 * The feature id for the '<em><b>Note Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -645,6 +681,15 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int COMPOSITE_NOTE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_NOTE__DURATION = NOTE__DURATION;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' containment reference list.
@@ -757,6 +802,16 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	int INSTRUMENTS = 16;
+
+	/**
+	 * The meta object id for the '{@link fr.polytech.dsl.model.rhythm.Duration <em>Duration</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.polytech.dsl.model.rhythm.Duration
+	 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getDuration()
+	 * @generated
+	 */
+	int DURATION = 17;
 
 	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.NamedElement <em>Named Element</em>}'.
@@ -971,6 +1026,17 @@ public interface RhythmPackage extends EPackage {
 	EClass getNote();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.polytech.dsl.model.rhythm.Note#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Note#getDuration()
+	 * @see #getNote()
+	 * @generated
+	 */
+	EAttribute getNote_Duration();
+
+	/**
 	 * Returns the meta object for class '{@link fr.polytech.dsl.model.rhythm.BatteryNote <em>Battery Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1158,6 +1224,16 @@ public interface RhythmPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getInstruments();
+
+	/**
+	 * Returns the meta object for enum '{@link fr.polytech.dsl.model.rhythm.Duration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Duration</em>'.
+	 * @see fr.polytech.dsl.model.rhythm.Duration
+	 * @generated
+	 */
+	EEnum getDuration();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1359,6 +1435,14 @@ public interface RhythmPackage extends EPackage {
 		EClass NOTE = eINSTANCE.getNote();
 
 		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE__DURATION = eINSTANCE.getNote_Duration();
+
+		/**
 		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.impl.BatteryNoteImpl <em>Battery Note</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1519,6 +1603,16 @@ public interface RhythmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INSTRUMENTS = eINSTANCE.getInstruments();
+
+		/**
+		 * The meta object literal for the '{@link fr.polytech.dsl.model.rhythm.Duration <em>Duration</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.polytech.dsl.model.rhythm.Duration
+		 * @see fr.polytech.dsl.model.rhythm.impl.RhythmPackageImpl#getDuration()
+		 * @generated
+		 */
+		EEnum DURATION = eINSTANCE.getDuration();
 
 	}
 
