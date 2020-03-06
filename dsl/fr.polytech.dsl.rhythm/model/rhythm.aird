@@ -951,9 +951,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_SFBrgE1vEeqPra9hoUhbVQ" name="Piano" tooltipText="" outgoingEdges="_T9JDyE1vEeqPra9hoUhbVQ" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="rhythm.ecore#//Piano"/>
-      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//Piano"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_SFBrgE1vEeqPra9hoUhbVQ" name="Melody" tooltipText="" outgoingEdges="_T9JDyE1vEeqPra9hoUhbVQ" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="rhythm.ecore#//Melody"/>
+      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//Melody"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -962,16 +962,16 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_XPZU0F8ZEeqy5a3AlxZztQ" name="instrument : Instruments = PIANO" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//Piano/instrument"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//Piano/instrument"/>
+        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//Melody/instrument"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//Melody/instrument"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_au3FWl8ZEeqy5a3AlxZztQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_uBJOUF8ZEeqy5a3AlxZztQ" name="other : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//Piano/other"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//Piano/other"/>
+        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//Melody/other"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//Melody/other"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_vE045V8ZEeqy5a3AlxZztQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -979,8 +979,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_T9JDyE1vEeqPra9hoUhbVQ" sourceNode="_SFBrgE1vEeqPra9hoUhbVQ" targetNode="_YPH_EEgFEeql-5mEgC6G9w">
-      <target xmi:type="ecore:EClass" href="rhythm.ecore#//Piano"/>
-      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//Piano"/>
+      <target xmi:type="ecore:EClass" href="rhythm.ecore#//Melody"/>
+      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//Melody"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_vE38SF8ZEeqy5a3AlxZztQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_vE38SV8ZEeqy5a3AlxZztQ" showIcon="false">
@@ -1101,9 +1101,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_g-3uAFLoEeqsntl_fuCiug" name="PianoNote" tooltipText="" outgoingEdges="_i9jBPFLoEeqsntl_fuCiug" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="rhythm.ecore#//PianoNote"/>
-      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//PianoNote"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_g-3uAFLoEeqsntl_fuCiug" name="MelodyNote" tooltipText="" outgoingEdges="_i9jBPFLoEeqsntl_fuCiug" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="rhythm.ecore#//MelodyNote"/>
+      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//MelodyNote"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1111,25 +1111,25 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_kYYAcFLoEeqsntl_fuCiug" name="noteType : PianoNoteType = C" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/noteType"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/noteType"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_kYYAcFLoEeqsntl_fuCiug" name="noteType : MelodyNoteType = C" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/noteType"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/noteType"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_xrCJUVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_R1XOEFMxEeqAq5baIKdGQA" name="octaveOffset : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/octaveOffset"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/octaveOffset"/>
+        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/octaveOffset"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/octaveOffset"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cD2bUlMxEeqAq5baIKdGQA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_eKF4EF8DEeqy5a3AlxZztQ" name="octaveAbsolute : EInt = 5" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/octaveAbsolute"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//PianoNote/octaveAbsolute"/>
+        <target xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/octaveAbsolute"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="rhythm.ecore#//MelodyNote/octaveAbsolute"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_gU47tF8DEeqy5a3AlxZztQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -1137,8 +1137,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_i9jBPFLoEeqsntl_fuCiug" sourceNode="_g-3uAFLoEeqsntl_fuCiug" targetNode="_SbxSYE2BEequb6m1O6-3yQ">
-      <target xmi:type="ecore:EClass" href="rhythm.ecore#//PianoNote"/>
-      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//PianoNote"/>
+      <target xmi:type="ecore:EClass" href="rhythm.ecore#//MelodyNote"/>
+      <semanticElements xmi:type="ecore:EClass" href="rhythm.ecore#//MelodyNote"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_gU7_JF8DEeqy5a3AlxZztQ" lineStyle="dash" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@conditionnalStyles.0/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_gU7_JV8DEeqy5a3AlxZztQ" showIcon="false">
@@ -1148,9 +1148,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_mzk3kFLoEeqsntl_fuCiug" name="PianoNoteType" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EEnum" href="rhythm.ecore#//PianoNoteType"/>
-      <semanticElements xmi:type="ecore:EEnum" href="rhythm.ecore#//PianoNoteType"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_mzk3kFLoEeqsntl_fuCiug" name="MelodyNoteType" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="rhythm.ecore#//MelodyNoteType"/>
+      <semanticElements xmi:type="ecore:EEnum" href="rhythm.ecore#//MelodyNoteType"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1159,56 +1159,56 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_qzNV4FLoEeqsntl_fuCiug" name="C" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/C"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/C"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/C"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/C"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_qzNV4VLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_snNqIFLoEeqsntl_fuCiug" name="D" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/D"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/D"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/D"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/D"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_snNqIVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_tZ2oAFLoEeqsntl_fuCiug" name="E" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/E"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/E"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/E"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/E"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_tZ2oAVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_t-F9gFLoEeqsntl_fuCiug" name="F" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/F"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/F"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/F"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/F"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_t-F9gVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_ucvBUFLoEeqsntl_fuCiug" name="G" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/G"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/G"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/G"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/G"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_ucvBUVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_u_9qMFLoEeqsntl_fuCiug" name="A" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/A"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/A"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/A"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/A"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_u_-RQFLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_v4IoUFLoEeqsntl_fuCiug" name="B" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/B"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//PianoNoteType/B"/>
+        <target xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/B"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythm.ecore#//MelodyNoteType/B"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_v4IoUVLoEeqsntl_fuCiug" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

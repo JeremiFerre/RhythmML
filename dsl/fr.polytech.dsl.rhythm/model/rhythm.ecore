@@ -36,7 +36,7 @@
     <eLiterals name="RIDE_CYMBAL" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Battery" eSuperTypes="#//Instrument"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Piano" eSuperTypes="#//Instrument">
+  <eClassifiers xsi:type="ecore:EClass" name="Melody" eSuperTypes="#//Instrument">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instrument" eType="#//Instruments"
         defaultValueLiteral="PIANO"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="other" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,13 +53,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
         eType="#//Note" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PianoNote" eSuperTypes="#//Note">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//PianoNoteType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MelodyNote" eSuperTypes="#//Note">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteType" eType="#//MelodyNoteType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="octaveOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="octaveAbsolute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PianoNoteType">
+  <eClassifiers xsi:type="ecore:EEnum" name="MelodyNoteType">
     <eLiterals name="C"/>
     <eLiterals name="D" value="1"/>
     <eLiterals name="E" value="2"/>

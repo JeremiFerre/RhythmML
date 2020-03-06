@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'piano'", "'..'", "'...'", "'....'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'", "'ACOUSTIC_BASS'", "'CHURCH_ORGAN'", "'CLAVINET'", "'GUITAR'", "'HARPSICHORD'", "'MUSIC_BOX'", "'OCARINA'", "'PIANO'", "'SYNTH_BASS_1'", "'VIOLIN'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'Music'", "'sections'", "'tracks'", "'CustomSoundBank'", "'basePath='", "'-'", "'tempo='", "'signature='", "'bars='", "'$'", "'battery'", "'begin_section'", "'end_section'", "'layer:'", "'('", "')'", "'x'", "'other:'", "'/'", "'|'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'Melody'", "'..'", "'...'", "'....'", "'bd'", "'ch'", "'cc'", "'oh'", "'rc'", "'sd'", "'ACOUSTIC_BASS'", "'CHURCH_ORGAN'", "'CLAVINET'", "'GUITAR'", "'HARPSICHORD'", "'MUSIC_BOX'", "'OCARINA'", "'PIANO'", "'SYNTH_BASS_1'", "'VIOLIN'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'Music'", "'sections'", "'tracks'", "'CustomSoundBank'", "'basePath='", "'-'", "'tempo='", "'signature='", "'bars='", "'$'", "'battery'", "'begin_section'", "'end_section'", "'layer:'", "'('", "')'", "'x'", "'other:'", "'/'", "'|'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -886,20 +886,20 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleCompositeBatteryNote"
 
 
-    // $ANTLR start "entryRulePiano"
-    // InternalGuardin.g:303:1: entryRulePiano : rulePiano EOF ;
-    public final void entryRulePiano() throws RecognitionException {
+    // $ANTLR start "entryRuleMelody"
+    // InternalGuardin.g:303:1: entryRuleMelody : ruleMelody EOF ;
+    public final void entryRuleMelody() throws RecognitionException {
         try {
-            // InternalGuardin.g:304:1: ( rulePiano EOF )
-            // InternalGuardin.g:305:1: rulePiano EOF
+            // InternalGuardin.g:304:1: ( ruleMelody EOF )
+            // InternalGuardin.g:305:1: ruleMelody EOF
             {
-             before(grammarAccess.getPianoRule()); 
+             before(grammarAccess.getMelodyRule()); 
             pushFollow(FOLLOW_1);
-            rulePiano();
+            ruleMelody();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoRule()); 
+             after(grammarAccess.getMelodyRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -913,35 +913,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulePiano"
+    // $ANTLR end "entryRuleMelody"
 
 
-    // $ANTLR start "rulePiano"
-    // InternalGuardin.g:312:1: rulePiano : ( ( rule__Piano__Group__0 ) ) ;
-    public final void rulePiano() throws RecognitionException {
+    // $ANTLR start "ruleMelody"
+    // InternalGuardin.g:312:1: ruleMelody : ( ( rule__Melody__Group__0 ) ) ;
+    public final void ruleMelody() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:316:2: ( ( ( rule__Piano__Group__0 ) ) )
-            // InternalGuardin.g:317:2: ( ( rule__Piano__Group__0 ) )
+            // InternalGuardin.g:316:2: ( ( ( rule__Melody__Group__0 ) ) )
+            // InternalGuardin.g:317:2: ( ( rule__Melody__Group__0 ) )
             {
-            // InternalGuardin.g:317:2: ( ( rule__Piano__Group__0 ) )
-            // InternalGuardin.g:318:3: ( rule__Piano__Group__0 )
+            // InternalGuardin.g:317:2: ( ( rule__Melody__Group__0 ) )
+            // InternalGuardin.g:318:3: ( rule__Melody__Group__0 )
             {
-             before(grammarAccess.getPianoAccess().getGroup()); 
-            // InternalGuardin.g:319:3: ( rule__Piano__Group__0 )
-            // InternalGuardin.g:319:4: rule__Piano__Group__0
+             before(grammarAccess.getMelodyAccess().getGroup()); 
+            // InternalGuardin.g:319:3: ( rule__Melody__Group__0 )
+            // InternalGuardin.g:319:4: rule__Melody__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Group__0();
+            rule__Melody__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getGroup()); 
+             after(grammarAccess.getMelodyAccess().getGroup()); 
 
             }
 
@@ -960,23 +960,23 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulePiano"
+    // $ANTLR end "ruleMelody"
 
 
-    // $ANTLR start "entryRuleSectionPianoLayer"
-    // InternalGuardin.g:328:1: entryRuleSectionPianoLayer : ruleSectionPianoLayer EOF ;
-    public final void entryRuleSectionPianoLayer() throws RecognitionException {
+    // $ANTLR start "entryRuleSectionMelodyLayer"
+    // InternalGuardin.g:328:1: entryRuleSectionMelodyLayer : ruleSectionMelodyLayer EOF ;
+    public final void entryRuleSectionMelodyLayer() throws RecognitionException {
         try {
-            // InternalGuardin.g:329:1: ( ruleSectionPianoLayer EOF )
-            // InternalGuardin.g:330:1: ruleSectionPianoLayer EOF
+            // InternalGuardin.g:329:1: ( ruleSectionMelodyLayer EOF )
+            // InternalGuardin.g:330:1: ruleSectionMelodyLayer EOF
             {
-             before(grammarAccess.getSectionPianoLayerRule()); 
+             before(grammarAccess.getSectionMelodyLayerRule()); 
             pushFollow(FOLLOW_1);
-            ruleSectionPianoLayer();
+            ruleSectionMelodyLayer();
 
             state._fsp--;
 
-             after(grammarAccess.getSectionPianoLayerRule()); 
+             after(grammarAccess.getSectionMelodyLayerRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -990,35 +990,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleSectionPianoLayer"
+    // $ANTLR end "entryRuleSectionMelodyLayer"
 
 
-    // $ANTLR start "ruleSectionPianoLayer"
-    // InternalGuardin.g:337:1: ruleSectionPianoLayer : ( ( rule__SectionPianoLayer__Group__0 ) ) ;
-    public final void ruleSectionPianoLayer() throws RecognitionException {
+    // $ANTLR start "ruleSectionMelodyLayer"
+    // InternalGuardin.g:337:1: ruleSectionMelodyLayer : ( ( rule__SectionMelodyLayer__Group__0 ) ) ;
+    public final void ruleSectionMelodyLayer() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:341:2: ( ( ( rule__SectionPianoLayer__Group__0 ) ) )
-            // InternalGuardin.g:342:2: ( ( rule__SectionPianoLayer__Group__0 ) )
+            // InternalGuardin.g:341:2: ( ( ( rule__SectionMelodyLayer__Group__0 ) ) )
+            // InternalGuardin.g:342:2: ( ( rule__SectionMelodyLayer__Group__0 ) )
             {
-            // InternalGuardin.g:342:2: ( ( rule__SectionPianoLayer__Group__0 ) )
-            // InternalGuardin.g:343:3: ( rule__SectionPianoLayer__Group__0 )
+            // InternalGuardin.g:342:2: ( ( rule__SectionMelodyLayer__Group__0 ) )
+            // InternalGuardin.g:343:3: ( rule__SectionMelodyLayer__Group__0 )
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getGroup()); 
-            // InternalGuardin.g:344:3: ( rule__SectionPianoLayer__Group__0 )
-            // InternalGuardin.g:344:4: rule__SectionPianoLayer__Group__0
+             before(grammarAccess.getSectionMelodyLayerAccess().getGroup()); 
+            // InternalGuardin.g:344:3: ( rule__SectionMelodyLayer__Group__0 )
+            // InternalGuardin.g:344:4: rule__SectionMelodyLayer__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__0();
+            rule__SectionMelodyLayer__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSectionPianoLayerAccess().getGroup()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getGroup()); 
 
             }
 
@@ -1037,23 +1037,23 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleSectionPianoLayer"
+    // $ANTLR end "ruleSectionMelodyLayer"
 
 
-    // $ANTLR start "entryRulePianoLayer"
-    // InternalGuardin.g:353:1: entryRulePianoLayer : rulePianoLayer EOF ;
-    public final void entryRulePianoLayer() throws RecognitionException {
+    // $ANTLR start "entryRuleMelodyLayer"
+    // InternalGuardin.g:353:1: entryRuleMelodyLayer : ruleMelodyLayer EOF ;
+    public final void entryRuleMelodyLayer() throws RecognitionException {
         try {
-            // InternalGuardin.g:354:1: ( rulePianoLayer EOF )
-            // InternalGuardin.g:355:1: rulePianoLayer EOF
+            // InternalGuardin.g:354:1: ( ruleMelodyLayer EOF )
+            // InternalGuardin.g:355:1: ruleMelodyLayer EOF
             {
-             before(grammarAccess.getPianoLayerRule()); 
+             before(grammarAccess.getMelodyLayerRule()); 
             pushFollow(FOLLOW_1);
-            rulePianoLayer();
+            ruleMelodyLayer();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoLayerRule()); 
+             after(grammarAccess.getMelodyLayerRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1067,35 +1067,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulePianoLayer"
+    // $ANTLR end "entryRuleMelodyLayer"
 
 
-    // $ANTLR start "rulePianoLayer"
-    // InternalGuardin.g:362:1: rulePianoLayer : ( ( rule__PianoLayer__Group__0 ) ) ;
-    public final void rulePianoLayer() throws RecognitionException {
+    // $ANTLR start "ruleMelodyLayer"
+    // InternalGuardin.g:362:1: ruleMelodyLayer : ( ( rule__MelodyLayer__Group__0 ) ) ;
+    public final void ruleMelodyLayer() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:366:2: ( ( ( rule__PianoLayer__Group__0 ) ) )
-            // InternalGuardin.g:367:2: ( ( rule__PianoLayer__Group__0 ) )
+            // InternalGuardin.g:366:2: ( ( ( rule__MelodyLayer__Group__0 ) ) )
+            // InternalGuardin.g:367:2: ( ( rule__MelodyLayer__Group__0 ) )
             {
-            // InternalGuardin.g:367:2: ( ( rule__PianoLayer__Group__0 ) )
-            // InternalGuardin.g:368:3: ( rule__PianoLayer__Group__0 )
+            // InternalGuardin.g:367:2: ( ( rule__MelodyLayer__Group__0 ) )
+            // InternalGuardin.g:368:3: ( rule__MelodyLayer__Group__0 )
             {
-             before(grammarAccess.getPianoLayerAccess().getGroup()); 
-            // InternalGuardin.g:369:3: ( rule__PianoLayer__Group__0 )
-            // InternalGuardin.g:369:4: rule__PianoLayer__Group__0
+             before(grammarAccess.getMelodyLayerAccess().getGroup()); 
+            // InternalGuardin.g:369:3: ( rule__MelodyLayer__Group__0 )
+            // InternalGuardin.g:369:4: rule__MelodyLayer__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__PianoLayer__Group__0();
+            rule__MelodyLayer__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoLayerAccess().getGroup()); 
+             after(grammarAccess.getMelodyLayerAccess().getGroup()); 
 
             }
 
@@ -1114,23 +1114,23 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulePianoLayer"
+    // $ANTLR end "ruleMelodyLayer"
 
 
-    // $ANTLR start "entryRulePianoNote"
-    // InternalGuardin.g:378:1: entryRulePianoNote : rulePianoNote EOF ;
-    public final void entryRulePianoNote() throws RecognitionException {
+    // $ANTLR start "entryRuleMelodyNote"
+    // InternalGuardin.g:378:1: entryRuleMelodyNote : ruleMelodyNote EOF ;
+    public final void entryRuleMelodyNote() throws RecognitionException {
         try {
-            // InternalGuardin.g:379:1: ( rulePianoNote EOF )
-            // InternalGuardin.g:380:1: rulePianoNote EOF
+            // InternalGuardin.g:379:1: ( ruleMelodyNote EOF )
+            // InternalGuardin.g:380:1: ruleMelodyNote EOF
             {
-             before(grammarAccess.getPianoNoteRule()); 
+             before(grammarAccess.getMelodyNoteRule()); 
             pushFollow(FOLLOW_1);
-            rulePianoNote();
+            ruleMelodyNote();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoNoteRule()); 
+             after(grammarAccess.getMelodyNoteRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1144,35 +1144,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulePianoNote"
+    // $ANTLR end "entryRuleMelodyNote"
 
 
-    // $ANTLR start "rulePianoNote"
-    // InternalGuardin.g:387:1: rulePianoNote : ( ( rule__PianoNote__Group__0 ) ) ;
-    public final void rulePianoNote() throws RecognitionException {
+    // $ANTLR start "ruleMelodyNote"
+    // InternalGuardin.g:387:1: ruleMelodyNote : ( ( rule__MelodyNote__Group__0 ) ) ;
+    public final void ruleMelodyNote() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:391:2: ( ( ( rule__PianoNote__Group__0 ) ) )
-            // InternalGuardin.g:392:2: ( ( rule__PianoNote__Group__0 ) )
+            // InternalGuardin.g:391:2: ( ( ( rule__MelodyNote__Group__0 ) ) )
+            // InternalGuardin.g:392:2: ( ( rule__MelodyNote__Group__0 ) )
             {
-            // InternalGuardin.g:392:2: ( ( rule__PianoNote__Group__0 ) )
-            // InternalGuardin.g:393:3: ( rule__PianoNote__Group__0 )
+            // InternalGuardin.g:392:2: ( ( rule__MelodyNote__Group__0 ) )
+            // InternalGuardin.g:393:3: ( rule__MelodyNote__Group__0 )
             {
-             before(grammarAccess.getPianoNoteAccess().getGroup()); 
-            // InternalGuardin.g:394:3: ( rule__PianoNote__Group__0 )
-            // InternalGuardin.g:394:4: rule__PianoNote__Group__0
+             before(grammarAccess.getMelodyNoteAccess().getGroup()); 
+            // InternalGuardin.g:394:3: ( rule__MelodyNote__Group__0 )
+            // InternalGuardin.g:394:4: rule__MelodyNote__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group__0();
+            rule__MelodyNote__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getGroup()); 
+             after(grammarAccess.getMelodyNoteAccess().getGroup()); 
 
             }
 
@@ -1191,23 +1191,23 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulePianoNote"
+    // $ANTLR end "ruleMelodyNote"
 
 
-    // $ANTLR start "entryRuleCompositePianoNote"
-    // InternalGuardin.g:403:1: entryRuleCompositePianoNote : ruleCompositePianoNote EOF ;
-    public final void entryRuleCompositePianoNote() throws RecognitionException {
+    // $ANTLR start "entryRuleCompositeMelodyNote"
+    // InternalGuardin.g:403:1: entryRuleCompositeMelodyNote : ruleCompositeMelodyNote EOF ;
+    public final void entryRuleCompositeMelodyNote() throws RecognitionException {
         try {
-            // InternalGuardin.g:404:1: ( ruleCompositePianoNote EOF )
-            // InternalGuardin.g:405:1: ruleCompositePianoNote EOF
+            // InternalGuardin.g:404:1: ( ruleCompositeMelodyNote EOF )
+            // InternalGuardin.g:405:1: ruleCompositeMelodyNote EOF
             {
-             before(grammarAccess.getCompositePianoNoteRule()); 
+             before(grammarAccess.getCompositeMelodyNoteRule()); 
             pushFollow(FOLLOW_1);
-            ruleCompositePianoNote();
+            ruleCompositeMelodyNote();
 
             state._fsp--;
 
-             after(grammarAccess.getCompositePianoNoteRule()); 
+             after(grammarAccess.getCompositeMelodyNoteRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1221,35 +1221,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleCompositePianoNote"
+    // $ANTLR end "entryRuleCompositeMelodyNote"
 
 
-    // $ANTLR start "ruleCompositePianoNote"
-    // InternalGuardin.g:412:1: ruleCompositePianoNote : ( ( rule__CompositePianoNote__Group__0 ) ) ;
-    public final void ruleCompositePianoNote() throws RecognitionException {
+    // $ANTLR start "ruleCompositeMelodyNote"
+    // InternalGuardin.g:412:1: ruleCompositeMelodyNote : ( ( rule__CompositeMelodyNote__Group__0 ) ) ;
+    public final void ruleCompositeMelodyNote() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:416:2: ( ( ( rule__CompositePianoNote__Group__0 ) ) )
-            // InternalGuardin.g:417:2: ( ( rule__CompositePianoNote__Group__0 ) )
+            // InternalGuardin.g:416:2: ( ( ( rule__CompositeMelodyNote__Group__0 ) ) )
+            // InternalGuardin.g:417:2: ( ( rule__CompositeMelodyNote__Group__0 ) )
             {
-            // InternalGuardin.g:417:2: ( ( rule__CompositePianoNote__Group__0 ) )
-            // InternalGuardin.g:418:3: ( rule__CompositePianoNote__Group__0 )
+            // InternalGuardin.g:417:2: ( ( rule__CompositeMelodyNote__Group__0 ) )
+            // InternalGuardin.g:418:3: ( rule__CompositeMelodyNote__Group__0 )
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getGroup()); 
-            // InternalGuardin.g:419:3: ( rule__CompositePianoNote__Group__0 )
-            // InternalGuardin.g:419:4: rule__CompositePianoNote__Group__0
+             before(grammarAccess.getCompositeMelodyNoteAccess().getGroup()); 
+            // InternalGuardin.g:419:3: ( rule__CompositeMelodyNote__Group__0 )
+            // InternalGuardin.g:419:4: rule__CompositeMelodyNote__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__0();
+            rule__CompositeMelodyNote__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCompositePianoNoteAccess().getGroup()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getGroup()); 
 
             }
 
@@ -1268,7 +1268,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleCompositePianoNote"
+    // $ANTLR end "ruleCompositeMelodyNote"
 
 
     // $ANTLR start "entryRuleEInt"
@@ -1633,32 +1633,32 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleInstruments"
 
 
-    // $ANTLR start "rulePianoNoteType"
-    // InternalGuardin.g:551:1: rulePianoNoteType : ( ( rule__PianoNoteType__Alternatives ) ) ;
-    public final void rulePianoNoteType() throws RecognitionException {
+    // $ANTLR start "ruleMelodyNoteType"
+    // InternalGuardin.g:551:1: ruleMelodyNoteType : ( ( rule__MelodyNoteType__Alternatives ) ) ;
+    public final void ruleMelodyNoteType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:555:1: ( ( ( rule__PianoNoteType__Alternatives ) ) )
-            // InternalGuardin.g:556:2: ( ( rule__PianoNoteType__Alternatives ) )
+            // InternalGuardin.g:555:1: ( ( ( rule__MelodyNoteType__Alternatives ) ) )
+            // InternalGuardin.g:556:2: ( ( rule__MelodyNoteType__Alternatives ) )
             {
-            // InternalGuardin.g:556:2: ( ( rule__PianoNoteType__Alternatives ) )
-            // InternalGuardin.g:557:3: ( rule__PianoNoteType__Alternatives )
+            // InternalGuardin.g:556:2: ( ( rule__MelodyNoteType__Alternatives ) )
+            // InternalGuardin.g:557:3: ( rule__MelodyNoteType__Alternatives )
             {
-             before(grammarAccess.getPianoNoteTypeAccess().getAlternatives()); 
-            // InternalGuardin.g:558:3: ( rule__PianoNoteType__Alternatives )
-            // InternalGuardin.g:558:4: rule__PianoNoteType__Alternatives
+             before(grammarAccess.getMelodyNoteTypeAccess().getAlternatives()); 
+            // InternalGuardin.g:558:3: ( rule__MelodyNoteType__Alternatives )
+            // InternalGuardin.g:558:4: rule__MelodyNoteType__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNoteType__Alternatives();
+            rule__MelodyNoteType__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoNoteTypeAccess().getAlternatives()); 
+             after(grammarAccess.getMelodyNoteTypeAccess().getAlternatives()); 
 
             }
 
@@ -1677,17 +1677,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulePianoNoteType"
+    // $ANTLR end "ruleMelodyNoteType"
 
 
     // $ANTLR start "rule__Instrument__Alternatives"
-    // InternalGuardin.g:566:1: rule__Instrument__Alternatives : ( ( ruleBattery ) | ( rulePiano ) );
+    // InternalGuardin.g:566:1: rule__Instrument__Alternatives : ( ( ruleBattery ) | ( ruleMelody ) );
     public final void rule__Instrument__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:570:1: ( ( ruleBattery ) | ( rulePiano ) )
+            // InternalGuardin.g:570:1: ( ( ruleBattery ) | ( ruleMelody ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1724,18 +1724,18 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:577:2: ( rulePiano )
+                    // InternalGuardin.g:577:2: ( ruleMelody )
                     {
-                    // InternalGuardin.g:577:2: ( rulePiano )
-                    // InternalGuardin.g:578:3: rulePiano
+                    // InternalGuardin.g:577:2: ( ruleMelody )
+                    // InternalGuardin.g:578:3: ruleMelody
                     {
-                     before(grammarAccess.getInstrumentAccess().getPianoParserRuleCall_1()); 
+                     before(grammarAccess.getInstrumentAccess().getMelodyParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    rulePiano();
+                    ruleMelody();
 
                     state._fsp--;
 
-                     after(grammarAccess.getInstrumentAccess().getPianoParserRuleCall_1()); 
+                     after(grammarAccess.getInstrumentAccess().getMelodyParserRuleCall_1()); 
 
                     }
 
@@ -2122,14 +2122,14 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__CompositeBatteryNote__NotesAlternatives_2_0"
 
 
-    // $ANTLR start "rule__Piano__Alternatives_1"
-    // InternalGuardin.g:677:1: rule__Piano__Alternatives_1 : ( ( 'piano' ) | ( ( rule__Piano__InstrumentAssignment_1_1 ) ) | ( ( rule__Piano__Group_1_2__0 ) ) );
-    public final void rule__Piano__Alternatives_1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Alternatives_1"
+    // InternalGuardin.g:677:1: rule__Melody__Alternatives_1 : ( ( 'Melody' ) | ( ( rule__Melody__InstrumentAssignment_1_1 ) ) | ( ( rule__Melody__Group_1_2__0 ) ) );
+    public final void rule__Melody__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:681:1: ( ( 'piano' ) | ( ( rule__Piano__InstrumentAssignment_1_1 ) ) | ( ( rule__Piano__Group_1_2__0 ) ) )
+            // InternalGuardin.g:681:1: ( ( 'Melody' ) | ( ( rule__Melody__InstrumentAssignment_1_1 ) ) | ( ( rule__Melody__Group_1_2__0 ) ) )
             int alt6=3;
             switch ( input.LA(1) ) {
             case 12:
@@ -2165,14 +2165,14 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalGuardin.g:682:2: ( 'piano' )
+                    // InternalGuardin.g:682:2: ( 'Melody' )
                     {
-                    // InternalGuardin.g:682:2: ( 'piano' )
-                    // InternalGuardin.g:683:3: 'piano'
+                    // InternalGuardin.g:682:2: ( 'Melody' )
+                    // InternalGuardin.g:683:3: 'Melody'
                     {
-                     before(grammarAccess.getPianoAccess().getPianoKeyword_1_0()); 
+                     before(grammarAccess.getMelodyAccess().getMelodyKeyword_1_0()); 
                     match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getPianoAccess().getPianoKeyword_1_0()); 
+                     after(grammarAccess.getMelodyAccess().getMelodyKeyword_1_0()); 
 
                     }
 
@@ -2180,24 +2180,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:688:2: ( ( rule__Piano__InstrumentAssignment_1_1 ) )
+                    // InternalGuardin.g:688:2: ( ( rule__Melody__InstrumentAssignment_1_1 ) )
                     {
-                    // InternalGuardin.g:688:2: ( ( rule__Piano__InstrumentAssignment_1_1 ) )
-                    // InternalGuardin.g:689:3: ( rule__Piano__InstrumentAssignment_1_1 )
+                    // InternalGuardin.g:688:2: ( ( rule__Melody__InstrumentAssignment_1_1 ) )
+                    // InternalGuardin.g:689:3: ( rule__Melody__InstrumentAssignment_1_1 )
                     {
-                     before(grammarAccess.getPianoAccess().getInstrumentAssignment_1_1()); 
-                    // InternalGuardin.g:690:3: ( rule__Piano__InstrumentAssignment_1_1 )
-                    // InternalGuardin.g:690:4: rule__Piano__InstrumentAssignment_1_1
+                     before(grammarAccess.getMelodyAccess().getInstrumentAssignment_1_1()); 
+                    // InternalGuardin.g:690:3: ( rule__Melody__InstrumentAssignment_1_1 )
+                    // InternalGuardin.g:690:4: rule__Melody__InstrumentAssignment_1_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Piano__InstrumentAssignment_1_1();
+                    rule__Melody__InstrumentAssignment_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoAccess().getInstrumentAssignment_1_1()); 
+                     after(grammarAccess.getMelodyAccess().getInstrumentAssignment_1_1()); 
 
                     }
 
@@ -2205,24 +2205,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalGuardin.g:694:2: ( ( rule__Piano__Group_1_2__0 ) )
+                    // InternalGuardin.g:694:2: ( ( rule__Melody__Group_1_2__0 ) )
                     {
-                    // InternalGuardin.g:694:2: ( ( rule__Piano__Group_1_2__0 ) )
-                    // InternalGuardin.g:695:3: ( rule__Piano__Group_1_2__0 )
+                    // InternalGuardin.g:694:2: ( ( rule__Melody__Group_1_2__0 ) )
+                    // InternalGuardin.g:695:3: ( rule__Melody__Group_1_2__0 )
                     {
-                     before(grammarAccess.getPianoAccess().getGroup_1_2()); 
-                    // InternalGuardin.g:696:3: ( rule__Piano__Group_1_2__0 )
-                    // InternalGuardin.g:696:4: rule__Piano__Group_1_2__0
+                     before(grammarAccess.getMelodyAccess().getGroup_1_2()); 
+                    // InternalGuardin.g:696:3: ( rule__Melody__Group_1_2__0 )
+                    // InternalGuardin.g:696:4: rule__Melody__Group_1_2__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Piano__Group_1_2__0();
+                    rule__Melody__Group_1_2__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoAccess().getGroup_1_2()); 
+                     after(grammarAccess.getMelodyAccess().getGroup_1_2()); 
 
                     }
 
@@ -2243,17 +2243,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Alternatives_1"
+    // $ANTLR end "rule__Melody__Alternatives_1"
 
 
-    // $ANTLR start "rule__Piano__Alternatives_2"
-    // InternalGuardin.g:704:1: rule__Piano__Alternatives_2 : ( ( ':' ) | ( ( rule__Piano__Group_2_1__0 ) ) );
-    public final void rule__Piano__Alternatives_2() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Alternatives_2"
+    // InternalGuardin.g:704:1: rule__Melody__Alternatives_2 : ( ( ':' ) | ( ( rule__Melody__Group_2_1__0 ) ) );
+    public final void rule__Melody__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:708:1: ( ( ':' ) | ( ( rule__Piano__Group_2_1__0 ) ) )
+            // InternalGuardin.g:708:1: ( ( ':' ) | ( ( rule__Melody__Group_2_1__0 ) ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2276,9 +2276,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:709:2: ( ':' )
                     // InternalGuardin.g:710:3: ':'
                     {
-                     before(grammarAccess.getPianoAccess().getColonKeyword_2_0()); 
+                     before(grammarAccess.getMelodyAccess().getColonKeyword_2_0()); 
                     match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getPianoAccess().getColonKeyword_2_0()); 
+                     after(grammarAccess.getMelodyAccess().getColonKeyword_2_0()); 
 
                     }
 
@@ -2286,24 +2286,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:715:2: ( ( rule__Piano__Group_2_1__0 ) )
+                    // InternalGuardin.g:715:2: ( ( rule__Melody__Group_2_1__0 ) )
                     {
-                    // InternalGuardin.g:715:2: ( ( rule__Piano__Group_2_1__0 ) )
-                    // InternalGuardin.g:716:3: ( rule__Piano__Group_2_1__0 )
+                    // InternalGuardin.g:715:2: ( ( rule__Melody__Group_2_1__0 ) )
+                    // InternalGuardin.g:716:3: ( rule__Melody__Group_2_1__0 )
                     {
-                     before(grammarAccess.getPianoAccess().getGroup_2_1()); 
-                    // InternalGuardin.g:717:3: ( rule__Piano__Group_2_1__0 )
-                    // InternalGuardin.g:717:4: rule__Piano__Group_2_1__0
+                     before(grammarAccess.getMelodyAccess().getGroup_2_1()); 
+                    // InternalGuardin.g:717:3: ( rule__Melody__Group_2_1__0 )
+                    // InternalGuardin.g:717:4: rule__Melody__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Piano__Group_2_1__0();
+                    rule__Melody__Group_2_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoAccess().getGroup_2_1()); 
+                     after(grammarAccess.getMelodyAccess().getGroup_2_1()); 
 
                     }
 
@@ -2324,17 +2324,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Alternatives_2"
+    // $ANTLR end "rule__Melody__Alternatives_2"
 
 
-    // $ANTLR start "rule__Piano__Alternatives_3"
-    // InternalGuardin.g:725:1: rule__Piano__Alternatives_3 : ( ( ( rule__Piano__SectionsAssignment_3_0 ) ) | ( ( rule__Piano__LayersAssignment_3_1 ) ) );
-    public final void rule__Piano__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Alternatives_3"
+    // InternalGuardin.g:725:1: rule__Melody__Alternatives_3 : ( ( ( rule__Melody__SectionsAssignment_3_0 ) ) | ( ( rule__Melody__LayersAssignment_3_1 ) ) );
+    public final void rule__Melody__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:729:1: ( ( ( rule__Piano__SectionsAssignment_3_0 ) ) | ( ( rule__Piano__LayersAssignment_3_1 ) ) )
+            // InternalGuardin.g:729:1: ( ( ( rule__Melody__SectionsAssignment_3_0 ) ) | ( ( rule__Melody__LayersAssignment_3_1 ) ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2352,24 +2352,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalGuardin.g:730:2: ( ( rule__Piano__SectionsAssignment_3_0 ) )
+                    // InternalGuardin.g:730:2: ( ( rule__Melody__SectionsAssignment_3_0 ) )
                     {
-                    // InternalGuardin.g:730:2: ( ( rule__Piano__SectionsAssignment_3_0 ) )
-                    // InternalGuardin.g:731:3: ( rule__Piano__SectionsAssignment_3_0 )
+                    // InternalGuardin.g:730:2: ( ( rule__Melody__SectionsAssignment_3_0 ) )
+                    // InternalGuardin.g:731:3: ( rule__Melody__SectionsAssignment_3_0 )
                     {
-                     before(grammarAccess.getPianoAccess().getSectionsAssignment_3_0()); 
-                    // InternalGuardin.g:732:3: ( rule__Piano__SectionsAssignment_3_0 )
-                    // InternalGuardin.g:732:4: rule__Piano__SectionsAssignment_3_0
+                     before(grammarAccess.getMelodyAccess().getSectionsAssignment_3_0()); 
+                    // InternalGuardin.g:732:3: ( rule__Melody__SectionsAssignment_3_0 )
+                    // InternalGuardin.g:732:4: rule__Melody__SectionsAssignment_3_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Piano__SectionsAssignment_3_0();
+                    rule__Melody__SectionsAssignment_3_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoAccess().getSectionsAssignment_3_0()); 
+                     after(grammarAccess.getMelodyAccess().getSectionsAssignment_3_0()); 
 
                     }
 
@@ -2377,24 +2377,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:736:2: ( ( rule__Piano__LayersAssignment_3_1 ) )
+                    // InternalGuardin.g:736:2: ( ( rule__Melody__LayersAssignment_3_1 ) )
                     {
-                    // InternalGuardin.g:736:2: ( ( rule__Piano__LayersAssignment_3_1 ) )
-                    // InternalGuardin.g:737:3: ( rule__Piano__LayersAssignment_3_1 )
+                    // InternalGuardin.g:736:2: ( ( rule__Melody__LayersAssignment_3_1 ) )
+                    // InternalGuardin.g:737:3: ( rule__Melody__LayersAssignment_3_1 )
                     {
-                     before(grammarAccess.getPianoAccess().getLayersAssignment_3_1()); 
-                    // InternalGuardin.g:738:3: ( rule__Piano__LayersAssignment_3_1 )
-                    // InternalGuardin.g:738:4: rule__Piano__LayersAssignment_3_1
+                     before(grammarAccess.getMelodyAccess().getLayersAssignment_3_1()); 
+                    // InternalGuardin.g:738:3: ( rule__Melody__LayersAssignment_3_1 )
+                    // InternalGuardin.g:738:4: rule__Melody__LayersAssignment_3_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Piano__LayersAssignment_3_1();
+                    rule__Melody__LayersAssignment_3_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoAccess().getLayersAssignment_3_1()); 
+                     after(grammarAccess.getMelodyAccess().getLayersAssignment_3_1()); 
 
                     }
 
@@ -2415,17 +2415,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Alternatives_3"
+    // $ANTLR end "rule__Melody__Alternatives_3"
 
 
-    // $ANTLR start "rule__PianoLayer__NotesAlternatives_2_0"
-    // InternalGuardin.g:746:1: rule__PianoLayer__NotesAlternatives_2_0 : ( ( rulePianoNote ) | ( ruleEmptyNote ) | ( ruleCompositePianoNote ) );
-    public final void rule__PianoLayer__NotesAlternatives_2_0() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__NotesAlternatives_2_0"
+    // InternalGuardin.g:746:1: rule__MelodyLayer__NotesAlternatives_2_0 : ( ( ruleMelodyNote ) | ( ruleEmptyNote ) | ( ruleCompositeMelodyNote ) );
+    public final void rule__MelodyLayer__NotesAlternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:750:1: ( ( rulePianoNote ) | ( ruleEmptyNote ) | ( ruleCompositePianoNote ) )
+            // InternalGuardin.g:750:1: ( ( ruleMelodyNote ) | ( ruleEmptyNote ) | ( ruleCompositeMelodyNote ) )
             int alt9=3;
             switch ( input.LA(1) ) {
             case 32:
@@ -2458,18 +2458,18 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
             switch (alt9) {
                 case 1 :
-                    // InternalGuardin.g:751:2: ( rulePianoNote )
+                    // InternalGuardin.g:751:2: ( ruleMelodyNote )
                     {
-                    // InternalGuardin.g:751:2: ( rulePianoNote )
-                    // InternalGuardin.g:752:3: rulePianoNote
+                    // InternalGuardin.g:751:2: ( ruleMelodyNote )
+                    // InternalGuardin.g:752:3: ruleMelodyNote
                     {
-                     before(grammarAccess.getPianoLayerAccess().getNotesPianoNoteParserRuleCall_2_0_0()); 
+                     before(grammarAccess.getMelodyLayerAccess().getNotesMelodyNoteParserRuleCall_2_0_0()); 
                     pushFollow(FOLLOW_2);
-                    rulePianoNote();
+                    ruleMelodyNote();
 
                     state._fsp--;
 
-                     after(grammarAccess.getPianoLayerAccess().getNotesPianoNoteParserRuleCall_2_0_0()); 
+                     after(grammarAccess.getMelodyLayerAccess().getNotesMelodyNoteParserRuleCall_2_0_0()); 
 
                     }
 
@@ -2482,13 +2482,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:757:2: ( ruleEmptyNote )
                     // InternalGuardin.g:758:3: ruleEmptyNote
                     {
-                     before(grammarAccess.getPianoLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
+                     before(grammarAccess.getMelodyLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
                     pushFollow(FOLLOW_2);
                     ruleEmptyNote();
 
                     state._fsp--;
 
-                     after(grammarAccess.getPianoLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
+                     after(grammarAccess.getMelodyLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
 
                     }
 
@@ -2496,18 +2496,18 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalGuardin.g:763:2: ( ruleCompositePianoNote )
+                    // InternalGuardin.g:763:2: ( ruleCompositeMelodyNote )
                     {
-                    // InternalGuardin.g:763:2: ( ruleCompositePianoNote )
-                    // InternalGuardin.g:764:3: ruleCompositePianoNote
+                    // InternalGuardin.g:763:2: ( ruleCompositeMelodyNote )
+                    // InternalGuardin.g:764:3: ruleCompositeMelodyNote
                     {
-                     before(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2()); 
+                     before(grammarAccess.getMelodyLayerAccess().getNotesCompositeMelodyNoteParserRuleCall_2_0_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleCompositePianoNote();
+                    ruleCompositeMelodyNote();
 
                     state._fsp--;
 
-                     after(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2()); 
+                     after(grammarAccess.getMelodyLayerAccess().getNotesCompositeMelodyNoteParserRuleCall_2_0_2()); 
 
                     }
 
@@ -2528,17 +2528,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__NotesAlternatives_2_0"
+    // $ANTLR end "rule__MelodyLayer__NotesAlternatives_2_0"
 
 
-    // $ANTLR start "rule__PianoNote__Alternatives_3"
-    // InternalGuardin.g:773:1: rule__PianoNote__Alternatives_3 : ( ( ( rule__PianoNote__Group_3_0__0 ) ) | ( ( rule__PianoNote__Group_3_1__0 ) ) );
-    public final void rule__PianoNote__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Alternatives_3"
+    // InternalGuardin.g:773:1: rule__MelodyNote__Alternatives_3 : ( ( ( rule__MelodyNote__Group_3_0__0 ) ) | ( ( rule__MelodyNote__Group_3_1__0 ) ) );
+    public final void rule__MelodyNote__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:777:1: ( ( ( rule__PianoNote__Group_3_0__0 ) ) | ( ( rule__PianoNote__Group_3_1__0 ) ) )
+            // InternalGuardin.g:777:1: ( ( ( rule__MelodyNote__Group_3_0__0 ) ) | ( ( rule__MelodyNote__Group_3_1__0 ) ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2556,24 +2556,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalGuardin.g:778:2: ( ( rule__PianoNote__Group_3_0__0 ) )
+                    // InternalGuardin.g:778:2: ( ( rule__MelodyNote__Group_3_0__0 ) )
                     {
-                    // InternalGuardin.g:778:2: ( ( rule__PianoNote__Group_3_0__0 ) )
-                    // InternalGuardin.g:779:3: ( rule__PianoNote__Group_3_0__0 )
+                    // InternalGuardin.g:778:2: ( ( rule__MelodyNote__Group_3_0__0 ) )
+                    // InternalGuardin.g:779:3: ( rule__MelodyNote__Group_3_0__0 )
                     {
-                     before(grammarAccess.getPianoNoteAccess().getGroup_3_0()); 
-                    // InternalGuardin.g:780:3: ( rule__PianoNote__Group_3_0__0 )
-                    // InternalGuardin.g:780:4: rule__PianoNote__Group_3_0__0
+                     before(grammarAccess.getMelodyNoteAccess().getGroup_3_0()); 
+                    // InternalGuardin.g:780:3: ( rule__MelodyNote__Group_3_0__0 )
+                    // InternalGuardin.g:780:4: rule__MelodyNote__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PianoNote__Group_3_0__0();
+                    rule__MelodyNote__Group_3_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoNoteAccess().getGroup_3_0()); 
+                     after(grammarAccess.getMelodyNoteAccess().getGroup_3_0()); 
 
                     }
 
@@ -2581,24 +2581,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGuardin.g:784:2: ( ( rule__PianoNote__Group_3_1__0 ) )
+                    // InternalGuardin.g:784:2: ( ( rule__MelodyNote__Group_3_1__0 ) )
                     {
-                    // InternalGuardin.g:784:2: ( ( rule__PianoNote__Group_3_1__0 ) )
-                    // InternalGuardin.g:785:3: ( rule__PianoNote__Group_3_1__0 )
+                    // InternalGuardin.g:784:2: ( ( rule__MelodyNote__Group_3_1__0 ) )
+                    // InternalGuardin.g:785:3: ( rule__MelodyNote__Group_3_1__0 )
                     {
-                     before(grammarAccess.getPianoNoteAccess().getGroup_3_1()); 
-                    // InternalGuardin.g:786:3: ( rule__PianoNote__Group_3_1__0 )
-                    // InternalGuardin.g:786:4: rule__PianoNote__Group_3_1__0
+                     before(grammarAccess.getMelodyNoteAccess().getGroup_3_1()); 
+                    // InternalGuardin.g:786:3: ( rule__MelodyNote__Group_3_1__0 )
+                    // InternalGuardin.g:786:4: rule__MelodyNote__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PianoNote__Group_3_1__0();
+                    rule__MelodyNote__Group_3_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPianoNoteAccess().getGroup_3_1()); 
+                     after(grammarAccess.getMelodyNoteAccess().getGroup_3_1()); 
 
                     }
 
@@ -2619,17 +2619,17 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Alternatives_3"
+    // $ANTLR end "rule__MelodyNote__Alternatives_3"
 
 
-    // $ANTLR start "rule__CompositePianoNote__NotesAlternatives_2_0"
-    // InternalGuardin.g:794:1: rule__CompositePianoNote__NotesAlternatives_2_0 : ( ( rulePianoNote ) | ( ruleEmptyNote ) );
-    public final void rule__CompositePianoNote__NotesAlternatives_2_0() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__NotesAlternatives_2_0"
+    // InternalGuardin.g:794:1: rule__CompositeMelodyNote__NotesAlternatives_2_0 : ( ( ruleMelodyNote ) | ( ruleEmptyNote ) );
+    public final void rule__CompositeMelodyNote__NotesAlternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:798:1: ( ( rulePianoNote ) | ( ruleEmptyNote ) )
+            // InternalGuardin.g:798:1: ( ( ruleMelodyNote ) | ( ruleEmptyNote ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2647,18 +2647,18 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalGuardin.g:799:2: ( rulePianoNote )
+                    // InternalGuardin.g:799:2: ( ruleMelodyNote )
                     {
-                    // InternalGuardin.g:799:2: ( rulePianoNote )
-                    // InternalGuardin.g:800:3: rulePianoNote
+                    // InternalGuardin.g:799:2: ( ruleMelodyNote )
+                    // InternalGuardin.g:800:3: ruleMelodyNote
                     {
-                     before(grammarAccess.getCompositePianoNoteAccess().getNotesPianoNoteParserRuleCall_2_0_0()); 
+                     before(grammarAccess.getCompositeMelodyNoteAccess().getNotesMelodyNoteParserRuleCall_2_0_0()); 
                     pushFollow(FOLLOW_2);
-                    rulePianoNote();
+                    ruleMelodyNote();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCompositePianoNoteAccess().getNotesPianoNoteParserRuleCall_2_0_0()); 
+                     after(grammarAccess.getCompositeMelodyNoteAccess().getNotesMelodyNoteParserRuleCall_2_0_0()); 
 
                     }
 
@@ -2671,13 +2671,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:805:2: ( ruleEmptyNote )
                     // InternalGuardin.g:806:3: ruleEmptyNote
                     {
-                     before(grammarAccess.getCompositePianoNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
+                     before(grammarAccess.getCompositeMelodyNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
                     pushFollow(FOLLOW_2);
                     ruleEmptyNote();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCompositePianoNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
+                     after(grammarAccess.getCompositeMelodyNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1()); 
 
                     }
 
@@ -2698,7 +2698,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__NotesAlternatives_2_0"
+    // $ANTLR end "rule__CompositeMelodyNote__NotesAlternatives_2_0"
 
 
     // $ANTLR start "rule__EString__Alternatives"
@@ -3371,9 +3371,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Instruments__Alternatives"
 
 
-    // $ANTLR start "rule__PianoNoteType__Alternatives"
-    // InternalGuardin.g:977:1: rule__PianoNoteType__Alternatives : ( ( ( 'A' ) ) | ( ( 'B' ) ) | ( ( 'C' ) ) | ( ( 'D' ) ) | ( ( 'E' ) ) | ( ( 'F' ) ) | ( ( 'G' ) ) );
-    public final void rule__PianoNoteType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNoteType__Alternatives"
+    // InternalGuardin.g:977:1: rule__MelodyNoteType__Alternatives : ( ( ( 'A' ) ) | ( ( 'B' ) ) | ( ( 'C' ) ) | ( ( 'D' ) ) | ( ( 'E' ) ) | ( ( 'F' ) ) | ( ( 'G' ) ) );
+    public final void rule__MelodyNoteType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3430,7 +3430,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:982:2: ( ( 'A' ) )
                     // InternalGuardin.g:983:3: ( 'A' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getAEnumLiteralDeclaration_0()); 
                     // InternalGuardin.g:984:3: ( 'A' )
                     // InternalGuardin.g:984:4: 'A'
                     {
@@ -3438,7 +3438,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getAEnumLiteralDeclaration_0()); 
 
                     }
 
@@ -3451,7 +3451,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:988:2: ( ( 'B' ) )
                     // InternalGuardin.g:989:3: ( 'B' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getBEnumLiteralDeclaration_1()); 
                     // InternalGuardin.g:990:3: ( 'B' )
                     // InternalGuardin.g:990:4: 'B'
                     {
@@ -3459,7 +3459,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getBEnumLiteralDeclaration_1()); 
 
                     }
 
@@ -3472,7 +3472,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:994:2: ( ( 'C' ) )
                     // InternalGuardin.g:995:3: ( 'C' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getCEnumLiteralDeclaration_2()); 
                     // InternalGuardin.g:996:3: ( 'C' )
                     // InternalGuardin.g:996:4: 'C'
                     {
@@ -3480,7 +3480,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getCEnumLiteralDeclaration_2()); 
 
                     }
 
@@ -3493,7 +3493,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:1000:2: ( ( 'D' ) )
                     // InternalGuardin.g:1001:3: ( 'D' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getDEnumLiteralDeclaration_3()); 
                     // InternalGuardin.g:1002:3: ( 'D' )
                     // InternalGuardin.g:1002:4: 'D'
                     {
@@ -3501,7 +3501,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getDEnumLiteralDeclaration_3()); 
 
                     }
 
@@ -3514,7 +3514,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:1006:2: ( ( 'E' ) )
                     // InternalGuardin.g:1007:3: ( 'E' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getEEnumLiteralDeclaration_4()); 
                     // InternalGuardin.g:1008:3: ( 'E' )
                     // InternalGuardin.g:1008:4: 'E'
                     {
@@ -3522,7 +3522,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getEEnumLiteralDeclaration_4()); 
 
                     }
 
@@ -3535,7 +3535,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:1012:2: ( ( 'F' ) )
                     // InternalGuardin.g:1013:3: ( 'F' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getFEnumLiteralDeclaration_5()); 
                     // InternalGuardin.g:1014:3: ( 'F' )
                     // InternalGuardin.g:1014:4: 'F'
                     {
@@ -3543,7 +3543,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getFEnumLiteralDeclaration_5()); 
 
                     }
 
@@ -3556,7 +3556,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                     // InternalGuardin.g:1018:2: ( ( 'G' ) )
                     // InternalGuardin.g:1019:3: ( 'G' )
                     {
-                     before(grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6()); 
+                     before(grammarAccess.getMelodyNoteTypeAccess().getGEnumLiteralDeclaration_6()); 
                     // InternalGuardin.g:1020:3: ( 'G' )
                     // InternalGuardin.g:1020:4: 'G'
                     {
@@ -3564,7 +3564,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6()); 
+                     after(grammarAccess.getMelodyNoteTypeAccess().getGEnumLiteralDeclaration_6()); 
 
                     }
 
@@ -3585,7 +3585,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNoteType__Alternatives"
+    // $ANTLR end "rule__MelodyNoteType__Alternatives"
 
 
     // $ANTLR start "rule__Music__Group__0"
@@ -8444,23 +8444,23 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__CompositeBatteryNote__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group__0"
-    // InternalGuardin.g:2649:1: rule__Piano__Group__0 : rule__Piano__Group__0__Impl rule__Piano__Group__1 ;
-    public final void rule__Piano__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__0"
+    // InternalGuardin.g:2649:1: rule__Melody__Group__0 : rule__Melody__Group__0__Impl rule__Melody__Group__1 ;
+    public final void rule__Melody__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2653:1: ( rule__Piano__Group__0__Impl rule__Piano__Group__1 )
-            // InternalGuardin.g:2654:2: rule__Piano__Group__0__Impl rule__Piano__Group__1
+            // InternalGuardin.g:2653:1: ( rule__Melody__Group__0__Impl rule__Melody__Group__1 )
+            // InternalGuardin.g:2654:2: rule__Melody__Group__0__Impl rule__Melody__Group__1
             {
             pushFollow(FOLLOW_11);
-            rule__Piano__Group__0__Impl();
+            rule__Melody__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Piano__Group__1();
+            rule__Melody__Group__1();
 
             state._fsp--;
 
@@ -8479,12 +8479,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__0"
+    // $ANTLR end "rule__Melody__Group__0"
 
 
-    // $ANTLR start "rule__Piano__Group__0__Impl"
-    // InternalGuardin.g:2661:1: rule__Piano__Group__0__Impl : ( () ) ;
-    public final void rule__Piano__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__0__Impl"
+    // InternalGuardin.g:2661:1: rule__Melody__Group__0__Impl : ( () ) ;
+    public final void rule__Melody__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8495,13 +8495,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:2666:1: ( () )
             // InternalGuardin.g:2667:2: ()
             {
-             before(grammarAccess.getPianoAccess().getPianoAction_0()); 
+             before(grammarAccess.getMelodyAccess().getMelodyAction_0()); 
             // InternalGuardin.g:2668:2: ()
             // InternalGuardin.g:2668:3: 
             {
             }
 
-             after(grammarAccess.getPianoAccess().getPianoAction_0()); 
+             after(grammarAccess.getMelodyAccess().getMelodyAction_0()); 
 
             }
 
@@ -8516,26 +8516,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__0__Impl"
+    // $ANTLR end "rule__Melody__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group__1"
-    // InternalGuardin.g:2676:1: rule__Piano__Group__1 : rule__Piano__Group__1__Impl rule__Piano__Group__2 ;
-    public final void rule__Piano__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__1"
+    // InternalGuardin.g:2676:1: rule__Melody__Group__1 : rule__Melody__Group__1__Impl rule__Melody__Group__2 ;
+    public final void rule__Melody__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2680:1: ( rule__Piano__Group__1__Impl rule__Piano__Group__2 )
-            // InternalGuardin.g:2681:2: rule__Piano__Group__1__Impl rule__Piano__Group__2
+            // InternalGuardin.g:2680:1: ( rule__Melody__Group__1__Impl rule__Melody__Group__2 )
+            // InternalGuardin.g:2681:2: rule__Melody__Group__1__Impl rule__Melody__Group__2
             {
             pushFollow(FOLLOW_19);
-            rule__Piano__Group__1__Impl();
+            rule__Melody__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Piano__Group__2();
+            rule__Melody__Group__2();
 
             state._fsp--;
 
@@ -8554,35 +8554,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__1"
+    // $ANTLR end "rule__Melody__Group__1"
 
 
-    // $ANTLR start "rule__Piano__Group__1__Impl"
-    // InternalGuardin.g:2688:1: rule__Piano__Group__1__Impl : ( ( rule__Piano__Alternatives_1 ) ) ;
-    public final void rule__Piano__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__1__Impl"
+    // InternalGuardin.g:2688:1: rule__Melody__Group__1__Impl : ( ( rule__Melody__Alternatives_1 ) ) ;
+    public final void rule__Melody__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2692:1: ( ( ( rule__Piano__Alternatives_1 ) ) )
-            // InternalGuardin.g:2693:1: ( ( rule__Piano__Alternatives_1 ) )
+            // InternalGuardin.g:2692:1: ( ( ( rule__Melody__Alternatives_1 ) ) )
+            // InternalGuardin.g:2693:1: ( ( rule__Melody__Alternatives_1 ) )
             {
-            // InternalGuardin.g:2693:1: ( ( rule__Piano__Alternatives_1 ) )
-            // InternalGuardin.g:2694:2: ( rule__Piano__Alternatives_1 )
+            // InternalGuardin.g:2693:1: ( ( rule__Melody__Alternatives_1 ) )
+            // InternalGuardin.g:2694:2: ( rule__Melody__Alternatives_1 )
             {
-             before(grammarAccess.getPianoAccess().getAlternatives_1()); 
-            // InternalGuardin.g:2695:2: ( rule__Piano__Alternatives_1 )
-            // InternalGuardin.g:2695:3: rule__Piano__Alternatives_1
+             before(grammarAccess.getMelodyAccess().getAlternatives_1()); 
+            // InternalGuardin.g:2695:2: ( rule__Melody__Alternatives_1 )
+            // InternalGuardin.g:2695:3: rule__Melody__Alternatives_1
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Alternatives_1();
+            rule__Melody__Alternatives_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getAlternatives_1()); 
+             after(grammarAccess.getMelodyAccess().getAlternatives_1()); 
 
             }
 
@@ -8601,26 +8601,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__1__Impl"
+    // $ANTLR end "rule__Melody__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group__2"
-    // InternalGuardin.g:2703:1: rule__Piano__Group__2 : rule__Piano__Group__2__Impl rule__Piano__Group__3 ;
-    public final void rule__Piano__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__2"
+    // InternalGuardin.g:2703:1: rule__Melody__Group__2 : rule__Melody__Group__2__Impl rule__Melody__Group__3 ;
+    public final void rule__Melody__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2707:1: ( rule__Piano__Group__2__Impl rule__Piano__Group__3 )
-            // InternalGuardin.g:2708:2: rule__Piano__Group__2__Impl rule__Piano__Group__3
+            // InternalGuardin.g:2707:1: ( rule__Melody__Group__2__Impl rule__Melody__Group__3 )
+            // InternalGuardin.g:2708:2: rule__Melody__Group__2__Impl rule__Melody__Group__3
             {
             pushFollow(FOLLOW_20);
-            rule__Piano__Group__2__Impl();
+            rule__Melody__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Piano__Group__3();
+            rule__Melody__Group__3();
 
             state._fsp--;
 
@@ -8639,35 +8639,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__2"
+    // $ANTLR end "rule__Melody__Group__2"
 
 
-    // $ANTLR start "rule__Piano__Group__2__Impl"
-    // InternalGuardin.g:2715:1: rule__Piano__Group__2__Impl : ( ( rule__Piano__Alternatives_2 ) ) ;
-    public final void rule__Piano__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__2__Impl"
+    // InternalGuardin.g:2715:1: rule__Melody__Group__2__Impl : ( ( rule__Melody__Alternatives_2 ) ) ;
+    public final void rule__Melody__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2719:1: ( ( ( rule__Piano__Alternatives_2 ) ) )
-            // InternalGuardin.g:2720:1: ( ( rule__Piano__Alternatives_2 ) )
+            // InternalGuardin.g:2719:1: ( ( ( rule__Melody__Alternatives_2 ) ) )
+            // InternalGuardin.g:2720:1: ( ( rule__Melody__Alternatives_2 ) )
             {
-            // InternalGuardin.g:2720:1: ( ( rule__Piano__Alternatives_2 ) )
-            // InternalGuardin.g:2721:2: ( rule__Piano__Alternatives_2 )
+            // InternalGuardin.g:2720:1: ( ( rule__Melody__Alternatives_2 ) )
+            // InternalGuardin.g:2721:2: ( rule__Melody__Alternatives_2 )
             {
-             before(grammarAccess.getPianoAccess().getAlternatives_2()); 
-            // InternalGuardin.g:2722:2: ( rule__Piano__Alternatives_2 )
-            // InternalGuardin.g:2722:3: rule__Piano__Alternatives_2
+             before(grammarAccess.getMelodyAccess().getAlternatives_2()); 
+            // InternalGuardin.g:2722:2: ( rule__Melody__Alternatives_2 )
+            // InternalGuardin.g:2722:3: rule__Melody__Alternatives_2
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Alternatives_2();
+            rule__Melody__Alternatives_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getAlternatives_2()); 
+             after(grammarAccess.getMelodyAccess().getAlternatives_2()); 
 
             }
 
@@ -8686,21 +8686,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__2__Impl"
+    // $ANTLR end "rule__Melody__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group__3"
-    // InternalGuardin.g:2730:1: rule__Piano__Group__3 : rule__Piano__Group__3__Impl ;
-    public final void rule__Piano__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__3"
+    // InternalGuardin.g:2730:1: rule__Melody__Group__3 : rule__Melody__Group__3__Impl ;
+    public final void rule__Melody__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2734:1: ( rule__Piano__Group__3__Impl )
-            // InternalGuardin.g:2735:2: rule__Piano__Group__3__Impl
+            // InternalGuardin.g:2734:1: ( rule__Melody__Group__3__Impl )
+            // InternalGuardin.g:2735:2: rule__Melody__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Group__3__Impl();
+            rule__Melody__Group__3__Impl();
 
             state._fsp--;
 
@@ -8719,46 +8719,46 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__3"
+    // $ANTLR end "rule__Melody__Group__3"
 
 
-    // $ANTLR start "rule__Piano__Group__3__Impl"
-    // InternalGuardin.g:2741:1: rule__Piano__Group__3__Impl : ( ( ( rule__Piano__Alternatives_3 ) ) ( ( rule__Piano__Alternatives_3 )* ) ) ;
-    public final void rule__Piano__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group__3__Impl"
+    // InternalGuardin.g:2741:1: rule__Melody__Group__3__Impl : ( ( ( rule__Melody__Alternatives_3 ) ) ( ( rule__Melody__Alternatives_3 )* ) ) ;
+    public final void rule__Melody__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2745:1: ( ( ( ( rule__Piano__Alternatives_3 ) ) ( ( rule__Piano__Alternatives_3 )* ) ) )
-            // InternalGuardin.g:2746:1: ( ( ( rule__Piano__Alternatives_3 ) ) ( ( rule__Piano__Alternatives_3 )* ) )
+            // InternalGuardin.g:2745:1: ( ( ( ( rule__Melody__Alternatives_3 ) ) ( ( rule__Melody__Alternatives_3 )* ) ) )
+            // InternalGuardin.g:2746:1: ( ( ( rule__Melody__Alternatives_3 ) ) ( ( rule__Melody__Alternatives_3 )* ) )
             {
-            // InternalGuardin.g:2746:1: ( ( ( rule__Piano__Alternatives_3 ) ) ( ( rule__Piano__Alternatives_3 )* ) )
-            // InternalGuardin.g:2747:2: ( ( rule__Piano__Alternatives_3 ) ) ( ( rule__Piano__Alternatives_3 )* )
+            // InternalGuardin.g:2746:1: ( ( ( rule__Melody__Alternatives_3 ) ) ( ( rule__Melody__Alternatives_3 )* ) )
+            // InternalGuardin.g:2747:2: ( ( rule__Melody__Alternatives_3 ) ) ( ( rule__Melody__Alternatives_3 )* )
             {
-            // InternalGuardin.g:2747:2: ( ( rule__Piano__Alternatives_3 ) )
-            // InternalGuardin.g:2748:3: ( rule__Piano__Alternatives_3 )
+            // InternalGuardin.g:2747:2: ( ( rule__Melody__Alternatives_3 ) )
+            // InternalGuardin.g:2748:3: ( rule__Melody__Alternatives_3 )
             {
-             before(grammarAccess.getPianoAccess().getAlternatives_3()); 
-            // InternalGuardin.g:2749:3: ( rule__Piano__Alternatives_3 )
-            // InternalGuardin.g:2749:4: rule__Piano__Alternatives_3
+             before(grammarAccess.getMelodyAccess().getAlternatives_3()); 
+            // InternalGuardin.g:2749:3: ( rule__Melody__Alternatives_3 )
+            // InternalGuardin.g:2749:4: rule__Melody__Alternatives_3
             {
             pushFollow(FOLLOW_21);
-            rule__Piano__Alternatives_3();
+            rule__Melody__Alternatives_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getAlternatives_3()); 
+             after(grammarAccess.getMelodyAccess().getAlternatives_3()); 
 
             }
 
-            // InternalGuardin.g:2752:2: ( ( rule__Piano__Alternatives_3 )* )
-            // InternalGuardin.g:2753:3: ( rule__Piano__Alternatives_3 )*
+            // InternalGuardin.g:2752:2: ( ( rule__Melody__Alternatives_3 )* )
+            // InternalGuardin.g:2753:3: ( rule__Melody__Alternatives_3 )*
             {
-             before(grammarAccess.getPianoAccess().getAlternatives_3()); 
-            // InternalGuardin.g:2754:3: ( rule__Piano__Alternatives_3 )*
+             before(grammarAccess.getMelodyAccess().getAlternatives_3()); 
+            // InternalGuardin.g:2754:3: ( rule__Melody__Alternatives_3 )*
             loop26:
             do {
                 int alt26=2;
@@ -8771,10 +8771,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalGuardin.g:2754:4: rule__Piano__Alternatives_3
+            	    // InternalGuardin.g:2754:4: rule__Melody__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_21);
-            	    rule__Piano__Alternatives_3();
+            	    rule__Melody__Alternatives_3();
 
             	    state._fsp--;
 
@@ -8787,7 +8787,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getPianoAccess().getAlternatives_3()); 
+             after(grammarAccess.getMelodyAccess().getAlternatives_3()); 
 
             }
 
@@ -8809,26 +8809,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group__3__Impl"
+    // $ANTLR end "rule__Melody__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group_1_2__0"
-    // InternalGuardin.g:2764:1: rule__Piano__Group_1_2__0 : rule__Piano__Group_1_2__0__Impl rule__Piano__Group_1_2__1 ;
-    public final void rule__Piano__Group_1_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_1_2__0"
+    // InternalGuardin.g:2764:1: rule__Melody__Group_1_2__0 : rule__Melody__Group_1_2__0__Impl rule__Melody__Group_1_2__1 ;
+    public final void rule__Melody__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2768:1: ( rule__Piano__Group_1_2__0__Impl rule__Piano__Group_1_2__1 )
-            // InternalGuardin.g:2769:2: rule__Piano__Group_1_2__0__Impl rule__Piano__Group_1_2__1
+            // InternalGuardin.g:2768:1: ( rule__Melody__Group_1_2__0__Impl rule__Melody__Group_1_2__1 )
+            // InternalGuardin.g:2769:2: rule__Melody__Group_1_2__0__Impl rule__Melody__Group_1_2__1
             {
             pushFollow(FOLLOW_4);
-            rule__Piano__Group_1_2__0__Impl();
+            rule__Melody__Group_1_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Piano__Group_1_2__1();
+            rule__Melody__Group_1_2__1();
 
             state._fsp--;
 
@@ -8847,12 +8847,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_1_2__0"
+    // $ANTLR end "rule__Melody__Group_1_2__0"
 
 
-    // $ANTLR start "rule__Piano__Group_1_2__0__Impl"
-    // InternalGuardin.g:2776:1: rule__Piano__Group_1_2__0__Impl : ( 'other:' ) ;
-    public final void rule__Piano__Group_1_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_1_2__0__Impl"
+    // InternalGuardin.g:2776:1: rule__Melody__Group_1_2__0__Impl : ( 'other:' ) ;
+    public final void rule__Melody__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8863,9 +8863,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:2781:1: ( 'other:' )
             // InternalGuardin.g:2782:2: 'other:'
             {
-             before(grammarAccess.getPianoAccess().getOtherKeyword_1_2_0()); 
+             before(grammarAccess.getMelodyAccess().getOtherKeyword_1_2_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getPianoAccess().getOtherKeyword_1_2_0()); 
+             after(grammarAccess.getMelodyAccess().getOtherKeyword_1_2_0()); 
 
             }
 
@@ -8884,21 +8884,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_1_2__0__Impl"
+    // $ANTLR end "rule__Melody__Group_1_2__0__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group_1_2__1"
-    // InternalGuardin.g:2791:1: rule__Piano__Group_1_2__1 : rule__Piano__Group_1_2__1__Impl ;
-    public final void rule__Piano__Group_1_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_1_2__1"
+    // InternalGuardin.g:2791:1: rule__Melody__Group_1_2__1 : rule__Melody__Group_1_2__1__Impl ;
+    public final void rule__Melody__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2795:1: ( rule__Piano__Group_1_2__1__Impl )
-            // InternalGuardin.g:2796:2: rule__Piano__Group_1_2__1__Impl
+            // InternalGuardin.g:2795:1: ( rule__Melody__Group_1_2__1__Impl )
+            // InternalGuardin.g:2796:2: rule__Melody__Group_1_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Group_1_2__1__Impl();
+            rule__Melody__Group_1_2__1__Impl();
 
             state._fsp--;
 
@@ -8917,35 +8917,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_1_2__1"
+    // $ANTLR end "rule__Melody__Group_1_2__1"
 
 
-    // $ANTLR start "rule__Piano__Group_1_2__1__Impl"
-    // InternalGuardin.g:2802:1: rule__Piano__Group_1_2__1__Impl : ( ( rule__Piano__OtherAssignment_1_2_1 ) ) ;
-    public final void rule__Piano__Group_1_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_1_2__1__Impl"
+    // InternalGuardin.g:2802:1: rule__Melody__Group_1_2__1__Impl : ( ( rule__Melody__OtherAssignment_1_2_1 ) ) ;
+    public final void rule__Melody__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2806:1: ( ( ( rule__Piano__OtherAssignment_1_2_1 ) ) )
-            // InternalGuardin.g:2807:1: ( ( rule__Piano__OtherAssignment_1_2_1 ) )
+            // InternalGuardin.g:2806:1: ( ( ( rule__Melody__OtherAssignment_1_2_1 ) ) )
+            // InternalGuardin.g:2807:1: ( ( rule__Melody__OtherAssignment_1_2_1 ) )
             {
-            // InternalGuardin.g:2807:1: ( ( rule__Piano__OtherAssignment_1_2_1 ) )
-            // InternalGuardin.g:2808:2: ( rule__Piano__OtherAssignment_1_2_1 )
+            // InternalGuardin.g:2807:1: ( ( rule__Melody__OtherAssignment_1_2_1 ) )
+            // InternalGuardin.g:2808:2: ( rule__Melody__OtherAssignment_1_2_1 )
             {
-             before(grammarAccess.getPianoAccess().getOtherAssignment_1_2_1()); 
-            // InternalGuardin.g:2809:2: ( rule__Piano__OtherAssignment_1_2_1 )
-            // InternalGuardin.g:2809:3: rule__Piano__OtherAssignment_1_2_1
+             before(grammarAccess.getMelodyAccess().getOtherAssignment_1_2_1()); 
+            // InternalGuardin.g:2809:2: ( rule__Melody__OtherAssignment_1_2_1 )
+            // InternalGuardin.g:2809:3: rule__Melody__OtherAssignment_1_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__OtherAssignment_1_2_1();
+            rule__Melody__OtherAssignment_1_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getOtherAssignment_1_2_1()); 
+             after(grammarAccess.getMelodyAccess().getOtherAssignment_1_2_1()); 
 
             }
 
@@ -8964,26 +8964,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_1_2__1__Impl"
+    // $ANTLR end "rule__Melody__Group_1_2__1__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group_2_1__0"
-    // InternalGuardin.g:2818:1: rule__Piano__Group_2_1__0 : rule__Piano__Group_2_1__0__Impl rule__Piano__Group_2_1__1 ;
-    public final void rule__Piano__Group_2_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_2_1__0"
+    // InternalGuardin.g:2818:1: rule__Melody__Group_2_1__0 : rule__Melody__Group_2_1__0__Impl rule__Melody__Group_2_1__1 ;
+    public final void rule__Melody__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2822:1: ( rule__Piano__Group_2_1__0__Impl rule__Piano__Group_2_1__1 )
-            // InternalGuardin.g:2823:2: rule__Piano__Group_2_1__0__Impl rule__Piano__Group_2_1__1
+            // InternalGuardin.g:2822:1: ( rule__Melody__Group_2_1__0__Impl rule__Melody__Group_2_1__1 )
+            // InternalGuardin.g:2823:2: rule__Melody__Group_2_1__0__Impl rule__Melody__Group_2_1__1
             {
             pushFollow(FOLLOW_5);
-            rule__Piano__Group_2_1__0__Impl();
+            rule__Melody__Group_2_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Piano__Group_2_1__1();
+            rule__Melody__Group_2_1__1();
 
             state._fsp--;
 
@@ -9002,35 +9002,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_2_1__0"
+    // $ANTLR end "rule__Melody__Group_2_1__0"
 
 
-    // $ANTLR start "rule__Piano__Group_2_1__0__Impl"
-    // InternalGuardin.g:2830:1: rule__Piano__Group_2_1__0__Impl : ( ( rule__Piano__NameAssignment_2_1_0 ) ) ;
-    public final void rule__Piano__Group_2_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_2_1__0__Impl"
+    // InternalGuardin.g:2830:1: rule__Melody__Group_2_1__0__Impl : ( ( rule__Melody__NameAssignment_2_1_0 ) ) ;
+    public final void rule__Melody__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2834:1: ( ( ( rule__Piano__NameAssignment_2_1_0 ) ) )
-            // InternalGuardin.g:2835:1: ( ( rule__Piano__NameAssignment_2_1_0 ) )
+            // InternalGuardin.g:2834:1: ( ( ( rule__Melody__NameAssignment_2_1_0 ) ) )
+            // InternalGuardin.g:2835:1: ( ( rule__Melody__NameAssignment_2_1_0 ) )
             {
-            // InternalGuardin.g:2835:1: ( ( rule__Piano__NameAssignment_2_1_0 ) )
-            // InternalGuardin.g:2836:2: ( rule__Piano__NameAssignment_2_1_0 )
+            // InternalGuardin.g:2835:1: ( ( rule__Melody__NameAssignment_2_1_0 ) )
+            // InternalGuardin.g:2836:2: ( rule__Melody__NameAssignment_2_1_0 )
             {
-             before(grammarAccess.getPianoAccess().getNameAssignment_2_1_0()); 
-            // InternalGuardin.g:2837:2: ( rule__Piano__NameAssignment_2_1_0 )
-            // InternalGuardin.g:2837:3: rule__Piano__NameAssignment_2_1_0
+             before(grammarAccess.getMelodyAccess().getNameAssignment_2_1_0()); 
+            // InternalGuardin.g:2837:2: ( rule__Melody__NameAssignment_2_1_0 )
+            // InternalGuardin.g:2837:3: rule__Melody__NameAssignment_2_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__NameAssignment_2_1_0();
+            rule__Melody__NameAssignment_2_1_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoAccess().getNameAssignment_2_1_0()); 
+             after(grammarAccess.getMelodyAccess().getNameAssignment_2_1_0()); 
 
             }
 
@@ -9049,21 +9049,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_2_1__0__Impl"
+    // $ANTLR end "rule__Melody__Group_2_1__0__Impl"
 
 
-    // $ANTLR start "rule__Piano__Group_2_1__1"
-    // InternalGuardin.g:2845:1: rule__Piano__Group_2_1__1 : rule__Piano__Group_2_1__1__Impl ;
-    public final void rule__Piano__Group_2_1__1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_2_1__1"
+    // InternalGuardin.g:2845:1: rule__Melody__Group_2_1__1 : rule__Melody__Group_2_1__1__Impl ;
+    public final void rule__Melody__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2849:1: ( rule__Piano__Group_2_1__1__Impl )
-            // InternalGuardin.g:2850:2: rule__Piano__Group_2_1__1__Impl
+            // InternalGuardin.g:2849:1: ( rule__Melody__Group_2_1__1__Impl )
+            // InternalGuardin.g:2850:2: rule__Melody__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Piano__Group_2_1__1__Impl();
+            rule__Melody__Group_2_1__1__Impl();
 
             state._fsp--;
 
@@ -9082,12 +9082,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_2_1__1"
+    // $ANTLR end "rule__Melody__Group_2_1__1"
 
 
-    // $ANTLR start "rule__Piano__Group_2_1__1__Impl"
-    // InternalGuardin.g:2856:1: rule__Piano__Group_2_1__1__Impl : ( ':' ) ;
-    public final void rule__Piano__Group_2_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Melody__Group_2_1__1__Impl"
+    // InternalGuardin.g:2856:1: rule__Melody__Group_2_1__1__Impl : ( ':' ) ;
+    public final void rule__Melody__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9098,9 +9098,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:2861:1: ( ':' )
             // InternalGuardin.g:2862:2: ':'
             {
-             before(grammarAccess.getPianoAccess().getColonKeyword_2_1_1()); 
+             before(grammarAccess.getMelodyAccess().getColonKeyword_2_1_1()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getPianoAccess().getColonKeyword_2_1_1()); 
+             after(grammarAccess.getMelodyAccess().getColonKeyword_2_1_1()); 
 
             }
 
@@ -9119,26 +9119,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__Group_2_1__1__Impl"
+    // $ANTLR end "rule__Melody__Group_2_1__1__Impl"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__0"
-    // InternalGuardin.g:2872:1: rule__SectionPianoLayer__Group__0 : rule__SectionPianoLayer__Group__0__Impl rule__SectionPianoLayer__Group__1 ;
-    public final void rule__SectionPianoLayer__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__0"
+    // InternalGuardin.g:2872:1: rule__SectionMelodyLayer__Group__0 : rule__SectionMelodyLayer__Group__0__Impl rule__SectionMelodyLayer__Group__1 ;
+    public final void rule__SectionMelodyLayer__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2876:1: ( rule__SectionPianoLayer__Group__0__Impl rule__SectionPianoLayer__Group__1 )
-            // InternalGuardin.g:2877:2: rule__SectionPianoLayer__Group__0__Impl rule__SectionPianoLayer__Group__1
+            // InternalGuardin.g:2876:1: ( rule__SectionMelodyLayer__Group__0__Impl rule__SectionMelodyLayer__Group__1 )
+            // InternalGuardin.g:2877:2: rule__SectionMelodyLayer__Group__0__Impl rule__SectionMelodyLayer__Group__1
             {
             pushFollow(FOLLOW_22);
-            rule__SectionPianoLayer__Group__0__Impl();
+            rule__SectionMelodyLayer__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__1();
+            rule__SectionMelodyLayer__Group__1();
 
             state._fsp--;
 
@@ -9157,12 +9157,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__0"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__0"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__0__Impl"
-    // InternalGuardin.g:2884:1: rule__SectionPianoLayer__Group__0__Impl : ( () ) ;
-    public final void rule__SectionPianoLayer__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__0__Impl"
+    // InternalGuardin.g:2884:1: rule__SectionMelodyLayer__Group__0__Impl : ( () ) ;
+    public final void rule__SectionMelodyLayer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9173,13 +9173,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:2889:1: ( () )
             // InternalGuardin.g:2890:2: ()
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getSectionLayerAction_0()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getSectionLayerAction_0()); 
             // InternalGuardin.g:2891:2: ()
             // InternalGuardin.g:2891:3: 
             {
             }
 
-             after(grammarAccess.getSectionPianoLayerAccess().getSectionLayerAction_0()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getSectionLayerAction_0()); 
 
             }
 
@@ -9194,26 +9194,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__0__Impl"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__0__Impl"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__1"
-    // InternalGuardin.g:2899:1: rule__SectionPianoLayer__Group__1 : rule__SectionPianoLayer__Group__1__Impl rule__SectionPianoLayer__Group__2 ;
-    public final void rule__SectionPianoLayer__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__1"
+    // InternalGuardin.g:2899:1: rule__SectionMelodyLayer__Group__1 : rule__SectionMelodyLayer__Group__1__Impl rule__SectionMelodyLayer__Group__2 ;
+    public final void rule__SectionMelodyLayer__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2903:1: ( rule__SectionPianoLayer__Group__1__Impl rule__SectionPianoLayer__Group__2 )
-            // InternalGuardin.g:2904:2: rule__SectionPianoLayer__Group__1__Impl rule__SectionPianoLayer__Group__2
+            // InternalGuardin.g:2903:1: ( rule__SectionMelodyLayer__Group__1__Impl rule__SectionMelodyLayer__Group__2 )
+            // InternalGuardin.g:2904:2: rule__SectionMelodyLayer__Group__1__Impl rule__SectionMelodyLayer__Group__2
             {
             pushFollow(FOLLOW_4);
-            rule__SectionPianoLayer__Group__1__Impl();
+            rule__SectionMelodyLayer__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__2();
+            rule__SectionMelodyLayer__Group__2();
 
             state._fsp--;
 
@@ -9232,12 +9232,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__1"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__1"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__1__Impl"
-    // InternalGuardin.g:2911:1: rule__SectionPianoLayer__Group__1__Impl : ( 'begin_section' ) ;
-    public final void rule__SectionPianoLayer__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__1__Impl"
+    // InternalGuardin.g:2911:1: rule__SectionMelodyLayer__Group__1__Impl : ( 'begin_section' ) ;
+    public final void rule__SectionMelodyLayer__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9248,9 +9248,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:2916:1: ( 'begin_section' )
             // InternalGuardin.g:2917:2: 'begin_section'
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getBegin_sectionKeyword_1()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getBegin_sectionKeyword_1()); 
 
             }
 
@@ -9269,26 +9269,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__1__Impl"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__1__Impl"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__2"
-    // InternalGuardin.g:2926:1: rule__SectionPianoLayer__Group__2 : rule__SectionPianoLayer__Group__2__Impl rule__SectionPianoLayer__Group__3 ;
-    public final void rule__SectionPianoLayer__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__2"
+    // InternalGuardin.g:2926:1: rule__SectionMelodyLayer__Group__2 : rule__SectionMelodyLayer__Group__2__Impl rule__SectionMelodyLayer__Group__3 ;
+    public final void rule__SectionMelodyLayer__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2930:1: ( rule__SectionPianoLayer__Group__2__Impl rule__SectionPianoLayer__Group__3 )
-            // InternalGuardin.g:2931:2: rule__SectionPianoLayer__Group__2__Impl rule__SectionPianoLayer__Group__3
+            // InternalGuardin.g:2930:1: ( rule__SectionMelodyLayer__Group__2__Impl rule__SectionMelodyLayer__Group__3 )
+            // InternalGuardin.g:2931:2: rule__SectionMelodyLayer__Group__2__Impl rule__SectionMelodyLayer__Group__3
             {
             pushFollow(FOLLOW_20);
-            rule__SectionPianoLayer__Group__2__Impl();
+            rule__SectionMelodyLayer__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__3();
+            rule__SectionMelodyLayer__Group__3();
 
             state._fsp--;
 
@@ -9307,35 +9307,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__2"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__2"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__2__Impl"
-    // InternalGuardin.g:2938:1: rule__SectionPianoLayer__Group__2__Impl : ( ( rule__SectionPianoLayer__SectionAssignment_2 ) ) ;
-    public final void rule__SectionPianoLayer__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__2__Impl"
+    // InternalGuardin.g:2938:1: rule__SectionMelodyLayer__Group__2__Impl : ( ( rule__SectionMelodyLayer__SectionAssignment_2 ) ) ;
+    public final void rule__SectionMelodyLayer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2942:1: ( ( ( rule__SectionPianoLayer__SectionAssignment_2 ) ) )
-            // InternalGuardin.g:2943:1: ( ( rule__SectionPianoLayer__SectionAssignment_2 ) )
+            // InternalGuardin.g:2942:1: ( ( ( rule__SectionMelodyLayer__SectionAssignment_2 ) ) )
+            // InternalGuardin.g:2943:1: ( ( rule__SectionMelodyLayer__SectionAssignment_2 ) )
             {
-            // InternalGuardin.g:2943:1: ( ( rule__SectionPianoLayer__SectionAssignment_2 ) )
-            // InternalGuardin.g:2944:2: ( rule__SectionPianoLayer__SectionAssignment_2 )
+            // InternalGuardin.g:2943:1: ( ( rule__SectionMelodyLayer__SectionAssignment_2 ) )
+            // InternalGuardin.g:2944:2: ( rule__SectionMelodyLayer__SectionAssignment_2 )
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getSectionAssignment_2()); 
-            // InternalGuardin.g:2945:2: ( rule__SectionPianoLayer__SectionAssignment_2 )
-            // InternalGuardin.g:2945:3: rule__SectionPianoLayer__SectionAssignment_2
+             before(grammarAccess.getSectionMelodyLayerAccess().getSectionAssignment_2()); 
+            // InternalGuardin.g:2945:2: ( rule__SectionMelodyLayer__SectionAssignment_2 )
+            // InternalGuardin.g:2945:3: rule__SectionMelodyLayer__SectionAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__SectionAssignment_2();
+            rule__SectionMelodyLayer__SectionAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSectionPianoLayerAccess().getSectionAssignment_2()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getSectionAssignment_2()); 
 
             }
 
@@ -9354,26 +9354,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__2__Impl"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__2__Impl"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__3"
-    // InternalGuardin.g:2953:1: rule__SectionPianoLayer__Group__3 : rule__SectionPianoLayer__Group__3__Impl rule__SectionPianoLayer__Group__4 ;
-    public final void rule__SectionPianoLayer__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__3"
+    // InternalGuardin.g:2953:1: rule__SectionMelodyLayer__Group__3 : rule__SectionMelodyLayer__Group__3__Impl rule__SectionMelodyLayer__Group__4 ;
+    public final void rule__SectionMelodyLayer__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2957:1: ( rule__SectionPianoLayer__Group__3__Impl rule__SectionPianoLayer__Group__4 )
-            // InternalGuardin.g:2958:2: rule__SectionPianoLayer__Group__3__Impl rule__SectionPianoLayer__Group__4
+            // InternalGuardin.g:2957:1: ( rule__SectionMelodyLayer__Group__3__Impl rule__SectionMelodyLayer__Group__4 )
+            // InternalGuardin.g:2958:2: rule__SectionMelodyLayer__Group__3__Impl rule__SectionMelodyLayer__Group__4
             {
             pushFollow(FOLLOW_23);
-            rule__SectionPianoLayer__Group__3__Impl();
+            rule__SectionMelodyLayer__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__4();
+            rule__SectionMelodyLayer__Group__4();
 
             state._fsp--;
 
@@ -9392,46 +9392,46 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__3"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__3"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__3__Impl"
-    // InternalGuardin.g:2965:1: rule__SectionPianoLayer__Group__3__Impl : ( ( ( rule__SectionPianoLayer__LayersAssignment_3 ) ) ( ( rule__SectionPianoLayer__LayersAssignment_3 )* ) ) ;
-    public final void rule__SectionPianoLayer__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__3__Impl"
+    // InternalGuardin.g:2965:1: rule__SectionMelodyLayer__Group__3__Impl : ( ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) ) ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* ) ) ;
+    public final void rule__SectionMelodyLayer__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2969:1: ( ( ( ( rule__SectionPianoLayer__LayersAssignment_3 ) ) ( ( rule__SectionPianoLayer__LayersAssignment_3 )* ) ) )
-            // InternalGuardin.g:2970:1: ( ( ( rule__SectionPianoLayer__LayersAssignment_3 ) ) ( ( rule__SectionPianoLayer__LayersAssignment_3 )* ) )
+            // InternalGuardin.g:2969:1: ( ( ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) ) ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* ) ) )
+            // InternalGuardin.g:2970:1: ( ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) ) ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* ) )
             {
-            // InternalGuardin.g:2970:1: ( ( ( rule__SectionPianoLayer__LayersAssignment_3 ) ) ( ( rule__SectionPianoLayer__LayersAssignment_3 )* ) )
-            // InternalGuardin.g:2971:2: ( ( rule__SectionPianoLayer__LayersAssignment_3 ) ) ( ( rule__SectionPianoLayer__LayersAssignment_3 )* )
+            // InternalGuardin.g:2970:1: ( ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) ) ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* ) )
+            // InternalGuardin.g:2971:2: ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) ) ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* )
             {
-            // InternalGuardin.g:2971:2: ( ( rule__SectionPianoLayer__LayersAssignment_3 ) )
-            // InternalGuardin.g:2972:3: ( rule__SectionPianoLayer__LayersAssignment_3 )
+            // InternalGuardin.g:2971:2: ( ( rule__SectionMelodyLayer__LayersAssignment_3 ) )
+            // InternalGuardin.g:2972:3: ( rule__SectionMelodyLayer__LayersAssignment_3 )
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getLayersAssignment_3()); 
-            // InternalGuardin.g:2973:3: ( rule__SectionPianoLayer__LayersAssignment_3 )
-            // InternalGuardin.g:2973:4: rule__SectionPianoLayer__LayersAssignment_3
+             before(grammarAccess.getSectionMelodyLayerAccess().getLayersAssignment_3()); 
+            // InternalGuardin.g:2973:3: ( rule__SectionMelodyLayer__LayersAssignment_3 )
+            // InternalGuardin.g:2973:4: rule__SectionMelodyLayer__LayersAssignment_3
             {
             pushFollow(FOLLOW_21);
-            rule__SectionPianoLayer__LayersAssignment_3();
+            rule__SectionMelodyLayer__LayersAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSectionPianoLayerAccess().getLayersAssignment_3()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getLayersAssignment_3()); 
 
             }
 
-            // InternalGuardin.g:2976:2: ( ( rule__SectionPianoLayer__LayersAssignment_3 )* )
-            // InternalGuardin.g:2977:3: ( rule__SectionPianoLayer__LayersAssignment_3 )*
+            // InternalGuardin.g:2976:2: ( ( rule__SectionMelodyLayer__LayersAssignment_3 )* )
+            // InternalGuardin.g:2977:3: ( rule__SectionMelodyLayer__LayersAssignment_3 )*
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getLayersAssignment_3()); 
-            // InternalGuardin.g:2978:3: ( rule__SectionPianoLayer__LayersAssignment_3 )*
+             before(grammarAccess.getSectionMelodyLayerAccess().getLayersAssignment_3()); 
+            // InternalGuardin.g:2978:3: ( rule__SectionMelodyLayer__LayersAssignment_3 )*
             loop27:
             do {
                 int alt27=2;
@@ -9444,10 +9444,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalGuardin.g:2978:4: rule__SectionPianoLayer__LayersAssignment_3
+            	    // InternalGuardin.g:2978:4: rule__SectionMelodyLayer__LayersAssignment_3
             	    {
             	    pushFollow(FOLLOW_21);
-            	    rule__SectionPianoLayer__LayersAssignment_3();
+            	    rule__SectionMelodyLayer__LayersAssignment_3();
 
             	    state._fsp--;
 
@@ -9460,7 +9460,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getSectionPianoLayerAccess().getLayersAssignment_3()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getLayersAssignment_3()); 
 
             }
 
@@ -9482,21 +9482,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__3__Impl"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__3__Impl"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__4"
-    // InternalGuardin.g:2987:1: rule__SectionPianoLayer__Group__4 : rule__SectionPianoLayer__Group__4__Impl ;
-    public final void rule__SectionPianoLayer__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__4"
+    // InternalGuardin.g:2987:1: rule__SectionMelodyLayer__Group__4 : rule__SectionMelodyLayer__Group__4__Impl ;
+    public final void rule__SectionMelodyLayer__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:2991:1: ( rule__SectionPianoLayer__Group__4__Impl )
-            // InternalGuardin.g:2992:2: rule__SectionPianoLayer__Group__4__Impl
+            // InternalGuardin.g:2991:1: ( rule__SectionMelodyLayer__Group__4__Impl )
+            // InternalGuardin.g:2992:2: rule__SectionMelodyLayer__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__SectionPianoLayer__Group__4__Impl();
+            rule__SectionMelodyLayer__Group__4__Impl();
 
             state._fsp--;
 
@@ -9515,12 +9515,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__4"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__4"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__Group__4__Impl"
-    // InternalGuardin.g:2998:1: rule__SectionPianoLayer__Group__4__Impl : ( 'end_section' ) ;
-    public final void rule__SectionPianoLayer__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__Group__4__Impl"
+    // InternalGuardin.g:2998:1: rule__SectionMelodyLayer__Group__4__Impl : ( 'end_section' ) ;
+    public final void rule__SectionMelodyLayer__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9531,9 +9531,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3003:1: ( 'end_section' )
             // InternalGuardin.g:3004:2: 'end_section'
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getEnd_sectionKeyword_4()); 
             match(input,51,FOLLOW_2); 
-             after(grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getEnd_sectionKeyword_4()); 
 
             }
 
@@ -9552,26 +9552,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__Group__4__Impl"
+    // $ANTLR end "rule__SectionMelodyLayer__Group__4__Impl"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__0"
-    // InternalGuardin.g:3014:1: rule__PianoLayer__Group__0 : rule__PianoLayer__Group__0__Impl rule__PianoLayer__Group__1 ;
-    public final void rule__PianoLayer__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__0"
+    // InternalGuardin.g:3014:1: rule__MelodyLayer__Group__0 : rule__MelodyLayer__Group__0__Impl rule__MelodyLayer__Group__1 ;
+    public final void rule__MelodyLayer__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3018:1: ( rule__PianoLayer__Group__0__Impl rule__PianoLayer__Group__1 )
-            // InternalGuardin.g:3019:2: rule__PianoLayer__Group__0__Impl rule__PianoLayer__Group__1
+            // InternalGuardin.g:3018:1: ( rule__MelodyLayer__Group__0__Impl rule__MelodyLayer__Group__1 )
+            // InternalGuardin.g:3019:2: rule__MelodyLayer__Group__0__Impl rule__MelodyLayer__Group__1
             {
             pushFollow(FOLLOW_20);
-            rule__PianoLayer__Group__0__Impl();
+            rule__MelodyLayer__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoLayer__Group__1();
+            rule__MelodyLayer__Group__1();
 
             state._fsp--;
 
@@ -9590,12 +9590,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__0"
+    // $ANTLR end "rule__MelodyLayer__Group__0"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__0__Impl"
-    // InternalGuardin.g:3026:1: rule__PianoLayer__Group__0__Impl : ( () ) ;
-    public final void rule__PianoLayer__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__0__Impl"
+    // InternalGuardin.g:3026:1: rule__MelodyLayer__Group__0__Impl : ( () ) ;
+    public final void rule__MelodyLayer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9606,13 +9606,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3031:1: ( () )
             // InternalGuardin.g:3032:2: ()
             {
-             before(grammarAccess.getPianoLayerAccess().getLayerAction_0()); 
+             before(grammarAccess.getMelodyLayerAccess().getLayerAction_0()); 
             // InternalGuardin.g:3033:2: ()
             // InternalGuardin.g:3033:3: 
             {
             }
 
-             after(grammarAccess.getPianoLayerAccess().getLayerAction_0()); 
+             after(grammarAccess.getMelodyLayerAccess().getLayerAction_0()); 
 
             }
 
@@ -9627,26 +9627,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__0__Impl"
+    // $ANTLR end "rule__MelodyLayer__Group__0__Impl"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__1"
-    // InternalGuardin.g:3041:1: rule__PianoLayer__Group__1 : rule__PianoLayer__Group__1__Impl rule__PianoLayer__Group__2 ;
-    public final void rule__PianoLayer__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__1"
+    // InternalGuardin.g:3041:1: rule__MelodyLayer__Group__1 : rule__MelodyLayer__Group__1__Impl rule__MelodyLayer__Group__2 ;
+    public final void rule__MelodyLayer__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3045:1: ( rule__PianoLayer__Group__1__Impl rule__PianoLayer__Group__2 )
-            // InternalGuardin.g:3046:2: rule__PianoLayer__Group__1__Impl rule__PianoLayer__Group__2
+            // InternalGuardin.g:3045:1: ( rule__MelodyLayer__Group__1__Impl rule__MelodyLayer__Group__2 )
+            // InternalGuardin.g:3046:2: rule__MelodyLayer__Group__1__Impl rule__MelodyLayer__Group__2
             {
             pushFollow(FOLLOW_32);
-            rule__PianoLayer__Group__1__Impl();
+            rule__MelodyLayer__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoLayer__Group__2();
+            rule__MelodyLayer__Group__2();
 
             state._fsp--;
 
@@ -9665,12 +9665,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__1"
+    // $ANTLR end "rule__MelodyLayer__Group__1"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__1__Impl"
-    // InternalGuardin.g:3053:1: rule__PianoLayer__Group__1__Impl : ( 'layer:' ) ;
-    public final void rule__PianoLayer__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__1__Impl"
+    // InternalGuardin.g:3053:1: rule__MelodyLayer__Group__1__Impl : ( 'layer:' ) ;
+    public final void rule__MelodyLayer__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9681,9 +9681,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3058:1: ( 'layer:' )
             // InternalGuardin.g:3059:2: 'layer:'
             {
-             before(grammarAccess.getPianoLayerAccess().getLayerKeyword_1()); 
+             before(grammarAccess.getMelodyLayerAccess().getLayerKeyword_1()); 
             match(input,52,FOLLOW_2); 
-             after(grammarAccess.getPianoLayerAccess().getLayerKeyword_1()); 
+             after(grammarAccess.getMelodyLayerAccess().getLayerKeyword_1()); 
 
             }
 
@@ -9702,21 +9702,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__1__Impl"
+    // $ANTLR end "rule__MelodyLayer__Group__1__Impl"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__2"
-    // InternalGuardin.g:3068:1: rule__PianoLayer__Group__2 : rule__PianoLayer__Group__2__Impl ;
-    public final void rule__PianoLayer__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__2"
+    // InternalGuardin.g:3068:1: rule__MelodyLayer__Group__2 : rule__MelodyLayer__Group__2__Impl ;
+    public final void rule__MelodyLayer__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3072:1: ( rule__PianoLayer__Group__2__Impl )
-            // InternalGuardin.g:3073:2: rule__PianoLayer__Group__2__Impl
+            // InternalGuardin.g:3072:1: ( rule__MelodyLayer__Group__2__Impl )
+            // InternalGuardin.g:3073:2: rule__MelodyLayer__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__PianoLayer__Group__2__Impl();
+            rule__MelodyLayer__Group__2__Impl();
 
             state._fsp--;
 
@@ -9735,46 +9735,46 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__2"
+    // $ANTLR end "rule__MelodyLayer__Group__2"
 
 
-    // $ANTLR start "rule__PianoLayer__Group__2__Impl"
-    // InternalGuardin.g:3079:1: rule__PianoLayer__Group__2__Impl : ( ( ( rule__PianoLayer__NotesAssignment_2 ) ) ( ( rule__PianoLayer__NotesAssignment_2 )* ) ) ;
-    public final void rule__PianoLayer__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__Group__2__Impl"
+    // InternalGuardin.g:3079:1: rule__MelodyLayer__Group__2__Impl : ( ( ( rule__MelodyLayer__NotesAssignment_2 ) ) ( ( rule__MelodyLayer__NotesAssignment_2 )* ) ) ;
+    public final void rule__MelodyLayer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3083:1: ( ( ( ( rule__PianoLayer__NotesAssignment_2 ) ) ( ( rule__PianoLayer__NotesAssignment_2 )* ) ) )
-            // InternalGuardin.g:3084:1: ( ( ( rule__PianoLayer__NotesAssignment_2 ) ) ( ( rule__PianoLayer__NotesAssignment_2 )* ) )
+            // InternalGuardin.g:3083:1: ( ( ( ( rule__MelodyLayer__NotesAssignment_2 ) ) ( ( rule__MelodyLayer__NotesAssignment_2 )* ) ) )
+            // InternalGuardin.g:3084:1: ( ( ( rule__MelodyLayer__NotesAssignment_2 ) ) ( ( rule__MelodyLayer__NotesAssignment_2 )* ) )
             {
-            // InternalGuardin.g:3084:1: ( ( ( rule__PianoLayer__NotesAssignment_2 ) ) ( ( rule__PianoLayer__NotesAssignment_2 )* ) )
-            // InternalGuardin.g:3085:2: ( ( rule__PianoLayer__NotesAssignment_2 ) ) ( ( rule__PianoLayer__NotesAssignment_2 )* )
+            // InternalGuardin.g:3084:1: ( ( ( rule__MelodyLayer__NotesAssignment_2 ) ) ( ( rule__MelodyLayer__NotesAssignment_2 )* ) )
+            // InternalGuardin.g:3085:2: ( ( rule__MelodyLayer__NotesAssignment_2 ) ) ( ( rule__MelodyLayer__NotesAssignment_2 )* )
             {
-            // InternalGuardin.g:3085:2: ( ( rule__PianoLayer__NotesAssignment_2 ) )
-            // InternalGuardin.g:3086:3: ( rule__PianoLayer__NotesAssignment_2 )
+            // InternalGuardin.g:3085:2: ( ( rule__MelodyLayer__NotesAssignment_2 ) )
+            // InternalGuardin.g:3086:3: ( rule__MelodyLayer__NotesAssignment_2 )
             {
-             before(grammarAccess.getPianoLayerAccess().getNotesAssignment_2()); 
-            // InternalGuardin.g:3087:3: ( rule__PianoLayer__NotesAssignment_2 )
-            // InternalGuardin.g:3087:4: rule__PianoLayer__NotesAssignment_2
+             before(grammarAccess.getMelodyLayerAccess().getNotesAssignment_2()); 
+            // InternalGuardin.g:3087:3: ( rule__MelodyLayer__NotesAssignment_2 )
+            // InternalGuardin.g:3087:4: rule__MelodyLayer__NotesAssignment_2
             {
             pushFollow(FOLLOW_33);
-            rule__PianoLayer__NotesAssignment_2();
+            rule__MelodyLayer__NotesAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoLayerAccess().getNotesAssignment_2()); 
+             after(grammarAccess.getMelodyLayerAccess().getNotesAssignment_2()); 
 
             }
 
-            // InternalGuardin.g:3090:2: ( ( rule__PianoLayer__NotesAssignment_2 )* )
-            // InternalGuardin.g:3091:3: ( rule__PianoLayer__NotesAssignment_2 )*
+            // InternalGuardin.g:3090:2: ( ( rule__MelodyLayer__NotesAssignment_2 )* )
+            // InternalGuardin.g:3091:3: ( rule__MelodyLayer__NotesAssignment_2 )*
             {
-             before(grammarAccess.getPianoLayerAccess().getNotesAssignment_2()); 
-            // InternalGuardin.g:3092:3: ( rule__PianoLayer__NotesAssignment_2 )*
+             before(grammarAccess.getMelodyLayerAccess().getNotesAssignment_2()); 
+            // InternalGuardin.g:3092:3: ( rule__MelodyLayer__NotesAssignment_2 )*
             loop28:
             do {
                 int alt28=2;
@@ -9787,10 +9787,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalGuardin.g:3092:4: rule__PianoLayer__NotesAssignment_2
+            	    // InternalGuardin.g:3092:4: rule__MelodyLayer__NotesAssignment_2
             	    {
             	    pushFollow(FOLLOW_33);
-            	    rule__PianoLayer__NotesAssignment_2();
+            	    rule__MelodyLayer__NotesAssignment_2();
 
             	    state._fsp--;
 
@@ -9803,7 +9803,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getPianoLayerAccess().getNotesAssignment_2()); 
+             after(grammarAccess.getMelodyLayerAccess().getNotesAssignment_2()); 
 
             }
 
@@ -9825,26 +9825,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__Group__2__Impl"
+    // $ANTLR end "rule__MelodyLayer__Group__2__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group__0"
-    // InternalGuardin.g:3102:1: rule__PianoNote__Group__0 : rule__PianoNote__Group__0__Impl rule__PianoNote__Group__1 ;
-    public final void rule__PianoNote__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__0"
+    // InternalGuardin.g:3102:1: rule__MelodyNote__Group__0 : rule__MelodyNote__Group__0__Impl rule__MelodyNote__Group__1 ;
+    public final void rule__MelodyNote__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3106:1: ( rule__PianoNote__Group__0__Impl rule__PianoNote__Group__1 )
-            // InternalGuardin.g:3107:2: rule__PianoNote__Group__0__Impl rule__PianoNote__Group__1
+            // InternalGuardin.g:3106:1: ( rule__MelodyNote__Group__0__Impl rule__MelodyNote__Group__1 )
+            // InternalGuardin.g:3107:2: rule__MelodyNote__Group__0__Impl rule__MelodyNote__Group__1
             {
             pushFollow(FOLLOW_34);
-            rule__PianoNote__Group__0__Impl();
+            rule__MelodyNote__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group__1();
+            rule__MelodyNote__Group__1();
 
             state._fsp--;
 
@@ -9863,12 +9863,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__0"
+    // $ANTLR end "rule__MelodyNote__Group__0"
 
 
-    // $ANTLR start "rule__PianoNote__Group__0__Impl"
-    // InternalGuardin.g:3114:1: rule__PianoNote__Group__0__Impl : ( () ) ;
-    public final void rule__PianoNote__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__0__Impl"
+    // InternalGuardin.g:3114:1: rule__MelodyNote__Group__0__Impl : ( () ) ;
+    public final void rule__MelodyNote__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9879,13 +9879,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3119:1: ( () )
             // InternalGuardin.g:3120:2: ()
             {
-             before(grammarAccess.getPianoNoteAccess().getPianoNoteAction_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getMelodyNoteAction_0()); 
             // InternalGuardin.g:3121:2: ()
             // InternalGuardin.g:3121:3: 
             {
             }
 
-             after(grammarAccess.getPianoNoteAccess().getPianoNoteAction_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getMelodyNoteAction_0()); 
 
             }
 
@@ -9900,26 +9900,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__0__Impl"
+    // $ANTLR end "rule__MelodyNote__Group__0__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group__1"
-    // InternalGuardin.g:3129:1: rule__PianoNote__Group__1 : rule__PianoNote__Group__1__Impl rule__PianoNote__Group__2 ;
-    public final void rule__PianoNote__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__1"
+    // InternalGuardin.g:3129:1: rule__MelodyNote__Group__1 : rule__MelodyNote__Group__1__Impl rule__MelodyNote__Group__2 ;
+    public final void rule__MelodyNote__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3133:1: ( rule__PianoNote__Group__1__Impl rule__PianoNote__Group__2 )
-            // InternalGuardin.g:3134:2: rule__PianoNote__Group__1__Impl rule__PianoNote__Group__2
+            // InternalGuardin.g:3133:1: ( rule__MelodyNote__Group__1__Impl rule__MelodyNote__Group__2 )
+            // InternalGuardin.g:3134:2: rule__MelodyNote__Group__1__Impl rule__MelodyNote__Group__2
             {
             pushFollow(FOLLOW_35);
-            rule__PianoNote__Group__1__Impl();
+            rule__MelodyNote__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group__2();
+            rule__MelodyNote__Group__2();
 
             state._fsp--;
 
@@ -9938,35 +9938,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__1"
+    // $ANTLR end "rule__MelodyNote__Group__1"
 
 
-    // $ANTLR start "rule__PianoNote__Group__1__Impl"
-    // InternalGuardin.g:3141:1: rule__PianoNote__Group__1__Impl : ( ( rule__PianoNote__NoteTypeAssignment_1 ) ) ;
-    public final void rule__PianoNote__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__1__Impl"
+    // InternalGuardin.g:3141:1: rule__MelodyNote__Group__1__Impl : ( ( rule__MelodyNote__NoteTypeAssignment_1 ) ) ;
+    public final void rule__MelodyNote__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3145:1: ( ( ( rule__PianoNote__NoteTypeAssignment_1 ) ) )
-            // InternalGuardin.g:3146:1: ( ( rule__PianoNote__NoteTypeAssignment_1 ) )
+            // InternalGuardin.g:3145:1: ( ( ( rule__MelodyNote__NoteTypeAssignment_1 ) ) )
+            // InternalGuardin.g:3146:1: ( ( rule__MelodyNote__NoteTypeAssignment_1 ) )
             {
-            // InternalGuardin.g:3146:1: ( ( rule__PianoNote__NoteTypeAssignment_1 ) )
-            // InternalGuardin.g:3147:2: ( rule__PianoNote__NoteTypeAssignment_1 )
+            // InternalGuardin.g:3146:1: ( ( rule__MelodyNote__NoteTypeAssignment_1 ) )
+            // InternalGuardin.g:3147:2: ( rule__MelodyNote__NoteTypeAssignment_1 )
             {
-             before(grammarAccess.getPianoNoteAccess().getNoteTypeAssignment_1()); 
-            // InternalGuardin.g:3148:2: ( rule__PianoNote__NoteTypeAssignment_1 )
-            // InternalGuardin.g:3148:3: rule__PianoNote__NoteTypeAssignment_1
+             before(grammarAccess.getMelodyNoteAccess().getNoteTypeAssignment_1()); 
+            // InternalGuardin.g:3148:2: ( rule__MelodyNote__NoteTypeAssignment_1 )
+            // InternalGuardin.g:3148:3: rule__MelodyNote__NoteTypeAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__NoteTypeAssignment_1();
+            rule__MelodyNote__NoteTypeAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getNoteTypeAssignment_1()); 
+             after(grammarAccess.getMelodyNoteAccess().getNoteTypeAssignment_1()); 
 
             }
 
@@ -9985,26 +9985,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__1__Impl"
+    // $ANTLR end "rule__MelodyNote__Group__1__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group__2"
-    // InternalGuardin.g:3156:1: rule__PianoNote__Group__2 : rule__PianoNote__Group__2__Impl rule__PianoNote__Group__3 ;
-    public final void rule__PianoNote__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__2"
+    // InternalGuardin.g:3156:1: rule__MelodyNote__Group__2 : rule__MelodyNote__Group__2__Impl rule__MelodyNote__Group__3 ;
+    public final void rule__MelodyNote__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3160:1: ( rule__PianoNote__Group__2__Impl rule__PianoNote__Group__3 )
-            // InternalGuardin.g:3161:2: rule__PianoNote__Group__2__Impl rule__PianoNote__Group__3
+            // InternalGuardin.g:3160:1: ( rule__MelodyNote__Group__2__Impl rule__MelodyNote__Group__3 )
+            // InternalGuardin.g:3161:2: rule__MelodyNote__Group__2__Impl rule__MelodyNote__Group__3
             {
             pushFollow(FOLLOW_35);
-            rule__PianoNote__Group__2__Impl();
+            rule__MelodyNote__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group__3();
+            rule__MelodyNote__Group__3();
 
             state._fsp--;
 
@@ -10023,24 +10023,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__2"
+    // $ANTLR end "rule__MelodyNote__Group__2"
 
 
-    // $ANTLR start "rule__PianoNote__Group__2__Impl"
-    // InternalGuardin.g:3168:1: rule__PianoNote__Group__2__Impl : ( ( rule__PianoNote__DurationAssignment_2 )? ) ;
-    public final void rule__PianoNote__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__2__Impl"
+    // InternalGuardin.g:3168:1: rule__MelodyNote__Group__2__Impl : ( ( rule__MelodyNote__DurationAssignment_2 )? ) ;
+    public final void rule__MelodyNote__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3172:1: ( ( ( rule__PianoNote__DurationAssignment_2 )? ) )
-            // InternalGuardin.g:3173:1: ( ( rule__PianoNote__DurationAssignment_2 )? )
+            // InternalGuardin.g:3172:1: ( ( ( rule__MelodyNote__DurationAssignment_2 )? ) )
+            // InternalGuardin.g:3173:1: ( ( rule__MelodyNote__DurationAssignment_2 )? )
             {
-            // InternalGuardin.g:3173:1: ( ( rule__PianoNote__DurationAssignment_2 )? )
-            // InternalGuardin.g:3174:2: ( rule__PianoNote__DurationAssignment_2 )?
+            // InternalGuardin.g:3173:1: ( ( rule__MelodyNote__DurationAssignment_2 )? )
+            // InternalGuardin.g:3174:2: ( rule__MelodyNote__DurationAssignment_2 )?
             {
-             before(grammarAccess.getPianoNoteAccess().getDurationAssignment_2()); 
-            // InternalGuardin.g:3175:2: ( rule__PianoNote__DurationAssignment_2 )?
+             before(grammarAccess.getMelodyNoteAccess().getDurationAssignment_2()); 
+            // InternalGuardin.g:3175:2: ( rule__MelodyNote__DurationAssignment_2 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -10049,10 +10049,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             }
             switch (alt29) {
                 case 1 :
-                    // InternalGuardin.g:3175:3: rule__PianoNote__DurationAssignment_2
+                    // InternalGuardin.g:3175:3: rule__MelodyNote__DurationAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PianoNote__DurationAssignment_2();
+                    rule__MelodyNote__DurationAssignment_2();
 
                     state._fsp--;
 
@@ -10062,7 +10062,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getDurationAssignment_2()); 
+             after(grammarAccess.getMelodyNoteAccess().getDurationAssignment_2()); 
 
             }
 
@@ -10081,21 +10081,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__2__Impl"
+    // $ANTLR end "rule__MelodyNote__Group__2__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group__3"
-    // InternalGuardin.g:3183:1: rule__PianoNote__Group__3 : rule__PianoNote__Group__3__Impl ;
-    public final void rule__PianoNote__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__3"
+    // InternalGuardin.g:3183:1: rule__MelodyNote__Group__3 : rule__MelodyNote__Group__3__Impl ;
+    public final void rule__MelodyNote__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3187:1: ( rule__PianoNote__Group__3__Impl )
-            // InternalGuardin.g:3188:2: rule__PianoNote__Group__3__Impl
+            // InternalGuardin.g:3187:1: ( rule__MelodyNote__Group__3__Impl )
+            // InternalGuardin.g:3188:2: rule__MelodyNote__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group__3__Impl();
+            rule__MelodyNote__Group__3__Impl();
 
             state._fsp--;
 
@@ -10114,24 +10114,24 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__3"
+    // $ANTLR end "rule__MelodyNote__Group__3"
 
 
-    // $ANTLR start "rule__PianoNote__Group__3__Impl"
-    // InternalGuardin.g:3194:1: rule__PianoNote__Group__3__Impl : ( ( rule__PianoNote__Alternatives_3 )? ) ;
-    public final void rule__PianoNote__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group__3__Impl"
+    // InternalGuardin.g:3194:1: rule__MelodyNote__Group__3__Impl : ( ( rule__MelodyNote__Alternatives_3 )? ) ;
+    public final void rule__MelodyNote__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3198:1: ( ( ( rule__PianoNote__Alternatives_3 )? ) )
-            // InternalGuardin.g:3199:1: ( ( rule__PianoNote__Alternatives_3 )? )
+            // InternalGuardin.g:3198:1: ( ( ( rule__MelodyNote__Alternatives_3 )? ) )
+            // InternalGuardin.g:3199:1: ( ( rule__MelodyNote__Alternatives_3 )? )
             {
-            // InternalGuardin.g:3199:1: ( ( rule__PianoNote__Alternatives_3 )? )
-            // InternalGuardin.g:3200:2: ( rule__PianoNote__Alternatives_3 )?
+            // InternalGuardin.g:3199:1: ( ( rule__MelodyNote__Alternatives_3 )? )
+            // InternalGuardin.g:3200:2: ( rule__MelodyNote__Alternatives_3 )?
             {
-             before(grammarAccess.getPianoNoteAccess().getAlternatives_3()); 
-            // InternalGuardin.g:3201:2: ( rule__PianoNote__Alternatives_3 )?
+             before(grammarAccess.getMelodyNoteAccess().getAlternatives_3()); 
+            // InternalGuardin.g:3201:2: ( rule__MelodyNote__Alternatives_3 )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -10140,10 +10140,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalGuardin.g:3201:3: rule__PianoNote__Alternatives_3
+                    // InternalGuardin.g:3201:3: rule__MelodyNote__Alternatives_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PianoNote__Alternatives_3();
+                    rule__MelodyNote__Alternatives_3();
 
                     state._fsp--;
 
@@ -10153,7 +10153,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getAlternatives_3()); 
+             after(grammarAccess.getMelodyNoteAccess().getAlternatives_3()); 
 
             }
 
@@ -10172,26 +10172,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group__3__Impl"
+    // $ANTLR end "rule__MelodyNote__Group__3__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_0__0"
-    // InternalGuardin.g:3210:1: rule__PianoNote__Group_3_0__0 : rule__PianoNote__Group_3_0__0__Impl rule__PianoNote__Group_3_0__1 ;
-    public final void rule__PianoNote__Group_3_0__0() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_0__0"
+    // InternalGuardin.g:3210:1: rule__MelodyNote__Group_3_0__0 : rule__MelodyNote__Group_3_0__0__Impl rule__MelodyNote__Group_3_0__1 ;
+    public final void rule__MelodyNote__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3214:1: ( rule__PianoNote__Group_3_0__0__Impl rule__PianoNote__Group_3_0__1 )
-            // InternalGuardin.g:3215:2: rule__PianoNote__Group_3_0__0__Impl rule__PianoNote__Group_3_0__1
+            // InternalGuardin.g:3214:1: ( rule__MelodyNote__Group_3_0__0__Impl rule__MelodyNote__Group_3_0__1 )
+            // InternalGuardin.g:3215:2: rule__MelodyNote__Group_3_0__0__Impl rule__MelodyNote__Group_3_0__1
             {
             pushFollow(FOLLOW_36);
-            rule__PianoNote__Group_3_0__0__Impl();
+            rule__MelodyNote__Group_3_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group_3_0__1();
+            rule__MelodyNote__Group_3_0__1();
 
             state._fsp--;
 
@@ -10210,12 +10210,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_0__0"
+    // $ANTLR end "rule__MelodyNote__Group_3_0__0"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_0__0__Impl"
-    // InternalGuardin.g:3222:1: rule__PianoNote__Group_3_0__0__Impl : ( '/' ) ;
-    public final void rule__PianoNote__Group_3_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_0__0__Impl"
+    // InternalGuardin.g:3222:1: rule__MelodyNote__Group_3_0__0__Impl : ( '/' ) ;
+    public final void rule__MelodyNote__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10226,9 +10226,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3227:1: ( '/' )
             // InternalGuardin.g:3228:2: '/'
             {
-             before(grammarAccess.getPianoNoteAccess().getSolidusKeyword_3_0_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getSolidusKeyword_3_0_0()); 
             match(input,57,FOLLOW_2); 
-             after(grammarAccess.getPianoNoteAccess().getSolidusKeyword_3_0_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getSolidusKeyword_3_0_0()); 
 
             }
 
@@ -10247,21 +10247,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_0__0__Impl"
+    // $ANTLR end "rule__MelodyNote__Group_3_0__0__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_0__1"
-    // InternalGuardin.g:3237:1: rule__PianoNote__Group_3_0__1 : rule__PianoNote__Group_3_0__1__Impl ;
-    public final void rule__PianoNote__Group_3_0__1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_0__1"
+    // InternalGuardin.g:3237:1: rule__MelodyNote__Group_3_0__1 : rule__MelodyNote__Group_3_0__1__Impl ;
+    public final void rule__MelodyNote__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3241:1: ( rule__PianoNote__Group_3_0__1__Impl )
-            // InternalGuardin.g:3242:2: rule__PianoNote__Group_3_0__1__Impl
+            // InternalGuardin.g:3241:1: ( rule__MelodyNote__Group_3_0__1__Impl )
+            // InternalGuardin.g:3242:2: rule__MelodyNote__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group_3_0__1__Impl();
+            rule__MelodyNote__Group_3_0__1__Impl();
 
             state._fsp--;
 
@@ -10280,35 +10280,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_0__1"
+    // $ANTLR end "rule__MelodyNote__Group_3_0__1"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_0__1__Impl"
-    // InternalGuardin.g:3248:1: rule__PianoNote__Group_3_0__1__Impl : ( ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 ) ) ;
-    public final void rule__PianoNote__Group_3_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_0__1__Impl"
+    // InternalGuardin.g:3248:1: rule__MelodyNote__Group_3_0__1__Impl : ( ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 ) ) ;
+    public final void rule__MelodyNote__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3252:1: ( ( ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 ) ) )
-            // InternalGuardin.g:3253:1: ( ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 ) )
+            // InternalGuardin.g:3252:1: ( ( ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 ) ) )
+            // InternalGuardin.g:3253:1: ( ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 ) )
             {
-            // InternalGuardin.g:3253:1: ( ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 ) )
-            // InternalGuardin.g:3254:2: ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 )
+            // InternalGuardin.g:3253:1: ( ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 ) )
+            // InternalGuardin.g:3254:2: ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 )
             {
-             before(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_3_0_1()); 
-            // InternalGuardin.g:3255:2: ( rule__PianoNote__OctaveOffsetAssignment_3_0_1 )
-            // InternalGuardin.g:3255:3: rule__PianoNote__OctaveOffsetAssignment_3_0_1
+             before(grammarAccess.getMelodyNoteAccess().getOctaveOffsetAssignment_3_0_1()); 
+            // InternalGuardin.g:3255:2: ( rule__MelodyNote__OctaveOffsetAssignment_3_0_1 )
+            // InternalGuardin.g:3255:3: rule__MelodyNote__OctaveOffsetAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__OctaveOffsetAssignment_3_0_1();
+            rule__MelodyNote__OctaveOffsetAssignment_3_0_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getOctaveOffsetAssignment_3_0_1()); 
+             after(grammarAccess.getMelodyNoteAccess().getOctaveOffsetAssignment_3_0_1()); 
 
             }
 
@@ -10327,26 +10327,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_0__1__Impl"
+    // $ANTLR end "rule__MelodyNote__Group_3_0__1__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_1__0"
-    // InternalGuardin.g:3264:1: rule__PianoNote__Group_3_1__0 : rule__PianoNote__Group_3_1__0__Impl rule__PianoNote__Group_3_1__1 ;
-    public final void rule__PianoNote__Group_3_1__0() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_1__0"
+    // InternalGuardin.g:3264:1: rule__MelodyNote__Group_3_1__0 : rule__MelodyNote__Group_3_1__0__Impl rule__MelodyNote__Group_3_1__1 ;
+    public final void rule__MelodyNote__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3268:1: ( rule__PianoNote__Group_3_1__0__Impl rule__PianoNote__Group_3_1__1 )
-            // InternalGuardin.g:3269:2: rule__PianoNote__Group_3_1__0__Impl rule__PianoNote__Group_3_1__1
+            // InternalGuardin.g:3268:1: ( rule__MelodyNote__Group_3_1__0__Impl rule__MelodyNote__Group_3_1__1 )
+            // InternalGuardin.g:3269:2: rule__MelodyNote__Group_3_1__0__Impl rule__MelodyNote__Group_3_1__1
             {
             pushFollow(FOLLOW_14);
-            rule__PianoNote__Group_3_1__0__Impl();
+            rule__MelodyNote__Group_3_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group_3_1__1();
+            rule__MelodyNote__Group_3_1__1();
 
             state._fsp--;
 
@@ -10365,12 +10365,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_1__0"
+    // $ANTLR end "rule__MelodyNote__Group_3_1__0"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_1__0__Impl"
-    // InternalGuardin.g:3276:1: rule__PianoNote__Group_3_1__0__Impl : ( '|' ) ;
-    public final void rule__PianoNote__Group_3_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_1__0__Impl"
+    // InternalGuardin.g:3276:1: rule__MelodyNote__Group_3_1__0__Impl : ( '|' ) ;
+    public final void rule__MelodyNote__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10381,9 +10381,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3281:1: ( '|' )
             // InternalGuardin.g:3282:2: '|'
             {
-             before(grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_3_1_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getVerticalLineKeyword_3_1_0()); 
             match(input,58,FOLLOW_2); 
-             after(grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_3_1_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getVerticalLineKeyword_3_1_0()); 
 
             }
 
@@ -10402,21 +10402,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_1__0__Impl"
+    // $ANTLR end "rule__MelodyNote__Group_3_1__0__Impl"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_1__1"
-    // InternalGuardin.g:3291:1: rule__PianoNote__Group_3_1__1 : rule__PianoNote__Group_3_1__1__Impl ;
-    public final void rule__PianoNote__Group_3_1__1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_1__1"
+    // InternalGuardin.g:3291:1: rule__MelodyNote__Group_3_1__1 : rule__MelodyNote__Group_3_1__1__Impl ;
+    public final void rule__MelodyNote__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3295:1: ( rule__PianoNote__Group_3_1__1__Impl )
-            // InternalGuardin.g:3296:2: rule__PianoNote__Group_3_1__1__Impl
+            // InternalGuardin.g:3295:1: ( rule__MelodyNote__Group_3_1__1__Impl )
+            // InternalGuardin.g:3296:2: rule__MelodyNote__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__Group_3_1__1__Impl();
+            rule__MelodyNote__Group_3_1__1__Impl();
 
             state._fsp--;
 
@@ -10435,35 +10435,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_1__1"
+    // $ANTLR end "rule__MelodyNote__Group_3_1__1"
 
 
-    // $ANTLR start "rule__PianoNote__Group_3_1__1__Impl"
-    // InternalGuardin.g:3302:1: rule__PianoNote__Group_3_1__1__Impl : ( ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 ) ) ;
-    public final void rule__PianoNote__Group_3_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__Group_3_1__1__Impl"
+    // InternalGuardin.g:3302:1: rule__MelodyNote__Group_3_1__1__Impl : ( ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 ) ) ;
+    public final void rule__MelodyNote__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3306:1: ( ( ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 ) ) )
-            // InternalGuardin.g:3307:1: ( ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 ) )
+            // InternalGuardin.g:3306:1: ( ( ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 ) ) )
+            // InternalGuardin.g:3307:1: ( ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 ) )
             {
-            // InternalGuardin.g:3307:1: ( ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 ) )
-            // InternalGuardin.g:3308:2: ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 )
+            // InternalGuardin.g:3307:1: ( ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 ) )
+            // InternalGuardin.g:3308:2: ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 )
             {
-             before(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteAssignment_3_1_1()); 
-            // InternalGuardin.g:3309:2: ( rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 )
-            // InternalGuardin.g:3309:3: rule__PianoNote__OctaveAbsoluteAssignment_3_1_1
+             before(grammarAccess.getMelodyNoteAccess().getOctaveAbsoluteAssignment_3_1_1()); 
+            // InternalGuardin.g:3309:2: ( rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 )
+            // InternalGuardin.g:3309:3: rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__PianoNote__OctaveAbsoluteAssignment_3_1_1();
+            rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteAssignment_3_1_1()); 
+             after(grammarAccess.getMelodyNoteAccess().getOctaveAbsoluteAssignment_3_1_1()); 
 
             }
 
@@ -10482,26 +10482,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__Group_3_1__1__Impl"
+    // $ANTLR end "rule__MelodyNote__Group_3_1__1__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__0"
-    // InternalGuardin.g:3318:1: rule__CompositePianoNote__Group__0 : rule__CompositePianoNote__Group__0__Impl rule__CompositePianoNote__Group__1 ;
-    public final void rule__CompositePianoNote__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__0"
+    // InternalGuardin.g:3318:1: rule__CompositeMelodyNote__Group__0 : rule__CompositeMelodyNote__Group__0__Impl rule__CompositeMelodyNote__Group__1 ;
+    public final void rule__CompositeMelodyNote__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3322:1: ( rule__CompositePianoNote__Group__0__Impl rule__CompositePianoNote__Group__1 )
-            // InternalGuardin.g:3323:2: rule__CompositePianoNote__Group__0__Impl rule__CompositePianoNote__Group__1
+            // InternalGuardin.g:3322:1: ( rule__CompositeMelodyNote__Group__0__Impl rule__CompositeMelodyNote__Group__1 )
+            // InternalGuardin.g:3323:2: rule__CompositeMelodyNote__Group__0__Impl rule__CompositeMelodyNote__Group__1
             {
             pushFollow(FOLLOW_32);
-            rule__CompositePianoNote__Group__0__Impl();
+            rule__CompositeMelodyNote__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__1();
+            rule__CompositeMelodyNote__Group__1();
 
             state._fsp--;
 
@@ -10520,12 +10520,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__0"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__0"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__0__Impl"
-    // InternalGuardin.g:3330:1: rule__CompositePianoNote__Group__0__Impl : ( () ) ;
-    public final void rule__CompositePianoNote__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__0__Impl"
+    // InternalGuardin.g:3330:1: rule__CompositeMelodyNote__Group__0__Impl : ( () ) ;
+    public final void rule__CompositeMelodyNote__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10536,13 +10536,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3335:1: ( () )
             // InternalGuardin.g:3336:2: ()
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getCompositeNoteAction_0()); 
+             before(grammarAccess.getCompositeMelodyNoteAccess().getCompositeNoteAction_0()); 
             // InternalGuardin.g:3337:2: ()
             // InternalGuardin.g:3337:3: 
             {
             }
 
-             after(grammarAccess.getCompositePianoNoteAccess().getCompositeNoteAction_0()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getCompositeNoteAction_0()); 
 
             }
 
@@ -10557,26 +10557,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__0__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__0__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__1"
-    // InternalGuardin.g:3345:1: rule__CompositePianoNote__Group__1 : rule__CompositePianoNote__Group__1__Impl rule__CompositePianoNote__Group__2 ;
-    public final void rule__CompositePianoNote__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__1"
+    // InternalGuardin.g:3345:1: rule__CompositeMelodyNote__Group__1 : rule__CompositeMelodyNote__Group__1__Impl rule__CompositeMelodyNote__Group__2 ;
+    public final void rule__CompositeMelodyNote__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3349:1: ( rule__CompositePianoNote__Group__1__Impl rule__CompositePianoNote__Group__2 )
-            // InternalGuardin.g:3350:2: rule__CompositePianoNote__Group__1__Impl rule__CompositePianoNote__Group__2
+            // InternalGuardin.g:3349:1: ( rule__CompositeMelodyNote__Group__1__Impl rule__CompositeMelodyNote__Group__2 )
+            // InternalGuardin.g:3350:2: rule__CompositeMelodyNote__Group__1__Impl rule__CompositeMelodyNote__Group__2
             {
             pushFollow(FOLLOW_37);
-            rule__CompositePianoNote__Group__1__Impl();
+            rule__CompositeMelodyNote__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__2();
+            rule__CompositeMelodyNote__Group__2();
 
             state._fsp--;
 
@@ -10595,12 +10595,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__1"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__1"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__1__Impl"
-    // InternalGuardin.g:3357:1: rule__CompositePianoNote__Group__1__Impl : ( '(' ) ;
-    public final void rule__CompositePianoNote__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__1__Impl"
+    // InternalGuardin.g:3357:1: rule__CompositeMelodyNote__Group__1__Impl : ( '(' ) ;
+    public final void rule__CompositeMelodyNote__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10611,9 +10611,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3362:1: ( '(' )
             // InternalGuardin.g:3363:2: '('
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getCompositeMelodyNoteAccess().getLeftParenthesisKeyword_1()); 
             match(input,53,FOLLOW_2); 
-             after(grammarAccess.getCompositePianoNoteAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -10632,26 +10632,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__1__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__1__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__2"
-    // InternalGuardin.g:3372:1: rule__CompositePianoNote__Group__2 : rule__CompositePianoNote__Group__2__Impl rule__CompositePianoNote__Group__3 ;
-    public final void rule__CompositePianoNote__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__2"
+    // InternalGuardin.g:3372:1: rule__CompositeMelodyNote__Group__2 : rule__CompositeMelodyNote__Group__2__Impl rule__CompositeMelodyNote__Group__3 ;
+    public final void rule__CompositeMelodyNote__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3376:1: ( rule__CompositePianoNote__Group__2__Impl rule__CompositePianoNote__Group__3 )
-            // InternalGuardin.g:3377:2: rule__CompositePianoNote__Group__2__Impl rule__CompositePianoNote__Group__3
+            // InternalGuardin.g:3376:1: ( rule__CompositeMelodyNote__Group__2__Impl rule__CompositeMelodyNote__Group__3 )
+            // InternalGuardin.g:3377:2: rule__CompositeMelodyNote__Group__2__Impl rule__CompositeMelodyNote__Group__3
             {
             pushFollow(FOLLOW_29);
-            rule__CompositePianoNote__Group__2__Impl();
+            rule__CompositeMelodyNote__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__3();
+            rule__CompositeMelodyNote__Group__3();
 
             state._fsp--;
 
@@ -10670,46 +10670,46 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__2"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__2"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__2__Impl"
-    // InternalGuardin.g:3384:1: rule__CompositePianoNote__Group__2__Impl : ( ( ( rule__CompositePianoNote__NotesAssignment_2 ) ) ( ( rule__CompositePianoNote__NotesAssignment_2 )* ) ) ;
-    public final void rule__CompositePianoNote__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__2__Impl"
+    // InternalGuardin.g:3384:1: rule__CompositeMelodyNote__Group__2__Impl : ( ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) ) ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* ) ) ;
+    public final void rule__CompositeMelodyNote__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3388:1: ( ( ( ( rule__CompositePianoNote__NotesAssignment_2 ) ) ( ( rule__CompositePianoNote__NotesAssignment_2 )* ) ) )
-            // InternalGuardin.g:3389:1: ( ( ( rule__CompositePianoNote__NotesAssignment_2 ) ) ( ( rule__CompositePianoNote__NotesAssignment_2 )* ) )
+            // InternalGuardin.g:3388:1: ( ( ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) ) ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* ) ) )
+            // InternalGuardin.g:3389:1: ( ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) ) ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* ) )
             {
-            // InternalGuardin.g:3389:1: ( ( ( rule__CompositePianoNote__NotesAssignment_2 ) ) ( ( rule__CompositePianoNote__NotesAssignment_2 )* ) )
-            // InternalGuardin.g:3390:2: ( ( rule__CompositePianoNote__NotesAssignment_2 ) ) ( ( rule__CompositePianoNote__NotesAssignment_2 )* )
+            // InternalGuardin.g:3389:1: ( ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) ) ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* ) )
+            // InternalGuardin.g:3390:2: ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) ) ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* )
             {
-            // InternalGuardin.g:3390:2: ( ( rule__CompositePianoNote__NotesAssignment_2 ) )
-            // InternalGuardin.g:3391:3: ( rule__CompositePianoNote__NotesAssignment_2 )
+            // InternalGuardin.g:3390:2: ( ( rule__CompositeMelodyNote__NotesAssignment_2 ) )
+            // InternalGuardin.g:3391:3: ( rule__CompositeMelodyNote__NotesAssignment_2 )
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getNotesAssignment_2()); 
-            // InternalGuardin.g:3392:3: ( rule__CompositePianoNote__NotesAssignment_2 )
-            // InternalGuardin.g:3392:4: rule__CompositePianoNote__NotesAssignment_2
+             before(grammarAccess.getCompositeMelodyNoteAccess().getNotesAssignment_2()); 
+            // InternalGuardin.g:3392:3: ( rule__CompositeMelodyNote__NotesAssignment_2 )
+            // InternalGuardin.g:3392:4: rule__CompositeMelodyNote__NotesAssignment_2
             {
             pushFollow(FOLLOW_38);
-            rule__CompositePianoNote__NotesAssignment_2();
+            rule__CompositeMelodyNote__NotesAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCompositePianoNoteAccess().getNotesAssignment_2()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getNotesAssignment_2()); 
 
             }
 
-            // InternalGuardin.g:3395:2: ( ( rule__CompositePianoNote__NotesAssignment_2 )* )
-            // InternalGuardin.g:3396:3: ( rule__CompositePianoNote__NotesAssignment_2 )*
+            // InternalGuardin.g:3395:2: ( ( rule__CompositeMelodyNote__NotesAssignment_2 )* )
+            // InternalGuardin.g:3396:3: ( rule__CompositeMelodyNote__NotesAssignment_2 )*
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getNotesAssignment_2()); 
-            // InternalGuardin.g:3397:3: ( rule__CompositePianoNote__NotesAssignment_2 )*
+             before(grammarAccess.getCompositeMelodyNoteAccess().getNotesAssignment_2()); 
+            // InternalGuardin.g:3397:3: ( rule__CompositeMelodyNote__NotesAssignment_2 )*
             loop31:
             do {
                 int alt31=2;
@@ -10722,10 +10722,10 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // InternalGuardin.g:3397:4: rule__CompositePianoNote__NotesAssignment_2
+            	    // InternalGuardin.g:3397:4: rule__CompositeMelodyNote__NotesAssignment_2
             	    {
             	    pushFollow(FOLLOW_38);
-            	    rule__CompositePianoNote__NotesAssignment_2();
+            	    rule__CompositeMelodyNote__NotesAssignment_2();
 
             	    state._fsp--;
 
@@ -10738,7 +10738,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getCompositePianoNoteAccess().getNotesAssignment_2()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getNotesAssignment_2()); 
 
             }
 
@@ -10760,26 +10760,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__2__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__2__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__3"
-    // InternalGuardin.g:3406:1: rule__CompositePianoNote__Group__3 : rule__CompositePianoNote__Group__3__Impl rule__CompositePianoNote__Group__4 ;
-    public final void rule__CompositePianoNote__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__3"
+    // InternalGuardin.g:3406:1: rule__CompositeMelodyNote__Group__3 : rule__CompositeMelodyNote__Group__3__Impl rule__CompositeMelodyNote__Group__4 ;
+    public final void rule__CompositeMelodyNote__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3410:1: ( rule__CompositePianoNote__Group__3__Impl rule__CompositePianoNote__Group__4 )
-            // InternalGuardin.g:3411:2: rule__CompositePianoNote__Group__3__Impl rule__CompositePianoNote__Group__4
+            // InternalGuardin.g:3410:1: ( rule__CompositeMelodyNote__Group__3__Impl rule__CompositeMelodyNote__Group__4 )
+            // InternalGuardin.g:3411:2: rule__CompositeMelodyNote__Group__3__Impl rule__CompositeMelodyNote__Group__4
             {
             pushFollow(FOLLOW_31);
-            rule__CompositePianoNote__Group__3__Impl();
+            rule__CompositeMelodyNote__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__4();
+            rule__CompositeMelodyNote__Group__4();
 
             state._fsp--;
 
@@ -10798,12 +10798,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__3"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__3"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__3__Impl"
-    // InternalGuardin.g:3418:1: rule__CompositePianoNote__Group__3__Impl : ( ')' ) ;
-    public final void rule__CompositePianoNote__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__3__Impl"
+    // InternalGuardin.g:3418:1: rule__CompositeMelodyNote__Group__3__Impl : ( ')' ) ;
+    public final void rule__CompositeMelodyNote__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10814,9 +10814,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3423:1: ( ')' )
             // InternalGuardin.g:3424:2: ')'
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getCompositeMelodyNoteAccess().getRightParenthesisKeyword_3()); 
             match(input,54,FOLLOW_2); 
-             after(grammarAccess.getCompositePianoNoteAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -10835,26 +10835,26 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__3__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__3__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__4"
-    // InternalGuardin.g:3433:1: rule__CompositePianoNote__Group__4 : rule__CompositePianoNote__Group__4__Impl rule__CompositePianoNote__Group__5 ;
-    public final void rule__CompositePianoNote__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__4"
+    // InternalGuardin.g:3433:1: rule__CompositeMelodyNote__Group__4 : rule__CompositeMelodyNote__Group__4__Impl rule__CompositeMelodyNote__Group__5 ;
+    public final void rule__CompositeMelodyNote__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3437:1: ( rule__CompositePianoNote__Group__4__Impl rule__CompositePianoNote__Group__5 )
-            // InternalGuardin.g:3438:2: rule__CompositePianoNote__Group__4__Impl rule__CompositePianoNote__Group__5
+            // InternalGuardin.g:3437:1: ( rule__CompositeMelodyNote__Group__4__Impl rule__CompositeMelodyNote__Group__5 )
+            // InternalGuardin.g:3438:2: rule__CompositeMelodyNote__Group__4__Impl rule__CompositeMelodyNote__Group__5
             {
             pushFollow(FOLLOW_14);
-            rule__CompositePianoNote__Group__4__Impl();
+            rule__CompositeMelodyNote__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__5();
+            rule__CompositeMelodyNote__Group__5();
 
             state._fsp--;
 
@@ -10873,12 +10873,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__4"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__4"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__4__Impl"
-    // InternalGuardin.g:3445:1: rule__CompositePianoNote__Group__4__Impl : ( 'x' ) ;
-    public final void rule__CompositePianoNote__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__4__Impl"
+    // InternalGuardin.g:3445:1: rule__CompositeMelodyNote__Group__4__Impl : ( 'x' ) ;
+    public final void rule__CompositeMelodyNote__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10889,9 +10889,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3450:1: ( 'x' )
             // InternalGuardin.g:3451:2: 'x'
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getXKeyword_4()); 
+             before(grammarAccess.getCompositeMelodyNoteAccess().getXKeyword_4()); 
             match(input,55,FOLLOW_2); 
-             after(grammarAccess.getCompositePianoNoteAccess().getXKeyword_4()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getXKeyword_4()); 
 
             }
 
@@ -10910,21 +10910,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__4__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__4__Impl"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__5"
-    // InternalGuardin.g:3460:1: rule__CompositePianoNote__Group__5 : rule__CompositePianoNote__Group__5__Impl ;
-    public final void rule__CompositePianoNote__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__5"
+    // InternalGuardin.g:3460:1: rule__CompositeMelodyNote__Group__5 : rule__CompositeMelodyNote__Group__5__Impl ;
+    public final void rule__CompositeMelodyNote__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3464:1: ( rule__CompositePianoNote__Group__5__Impl )
-            // InternalGuardin.g:3465:2: rule__CompositePianoNote__Group__5__Impl
+            // InternalGuardin.g:3464:1: ( rule__CompositeMelodyNote__Group__5__Impl )
+            // InternalGuardin.g:3465:2: rule__CompositeMelodyNote__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__Group__5__Impl();
+            rule__CompositeMelodyNote__Group__5__Impl();
 
             state._fsp--;
 
@@ -10943,35 +10943,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__5"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__5"
 
 
-    // $ANTLR start "rule__CompositePianoNote__Group__5__Impl"
-    // InternalGuardin.g:3471:1: rule__CompositePianoNote__Group__5__Impl : ( ( rule__CompositePianoNote__RepeatsAssignment_5 ) ) ;
-    public final void rule__CompositePianoNote__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__Group__5__Impl"
+    // InternalGuardin.g:3471:1: rule__CompositeMelodyNote__Group__5__Impl : ( ( rule__CompositeMelodyNote__RepeatsAssignment_5 ) ) ;
+    public final void rule__CompositeMelodyNote__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3475:1: ( ( ( rule__CompositePianoNote__RepeatsAssignment_5 ) ) )
-            // InternalGuardin.g:3476:1: ( ( rule__CompositePianoNote__RepeatsAssignment_5 ) )
+            // InternalGuardin.g:3475:1: ( ( ( rule__CompositeMelodyNote__RepeatsAssignment_5 ) ) )
+            // InternalGuardin.g:3476:1: ( ( rule__CompositeMelodyNote__RepeatsAssignment_5 ) )
             {
-            // InternalGuardin.g:3476:1: ( ( rule__CompositePianoNote__RepeatsAssignment_5 ) )
-            // InternalGuardin.g:3477:2: ( rule__CompositePianoNote__RepeatsAssignment_5 )
+            // InternalGuardin.g:3476:1: ( ( rule__CompositeMelodyNote__RepeatsAssignment_5 ) )
+            // InternalGuardin.g:3477:2: ( rule__CompositeMelodyNote__RepeatsAssignment_5 )
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getRepeatsAssignment_5()); 
-            // InternalGuardin.g:3478:2: ( rule__CompositePianoNote__RepeatsAssignment_5 )
-            // InternalGuardin.g:3478:3: rule__CompositePianoNote__RepeatsAssignment_5
+             before(grammarAccess.getCompositeMelodyNoteAccess().getRepeatsAssignment_5()); 
+            // InternalGuardin.g:3478:2: ( rule__CompositeMelodyNote__RepeatsAssignment_5 )
+            // InternalGuardin.g:3478:3: rule__CompositeMelodyNote__RepeatsAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__RepeatsAssignment_5();
+            rule__CompositeMelodyNote__RepeatsAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCompositePianoNoteAccess().getRepeatsAssignment_5()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getRepeatsAssignment_5()); 
 
             }
 
@@ -10990,7 +10990,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__Group__5__Impl"
+    // $ANTLR end "rule__CompositeMelodyNote__Group__5__Impl"
 
 
     // $ANTLR start "rule__ERelativeInt__Group__0"
@@ -12077,9 +12077,9 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__CompositeBatteryNote__RepeatsAssignment_5"
 
 
-    // $ANTLR start "rule__Piano__InstrumentAssignment_1_1"
-    // InternalGuardin.g:3875:1: rule__Piano__InstrumentAssignment_1_1 : ( ruleInstruments ) ;
-    public final void rule__Piano__InstrumentAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__InstrumentAssignment_1_1"
+    // InternalGuardin.g:3875:1: rule__Melody__InstrumentAssignment_1_1 : ( ruleInstruments ) ;
+    public final void rule__Melody__InstrumentAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12090,13 +12090,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3880:2: ( ruleInstruments )
             // InternalGuardin.g:3881:3: ruleInstruments
             {
-             before(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); 
+             before(grammarAccess.getMelodyAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleInstruments();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); 
+             after(grammarAccess.getMelodyAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0()); 
 
             }
 
@@ -12115,12 +12115,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__InstrumentAssignment_1_1"
+    // $ANTLR end "rule__Melody__InstrumentAssignment_1_1"
 
 
-    // $ANTLR start "rule__Piano__OtherAssignment_1_2_1"
-    // InternalGuardin.g:3890:1: rule__Piano__OtherAssignment_1_2_1 : ( ruleEString ) ;
-    public final void rule__Piano__OtherAssignment_1_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__OtherAssignment_1_2_1"
+    // InternalGuardin.g:3890:1: rule__Melody__OtherAssignment_1_2_1 : ( ruleEString ) ;
+    public final void rule__Melody__OtherAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12131,13 +12131,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3895:2: ( ruleEString )
             // InternalGuardin.g:3896:3: ruleEString
             {
-             before(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0()); 
+             before(grammarAccess.getMelodyAccess().getOtherEStringParserRuleCall_1_2_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0()); 
+             after(grammarAccess.getMelodyAccess().getOtherEStringParserRuleCall_1_2_1_0()); 
 
             }
 
@@ -12156,12 +12156,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__OtherAssignment_1_2_1"
+    // $ANTLR end "rule__Melody__OtherAssignment_1_2_1"
 
 
-    // $ANTLR start "rule__Piano__NameAssignment_2_1_0"
-    // InternalGuardin.g:3905:1: rule__Piano__NameAssignment_2_1_0 : ( ruleEString ) ;
-    public final void rule__Piano__NameAssignment_2_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Melody__NameAssignment_2_1_0"
+    // InternalGuardin.g:3905:1: rule__Melody__NameAssignment_2_1_0 : ( ruleEString ) ;
+    public final void rule__Melody__NameAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12172,13 +12172,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3910:2: ( ruleEString )
             // InternalGuardin.g:3911:3: ruleEString
             {
-             before(grammarAccess.getPianoAccess().getNameEStringParserRuleCall_2_1_0_0()); 
+             before(grammarAccess.getMelodyAccess().getNameEStringParserRuleCall_2_1_0_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoAccess().getNameEStringParserRuleCall_2_1_0_0()); 
+             after(grammarAccess.getMelodyAccess().getNameEStringParserRuleCall_2_1_0_0()); 
 
             }
 
@@ -12197,29 +12197,29 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__NameAssignment_2_1_0"
+    // $ANTLR end "rule__Melody__NameAssignment_2_1_0"
 
 
-    // $ANTLR start "rule__Piano__SectionsAssignment_3_0"
-    // InternalGuardin.g:3920:1: rule__Piano__SectionsAssignment_3_0 : ( ruleSectionPianoLayer ) ;
-    public final void rule__Piano__SectionsAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__Melody__SectionsAssignment_3_0"
+    // InternalGuardin.g:3920:1: rule__Melody__SectionsAssignment_3_0 : ( ruleSectionMelodyLayer ) ;
+    public final void rule__Melody__SectionsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3924:1: ( ( ruleSectionPianoLayer ) )
-            // InternalGuardin.g:3925:2: ( ruleSectionPianoLayer )
+            // InternalGuardin.g:3924:1: ( ( ruleSectionMelodyLayer ) )
+            // InternalGuardin.g:3925:2: ( ruleSectionMelodyLayer )
             {
-            // InternalGuardin.g:3925:2: ( ruleSectionPianoLayer )
-            // InternalGuardin.g:3926:3: ruleSectionPianoLayer
+            // InternalGuardin.g:3925:2: ( ruleSectionMelodyLayer )
+            // InternalGuardin.g:3926:3: ruleSectionMelodyLayer
             {
-             before(grammarAccess.getPianoAccess().getSectionsSectionPianoLayerParserRuleCall_3_0_0()); 
+             before(grammarAccess.getMelodyAccess().getSectionsSectionMelodyLayerParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleSectionPianoLayer();
+            ruleSectionMelodyLayer();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoAccess().getSectionsSectionPianoLayerParserRuleCall_3_0_0()); 
+             after(grammarAccess.getMelodyAccess().getSectionsSectionMelodyLayerParserRuleCall_3_0_0()); 
 
             }
 
@@ -12238,29 +12238,29 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__SectionsAssignment_3_0"
+    // $ANTLR end "rule__Melody__SectionsAssignment_3_0"
 
 
-    // $ANTLR start "rule__Piano__LayersAssignment_3_1"
-    // InternalGuardin.g:3935:1: rule__Piano__LayersAssignment_3_1 : ( rulePianoLayer ) ;
-    public final void rule__Piano__LayersAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Melody__LayersAssignment_3_1"
+    // InternalGuardin.g:3935:1: rule__Melody__LayersAssignment_3_1 : ( ruleMelodyLayer ) ;
+    public final void rule__Melody__LayersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3939:1: ( ( rulePianoLayer ) )
-            // InternalGuardin.g:3940:2: ( rulePianoLayer )
+            // InternalGuardin.g:3939:1: ( ( ruleMelodyLayer ) )
+            // InternalGuardin.g:3940:2: ( ruleMelodyLayer )
             {
-            // InternalGuardin.g:3940:2: ( rulePianoLayer )
-            // InternalGuardin.g:3941:3: rulePianoLayer
+            // InternalGuardin.g:3940:2: ( ruleMelodyLayer )
+            // InternalGuardin.g:3941:3: ruleMelodyLayer
             {
-             before(grammarAccess.getPianoAccess().getLayersPianoLayerParserRuleCall_3_1_0()); 
+             before(grammarAccess.getMelodyAccess().getLayersMelodyLayerParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
-            rulePianoLayer();
+            ruleMelodyLayer();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoAccess().getLayersPianoLayerParserRuleCall_3_1_0()); 
+             after(grammarAccess.getMelodyAccess().getLayersMelodyLayerParserRuleCall_3_1_0()); 
 
             }
 
@@ -12279,12 +12279,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Piano__LayersAssignment_3_1"
+    // $ANTLR end "rule__Melody__LayersAssignment_3_1"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__SectionAssignment_2"
-    // InternalGuardin.g:3950:1: rule__SectionPianoLayer__SectionAssignment_2 : ( ( ruleEString ) ) ;
-    public final void rule__SectionPianoLayer__SectionAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__SectionAssignment_2"
+    // InternalGuardin.g:3950:1: rule__SectionMelodyLayer__SectionAssignment_2 : ( ( ruleEString ) ) ;
+    public final void rule__SectionMelodyLayer__SectionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12295,21 +12295,21 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:3955:2: ( ( ruleEString ) )
             // InternalGuardin.g:3956:3: ( ruleEString )
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getSectionSectionCrossReference_2_0()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getSectionSectionCrossReference_2_0()); 
             // InternalGuardin.g:3957:3: ( ruleEString )
             // InternalGuardin.g:3958:4: ruleEString
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getSectionSectionEStringParserRuleCall_2_0_1()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getSectionSectionEStringParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getSectionPianoLayerAccess().getSectionSectionEStringParserRuleCall_2_0_1()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getSectionSectionEStringParserRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getSectionPianoLayerAccess().getSectionSectionCrossReference_2_0()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getSectionSectionCrossReference_2_0()); 
 
             }
 
@@ -12328,29 +12328,29 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__SectionAssignment_2"
+    // $ANTLR end "rule__SectionMelodyLayer__SectionAssignment_2"
 
 
-    // $ANTLR start "rule__SectionPianoLayer__LayersAssignment_3"
-    // InternalGuardin.g:3969:1: rule__SectionPianoLayer__LayersAssignment_3 : ( rulePianoLayer ) ;
-    public final void rule__SectionPianoLayer__LayersAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SectionMelodyLayer__LayersAssignment_3"
+    // InternalGuardin.g:3969:1: rule__SectionMelodyLayer__LayersAssignment_3 : ( ruleMelodyLayer ) ;
+    public final void rule__SectionMelodyLayer__LayersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3973:1: ( ( rulePianoLayer ) )
-            // InternalGuardin.g:3974:2: ( rulePianoLayer )
+            // InternalGuardin.g:3973:1: ( ( ruleMelodyLayer ) )
+            // InternalGuardin.g:3974:2: ( ruleMelodyLayer )
             {
-            // InternalGuardin.g:3974:2: ( rulePianoLayer )
-            // InternalGuardin.g:3975:3: rulePianoLayer
+            // InternalGuardin.g:3974:2: ( ruleMelodyLayer )
+            // InternalGuardin.g:3975:3: ruleMelodyLayer
             {
-             before(grammarAccess.getSectionPianoLayerAccess().getLayersPianoLayerParserRuleCall_3_0()); 
+             before(grammarAccess.getSectionMelodyLayerAccess().getLayersMelodyLayerParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            rulePianoLayer();
+            ruleMelodyLayer();
 
             state._fsp--;
 
-             after(grammarAccess.getSectionPianoLayerAccess().getLayersPianoLayerParserRuleCall_3_0()); 
+             after(grammarAccess.getSectionMelodyLayerAccess().getLayersMelodyLayerParserRuleCall_3_0()); 
 
             }
 
@@ -12369,35 +12369,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SectionPianoLayer__LayersAssignment_3"
+    // $ANTLR end "rule__SectionMelodyLayer__LayersAssignment_3"
 
 
-    // $ANTLR start "rule__PianoLayer__NotesAssignment_2"
-    // InternalGuardin.g:3984:1: rule__PianoLayer__NotesAssignment_2 : ( ( rule__PianoLayer__NotesAlternatives_2_0 ) ) ;
-    public final void rule__PianoLayer__NotesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__MelodyLayer__NotesAssignment_2"
+    // InternalGuardin.g:3984:1: rule__MelodyLayer__NotesAssignment_2 : ( ( rule__MelodyLayer__NotesAlternatives_2_0 ) ) ;
+    public final void rule__MelodyLayer__NotesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:3988:1: ( ( ( rule__PianoLayer__NotesAlternatives_2_0 ) ) )
-            // InternalGuardin.g:3989:2: ( ( rule__PianoLayer__NotesAlternatives_2_0 ) )
+            // InternalGuardin.g:3988:1: ( ( ( rule__MelodyLayer__NotesAlternatives_2_0 ) ) )
+            // InternalGuardin.g:3989:2: ( ( rule__MelodyLayer__NotesAlternatives_2_0 ) )
             {
-            // InternalGuardin.g:3989:2: ( ( rule__PianoLayer__NotesAlternatives_2_0 ) )
-            // InternalGuardin.g:3990:3: ( rule__PianoLayer__NotesAlternatives_2_0 )
+            // InternalGuardin.g:3989:2: ( ( rule__MelodyLayer__NotesAlternatives_2_0 ) )
+            // InternalGuardin.g:3990:3: ( rule__MelodyLayer__NotesAlternatives_2_0 )
             {
-             before(grammarAccess.getPianoLayerAccess().getNotesAlternatives_2_0()); 
-            // InternalGuardin.g:3991:3: ( rule__PianoLayer__NotesAlternatives_2_0 )
-            // InternalGuardin.g:3991:4: rule__PianoLayer__NotesAlternatives_2_0
+             before(grammarAccess.getMelodyLayerAccess().getNotesAlternatives_2_0()); 
+            // InternalGuardin.g:3991:3: ( rule__MelodyLayer__NotesAlternatives_2_0 )
+            // InternalGuardin.g:3991:4: rule__MelodyLayer__NotesAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__PianoLayer__NotesAlternatives_2_0();
+            rule__MelodyLayer__NotesAlternatives_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPianoLayerAccess().getNotesAlternatives_2_0()); 
+             after(grammarAccess.getMelodyLayerAccess().getNotesAlternatives_2_0()); 
 
             }
 
@@ -12416,29 +12416,29 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoLayer__NotesAssignment_2"
+    // $ANTLR end "rule__MelodyLayer__NotesAssignment_2"
 
 
-    // $ANTLR start "rule__PianoNote__NoteTypeAssignment_1"
-    // InternalGuardin.g:3999:1: rule__PianoNote__NoteTypeAssignment_1 : ( rulePianoNoteType ) ;
-    public final void rule__PianoNote__NoteTypeAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__NoteTypeAssignment_1"
+    // InternalGuardin.g:3999:1: rule__MelodyNote__NoteTypeAssignment_1 : ( ruleMelodyNoteType ) ;
+    public final void rule__MelodyNote__NoteTypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:4003:1: ( ( rulePianoNoteType ) )
-            // InternalGuardin.g:4004:2: ( rulePianoNoteType )
+            // InternalGuardin.g:4003:1: ( ( ruleMelodyNoteType ) )
+            // InternalGuardin.g:4004:2: ( ruleMelodyNoteType )
             {
-            // InternalGuardin.g:4004:2: ( rulePianoNoteType )
-            // InternalGuardin.g:4005:3: rulePianoNoteType
+            // InternalGuardin.g:4004:2: ( ruleMelodyNoteType )
+            // InternalGuardin.g:4005:3: ruleMelodyNoteType
             {
-             before(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getNoteTypeMelodyNoteTypeEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            rulePianoNoteType();
+            ruleMelodyNoteType();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getNoteTypeMelodyNoteTypeEnumRuleCall_1_0()); 
 
             }
 
@@ -12457,12 +12457,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__NoteTypeAssignment_1"
+    // $ANTLR end "rule__MelodyNote__NoteTypeAssignment_1"
 
 
-    // $ANTLR start "rule__PianoNote__DurationAssignment_2"
-    // InternalGuardin.g:4014:1: rule__PianoNote__DurationAssignment_2 : ( ruleDuration ) ;
-    public final void rule__PianoNote__DurationAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__DurationAssignment_2"
+    // InternalGuardin.g:4014:1: rule__MelodyNote__DurationAssignment_2 : ( ruleDuration ) ;
+    public final void rule__MelodyNote__DurationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12473,13 +12473,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:4019:2: ( ruleDuration )
             // InternalGuardin.g:4020:3: ruleDuration
             {
-             before(grammarAccess.getPianoNoteAccess().getDurationDurationEnumRuleCall_2_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getDurationDurationEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleDuration();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoNoteAccess().getDurationDurationEnumRuleCall_2_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getDurationDurationEnumRuleCall_2_0()); 
 
             }
 
@@ -12498,12 +12498,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__DurationAssignment_2"
+    // $ANTLR end "rule__MelodyNote__DurationAssignment_2"
 
 
-    // $ANTLR start "rule__PianoNote__OctaveOffsetAssignment_3_0_1"
-    // InternalGuardin.g:4029:1: rule__PianoNote__OctaveOffsetAssignment_3_0_1 : ( ruleERelativeInt ) ;
-    public final void rule__PianoNote__OctaveOffsetAssignment_3_0_1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__OctaveOffsetAssignment_3_0_1"
+    // InternalGuardin.g:4029:1: rule__MelodyNote__OctaveOffsetAssignment_3_0_1 : ( ruleERelativeInt ) ;
+    public final void rule__MelodyNote__OctaveOffsetAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12514,13 +12514,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:4034:2: ( ruleERelativeInt )
             // InternalGuardin.g:4035:3: ruleERelativeInt
             {
-             before(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0()); 
             pushFollow(FOLLOW_2);
             ruleERelativeInt();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0()); 
 
             }
 
@@ -12539,12 +12539,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__OctaveOffsetAssignment_3_0_1"
+    // $ANTLR end "rule__MelodyNote__OctaveOffsetAssignment_3_0_1"
 
 
-    // $ANTLR start "rule__PianoNote__OctaveAbsoluteAssignment_3_1_1"
-    // InternalGuardin.g:4044:1: rule__PianoNote__OctaveAbsoluteAssignment_3_1_1 : ( ruleEInt ) ;
-    public final void rule__PianoNote__OctaveAbsoluteAssignment_3_1_1() throws RecognitionException {
+    // $ANTLR start "rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1"
+    // InternalGuardin.g:4044:1: rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1 : ( ruleEInt ) ;
+    public final void rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12555,13 +12555,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:4049:2: ( ruleEInt )
             // InternalGuardin.g:4050:3: ruleEInt
             {
-             before(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0()); 
+             before(grammarAccess.getMelodyNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEInt();
 
             state._fsp--;
 
-             after(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0()); 
+             after(grammarAccess.getMelodyNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0()); 
 
             }
 
@@ -12580,35 +12580,35 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PianoNote__OctaveAbsoluteAssignment_3_1_1"
+    // $ANTLR end "rule__MelodyNote__OctaveAbsoluteAssignment_3_1_1"
 
 
-    // $ANTLR start "rule__CompositePianoNote__NotesAssignment_2"
-    // InternalGuardin.g:4059:1: rule__CompositePianoNote__NotesAssignment_2 : ( ( rule__CompositePianoNote__NotesAlternatives_2_0 ) ) ;
-    public final void rule__CompositePianoNote__NotesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__NotesAssignment_2"
+    // InternalGuardin.g:4059:1: rule__CompositeMelodyNote__NotesAssignment_2 : ( ( rule__CompositeMelodyNote__NotesAlternatives_2_0 ) ) ;
+    public final void rule__CompositeMelodyNote__NotesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGuardin.g:4063:1: ( ( ( rule__CompositePianoNote__NotesAlternatives_2_0 ) ) )
-            // InternalGuardin.g:4064:2: ( ( rule__CompositePianoNote__NotesAlternatives_2_0 ) )
+            // InternalGuardin.g:4063:1: ( ( ( rule__CompositeMelodyNote__NotesAlternatives_2_0 ) ) )
+            // InternalGuardin.g:4064:2: ( ( rule__CompositeMelodyNote__NotesAlternatives_2_0 ) )
             {
-            // InternalGuardin.g:4064:2: ( ( rule__CompositePianoNote__NotesAlternatives_2_0 ) )
-            // InternalGuardin.g:4065:3: ( rule__CompositePianoNote__NotesAlternatives_2_0 )
+            // InternalGuardin.g:4064:2: ( ( rule__CompositeMelodyNote__NotesAlternatives_2_0 ) )
+            // InternalGuardin.g:4065:3: ( rule__CompositeMelodyNote__NotesAlternatives_2_0 )
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getNotesAlternatives_2_0()); 
-            // InternalGuardin.g:4066:3: ( rule__CompositePianoNote__NotesAlternatives_2_0 )
-            // InternalGuardin.g:4066:4: rule__CompositePianoNote__NotesAlternatives_2_0
+             before(grammarAccess.getCompositeMelodyNoteAccess().getNotesAlternatives_2_0()); 
+            // InternalGuardin.g:4066:3: ( rule__CompositeMelodyNote__NotesAlternatives_2_0 )
+            // InternalGuardin.g:4066:4: rule__CompositeMelodyNote__NotesAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__CompositePianoNote__NotesAlternatives_2_0();
+            rule__CompositeMelodyNote__NotesAlternatives_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCompositePianoNoteAccess().getNotesAlternatives_2_0()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getNotesAlternatives_2_0()); 
 
             }
 
@@ -12627,12 +12627,12 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__NotesAssignment_2"
+    // $ANTLR end "rule__CompositeMelodyNote__NotesAssignment_2"
 
 
-    // $ANTLR start "rule__CompositePianoNote__RepeatsAssignment_5"
-    // InternalGuardin.g:4074:1: rule__CompositePianoNote__RepeatsAssignment_5 : ( ruleEInt ) ;
-    public final void rule__CompositePianoNote__RepeatsAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__CompositeMelodyNote__RepeatsAssignment_5"
+    // InternalGuardin.g:4074:1: rule__CompositeMelodyNote__RepeatsAssignment_5 : ( ruleEInt ) ;
+    public final void rule__CompositeMelodyNote__RepeatsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12643,13 +12643,13 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
             // InternalGuardin.g:4079:2: ( ruleEInt )
             // InternalGuardin.g:4080:3: ruleEInt
             {
-             before(grammarAccess.getCompositePianoNoteAccess().getRepeatsEIntParserRuleCall_5_0()); 
+             before(grammarAccess.getCompositeMelodyNoteAccess().getRepeatsEIntParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
             ruleEInt();
 
             state._fsp--;
 
-             after(grammarAccess.getCompositePianoNoteAccess().getRepeatsEIntParserRuleCall_5_0()); 
+             after(grammarAccess.getCompositeMelodyNoteAccess().getRepeatsEIntParserRuleCall_5_0()); 
 
             }
 
@@ -12668,7 +12668,7 @@ public class InternalGuardinParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompositePianoNote__RepeatsAssignment_5"
+    // $ANTLR end "rule__CompositeMelodyNote__RepeatsAssignment_5"
 
     // Delegated rules
 

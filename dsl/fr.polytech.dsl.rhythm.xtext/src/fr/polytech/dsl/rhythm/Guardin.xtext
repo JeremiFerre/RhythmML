@@ -32,7 +32,7 @@ Track returns Track:
 ;
 
 Instrument returns Instrument:
-	Battery|Piano
+	Battery|Melody
 ;
 
 EmptyNote returns EmptyNote:
@@ -80,41 +80,41 @@ CompositeBatteryNote returns CompositeNote:
 /* ------------------------------------------- */
 
 /*------------------ OTHER INSTRUMENTS ------------------*/
-Piano returns Piano:
-	{Piano}
-	("piano"|instrument=Instruments|"other:" other=EString) (":"|(name=EString ":"))
-	((sections+=SectionPianoLayer)|(layers+=PianoLayer))+
+Melody returns Melody:
+	{Melody}
+	("Melody"|instrument=Instruments|"other:" other=EString) (":"|(name=EString ":"))
+	((sections+=SectionMelodyLayer)|(layers+=MelodyLayer))+
 ;
 
-SectionPianoLayer returns SectionLayer:
+SectionMelodyLayer returns SectionLayer:
 	{SectionLayer}
 	"begin_section"
 	section=[Section|EString]
-	(layers+=PianoLayer)+
+	(layers+=MelodyLayer)+
 	"end_section"
 ;
 
-PianoLayer returns Layer:
+MelodyLayer returns Layer:
 	{Layer}
-	"layer:" (notes+=(PianoNote|EmptyNote|CompositePianoNote))+
+	"layer:" (notes+=(MelodyNote|EmptyNote|CompositeMelodyNote))+
 ;
 
-PianoNote returns PianoNote:
-	{PianoNote}
-	noteType=PianoNoteType (duration=Duration)? (("/" octaveOffset=ERelativeInt)|("|" octaveAbsolute=EInt))?
+MelodyNote returns MelodyNote:
+	{MelodyNote}
+	noteType=MelodyNoteType (duration=Duration)? (("/" octaveOffset=ERelativeInt)|("|" octaveAbsolute=EInt))?
 ;
 
 enum Instruments:
 	ACOUSTIC_BASS|CHURCH_ORGAN|CLAVINET|GUITAR|HARPSICHORD|MUSIC_BOX|OCARINA|PIANO|SYNTH_BASS_1|VIOLIN
 ;
 
-enum PianoNoteType returns PianoNoteType:
+enum MelodyNoteType returns MelodyNoteType:
 	A|B|C|D|E|F|G
 ;
 
-CompositePianoNote returns CompositeNote:
+CompositeMelodyNote returns CompositeNote:
 	{CompositeNote}
-	"(" (notes+=(PianoNote|EmptyNote))+ ")" "x" repeats=EInt
+	"(" (notes+=(MelodyNote|EmptyNote))+ ")" "x" repeats=EInt
 ;
 /* ------------------------------------------- */
 

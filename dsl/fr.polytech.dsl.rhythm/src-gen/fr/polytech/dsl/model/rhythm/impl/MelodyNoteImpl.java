@@ -3,8 +3,8 @@
 package fr.polytech.dsl.model.rhythm.impl;
 
 import fr.polytech.dsl.model.rhythm.Duration;
-import fr.polytech.dsl.model.rhythm.PianoNote;
-import fr.polytech.dsl.model.rhythm.PianoNoteType;
+import fr.polytech.dsl.model.rhythm.MelodyNote;
+import fr.polytech.dsl.model.rhythm.MelodyNoteType;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,21 +16,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Piano Note</b></em>'.
+ * An implementation of the model object '<em><b>Melody Note</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getNoteType <em>Note Type</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getOctaveOffset <em>Octave Offset</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoNoteImpl#getOctaveAbsolute <em>Octave Absolute</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyNoteImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyNoteImpl#getNoteType <em>Note Type</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyNoteImpl#getOctaveOffset <em>Octave Offset</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyNoteImpl#getOctaveAbsolute <em>Octave Absolute</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PianoNoteImpl extends MinimalEObjectImpl.Container implements PianoNote {
+public class MelodyNoteImpl extends MinimalEObjectImpl.Container implements MelodyNote {
 	/**
 	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PianoNoteType NOTE_TYPE_EDEFAULT = PianoNoteType.C;
+	protected static final MelodyNoteType NOTE_TYPE_EDEFAULT = MelodyNoteType.C;
 
 	/**
 	 * The cached value of the '{@link #getNoteType() <em>Note Type</em>}' attribute.
@@ -69,7 +69,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * @generated
 	 * @ordered
 	 */
-	protected PianoNoteType noteType = NOTE_TYPE_EDEFAULT;
+	protected MelodyNoteType noteType = NOTE_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOctaveOffset() <em>Octave Offset</em>}' attribute.
@@ -116,7 +116,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PianoNoteImpl() {
+	protected MelodyNoteImpl() {
 		super();
 	}
 
@@ -127,7 +127,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RhythmPackage.Literals.PIANO_NOTE;
+		return RhythmPackage.Literals.MELODY_NOTE;
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		Duration oldDuration = duration;
 		duration = newDuration == null ? DURATION_EDEFAULT : newDuration;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__DURATION, oldDuration,
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY_NOTE__DURATION, oldDuration,
 					duration));
 	}
 
@@ -157,7 +157,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PianoNoteType getNoteType() {
+	public MelodyNoteType getNoteType() {
 		return noteType;
 	}
 
@@ -166,11 +166,11 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNoteType(PianoNoteType newNoteType) {
-		PianoNoteType oldNoteType = noteType;
+	public void setNoteType(MelodyNoteType newNoteType) {
+		MelodyNoteType oldNoteType = noteType;
 		noteType = newNoteType == null ? NOTE_TYPE_EDEFAULT : newNoteType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__NOTE_TYPE, oldNoteType,
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY_NOTE__NOTE_TYPE, oldNoteType,
 					noteType));
 	}
 
@@ -192,7 +192,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		int oldOctaveOffset = octaveOffset;
 		octaveOffset = newOctaveOffset;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET,
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET,
 					oldOctaveOffset, octaveOffset));
 	}
 
@@ -214,7 +214,7 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		int oldOctaveAbsolute = octaveAbsolute;
 		octaveAbsolute = newOctaveAbsolute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE,
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE,
 					oldOctaveAbsolute, octaveAbsolute));
 	}
 
@@ -226,13 +226,13 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RhythmPackage.PIANO_NOTE__DURATION:
+		case RhythmPackage.MELODY_NOTE__DURATION:
 			return getDuration();
-		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
+		case RhythmPackage.MELODY_NOTE__NOTE_TYPE:
 			return getNoteType();
-		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET:
 			return getOctaveOffset();
-		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE:
 			return getOctaveAbsolute();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -246,16 +246,16 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RhythmPackage.PIANO_NOTE__DURATION:
+		case RhythmPackage.MELODY_NOTE__DURATION:
 			setDuration((Duration) newValue);
 			return;
-		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
-			setNoteType((PianoNoteType) newValue);
+		case RhythmPackage.MELODY_NOTE__NOTE_TYPE:
+			setNoteType((MelodyNoteType) newValue);
 			return;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET:
 			setOctaveOffset((Integer) newValue);
 			return;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE:
 			setOctaveAbsolute((Integer) newValue);
 			return;
 		}
@@ -270,16 +270,16 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.PIANO_NOTE__DURATION:
+		case RhythmPackage.MELODY_NOTE__DURATION:
 			setDuration(DURATION_EDEFAULT);
 			return;
-		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
+		case RhythmPackage.MELODY_NOTE__NOTE_TYPE:
 			setNoteType(NOTE_TYPE_EDEFAULT);
 			return;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET:
 			setOctaveOffset(OCTAVE_OFFSET_EDEFAULT);
 			return;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE:
 			setOctaveAbsolute(OCTAVE_ABSOLUTE_EDEFAULT);
 			return;
 		}
@@ -294,13 +294,13 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.PIANO_NOTE__DURATION:
+		case RhythmPackage.MELODY_NOTE__DURATION:
 			return duration != DURATION_EDEFAULT;
-		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
+		case RhythmPackage.MELODY_NOTE__NOTE_TYPE:
 			return noteType != NOTE_TYPE_EDEFAULT;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET:
 			return octaveOffset != OCTAVE_OFFSET_EDEFAULT;
-		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE:
 			return octaveAbsolute != OCTAVE_ABSOLUTE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -329,4 +329,4 @@ public class PianoNoteImpl extends MinimalEObjectImpl.Container implements Piano
 		return result.toString();
 	}
 
-} //PianoNoteImpl
+} //MelodyNoteImpl

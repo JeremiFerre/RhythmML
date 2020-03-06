@@ -97,8 +97,8 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePiano(Piano object) {
-			return createPianoAdapter();
+		public Adapter caseMelody(Melody object) {
+			return createMelodyAdapter();
 		}
 
 		@Override
@@ -122,8 +122,8 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePianoNote(PianoNote object) {
-			return createPianoNoteAdapter();
+		public Adapter caseMelodyNote(MelodyNote object) {
+			return createMelodyNoteAdapter();
 		}
 
 		@Override
@@ -240,16 +240,16 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.Piano <em>Piano</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.Melody <em>Melody</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.polytech.dsl.model.rhythm.Piano
+	 * @see fr.polytech.dsl.model.rhythm.Melody
 	 * @generated
 	 */
-	public Adapter createPianoAdapter() {
+	public Adapter createMelodyAdapter() {
 		return null;
 	}
 
@@ -310,16 +310,16 @@ public class RhythmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.PianoNote <em>Piano Note</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.polytech.dsl.model.rhythm.MelodyNote <em>Melody Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.polytech.dsl.model.rhythm.PianoNote
+	 * @see fr.polytech.dsl.model.rhythm.MelodyNote
 	 * @generated
 	 */
-	public Adapter createPianoNoteAdapter() {
+	public Adapter createMelodyNoteAdapter() {
 		return null;
 	}
 

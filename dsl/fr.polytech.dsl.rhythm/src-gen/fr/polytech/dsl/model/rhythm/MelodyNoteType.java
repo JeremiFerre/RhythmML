@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Piano Note Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Melody Note Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNoteType()
+ * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelodyNoteType()
  * @model
  * @generated
  */
-public enum PianoNoteType implements Enumerator {
+public enum MelodyNoteType implements Enumerator {
 	/**
 	 * The '<em><b>C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -194,32 +194,32 @@ public enum PianoNoteType implements Enumerator {
 	public static final int B_VALUE = 6;
 
 	/**
-	 * An array of all the '<em><b>Piano Note Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Melody Note Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PianoNoteType[] VALUES_ARRAY = new PianoNoteType[] { C, D, E, F, G, A, B, };
+	private static final MelodyNoteType[] VALUES_ARRAY = new MelodyNoteType[] { C, D, E, F, G, A, B, };
 
 	/**
-	 * A public read-only list of all the '<em><b>Piano Note Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Melody Note Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<PianoNoteType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<MelodyNoteType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Piano Note Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Melody Note Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static PianoNoteType get(String literal) {
+	public static MelodyNoteType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			PianoNoteType result = VALUES_ARRAY[i];
+			MelodyNoteType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -228,16 +228,16 @@ public enum PianoNoteType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Piano Note Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Melody Note Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static PianoNoteType getByName(String name) {
+	public static MelodyNoteType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			PianoNoteType result = VALUES_ARRAY[i];
+			MelodyNoteType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -246,14 +246,14 @@ public enum PianoNoteType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Piano Note Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Melody Note Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static PianoNoteType get(int value) {
+	public static MelodyNoteType get(int value) {
 		switch (value) {
 		case C_VALUE:
 			return C;
@@ -300,7 +300,7 @@ public enum PianoNoteType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private PianoNoteType(int value, String name, String literal) {
+	private MelodyNoteType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -344,4 +344,4 @@ public enum PianoNoteType implements Enumerator {
 		return literal;
 	}
 
-} //PianoNoteType
+} //MelodyNoteType

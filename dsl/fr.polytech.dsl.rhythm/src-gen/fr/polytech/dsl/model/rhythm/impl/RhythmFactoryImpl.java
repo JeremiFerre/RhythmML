@@ -65,16 +65,16 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 			return createSection();
 		case RhythmPackage.BATTERY:
 			return createBattery();
-		case RhythmPackage.PIANO:
-			return createPiano();
+		case RhythmPackage.MELODY:
+			return createMelody();
 		case RhythmPackage.BATTERY_NOTE:
 			return createBatteryNote();
 		case RhythmPackage.EMPTY_NOTE:
 			return createEmptyNote();
 		case RhythmPackage.LAYER:
 			return createLayer();
-		case RhythmPackage.PIANO_NOTE:
-			return createPianoNote();
+		case RhythmPackage.MELODY_NOTE:
+			return createMelodyNote();
 		case RhythmPackage.COMPOSITE_NOTE:
 			return createCompositeNote();
 		case RhythmPackage.SECTION_LAYER:
@@ -94,8 +94,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 		switch (eDataType.getClassifierID()) {
 		case RhythmPackage.BATTERY_NOTE_TYPE:
 			return createBatteryNoteTypeFromString(eDataType, initialValue);
-		case RhythmPackage.PIANO_NOTE_TYPE:
-			return createPianoNoteTypeFromString(eDataType, initialValue);
+		case RhythmPackage.MELODY_NOTE_TYPE:
+			return createMelodyNoteTypeFromString(eDataType, initialValue);
 		case RhythmPackage.INSTRUMENTS:
 			return createInstrumentsFromString(eDataType, initialValue);
 		case RhythmPackage.DURATION:
@@ -115,8 +115,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 		switch (eDataType.getClassifierID()) {
 		case RhythmPackage.BATTERY_NOTE_TYPE:
 			return convertBatteryNoteTypeToString(eDataType, instanceValue);
-		case RhythmPackage.PIANO_NOTE_TYPE:
-			return convertPianoNoteTypeToString(eDataType, instanceValue);
+		case RhythmPackage.MELODY_NOTE_TYPE:
+			return convertMelodyNoteTypeToString(eDataType, instanceValue);
 		case RhythmPackage.INSTRUMENTS:
 			return convertInstrumentsToString(eDataType, instanceValue);
 		case RhythmPackage.DURATION:
@@ -171,9 +171,9 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Piano createPiano() {
-		PianoImpl piano = new PianoImpl();
-		return piano;
+	public Melody createMelody() {
+		MelodyImpl melody = new MelodyImpl();
+		return melody;
 	}
 
 	/**
@@ -211,9 +211,9 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PianoNote createPianoNote() {
-		PianoNoteImpl pianoNote = new PianoNoteImpl();
-		return pianoNote;
+	public MelodyNote createMelodyNote() {
+		MelodyNoteImpl melodyNote = new MelodyNoteImpl();
+		return melodyNote;
 	}
 
 	/**
@@ -263,8 +263,8 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PianoNoteType createPianoNoteTypeFromString(EDataType eDataType, String initialValue) {
-		PianoNoteType result = PianoNoteType.get(initialValue);
+	public MelodyNoteType createMelodyNoteTypeFromString(EDataType eDataType, String initialValue) {
+		MelodyNoteType result = MelodyNoteType.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -276,7 +276,7 @@ public class RhythmFactoryImpl extends EFactoryImpl implements RhythmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPianoNoteTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertMelodyNoteTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

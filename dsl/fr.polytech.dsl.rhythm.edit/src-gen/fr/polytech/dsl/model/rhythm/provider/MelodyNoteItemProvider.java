@@ -3,12 +3,17 @@
 package fr.polytech.dsl.model.rhythm.provider;
 
 import fr.polytech.dsl.model.rhythm.Duration;
+import fr.polytech.dsl.model.rhythm.MelodyNote;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,16 +25,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import fr.polytech.dsl.model.rhythm.PianoNote;
-import fr.polytech.dsl.model.rhythm.RhythmPackage;
-
 /**
- * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.PianoNote} object.
+ * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.MelodyNote} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class MelodyNoteItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -37,7 +39,7 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PianoNoteItemProvider(AdapterFactory adapterFactory) {
+	public MelodyNoteItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -84,10 +86,10 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	protected void addNoteTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_PianoNote_noteType_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PianoNote_noteType_feature",
-								"_UI_PianoNote_type"),
-						RhythmPackage.Literals.PIANO_NOTE__NOTE_TYPE, true, false, false,
+						getResourceLocator(), getString("_UI_MelodyNote_noteType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MelodyNote_noteType_feature",
+								"_UI_MelodyNote_type"),
+						RhythmPackage.Literals.MELODY_NOTE__NOTE_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -100,10 +102,10 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	protected void addOctaveOffsetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_PianoNote_octaveOffset_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PianoNote_octaveOffset_feature",
-								"_UI_PianoNote_type"),
-						RhythmPackage.Literals.PIANO_NOTE__OCTAVE_OFFSET, true, false, false,
+						getResourceLocator(), getString("_UI_MelodyNote_octaveOffset_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MelodyNote_octaveOffset_feature",
+								"_UI_MelodyNote_type"),
+						RhythmPackage.Literals.MELODY_NOTE__OCTAVE_OFFSET, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -116,22 +118,22 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	protected void addOctaveAbsolutePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_PianoNote_octaveAbsolute_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PianoNote_octaveAbsolute_feature",
-								"_UI_PianoNote_type"),
-						RhythmPackage.Literals.PIANO_NOTE__OCTAVE_ABSOLUTE, true, false, false,
+						getResourceLocator(), getString("_UI_MelodyNote_octaveAbsolute_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MelodyNote_octaveAbsolute_feature",
+								"_UI_MelodyNote_type"),
+						RhythmPackage.Literals.MELODY_NOTE__OCTAVE_ABSOLUTE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns PianoNote.gif.
+	 * This returns MelodyNote.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PianoNote"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MelodyNote"));
 	}
 
 	/**
@@ -152,10 +154,10 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		Duration labelValue = ((PianoNote) object).getDuration();
+		Duration labelValue = ((MelodyNote) object).getDuration();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_PianoNote_type")
-				: getString("_UI_PianoNote_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_MelodyNote_type")
+				: getString("_UI_MelodyNote_type") + " " + label;
 	}
 
 	/**
@@ -169,11 +171,11 @@ public class PianoNoteItemProvider extends ItemProviderAdapter implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PianoNote.class)) {
-		case RhythmPackage.PIANO_NOTE__DURATION:
-		case RhythmPackage.PIANO_NOTE__NOTE_TYPE:
-		case RhythmPackage.PIANO_NOTE__OCTAVE_OFFSET:
-		case RhythmPackage.PIANO_NOTE__OCTAVE_ABSOLUTE:
+		switch (notification.getFeatureID(MelodyNote.class)) {
+		case RhythmPackage.MELODY_NOTE__DURATION:
+		case RhythmPackage.MELODY_NOTE__NOTE_TYPE:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_OFFSET:
+		case RhythmPackage.MELODY_NOTE__OCTAVE_ABSOLUTE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -9,7 +9,7 @@ Bundle-Activator: fr.polytech.dsl.model.rhythm.presentation.RhythmEditorPlugin$I
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.polytech.dsl.rhythm.presentation,
+Export-Package: fr.polytech.dsl.model.rhythm.presentation,
  fr.polytech.dsl.model.rhythm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

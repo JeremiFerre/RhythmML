@@ -7,7 +7,9 @@ import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -34,6 +36,7 @@ public class EmptyNoteImpl extends MinimalEObjectImpl.Container implements Empty
 	 * @ordered
 	 */
 	protected static final Duration DURATION_EDEFAULT = Duration.QUARTER;
+
 	/**
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->

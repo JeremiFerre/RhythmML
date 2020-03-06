@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Note extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
 	 * The default value is <code>"QUARTER"</code>.
@@ -51,4 +50,5 @@ public interface Note extends EObject {
 	 * @generated
 	 */
 	void setDuration(Duration value);
+
 } // Note

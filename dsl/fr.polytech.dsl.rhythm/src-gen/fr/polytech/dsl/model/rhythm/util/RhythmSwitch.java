@@ -120,13 +120,13 @@ public class RhythmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RhythmPackage.PIANO: {
-			Piano piano = (Piano) theEObject;
-			T result = casePiano(piano);
+		case RhythmPackage.MELODY: {
+			Melody melody = (Melody) theEObject;
+			T result = caseMelody(melody);
 			if (result == null)
-				result = caseInstrument(piano);
+				result = caseInstrument(melody);
 			if (result == null)
-				result = caseNamedElement(piano);
+				result = caseNamedElement(melody);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -163,11 +163,11 @@ public class RhythmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RhythmPackage.PIANO_NOTE: {
-			PianoNote pianoNote = (PianoNote) theEObject;
-			T result = casePianoNote(pianoNote);
+		case RhythmPackage.MELODY_NOTE: {
+			MelodyNote melodyNote = (MelodyNote) theEObject;
+			T result = caseMelodyNote(melodyNote);
 			if (result == null)
-				result = caseNote(pianoNote);
+				result = caseNote(melodyNote);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -284,17 +284,17 @@ public class RhythmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Piano</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Melody</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Piano</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Melody</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePiano(Piano object) {
+	public T caseMelody(Melody object) {
 		return null;
 	}
 
@@ -359,17 +359,17 @@ public class RhythmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Piano Note</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Melody Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Piano Note</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Melody Note</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePianoNote(PianoNote object) {
+	public T caseMelodyNote(MelodyNote object) {
 		return null;
 	}
 

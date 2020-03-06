@@ -9,9 +9,9 @@ import fr.polytech.dsl.model.rhythm.BatteryNote;
 import fr.polytech.dsl.model.rhythm.CompositeNote;
 import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Layer;
+import fr.polytech.dsl.model.rhythm.Melody;
+import fr.polytech.dsl.model.rhythm.MelodyNote;
 import fr.polytech.dsl.model.rhythm.Music;
-import fr.polytech.dsl.model.rhythm.Piano;
-import fr.polytech.dsl.model.rhythm.PianoNote;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
 import fr.polytech.dsl.model.rhythm.SectionLayer;
@@ -53,8 +53,8 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_CompositeBatteryNote(context, (CompositeNote) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getCompositePianoNoteRule()) {
-					sequence_CompositePianoNote(context, (CompositeNote) semanticObject); 
+				else if (rule == grammarAccess.getCompositeMelodyNoteRule()) {
+					sequence_CompositeMelodyNote(context, (CompositeNote) semanticObject); 
 					return; 
 				}
 				else break;
@@ -66,19 +66,19 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_BatteryLayer(context, (Layer) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getPianoLayerRule()) {
-					sequence_PianoLayer(context, (Layer) semanticObject); 
+				else if (rule == grammarAccess.getMelodyLayerRule()) {
+					sequence_MelodyLayer(context, (Layer) semanticObject); 
 					return; 
 				}
 				else break;
+			case RhythmPackage.MELODY:
+				sequence_Melody(context, (Melody) semanticObject); 
+				return; 
+			case RhythmPackage.MELODY_NOTE:
+				sequence_MelodyNote(context, (MelodyNote) semanticObject); 
+				return; 
 			case RhythmPackage.MUSIC:
 				sequence_Music(context, (Music) semanticObject); 
-				return; 
-			case RhythmPackage.PIANO:
-				sequence_Piano(context, (Piano) semanticObject); 
-				return; 
-			case RhythmPackage.PIANO_NOTE:
-				sequence_PianoNote(context, (PianoNote) semanticObject); 
 				return; 
 			case RhythmPackage.SECTION:
 				sequence_Section(context, (Section) semanticObject); 
@@ -88,8 +88,8 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_SectionBatteryLayer(context, (SectionLayer) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getSectionPianoLayerRule()) {
-					sequence_SectionPianoLayer(context, (SectionLayer) semanticObject); 
+				else if (rule == grammarAccess.getSectionMelodyLayerRule()) {
+					sequence_SectionMelodyLayer(context, (SectionLayer) semanticObject); 
 					return; 
 				}
 				else break;
@@ -152,12 +152,12 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     CompositePianoNote returns CompositeNote
+	 *     CompositeMelodyNote returns CompositeNote
 	 *
 	 * Constraint:
-	 *     ((notes+=PianoNote | notes+=EmptyNote)+ repeats=EInt)
+	 *     ((notes+=MelodyNote | notes+=EmptyNote)+ repeats=EInt)
 	 */
-	protected void sequence_CompositePianoNote(ISerializationContext context, CompositeNote semanticObject) {
+	protected void sequence_CompositeMelodyNote(ISerializationContext context, CompositeNote semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -170,6 +170,43 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     {EmptyNote}
 	 */
 	protected void sequence_EmptyNote(ISerializationContext context, EmptyNote semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MelodyLayer returns Layer
+	 *
+	 * Constraint:
+	 *     (notes+=MelodyNote | notes+=EmptyNote | notes+=CompositeMelodyNote)+
+	 */
+	protected void sequence_MelodyLayer(ISerializationContext context, Layer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MelodyNote returns MelodyNote
+	 *
+	 * Constraint:
+	 *     (noteType=MelodyNoteType duration=Duration? (octaveOffset=ERelativeInt | octaveAbsolute=EInt)?)
+	 */
+	protected void sequence_MelodyNote(ISerializationContext context, MelodyNote semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instrument returns Melody
+	 *     Melody returns Melody
+	 *
+	 * Constraint:
+	 *     ((instrument=Instruments | other=EString)? name=EString? (sections+=SectionMelodyLayer | layers+=MelodyLayer)+)
+	 */
+	protected void sequence_Melody(ISerializationContext context, Melody semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -195,43 +232,6 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     PianoLayer returns Layer
-	 *
-	 * Constraint:
-	 *     (notes+=PianoNote | notes+=EmptyNote | notes+=CompositePianoNote)+
-	 */
-	protected void sequence_PianoLayer(ISerializationContext context, Layer semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     PianoNote returns PianoNote
-	 *
-	 * Constraint:
-	 *     (noteType=PianoNoteType duration=Duration? (octaveOffset=ERelativeInt | octaveAbsolute=EInt)?)
-	 */
-	protected void sequence_PianoNote(ISerializationContext context, PianoNote semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Instrument returns Piano
-	 *     Piano returns Piano
-	 *
-	 * Constraint:
-	 *     ((instrument=Instruments | other=EString)? name=EString? (sections+=SectionPianoLayer | layers+=PianoLayer)+)
-	 */
-	protected void sequence_Piano(ISerializationContext context, Piano semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     SectionBatteryLayer returns SectionLayer
 	 *
 	 * Constraint:
@@ -244,12 +244,12 @@ public class GuardinSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     SectionPianoLayer returns SectionLayer
+	 *     SectionMelodyLayer returns SectionLayer
 	 *
 	 * Constraint:
-	 *     (section=[Section|EString] layers+=PianoLayer+)
+	 *     (section=[Section|EString] layers+=MelodyLayer+)
 	 */
-	protected void sequence_SectionPianoLayer(ISerializationContext context, SectionLayer semanticObject) {
+	protected void sequence_SectionMelodyLayer(ISerializationContext context, SectionLayer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

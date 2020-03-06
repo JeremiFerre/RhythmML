@@ -10,7 +10,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import fr.polytech.dsl.rhythm.GuardinChecker
 import fr.polytech.dsl.model.rhythm.Music
 import fr.polytech.dsl.model.rhythm.impl.MusicImpl
-import fr.polytech.dsl.model.rhythm.Piano
+import fr.polytech.dsl.model.rhythm.Melody
 
 /**
  * Generates code from your model files on save.

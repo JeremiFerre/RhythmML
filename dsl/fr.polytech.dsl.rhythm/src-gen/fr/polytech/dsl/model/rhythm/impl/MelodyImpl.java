@@ -3,28 +3,30 @@
 package fr.polytech.dsl.model.rhythm.impl;
 
 import fr.polytech.dsl.model.rhythm.Instruments;
-import fr.polytech.dsl.model.rhythm.Piano;
+import fr.polytech.dsl.model.rhythm.Melody;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Piano</b></em>'.
+ * An implementation of the model object '<em><b>Melody</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoImpl#getInstrument <em>Instrument</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.impl.PianoImpl#getOther <em>Other</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyImpl#getInstrument <em>Instrument</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.impl.MelodyImpl#getOther <em>Other</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PianoImpl extends InstrumentImpl implements Piano {
+public class MelodyImpl extends InstrumentImpl implements Melody {
 	/**
 	 * The default value of the '{@link #getInstrument() <em>Instrument</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,6 +36,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	 * @ordered
 	 */
 	protected static final Instruments INSTRUMENT_EDEFAULT = Instruments.PIANO;
+
 	/**
 	 * The cached value of the '{@link #getInstrument() <em>Instrument</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +56,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	 * @ordered
 	 */
 	protected static final String OTHER_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getOther() <em>Other</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,7 +72,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PianoImpl() {
+	protected MelodyImpl() {
 		super();
 	}
 
@@ -79,7 +83,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RhythmPackage.Literals.PIANO;
+		return RhythmPackage.Literals.MELODY;
 	}
 
 	/**
@@ -100,7 +104,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 		Instruments oldInstrument = instrument;
 		instrument = newInstrument == null ? INSTRUMENT_EDEFAULT : newInstrument;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO__INSTRUMENT, oldInstrument,
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY__INSTRUMENT, oldInstrument,
 					instrument));
 	}
 
@@ -122,7 +126,7 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 		String oldOther = other;
 		other = newOther;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.PIANO__OTHER, oldOther, other));
+			eNotify(new ENotificationImpl(this, Notification.SET, RhythmPackage.MELODY__OTHER, oldOther, other));
 	}
 
 	/**
@@ -133,9 +137,9 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RhythmPackage.PIANO__INSTRUMENT:
+		case RhythmPackage.MELODY__INSTRUMENT:
 			return getInstrument();
-		case RhythmPackage.PIANO__OTHER:
+		case RhythmPackage.MELODY__OTHER:
 			return getOther();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -149,10 +153,10 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RhythmPackage.PIANO__INSTRUMENT:
+		case RhythmPackage.MELODY__INSTRUMENT:
 			setInstrument((Instruments) newValue);
 			return;
-		case RhythmPackage.PIANO__OTHER:
+		case RhythmPackage.MELODY__OTHER:
 			setOther((String) newValue);
 			return;
 		}
@@ -167,10 +171,10 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.PIANO__INSTRUMENT:
+		case RhythmPackage.MELODY__INSTRUMENT:
 			setInstrument(INSTRUMENT_EDEFAULT);
 			return;
-		case RhythmPackage.PIANO__OTHER:
+		case RhythmPackage.MELODY__OTHER:
 			setOther(OTHER_EDEFAULT);
 			return;
 		}
@@ -185,9 +189,9 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RhythmPackage.PIANO__INSTRUMENT:
+		case RhythmPackage.MELODY__INSTRUMENT:
 			return instrument != INSTRUMENT_EDEFAULT;
-		case RhythmPackage.PIANO__OTHER:
+		case RhythmPackage.MELODY__OTHER:
 			return OTHER_EDEFAULT == null ? other != null : !OTHER_EDEFAULT.equals(other);
 		}
 		return super.eIsSet(featureID);
@@ -212,4 +216,4 @@ public class PianoImpl extends InstrumentImpl implements Piano {
 		return result.toString();
 	}
 
-} //PianoImpl
+} //MelodyImpl

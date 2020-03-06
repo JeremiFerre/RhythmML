@@ -21,6 +21,7 @@
 'GUITAR'=25
 'HARPSICHORD'=26
 'MUSIC_BOX'=27
+'Melody'=12
 'Music'=39
 'OCARINA'=28
 'PIANO'=29
@@ -37,7 +38,6 @@
 'layer:'=52
 'oh'=19
 'other:'=56
-'piano'=12
 'rc'=20
 'sd'=21
 'sections'=40

@@ -11,12 +11,12 @@ import fr.polytech.dsl.model.rhythm.EmptyNote;
 import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.Instruments;
 import fr.polytech.dsl.model.rhythm.Layer;
+import fr.polytech.dsl.model.rhythm.Melody;
+import fr.polytech.dsl.model.rhythm.MelodyNote;
+import fr.polytech.dsl.model.rhythm.MelodyNoteType;
 import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.NamedElement;
 import fr.polytech.dsl.model.rhythm.Note;
-import fr.polytech.dsl.model.rhythm.Piano;
-import fr.polytech.dsl.model.rhythm.PianoNote;
-import fr.polytech.dsl.model.rhythm.PianoNoteType;
 import fr.polytech.dsl.model.rhythm.RhythmFactory;
 import fr.polytech.dsl.model.rhythm.RhythmPackage;
 import fr.polytech.dsl.model.rhythm.Section;
@@ -85,7 +85,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pianoEClass = null;
+	private EClass melodyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +120,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pianoNoteEClass = null;
+	private EClass melodyNoteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum pianoNoteTypeEEnum = null;
+	private EEnum melodyNoteTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,8 +377,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPiano() {
-		return pianoEClass;
+	public EClass getMelody() {
+		return melodyEClass;
 	}
 
 	/**
@@ -386,8 +386,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPiano_Instrument() {
-		return (EAttribute) pianoEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMelody_Instrument() {
+		return (EAttribute) melodyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -395,8 +395,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPiano_Other() {
-		return (EAttribute) pianoEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMelody_Other() {
+		return (EAttribute) melodyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -467,8 +467,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPianoNote() {
-		return pianoNoteEClass;
+	public EClass getMelodyNote() {
+		return melodyNoteEClass;
 	}
 
 	/**
@@ -476,8 +476,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPianoNote_NoteType() {
-		return (EAttribute) pianoNoteEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMelodyNote_NoteType() {
+		return (EAttribute) melodyNoteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -485,8 +485,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPianoNote_OctaveOffset() {
-		return (EAttribute) pianoNoteEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMelodyNote_OctaveOffset() {
+		return (EAttribute) melodyNoteEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -494,8 +494,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPianoNote_OctaveAbsolute() {
-		return (EAttribute) pianoNoteEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMelodyNote_OctaveAbsolute() {
+		return (EAttribute) melodyNoteEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -566,8 +566,8 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getPianoNoteType() {
-		return pianoNoteTypeEEnum;
+	public EEnum getMelodyNoteType() {
+		return melodyNoteTypeEEnum;
 	}
 
 	/**
@@ -639,9 +639,9 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		batteryEClass = createEClass(BATTERY);
 
-		pianoEClass = createEClass(PIANO);
-		createEAttribute(pianoEClass, PIANO__INSTRUMENT);
-		createEAttribute(pianoEClass, PIANO__OTHER);
+		melodyEClass = createEClass(MELODY);
+		createEAttribute(melodyEClass, MELODY__INSTRUMENT);
+		createEAttribute(melodyEClass, MELODY__OTHER);
 
 		noteEClass = createEClass(NOTE);
 		createEAttribute(noteEClass, NOTE__DURATION);
@@ -654,10 +654,10 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		layerEClass = createEClass(LAYER);
 		createEReference(layerEClass, LAYER__NOTES);
 
-		pianoNoteEClass = createEClass(PIANO_NOTE);
-		createEAttribute(pianoNoteEClass, PIANO_NOTE__NOTE_TYPE);
-		createEAttribute(pianoNoteEClass, PIANO_NOTE__OCTAVE_OFFSET);
-		createEAttribute(pianoNoteEClass, PIANO_NOTE__OCTAVE_ABSOLUTE);
+		melodyNoteEClass = createEClass(MELODY_NOTE);
+		createEAttribute(melodyNoteEClass, MELODY_NOTE__NOTE_TYPE);
+		createEAttribute(melodyNoteEClass, MELODY_NOTE__OCTAVE_OFFSET);
+		createEAttribute(melodyNoteEClass, MELODY_NOTE__OCTAVE_ABSOLUTE);
 
 		compositeNoteEClass = createEClass(COMPOSITE_NOTE);
 		createEReference(compositeNoteEClass, COMPOSITE_NOTE__NOTES);
@@ -669,7 +669,7 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		// Create enums
 		batteryNoteTypeEEnum = createEEnum(BATTERY_NOTE_TYPE);
-		pianoNoteTypeEEnum = createEEnum(PIANO_NOTE_TYPE);
+		melodyNoteTypeEEnum = createEEnum(MELODY_NOTE_TYPE);
 		instrumentsEEnum = createEEnum(INSTRUMENTS);
 		durationEEnum = createEEnum(DURATION);
 	}
@@ -708,10 +708,10 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		sectionEClass.getESuperTypes().add(this.getNamedElement());
 		instrumentEClass.getESuperTypes().add(this.getNamedElement());
 		batteryEClass.getESuperTypes().add(this.getInstrument());
-		pianoEClass.getESuperTypes().add(this.getInstrument());
+		melodyEClass.getESuperTypes().add(this.getInstrument());
 		batteryNoteEClass.getESuperTypes().add(this.getNote());
 		emptyNoteEClass.getESuperTypes().add(this.getNote());
-		pianoNoteEClass.getESuperTypes().add(this.getNote());
+		melodyNoteEClass.getESuperTypes().add(this.getNote());
 		compositeNoteEClass.getESuperTypes().add(this.getNote());
 
 		// Initialize classes, features, and operations; add parameters
@@ -754,10 +754,10 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 
 		initEClass(batteryEClass, Battery.class, "Battery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(pianoEClass, Piano.class, "Piano", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPiano_Instrument(), this.getInstruments(), "instrument", "PIANO", 0, 1, Piano.class,
+		initEClass(melodyEClass, Melody.class, "Melody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMelody_Instrument(), this.getInstruments(), "instrument", "PIANO", 0, 1, Melody.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPiano_Other(), ecorePackage.getEString(), "other", null, 0, 1, Piano.class, !IS_TRANSIENT,
+		initEAttribute(getMelody_Other(), ecorePackage.getEString(), "other", null, 0, 1, Melody.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(noteEClass, Note.class, "Note", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -777,14 +777,15 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(pianoNoteEClass, PianoNote.class, "PianoNote", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(melodyNoteEClass, MelodyNote.class, "MelodyNote", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPianoNote_NoteType(), this.getPianoNoteType(), "noteType", null, 0, 1, PianoNote.class,
+		initEAttribute(getMelodyNote_NoteType(), this.getMelodyNoteType(), "noteType", null, 0, 1, MelodyNote.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPianoNote_OctaveOffset(), ecorePackage.getEInt(), "octaveOffset", null, 0, 1, PianoNote.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPianoNote_OctaveAbsolute(), ecorePackage.getEInt(), "octaveAbsolute", "5", 0, 1,
-				PianoNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getMelodyNote_OctaveOffset(), ecorePackage.getEInt(), "octaveOffset", null, 0, 1,
+				MelodyNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMelodyNote_OctaveAbsolute(), ecorePackage.getEInt(), "octaveAbsolute", "5", 0, 1,
+				MelodyNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeNoteEClass, CompositeNote.class, "CompositeNote", !IS_ABSTRACT, !IS_INTERFACE,
@@ -813,14 +814,14 @@ public class RhythmPackageImpl extends EPackageImpl implements RhythmPackage {
 		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.CRASH_CYMBAL);
 		addEEnumLiteral(batteryNoteTypeEEnum, BatteryNoteType.RIDE_CYMBAL);
 
-		initEEnum(pianoNoteTypeEEnum, PianoNoteType.class, "PianoNoteType");
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.C);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.D);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.E);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.F);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.G);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.A);
-		addEEnumLiteral(pianoNoteTypeEEnum, PianoNoteType.B);
+		initEEnum(melodyNoteTypeEEnum, MelodyNoteType.class, "MelodyNoteType");
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.C);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.D);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.E);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.F);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.G);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.A);
+		addEEnumLiteral(melodyNoteTypeEEnum, MelodyNoteType.B);
 
 		initEEnum(instrumentsEEnum, Instruments.class, "Instruments");
 		addEEnumLiteral(instrumentsEEnum, Instruments.PIANO);

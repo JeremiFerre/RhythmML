@@ -4,23 +4,22 @@ package fr.polytech.dsl.model.rhythm;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Piano</b></em>'.
+ * A representation of the model object '<em><b>Melody</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.model.rhythm.Piano#getInstrument <em>Instrument</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.Piano#getOther <em>Other</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.Melody#getInstrument <em>Instrument</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.Melody#getOther <em>Other</em>}</li>
  * </ul>
  *
- * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPiano()
+ * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelody()
  * @model
  * @generated
  */
-public interface Piano extends Instrument {
-
+public interface Melody extends Instrument {
 	/**
 	 * Returns the value of the '<em><b>Instrument</b></em>' attribute.
 	 * The default value is <code>"PIANO"</code>.
@@ -34,14 +33,14 @@ public interface Piano extends Instrument {
 	 * @return the value of the '<em>Instrument</em>' attribute.
 	 * @see fr.polytech.dsl.model.rhythm.Instruments
 	 * @see #setInstrument(Instruments)
-	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPiano_Instrument()
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelody_Instrument()
 	 * @model default="PIANO"
 	 * @generated
 	 */
 	Instruments getInstrument();
 
 	/**
-	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.Piano#getInstrument <em>Instrument</em>}' attribute.
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.Melody#getInstrument <em>Instrument</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Instrument</em>' attribute.
@@ -61,14 +60,14 @@ public interface Piano extends Instrument {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Other</em>' attribute.
 	 * @see #setOther(String)
-	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPiano_Other()
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelody_Other()
 	 * @model
 	 * @generated
 	 */
 	String getOther();
 
 	/**
-	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.Piano#getOther <em>Other</em>}' attribute.
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.Melody#getOther <em>Other</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Other</em>' attribute.
@@ -76,4 +75,5 @@ public interface Piano extends Instrument {
 	 * @generated
 	 */
 	void setOther(String value);
-} // Piano
+
+} // Melody

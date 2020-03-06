@@ -461,11 +461,11 @@ ruleInstrument returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstrumentAccess().getPianoParserRuleCall_1());
+			newCompositeNode(grammarAccess.getInstrumentAccess().getMelodyParserRuleCall_1());
 		}
-		this_Piano_1=rulePiano
+		this_Melody_1=ruleMelody
 		{
-			$current = $this_Piano_1.current;
+			$current = $this_Melody_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -914,15 +914,15 @@ ruleCompositeBatteryNote returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePiano
-entryRulePiano returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPianoRule()); }
-	iv_rulePiano=rulePiano
-	{ $current=$iv_rulePiano.current; }
+// Entry rule entryRuleMelody
+entryRuleMelody returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMelodyRule()); }
+	iv_ruleMelody=ruleMelody
+	{ $current=$iv_ruleMelody.current; }
 	EOF;
 
-// Rule Piano
-rulePiano returns [EObject current=null]
+// Rule Melody
+ruleMelody returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -933,25 +933,25 @@ rulePiano returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPianoAccess().getPianoAction_0(),
+					grammarAccess.getMelodyAccess().getMelodyAction_0(),
 					$current);
 			}
 		)
 		(
-			otherlv_1='piano'
+			otherlv_1='Melody'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getPianoAccess().getPianoKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getMelodyAccess().getMelodyKeyword_1_0());
 			}
 			    |
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPianoAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getMelodyAccess().getInstrumentInstrumentsEnumRuleCall_1_1_0());
 					}
 					lv_instrument_2_0=ruleInstruments
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyRule());
 						}
 						set(
 							$current,
@@ -966,17 +966,17 @@ rulePiano returns [EObject current=null]
 			(
 				otherlv_3='other:'
 				{
-					newLeafNode(otherlv_3, grammarAccess.getPianoAccess().getOtherKeyword_1_2_0());
+					newLeafNode(otherlv_3, grammarAccess.getMelodyAccess().getOtherKeyword_1_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoAccess().getOtherEStringParserRuleCall_1_2_1_0());
+							newCompositeNode(grammarAccess.getMelodyAccess().getOtherEStringParserRuleCall_1_2_1_0());
 						}
 						lv_other_4_0=ruleEString
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPianoRule());
+								$current = createModelElementForParent(grammarAccess.getMelodyRule());
 							}
 							set(
 								$current,
@@ -992,19 +992,19 @@ rulePiano returns [EObject current=null]
 		(
 			otherlv_5=':'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getPianoAccess().getColonKeyword_2_0());
+				newLeafNode(otherlv_5, grammarAccess.getMelodyAccess().getColonKeyword_2_0());
 			}
 			    |
 			(
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoAccess().getNameEStringParserRuleCall_2_1_0_0());
+							newCompositeNode(grammarAccess.getMelodyAccess().getNameEStringParserRuleCall_2_1_0_0());
 						}
 						lv_name_6_0=ruleEString
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPianoRule());
+								$current = createModelElementForParent(grammarAccess.getMelodyRule());
 							}
 							set(
 								$current,
@@ -1017,7 +1017,7 @@ rulePiano returns [EObject current=null]
 				)
 				otherlv_7=':'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getPianoAccess().getColonKeyword_2_1_1());
+					newLeafNode(otherlv_7, grammarAccess.getMelodyAccess().getColonKeyword_2_1_1());
 				}
 			)
 		)
@@ -1025,18 +1025,18 @@ rulePiano returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPianoAccess().getSectionsSectionPianoLayerParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getMelodyAccess().getSectionsSectionMelodyLayerParserRuleCall_3_0_0());
 					}
-					lv_sections_8_0=ruleSectionPianoLayer
+					lv_sections_8_0=ruleSectionMelodyLayer
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyRule());
 						}
 						add(
 							$current,
 							"sections",
 							lv_sections_8_0,
-							"fr.polytech.dsl.rhythm.Guardin.SectionPianoLayer");
+							"fr.polytech.dsl.rhythm.Guardin.SectionMelodyLayer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1045,18 +1045,18 @@ rulePiano returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPianoAccess().getLayersPianoLayerParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getMelodyAccess().getLayersMelodyLayerParserRuleCall_3_1_0());
 					}
-					lv_layers_9_0=rulePianoLayer
+					lv_layers_9_0=ruleMelodyLayer
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyRule());
 						}
 						add(
 							$current,
 							"layers",
 							lv_layers_9_0,
-							"fr.polytech.dsl.rhythm.Guardin.PianoLayer");
+							"fr.polytech.dsl.rhythm.Guardin.MelodyLayer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1065,15 +1065,15 @@ rulePiano returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleSectionPianoLayer
-entryRuleSectionPianoLayer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSectionPianoLayerRule()); }
-	iv_ruleSectionPianoLayer=ruleSectionPianoLayer
-	{ $current=$iv_ruleSectionPianoLayer.current; }
+// Entry rule entryRuleSectionMelodyLayer
+entryRuleSectionMelodyLayer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSectionMelodyLayerRule()); }
+	iv_ruleSectionMelodyLayer=ruleSectionMelodyLayer
+	{ $current=$iv_ruleSectionMelodyLayer.current; }
 	EOF;
 
-// Rule SectionPianoLayer
-ruleSectionPianoLayer returns [EObject current=null]
+// Rule SectionMelodyLayer
+ruleSectionMelodyLayer returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1084,23 +1084,23 @@ ruleSectionPianoLayer returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getSectionPianoLayerAccess().getSectionLayerAction_0(),
+					grammarAccess.getSectionMelodyLayerAccess().getSectionLayerAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='begin_section'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSectionPianoLayerAccess().getBegin_sectionKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getSectionMelodyLayerAccess().getBegin_sectionKeyword_1());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSectionPianoLayerRule());
+						$current = createModelElement(grammarAccess.getSectionMelodyLayerRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getSectionPianoLayerAccess().getSectionSectionCrossReference_2_0());
+					newCompositeNode(grammarAccess.getSectionMelodyLayerAccess().getSectionSectionCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -1111,38 +1111,38 @@ ruleSectionPianoLayer returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSectionPianoLayerAccess().getLayersPianoLayerParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSectionMelodyLayerAccess().getLayersMelodyLayerParserRuleCall_3_0());
 				}
-				lv_layers_3_0=rulePianoLayer
+				lv_layers_3_0=ruleMelodyLayer
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSectionPianoLayerRule());
+						$current = createModelElementForParent(grammarAccess.getSectionMelodyLayerRule());
 					}
 					add(
 						$current,
 						"layers",
 						lv_layers_3_0,
-						"fr.polytech.dsl.rhythm.Guardin.PianoLayer");
+						"fr.polytech.dsl.rhythm.Guardin.MelodyLayer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
 		otherlv_4='end_section'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSectionPianoLayerAccess().getEnd_sectionKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getSectionMelodyLayerAccess().getEnd_sectionKeyword_4());
 		}
 	)
 ;
 
-// Entry rule entryRulePianoLayer
-entryRulePianoLayer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPianoLayerRule()); }
-	iv_rulePianoLayer=rulePianoLayer
-	{ $current=$iv_rulePianoLayer.current; }
+// Entry rule entryRuleMelodyLayer
+entryRuleMelodyLayer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMelodyLayerRule()); }
+	iv_ruleMelodyLayer=ruleMelodyLayer
+	{ $current=$iv_ruleMelodyLayer.current; }
 	EOF;
 
-// Rule PianoLayer
-rulePianoLayer returns [EObject current=null]
+// Rule MelodyLayer
+ruleMelodyLayer returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1153,40 +1153,40 @@ rulePianoLayer returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPianoLayerAccess().getLayerAction_0(),
+					grammarAccess.getMelodyLayerAccess().getLayerAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='layer:'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getPianoLayerAccess().getLayerKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getMelodyLayerAccess().getLayerKeyword_1());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesPianoNoteParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getMelodyLayerAccess().getNotesMelodyNoteParserRuleCall_2_0_0());
 					}
-					lv_notes_2_1=rulePianoNote
+					lv_notes_2_1=ruleMelodyNote
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyLayerRule());
 						}
 						add(
 							$current,
 							"notes",
 							lv_notes_2_1,
-							"fr.polytech.dsl.rhythm.Guardin.PianoNote");
+							"fr.polytech.dsl.rhythm.Guardin.MelodyNote");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+						newCompositeNode(grammarAccess.getMelodyLayerAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
 					}
 					lv_notes_2_2=ruleEmptyNote
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyLayerRule());
 						}
 						add(
 							$current,
@@ -1197,18 +1197,18 @@ rulePianoLayer returns [EObject current=null]
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getPianoLayerAccess().getNotesCompositePianoNoteParserRuleCall_2_0_2());
+						newCompositeNode(grammarAccess.getMelodyLayerAccess().getNotesCompositeMelodyNoteParserRuleCall_2_0_2());
 					}
-					lv_notes_2_3=ruleCompositePianoNote
+					lv_notes_2_3=ruleCompositeMelodyNote
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPianoLayerRule());
+							$current = createModelElementForParent(grammarAccess.getMelodyLayerRule());
 						}
 						add(
 							$current,
 							"notes",
 							lv_notes_2_3,
-							"fr.polytech.dsl.rhythm.Guardin.CompositePianoNote");
+							"fr.polytech.dsl.rhythm.Guardin.CompositeMelodyNote");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1217,15 +1217,15 @@ rulePianoLayer returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePianoNote
-entryRulePianoNote returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPianoNoteRule()); }
-	iv_rulePianoNote=rulePianoNote
-	{ $current=$iv_rulePianoNote.current; }
+// Entry rule entryRuleMelodyNote
+entryRuleMelodyNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMelodyNoteRule()); }
+	iv_ruleMelodyNote=ruleMelodyNote
+	{ $current=$iv_ruleMelodyNote.current; }
 	EOF;
 
-// Rule PianoNote
-rulePianoNote returns [EObject current=null]
+// Rule MelodyNote
+ruleMelodyNote returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1236,25 +1236,25 @@ rulePianoNote returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPianoNoteAccess().getPianoNoteAction_0(),
+					grammarAccess.getMelodyNoteAccess().getMelodyNoteAction_0(),
 					$current);
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPianoNoteAccess().getNoteTypePianoNoteTypeEnumRuleCall_1_0());
+					newCompositeNode(grammarAccess.getMelodyNoteAccess().getNoteTypeMelodyNoteTypeEnumRuleCall_1_0());
 				}
-				lv_noteType_1_0=rulePianoNoteType
+				lv_noteType_1_0=ruleMelodyNoteType
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+						$current = createModelElementForParent(grammarAccess.getMelodyNoteRule());
 					}
 					set(
 						$current,
 						"noteType",
 						lv_noteType_1_0,
-						"fr.polytech.dsl.rhythm.Guardin.PianoNoteType");
+						"fr.polytech.dsl.rhythm.Guardin.MelodyNoteType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1262,12 +1262,12 @@ rulePianoNote returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPianoNoteAccess().getDurationDurationEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMelodyNoteAccess().getDurationDurationEnumRuleCall_2_0());
 				}
 				lv_duration_2_0=ruleDuration
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+						$current = createModelElementForParent(grammarAccess.getMelodyNoteRule());
 					}
 					set(
 						$current,
@@ -1282,17 +1282,17 @@ rulePianoNote returns [EObject current=null]
 			(
 				otherlv_3='/'
 				{
-					newLeafNode(otherlv_3, grammarAccess.getPianoNoteAccess().getSolidusKeyword_3_0_0());
+					newLeafNode(otherlv_3, grammarAccess.getMelodyNoteAccess().getSolidusKeyword_3_0_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0());
+							newCompositeNode(grammarAccess.getMelodyNoteAccess().getOctaveOffsetERelativeIntParserRuleCall_3_0_1_0());
 						}
 						lv_octaveOffset_4_0=ruleERelativeInt
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+								$current = createModelElementForParent(grammarAccess.getMelodyNoteRule());
 							}
 							set(
 								$current,
@@ -1308,17 +1308,17 @@ rulePianoNote returns [EObject current=null]
 			(
 				otherlv_5='|'
 				{
-					newLeafNode(otherlv_5, grammarAccess.getPianoNoteAccess().getVerticalLineKeyword_3_1_0());
+					newLeafNode(otherlv_5, grammarAccess.getMelodyNoteAccess().getVerticalLineKeyword_3_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPianoNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0());
+							newCompositeNode(grammarAccess.getMelodyNoteAccess().getOctaveAbsoluteEIntParserRuleCall_3_1_1_0());
 						}
 						lv_octaveAbsolute_6_0=ruleEInt
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPianoNoteRule());
+								$current = createModelElementForParent(grammarAccess.getMelodyNoteRule());
 							}
 							set(
 								$current,
@@ -1334,15 +1334,15 @@ rulePianoNote returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleCompositePianoNote
-entryRuleCompositePianoNote returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCompositePianoNoteRule()); }
-	iv_ruleCompositePianoNote=ruleCompositePianoNote
-	{ $current=$iv_ruleCompositePianoNote.current; }
+// Entry rule entryRuleCompositeMelodyNote
+entryRuleCompositeMelodyNote returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositeMelodyNoteRule()); }
+	iv_ruleCompositeMelodyNote=ruleCompositeMelodyNote
+	{ $current=$iv_ruleCompositeMelodyNote.current; }
 	EOF;
 
-// Rule CompositePianoNote
-ruleCompositePianoNote returns [EObject current=null]
+// Rule CompositeMelodyNote
+ruleCompositeMelodyNote returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1353,40 +1353,40 @@ ruleCompositePianoNote returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getCompositePianoNoteAccess().getCompositeNoteAction_0(),
+					grammarAccess.getCompositeMelodyNoteAccess().getCompositeNoteAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getCompositePianoNoteAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCompositeMelodyNoteAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesPianoNoteParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getCompositeMelodyNoteAccess().getNotesMelodyNoteParserRuleCall_2_0_0());
 					}
-					lv_notes_2_1=rulePianoNote
+					lv_notes_2_1=ruleMelodyNote
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+							$current = createModelElementForParent(grammarAccess.getCompositeMelodyNoteRule());
 						}
 						add(
 							$current,
 							"notes",
 							lv_notes_2_1,
-							"fr.polytech.dsl.rhythm.Guardin.PianoNote");
+							"fr.polytech.dsl.rhythm.Guardin.MelodyNote");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
+						newCompositeNode(grammarAccess.getCompositeMelodyNoteAccess().getNotesEmptyNoteParserRuleCall_2_0_1());
 					}
 					lv_notes_2_2=ruleEmptyNote
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+							$current = createModelElementForParent(grammarAccess.getCompositeMelodyNoteRule());
 						}
 						add(
 							$current,
@@ -1400,21 +1400,21 @@ ruleCompositePianoNote returns [EObject current=null]
 		)+
 		otherlv_3=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCompositePianoNoteAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getCompositeMelodyNoteAccess().getRightParenthesisKeyword_3());
 		}
 		otherlv_4='x'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getCompositePianoNoteAccess().getXKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getCompositeMelodyNoteAccess().getXKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompositePianoNoteAccess().getRepeatsEIntParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getCompositeMelodyNoteAccess().getRepeatsEIntParserRuleCall_5_0());
 				}
 				lv_repeats_5_0=ruleEInt
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositePianoNoteRule());
+						$current = createModelElementForParent(grammarAccess.getCompositeMelodyNoteRule());
 					}
 					set(
 						$current,
@@ -1704,8 +1704,8 @@ ruleInstruments returns [Enumerator current=null]
 	)
 ;
 
-// Rule PianoNoteType
-rulePianoNoteType returns [Enumerator current=null]
+// Rule MelodyNoteType
+ruleMelodyNoteType returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -1716,56 +1716,56 @@ rulePianoNoteType returns [Enumerator current=null]
 		(
 			enumLiteral_0='A'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getPianoNoteTypeAccess().getAEnumLiteralDeclaration_0());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getMelodyNoteTypeAccess().getAEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='B'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getPianoNoteTypeAccess().getBEnumLiteralDeclaration_1());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getMelodyNoteTypeAccess().getBEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='C'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getPianoNoteTypeAccess().getCEnumLiteralDeclaration_2());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getCEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getMelodyNoteTypeAccess().getCEnumLiteralDeclaration_2());
 			}
 		)
 		    |
 		(
 			enumLiteral_3='D'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getPianoNoteTypeAccess().getDEnumLiteralDeclaration_3());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getMelodyNoteTypeAccess().getDEnumLiteralDeclaration_3());
 			}
 		)
 		    |
 		(
 			enumLiteral_4='E'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getPianoNoteTypeAccess().getEEnumLiteralDeclaration_4());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getMelodyNoteTypeAccess().getEEnumLiteralDeclaration_4());
 			}
 		)
 		    |
 		(
 			enumLiteral_5='F'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getPianoNoteTypeAccess().getFEnumLiteralDeclaration_5());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getFEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getMelodyNoteTypeAccess().getFEnumLiteralDeclaration_5());
 			}
 		)
 		    |
 		(
 			enumLiteral_6='G'
 			{
-				$current = grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getPianoNoteTypeAccess().getGEnumLiteralDeclaration_6());
+				$current = grammarAccess.getMelodyNoteTypeAccess().getGEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getMelodyNoteTypeAccess().getGEnumLiteralDeclaration_6());
 			}
 		)
 	)

@@ -2,19 +2,21 @@
  */
 package fr.polytech.dsl.model.rhythm.provider;
 
+import fr.polytech.dsl.model.rhythm.Instrument;
+import fr.polytech.dsl.model.rhythm.RhythmFactory;
+import fr.polytech.dsl.model.rhythm.RhythmPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import fr.polytech.dsl.model.rhythm.Instrument;
-import fr.polytech.dsl.model.rhythm.RhythmFactory;
-import fr.polytech.dsl.model.rhythm.RhythmPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.Instrument} object.

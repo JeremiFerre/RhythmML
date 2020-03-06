@@ -1,16 +1,16 @@
-CustomSoundBank basePath="/Users/jeremiferre/Documents/Personnel/SI5/S9-2/DSL/RhythmML/RhythmML/midi/soundBank"
+CustomSoundBank basePath='/Users/alexisgardin/Documents/COURS/SI5/DSL/RhythmML/midi/soundBank'
 Music BillieJean:
 	sections:
 		section1:
-			tempo=100
+			tempo=114
 			signature=8
 			bars=8
 		section2:
-			tempo=100
+			tempo=114
 			signature=8
 			bars=8
 		final:
-			tempo=100
+			tempo=114
 			signature=8
 			bars=2
 	tracks:

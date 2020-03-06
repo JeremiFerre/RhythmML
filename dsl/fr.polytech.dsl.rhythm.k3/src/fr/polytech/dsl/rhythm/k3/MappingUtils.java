@@ -34,8 +34,8 @@ import fr.polytech.dsl.model.rhythm.Instrument;
 import fr.polytech.dsl.model.rhythm.Layer;
 import fr.polytech.dsl.model.rhythm.Music;
 import fr.polytech.dsl.model.rhythm.Note;
-import fr.polytech.dsl.model.rhythm.Piano;
-import fr.polytech.dsl.model.rhythm.PianoNote;
+import fr.polytech.dsl.model.rhythm.Melody;
+import fr.polytech.dsl.model.rhythm.MelodyNote;
 import fr.polytech.dsl.model.rhythm.SectionLayer;
 
 public class MappingUtils {
@@ -171,17 +171,17 @@ public class MappingUtils {
 			return "Battery";
 		}
 		
-		if (instrument instanceof Piano) {
-			Piano piano = ((Piano) instrument);
-			if (piano.getOther() != null && !piano.getOther().equals("")) {
-				return piano.getOther();
+		if (instrument instanceof Melody) {
+			Melody Melody = ((Melody) instrument);
+			if (Melody.getOther() != null && !Melody.getOther().equals("")) {
+				return Melody.getOther();
 			}
 			
-			if (piano.getInstrument() != null) {
-				return piano.getInstrument().toString();
+			if (Melody.getInstrument() != null) {
+				return Melody.getInstrument().toString();
 			}
 			
-			return "Piano";
+			return "Melody";
 		}
 		
 		return "";
@@ -210,14 +210,14 @@ public class MappingUtils {
 			return notes.stream().map(n -> mapNote(n)).collect(Collectors.joining(" "));
 		}
 		
-		if (note instanceof PianoNote) {
-			return mapPianoNote((PianoNote) note) + mapDuration(note.getDuration());
+		if (note instanceof MelodyNote) {
+			return mapMelodyNote((MelodyNote) note) + mapDuration(note.getDuration());
 		}
 		
 		return "R";
 	}
 	
-	public static String mapPianoNote(PianoNote note) {
+	public static String mapMelodyNote(MelodyNote note) {
 		String res = note.getNoteType().toString();
 		if (note.getOctaveOffset() != 0) {
 			res += (5 + note.getOctaveOffset());

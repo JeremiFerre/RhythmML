@@ -2,14 +2,15 @@
  */
 package fr.polytech.dsl.model.rhythm.provider;
 
+import fr.polytech.dsl.model.rhythm.Battery;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import fr.polytech.dsl.model.rhythm.Battery;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link fr.polytech.dsl.model.rhythm.Battery} object.

@@ -4,26 +4,26 @@ package fr.polytech.dsl.model.rhythm;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Piano Note</b></em>'.
+ * A representation of the model object '<em><b>Melody Note</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getNoteType <em>Note Type</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}</li>
- *   <li>{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute <em>Octave Absolute</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.MelodyNote#getNoteType <em>Note Type</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.MelodyNote#getOctaveOffset <em>Octave Offset</em>}</li>
+ *   <li>{@link fr.polytech.dsl.model.rhythm.MelodyNote#getOctaveAbsolute <em>Octave Absolute</em>}</li>
  * </ul>
  *
- * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote()
+ * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelodyNote()
  * @model
  * @generated
  */
-public interface PianoNote extends Note {
+public interface MelodyNote extends Note {
 	/**
 	 * Returns the value of the '<em><b>Note Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link fr.polytech.dsl.model.rhythm.PianoNoteType}.
+	 * The literals are from the enumeration {@link fr.polytech.dsl.model.rhythm.MelodyNoteType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Note Type</em>' attribute isn't clear,
@@ -31,24 +31,24 @@ public interface PianoNote extends Note {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Note Type</em>' attribute.
-	 * @see fr.polytech.dsl.model.rhythm.PianoNoteType
-	 * @see #setNoteType(PianoNoteType)
-	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote_NoteType()
+	 * @see fr.polytech.dsl.model.rhythm.MelodyNoteType
+	 * @see #setNoteType(MelodyNoteType)
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelodyNote_NoteType()
 	 * @model
 	 * @generated
 	 */
-	PianoNoteType getNoteType();
+	MelodyNoteType getNoteType();
 
 	/**
-	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.PianoNote#getNoteType <em>Note Type</em>}' attribute.
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.MelodyNote#getNoteType <em>Note Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Note Type</em>' attribute.
-	 * @see fr.polytech.dsl.model.rhythm.PianoNoteType
+	 * @see fr.polytech.dsl.model.rhythm.MelodyNoteType
 	 * @see #getNoteType()
 	 * @generated
 	 */
-	void setNoteType(PianoNoteType value);
+	void setNoteType(MelodyNoteType value);
 
 	/**
 	 * Returns the value of the '<em><b>Octave Offset</b></em>' attribute.
@@ -60,14 +60,14 @@ public interface PianoNote extends Note {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Octave Offset</em>' attribute.
 	 * @see #setOctaveOffset(int)
-	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote_OctaveOffset()
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelodyNote_OctaveOffset()
 	 * @model
 	 * @generated
 	 */
 	int getOctaveOffset();
 
 	/**
-	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveOffset <em>Octave Offset</em>}' attribute.
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.MelodyNote#getOctaveOffset <em>Octave Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Octave Offset</em>' attribute.
@@ -87,14 +87,14 @@ public interface PianoNote extends Note {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Octave Absolute</em>' attribute.
 	 * @see #setOctaveAbsolute(int)
-	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getPianoNote_OctaveAbsolute()
+	 * @see fr.polytech.dsl.model.rhythm.RhythmPackage#getMelodyNote_OctaveAbsolute()
 	 * @model default="5"
 	 * @generated
 	 */
 	int getOctaveAbsolute();
 
 	/**
-	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.PianoNote#getOctaveAbsolute <em>Octave Absolute</em>}' attribute.
+	 * Sets the value of the '{@link fr.polytech.dsl.model.rhythm.MelodyNote#getOctaveAbsolute <em>Octave Absolute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Octave Absolute</em>' attribute.
@@ -103,4 +103,4 @@ public interface PianoNote extends Note {
 	 */
 	void setOctaveAbsolute(int value);
 
-} // PianoNote
+} // MelodyNote

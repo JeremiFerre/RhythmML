@@ -58,13 +58,13 @@ public interface RhythmFactory extends EFactory {
 	Battery createBattery();
 
 	/**
-	 * Returns a new object of class '<em>Piano</em>'.
+	 * Returns a new object of class '<em>Melody</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Piano</em>'.
+	 * @return a new object of class '<em>Melody</em>'.
 	 * @generated
 	 */
-	Piano createPiano();
+	Melody createMelody();
 
 	/**
 	 * Returns a new object of class '<em>Battery Note</em>'.
@@ -94,13 +94,13 @@ public interface RhythmFactory extends EFactory {
 	Layer createLayer();
 
 	/**
-	 * Returns a new object of class '<em>Piano Note</em>'.
+	 * Returns a new object of class '<em>Melody Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Piano Note</em>'.
+	 * @return a new object of class '<em>Melody Note</em>'.
 	 * @generated
 	 */
-	PianoNote createPianoNote();
+	MelodyNote createMelodyNote();
 
 	/**
 	 * Returns a new object of class '<em>Composite Note</em>'.
